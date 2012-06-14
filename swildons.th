@@ -1,0 +1,74 @@
+encoding  utf-8
+survey swildons
+#Swildons Hole, Priddy, Mendip, Somerset, UK
+#template for project, with made up walls drawing just to test it compiles
+
+  input swil1.th2
+
+  map testPlan -title "Swildons Plan"
+    swilSP1
+  endmap
+
+  centerline
+    equate  S1@swil1  A@swil2
+  endcentreline
+
+
+survey swil1
+#Fake survey to put bit of test passage in roughly the right part of the world
+#Fixes are very approximate for entrance and relative location of actual data
+
+centreline
+cs OSGB:ST 
+date 2012.06.14
+
+fix Ent 53100 51200 230
+fix S1 52713 51177 230
+station Ent "Swildons Hole" entrance
+
+data normal from to tape compass clino ignoreall
+Ent S1 0 0 0
+
+endcentreline
+
+endsurvey
+
+survey swil2
+#Data from Willie Stanton's Survey Book 1 pp49-50
+#Typed in by Footleg, June 2012
+
+centreline
+cs OSGB:ST 
+date 1951.07.21
+
+data normal from to tape compass clino ignoreall
+units tape feet
+#in this survey some angles are in degrees:minutes, others decimal degrees
+
+A  B  21.00  283  8.5
+B  C  27.00  322:30  -9.5
+C  D  37.00  263  2.3
+D  E  16.20  192:30  4.3
+E  F  47.00  258  -5.3
+F  G  48.00  292  -3.0
+G  H  36.00  339  0.0
+H  I  31.00  247  -2.3
+I  J  26.00  275  2.0
+J  K  26.50  320  1.0
+K  L  17.50  13  -9.0
+L  M  33.00  299  -3.0
+M  N  43.00  322  -7.3
+N  O  15.50  281  -2.0
+O  P  56.00  307  -5.0
+P  Q  15.80  283  -0.2
+Q  R  15.30  217  -15.2
+R  S  39.50  310  5.8
+S  T  39.60  238  -2.7
+T  U  49.00  148  -2.0
+
+endcentreline
+
+endsurvey
+
+endsurvey
+

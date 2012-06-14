@@ -1,0 +1,21 @@
+encoding  utf-8
+#input ../../../Therion/Layouts/matienzo.layout
+
+source swildons.th
+
+export model -fmt survex -o swildons_th.3d
+export model -o swildons.lox
+export map -projection plan -layout local -o swildons_plan.pdf
+export map -proj plan -fmt kml -o swildons.kml
+
+layout local
+    #copy Mat_Std
+    scale 1 500
+    base-scale 1 500
+
+    symbol-hide line survey
+    
+    #color by altitude
+    color map-fg altitude
+    color map-bg [97 86 38] # yellow brown
+endlayout
