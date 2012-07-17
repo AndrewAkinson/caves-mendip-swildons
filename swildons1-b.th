@@ -1,0 +1,42 @@
+survey swil1b
+#Data from Willie Stanton's Survey Book 1 PDF p57-60
+#Typed in by Footleg, July 2012
+
+#21st Dec '52	Howard & Jock.	
+#Short Dry Way to 40' Pot
+
+centreline
+cs OSGB:ST 
+date 1952.12.21
+
+#in this survey some angles are in degrees:minutes, others decimal degrees
+units tape feet
+units depth feet
+
+data normal from to tape compass backcompass clino ignoreall						
+DH	DG	5.6	-	175:00	30:00	
+DG	DF	8.7	317:00	-	2:00	
+DF	DE	3.1	-	087:00	21:00	
+DE	DD	13.4	299:00	-	-15:00	
+DD	DC	19.2	-	145:30	-2:30	
+DC	DB	20.1	319:30	-	-13:00	
+DB	DA	23.2	-	089:00	-15:00	Entrance to Old Grotto.
+DA	CZ	27.9	202:20	-	-41:30	
+CZ	CY	22.6	-	069:00	-17:00	
+CY	CX	27.4	292:00	-	-6:40	
+CX	CW	22.2	-	030:00	-1:40	
+CW	CV	16.3	192:00	-	6:30	
+CV	CU	13.6	-	073:00	6:00	
+CU	CT	20.1	259:30	-	-28:00	
+CT	CS	1.8	-	-	UP	(sketch of CR-CZ-DA-DH)
+CS	CR	15.8	321:00	-	-1:00	
+CR	CQ	16.7	-	144:00	-5:00	
+CQ	CP	14.5	325:30	-	3:00	
+CP	CO	4.1	-	171:00	0	
+CO	CN	9.5	-	168:00	4:30	
+CN	CM	25.5	335:00	-	-21:30	CM = On stalagmite projection over 40 ft pt.
+#	CM	0			-	
+
+endcentreline
+
+endsurvey

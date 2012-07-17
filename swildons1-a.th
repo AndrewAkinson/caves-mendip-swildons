@@ -1,0 +1,38 @@
+survey swil1a
+#Data from Willie Stanton's Survey Book 1 PDF p57-58
+#Typed in by Footleg, July 2012
+
+#Nov. 23rd '52	Jack Broadley	
+#Short Dry Way - Entrance
+
+centreline
+cs OSGB:ST 
+date 1952.11.23
+
+#in this survey some angles are in degrees:minutes, others decimal degrees
+units tape feet
+units depth feet
+
+data normal from to tape compass backcompass clino ignoreall						
+EC	EB	12	-	103:00	-6:00	EC is on dimple in projecting rock 10' below entrance on E.
+EB	EA	3	011:00	-	-6:00	
+EA	DZ	6	-	-	DOWN	(sketch from Ent. EC-DO)
+DZ	DY	17.5	-	216:00	8:00	
+DY	DX	4.9	344:30	-	6:00	
+DX	DW	23.5	-	162:00	-12:00	
+DW	DV	8.2	259:00	-	-21:00	
+DV	DQ	9	-	119:00	-17:00	(sketch of Short Dry Way DN-DH)
+DQ	DP	0.5	-	-	DOWN	
+DP	DO	14.8	277:00	-	-53:00	
+DO	DN	13.3	-	261:00	-47:00	
+DN	DM	0.5	-	-	UP	
+DM	DL	14.5	348:30	-	-6:00	
+DL	DK	17.3	-	112:00	-20:00	
+DK	DJ	17.2	346:00	-	-22:00	
+DJ	DI	8.9	-	138:00	-13:30	
+DI	DH	32	304:00	-	-17:00	
+#	DH	0				is 2" candle on smoke BM below smoke (.)
+
+endcentreline
+
+endsurvey

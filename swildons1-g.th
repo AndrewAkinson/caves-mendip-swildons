@@ -1,0 +1,59 @@
+survey swil1g
+#Data from Willie Stanton's Survey Book 1 PDF p67-68
+#Typed in by Footleg, July 2012
+
+#14th March 1953	Howard	
+#Damascus
+
+centreline
+cs OSGB:ST 
+date 1953.03.14
+
+#in this survey some angles are in degrees:minutes, others decimal degrees
+units tape feet
+units depth feet
+
+data normal from to tape compass backcompass clino ignoreall						
+o	p	24	-	102:00	-9:15	(sketch o-t)
+p	q	34.4	250:00	-	-14:30	
+data diving from to tape compass backcompass depthchange ignoreall						
+q	r	23.1	320:00	-	-3.5	Sump 15' on at 280deg true WL 5 WR 4
+data normal from to tape compass backcompass clino ignoreall						
+q	s	21.6	-	330:00	20:30	
+s	t	17.4	246:00	-	-7:30	
+data diving from to tape compass backcompass depthchange ignoreall						
+t	u	18.2	255:00	-	-4	(sketch t-u) u-> Howards Loop
+data normal from to tape compass backcompass clino ignoreall						
+t	v	17.3	-	346:00	20:30	v in a cross rift 4' from Pearly Gate
+v	w	16.2	165:40	-	-2:45	
+w	x	17.8	-	272:30	19:40	(sketch w-x)
+x	y	24.3	147:00	-	10:00	
+y	z	6	-	-	DOWN	
+z	aa	12.5	-	327:00	-2:40	Bottom of drop. View into Damascus
+aa	ab	11.2	212:30	-	-22:30	Above pool
+ab	ac	8	-	353:00	11:30	Bearing 238 true into Howards Loop
+ac	ad	14.3	202:00	-	-12:00	(sketch ab-ac)
+ad	ae	12.7	-	026:00	6:00	
+ae	af	30.5	263:00	-	-8:40	15' aven explored by Oliver just before station
+af	ag	27.4	-	112:15	0:15	
+ag	ah	13.7	253:30	-	-20:20	(sketch ag) 6" above water. Sump level 60.1
+z	ai	19.2	-	322:00	22:00	
+ai	aj	7.2	097:00	-	55:00	
+aj	ak	19.7	099:00	-	18:00	
+ak	al	9.2	106:00	-	-22:00	
+data diving from to tape compass backcompass depthchange ignoreall						
+al	am	15.8	101:00	-	2	Near side of duck (in dry weather)
+data normal from to tape compass backcompass clino ignoreall						
+am	an	12.3	080:00	-	22:00	Far side of duck (in dry weather)
+an	ao	14.5	114:00	-	50:00	
+ao	ap	17.8	103:00	-	-6:30	
+ap	aq	7.7	026:00	-	-53:00	
+aq	ar	8.5	003:00	-	0	
+ar	as	10.8	022:00	-	0	(sketch at-au) descends at 15 or 20 degrees. i.e. -9 feet vertical. Sump?
+data diving from to tape compass backcompass depthchange ignoreall						
+as	at	18.4	003:00	-	-2.5	
+at	au	11	355:00	-	0	
+
+endcentreline
+
+endsurvey

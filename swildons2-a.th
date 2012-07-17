@@ -1,0 +1,50 @@
+survey swil2a
+#Data from Willie Stanton's Survey Book 1 PDF p49-50
+#Typed in by Footleg, June 2012
+
+#21st July 1951	W.I.Stanton	SWILDONS HOLE
+#Main streamway downstream from Sump 1 to the Landing
+
+centreline
+cs OSGB:ST 
+date 1951.07.21
+
+#in this survey some angles are in degrees:minutes, others decimal degrees
+units tape feet
+units depth feet
+
+data normal from to tape compass backcompass clino ignoreall						
+A	B	21	-	103	8:30	A is at the base of the cable spike on the downstream side of Sump I
+B	C	27	322:30	-	-9:30	B is on a rock at upstream end of pool
+data diving from to tape compass backcompass depthchange ignoreall						
+C	D	37	-	83	1.5	C is on edge of pool 10' before Duck I
+data normal from to tape compass backcompass clino ignoreall						
+D	E	16.2	192:30	-	4:30	D is in stream. Big rock (start of New Series survey) 10' away at 350 (deg). Big passage starts as continuation of Howards Dig.
+E	F	47	-	78	-5:30	
+data diving from to tape compass backcompass depthchange ignoreall						
+F	G	48	292	-	-2.5	At 40' the roof lowers suddenly to Creep I. The big Bedding Plane passage comes in on the right, from -5' to 40'
+G	H	36	-	159	0	
+data normal from to tape compass backcompass clino ignoreall						
+H	I	31	247	-	-2:30	
+I	J	26	-	95	2	
+J	K	26.5	320	-	1	Pots
+K	L	17.5	-	193	-9	Pots
+L	M	33	299	-	-3	L is at foot of climb to Approach passage. Clay fill remains 6' up on left wall.
+M	N	43	-	142	-7.3	Pots
+N	O	15.5	281	-	-2	Pots
+O	P	56	-	127	-5	Pots. Very pretty coral on left wall
+P	Q	15.8	283	-	-0:15	
+data diving from to tape compass backcompass depthchange ignoreall						
+Q	R	15.3	-	37	-4	1.5 foot deep pool starts at P.
+R	S	39.5	310	-	4	Pool 2.5' deep at R, ends 15' on. Scalloping as in Goughs 1st Sandy Chamber.
+data normal from to tape compass backcompass clino ignoreall						
+S	T	39.6	-	58	-2:30	S is marked on wall. At 20' there is a muddy chamber overhead.
+data diving from to tape compass backcompass depthchange ignoreall						
+T	U	49	148	-	-1.7	
+#	U					Bearls (sp.?) seen here.    Total = 650'
+A1	B1	30.4	-	326	0	A1 is far end of "Priddy Green" passage. At choke
+B1	C1	37.5	248	-	-3.9	B1 is ent to P.G. pass, above stalagmite keloid (sp.?)
+
+endcentreline
+
+endsurvey

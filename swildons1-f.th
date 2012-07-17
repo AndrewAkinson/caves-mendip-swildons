@@ -1,0 +1,39 @@
+survey swil1f
+#Data from Willie Stanton's Survey Book 1 PDF p65-68
+#Typed in by Footleg, July 2012
+
+#1st March 1953	Phil, Don, Oliver, Colin	
+#Trats Grotto into St Pauls System
+
+centreline
+cs OSGB:ST 
+date 1953.03.01
+
+#in this survey some angles are in degrees:minutes, others decimal degrees
+units tape feet
+units depth feet
+
+data diving from to tape compass backcompass depthchange ignoreall						
+AL	a	3.4	-	048:00	-1	See p.51 Below Trats Grotto
+data normal from to tape compass backcompass clino ignoreall						
+a	b	19.4	184:00	-	56:30	
+b	c	10.8	-	229:40	30:15	Top of pit
+c	d	23.8	203:40	-	19:40	Foot of cascade
+d	e	52	-	305:10	2:30	(small sketch a-e)
+e	f	23.5	125:00	-	8:45	(sketch e-i)
+f	g	16.9	-	342:00	-5:00	
+data diving from to tape compass backcompass depthchange ignoreall						
+g	h	7.6	-	013:00	0.5	
+data normal from to tape compass backcompass clino ignoreall						
+h	i	18.2	-	002:00	5:30	
+i	j	7.8	-	007:00	-7:00	(sketch j-o)
+j	k	28.9	194:00	-	-17:30	
+k	l	22.3	-	027:30	4:00	
+l	m	22.9	187:00	-	0:40	
+m	n	18.8	-	044:00	-5:30	
+n	o	47.1	251:00	-	-11:30	On Olivers boulder
+#	o	0				
+
+endcentreline
+
+endsurvey

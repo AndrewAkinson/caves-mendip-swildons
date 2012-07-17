@@ -1,0 +1,66 @@
+survey swil2c
+#Data from Willie Stanton's Survey Book 1 PDF p55-58
+#Typed in by Footleg, June 2012
+
+#14th August '52	Colin	
+#Upper Mud Series
+
+centreline
+cs OSGB:ST 
+date 1952.08.14
+
+#in this survey some angles are in degrees:minutes, others decimal degrees
+units tape feet
+units depth feet
+
+data normal from to tape compass backcompass clino ignoreall						
+18	19	10.1	-	-	DOWN	18 is in crack at top of 11 Foot Drop.
+19	20	8	-	355:00	1:00	(sketch of 18 - 24)
+20	21	24.8	091:00	-	23:00	
+21	22	11.2	-	302:00	10:00	
+22	23	25.5	172:40	-	-9:00	
+23	24	50.7	-	248:00	18:00	
+24	25	14	046:00	-	-46:00	(sketch of 24 - 35)
+25	26	15.3	-	293:00	-43:00	
+26	27	23.2	061:00	-	-55:00	
+27	28	25.3	-	015:30	-24:30	
+28	29	51	242:00	-	-23:30	
+29	30	13.7	-	340:00	-3:00	
+30	31	25.4	239:00	-	-19:00	
+data diving from to tape compass backcompass depthchange ignoreall						
+31	32	11.2	-	106:00	-1	
+data normal from to tape compass backcompass clino ignoreall						
+32	33	14.1	182:00	-	-9:00	
+data diving from to tape compass backcompass depthchange ignoreall						
+33	34	17	-	339:00	1	
+data normal from to tape compass backcompass clino ignoreall						
+34	35	13.9	-	341:00	-12:30	35 = A on p.25 = Big rock by D on p.46 (Top of)
+#	35					Total = 2,642'
+35	e2	18	234	-	45	(e) is where passage rejoins streamway. Stn 35 (p.52)-(e) is F.S. 234 (TRUE), Dist 18', Clino +45 (deg), HD 12.7, VD +12.7
+35	D	10	350	-	0	D is in stream. Big rock (start of New Series survey) 10' away at 350 (deg). Big passage starts as continuation of Howards Dig.
+
+27	36	6	-	-	UP	27 = 27 of p.52
+36	37	29.4	-	158:00	12:30	
+37	38	12.1	011:00	-	-38:00	(sketch of 36-54)
+38	39	30.2	-	282:00	16:30	
+39	40	15	063:30	-	27:00	
+40	41	24.4	-	284:00	13:30	
+41	42	19.5	083:00	-	10:30	
+42	43	14.8	-	296:30	14:30	
+43	44	49.3	074:30	-	23:00	
+44	45	7.3	-	337:00	5:00	
+45	46	16.2	117:00	-	-31:00	
+46	47	35	-	-	DOWN	46 marked by candle 4' beyond lip of Black Hole
+47	48	23.6	-	308:00	8:00	
+48	49	27.5	163:30	-	-34:30	
+49	50	23.5	-	020:00	-5:00	
+50	51	16.9	186:00	-	-17:30	"Dry" passage starts 3' back.
+51	52	49.5	-	102:30	-20:30	
+52	53	51.2	264:00	-	-12:30	
+data diving from to tape compass backcompass depthchange ignoreall						
+53	54	14.2	175:00	-	-3.5	Dry passage enters 2' on North. 53 is marked by a candle 1' below (.) on roof. 54 is H2O level in sump.
+#	54	0				Closed on levels to 1.9 feet.  Not bad! Total 2,208 (? faint)
+
+endcentreline
+
+endsurvey

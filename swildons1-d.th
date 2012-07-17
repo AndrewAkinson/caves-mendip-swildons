@@ -1,0 +1,33 @@
+survey swil1d
+#Data from Willie Stanton's Survey Book 1 PDF p55-56
+#Typed in by Footleg, June 2012
+
+#2nd April 1952	Cono & Roy Blewett
+#Double Pots to Tratman's Temple
+
+centreline
+cs OSGB:ST 
+date 1952.04.02
+
+#in this survey some angles are in degrees:minutes, others decimal degrees
+units tape feet
+units depth feet
+
+data normal from to tape compass backcompass clino ignoreall						
+AL	AN	12.8	-	126:40	-4:30	AL is start of St. Pauls survey
+AN	AO	16.8	025:20	-	26:00	AN is at S. end of lower big pot.
+AO	AP	27.7	-	243:50	12:00	
+AP	AQ	23.2	094:00	-	10:30	
+AQ	AR	10.7	-	316:00	-5:30	
+AR	AS	26.5	012:20	-	28:30	
+AS	AT	38.6	-	169:30	10:30	
+AT	AU	23.3	321:40	-	-4:00	
+AU	AV	23.3	-	245:30	9:00	
+AV	AW	24.1	108:30	-	27:30	AV is in middle of upper big pot.
+AW	AX	14.6	-	259:40	23:30	
+AX	AY	15	128:00	-	13:30	AY is on stumpy stalagmite on cascade on E side of passage.
+#	AY					Total = 2,188'
+
+endcentreline
+
+endsurvey

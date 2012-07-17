@@ -5,7 +5,7 @@ source swildons.th
 
 export model -fmt survex -o swildons_th.3d
 export model -o swildons.lox
-export map -projection plan -layout local -o swildons_plan.pdf
+#export map -projection plan -layout local -o swildons_plan.pdf
 export map -proj plan -fmt kml -o swildons.kml
 
 layout local
