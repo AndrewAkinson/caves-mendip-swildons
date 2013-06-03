@@ -1,0 +1,51 @@
+survey swil1i
+#Data from Willie Stanton's Survey Book 1
+# p. 67-70	(=PDF p.69-72)					
+
+#Typed in by Footleg, May 2013
+
+# 24th May '53	Oliver (+ Richard)	
+#Wet Way to Water Chamber (with link almost back to entrance chamber)				
+
+centreline
+cs OSGB:ST 
+date 1953.05.24
+
+#in this survey some angles are in degrees:minutes, others decimal degrees
+units tape feet
+units depth feet
+
+data normal from to tape compass backcompass clino ignoreall						
+FB	FX	15.6	-	035:00	22:00	See p.67 above
+FX	FY	15.1	173:00	-	-33:30	(sketch FB,FX,FY,FZ,GA,GR,GB,GC,GD)
+FY	FZ	16.4	-	079:00	-25:00	
+FZ	GA	10	-	024:30	-3:00	
+GA	GR	11.5	229:10	-	-12:15	
+# GR						
+GA	GB	21.6	162:00	-	7:40	
+GB	GC	17.8	-	267:00	19:00	
+GC	GD	16.1	113:00	-	18:30	
+GD	GE	15.5	-	324:30	15:30	(sketches of  GD-GG and GG-GF-EA))
+GE	GF	9.3	193:00	-	29:30	
+GF	GG	26.5	-	156:30	18:00	
+# GG						
+# p. 69-70	(=PDF p.71-72)					
+GG	EA	16.2	093:30	-	25:30	
+# EA						Vert error 0.7' in 298' = 0.23%
+CS	GH	26.5	111:00	-	24:00	See p.56
+GH	GI	20	-	316:30	3:30	
+GI	GJ	52.9	088:30	-	9:30	
+GJ	GK	4	108:00	-	-53:30	
+GK	GL	11.7	-	246:00	26:00	
+GL	GM	15.8	079:00	-	26:00	
+GM	GN	12.8	-	355:30	26:00	
+GN	GO	39.9	148:00	-	24:30	
+GO	GP	8.9	-	273:00	20:00	Sketch marks GP as 'stream on stalagmite'
+GP	GQ	27.7	121:10	-	15:00	Sketch marks GQ as 'on boss'
+GQ	GR	9.8	092:30	-	19:30	
+# GR						Vert error 0.1' in 670' = 0.015%!
+#						Totals (unclear in scan)(7,005'?) then (7445'?)
+
+endcentreline
+
+endsurvey

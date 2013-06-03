@@ -1,0 +1,49 @@
+survey swil1h
+#Data from Willie Stanton's Survey Book 1
+# p. 65-66	(=PDF p.69-70)					
+
+#Typed in by Footleg, May 2013
+
+# 2nd May 1953	Oliver		
+#Pretty Way to Old Grotto
+			
+centreline
+cs OSGB:ST 
+date 1953.05.02
+
+#in this survey some angles are in degrees:minutes, others decimal degrees
+units tape feet
+units depth feet
+
+data normal from to tape compass backcompass clino ignoreall						
+DO	FA	17.5	-	171:30	-0:30	DO within one foot of DO on p.53
+FA	FB	4.8	358:10	-	-18:30	Corner of Kenneys dig passage 0 - 0.7
+FB	FC	9.8	-	144:10	29:30	3" candle on wee stalagmite
+FC	FD	13.3	358:00	-	1:30	
+FD	FE	8.9	-	188:00	13:30	Under chock stones on angular rock
+FE	FF	13.4	-	232:10	13:30	On 8" stalagmite at corner
+FF	FG	8.7	026:00	-	-22:30	On top of bloody great rock
+FG	FH	21.3	-	310:00	13:00	
+FH	FI	12.8	155:30	-	10:30	
+FI	FJ	14.1	-	240:00	-44:00	Entrance to 2nd Boulder Ch. (sketch of FI-FK)
+FJ	FK	35.8	324:00	-	-18:30	Side pass at 20', enters BC 12' from FK
+FK	FL	11.2	-	238:00	-15:00	On wee stalagmite in S. corner 1st BC
+FL	FM	44.5	287:10	-	-11:00	In BC. Side passage (wet) at 39'. 20' long at 155deg. Passage splits at 24'
+FM	FN	14.3	-	112:15	18:30	On stal boss in roof passage
+FN	FO	16	340:30	-	4:00	
+FO	FP	15.4	-	068:00	-58:00	Mousehole passage 33' at 087deg from FO
+FP	FQ	12	319:00	-	-11:00	
+FQ	FR	39	-	088:00	-6:30	
+FR	DA	29.2	252:30	-	-24:30	Ent to Old Grot on bridge
+# DA						1' further on at 45deg to right of last sta. (sketch of this DA relative to "DA boss")
+FK	FS	31.3	-	271:40	11:00	
+FS	FT	38.1	162:00	-	17:00	
+data diving from to tape compass backcompass depthchange ignoreall						
+FT	FU	18.4	008:00	-	7	Boss opposite squeeze. Passage to choke 15' at 160deg
+FU	FV	13.3	46	-	5	(sketch T-U-V-W) New Grottoes
+FV	FW	20.2	75	-	3	
+# FW						Total = 6,448'
+
+endcentreline
+
+endsurvey

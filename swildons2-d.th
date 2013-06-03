@@ -1,0 +1,60 @@
+survey swil2d
+#Data from Willie Stanton's Survey Book 1
+# p. 69-72	(=PDF p.71-74)
+
+#Typed in by Footleg, June 2013
+
+# August 30th 1953		Name Too faint to read. 'Black?' hole to 'Paradise?'. Sketch contains 'Calcutta' at  start and 'Sore Knees Creep' near the end.				
+# Black Hole Series to Fools Paradise
+
+centreline
+cs OSGB:ST 
+date 1953.08.30
+
+#in this survey some angles are in degrees:minutes, others decimal degrees
+units tape feet
+units depth feet
+
+data normal from to tape compass backcompass clino ignoreall						
+46	60	34.3	-	195:00	13:00	
+60	61	41.8	133:30	-	3:30	
+61	62	22.9	-	192:30	6:00	
+62	63	30.3	357:00	-	-5:00	
+63	64	12.5	-	203:00	12:30	
+64	65	15.7	-	165:00	3:30	
+65	66	19.3	006:30	-	13:30	
+66	67	30.2	-	180:00	-1:00	
+67	68	48.9	348:00	-	-4:00	
+68	69	14.8	-	221:30	5:30	
+69	70	21	005:00	-	-6:30	
+70	71	36.8	-	283:00	4:30	
+71	72	38.2	019:00	-	5:00	
+72	73	11.9	-	172:00	-10:00	
+73	74	34.2	007:00	-	-1:30	
+74	75	9.1	-	280:00	0	
+75	76	40.7	-	310:00	6:30	
+76	77	17.5	161:00	-	-1:30	
+77	78	7.6	-	338:00	25:30	
+78	79	35	176:00	-	4:00	
+79	80	45.7	-	325:00	0:30	
+80	81	27.2	157:30	-	0:30	
+81	82	19.1	-	283:30	7:00	
+82	83	39.7	140:00	-	3:00	
+83	84	35.5	-	319:00	5:30	
+84	85	29.1	074:00	-	16:00	
+85	86	25.3	-	193:00	21:00	
+86	87	23.1	353:00	-	18:30	
+87	88	51.3	-	268:00	12:30	
+88	89	16.5	061:00	-	22:30	
+89	90	26.4	-	211:00	14:30	
+# p. 71-72	(=PDF p.73-74)					
+90	91	49	351:00	-	3:30	
+91	92	35.8	-	215:00	26:30	
+92	93	48.2	018:00	-	8:30	
+93	94	18.5	-	211:00	-9:00	
+94	95	26	003:00	-	-4:30	
+# 95						
+
+endcentreline
+
+endsurvey
