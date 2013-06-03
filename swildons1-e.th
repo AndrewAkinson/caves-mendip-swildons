@@ -1,5 +1,7 @@
 survey swil1e
-#Data from Willie Stanton's Survey Book 1 PDF p55-56
+#Data from Willie Stanton's Survey Book 1
+# p. 51-52	(=PDF p.55-56)
+
 #Typed in by Footleg, June 2012
 
 #30th March 1952
@@ -14,7 +16,7 @@ units tape feet
 units depth feet
 
 data normal from to tape compass backcompass clino ignoreall						
-B1	AA	78.1	-	293:40	9:30	B1 is station B1 of page 45, at entrance to "P.G." passage
+B1	AA	78.1	-	293:40	9:30	B1 ('beta' in original notes) is station B1 of page 45, at entrance to "P.G." passage
 AA	AB	24.1	115:30	-	-5:30	AA on a big high rock
 AB	AC	29.2	-	277:50	0:30	AB on big rock. Stream sinks below boulders.
 AC	AD	10.6	121:00	-	22:30	AC on dirty great big rock.

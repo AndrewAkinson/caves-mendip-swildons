@@ -1,9 +1,11 @@
 survey swil2a
-#Data from Willie Stanton's Survey Book 1 PDF p49-50
+#Data from Willie Stanton's Survey Book 1 
+# p. 45-46	(=PDF p.49-50)
+
 #Typed in by Footleg, June 2012
 
 #21st July 1951	W.I.Stanton	SWILDONS HOLE
-#Main streamway downstream from Sump 1 to the Landing
+#Swildons 2 Main streamway from near Sump 1 to Creep 2
 
 centreline
 cs OSGB:ST 
@@ -41,9 +43,10 @@ data normal from to tape compass backcompass clino ignoreall
 S	T	39.6	-	58	-2:30	S is marked on wall. At 20' there is a muddy chamber overhead.
 data diving from to tape compass backcompass depthchange ignoreall						
 T	U	49	148	-	-1.7	
-#	U					Bearls (sp.?) seen here.    Total = 650'
+#	U					Beasts (or Pearls? Not clear in scan) seen here.    Total = 650'
 A1	B1	30.4	-	326	0	A1 is far end of "Priddy Green" passage. At choke
-B1	C1	37.5	248	-	-3.9	B1 is ent to P.G. pass, above stalagmite keloid (sp.?)
+data normal from to tape compass backcompass clino ignoreall						
+B1	C1	37.5	248	-	-6:00	B1 is ent to P.G. pass, above stalagmite keloid (sp.?)
 
 endcentreline
 

@@ -1,5 +1,7 @@
 survey swil1c
-#Data from Willie Stanton's Survey Book 1 PDF p65-66
+#Data from Willie Stanton's Survey Book 1
+# p. 61-62	(=PDF p.65-66)
+
 #Typed in by Footleg, July 2012
 
 #8th Feb '53
@@ -59,7 +61,7 @@ data normal from to tape compass backcompass clino ignoreall
 CK	CL	35.7	-	272:00	71:00	side of pot
 data diving from to tape compass backcompass depthchange ignoreall						
 CL	CN	3	100:00	-	2	lip of pot
-#	CN	0				see p.55
+#	CN					see p.55
 
 endcentreline
 

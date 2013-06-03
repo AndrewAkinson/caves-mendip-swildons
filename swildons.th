@@ -14,7 +14,7 @@ survey swildons
     date 2012.06.14
 
     station Ent "Swildons Hole" entrance
-    fix Ent 53120 51310 230
+    fix Ent 53121 51298 235  #Lat:51.25890870001207, Lon: -2.673194110393524 (picked off Googlemaps)
 
     equate  Ent  EC@swil1a
     equate  DH@swil1a  DH@swil1b

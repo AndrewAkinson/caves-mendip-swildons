@@ -1,8 +1,11 @@
 survey swil2c
-#Data from Willie Stanton's Survey Book 1 PDF p55-58
+#Data from Willie Stanton's Survey Book 1
+# p. 51-52	(=PDF p.55-56)
+# p. 53-54	(=PDF p.57-58)
+
 #Typed in by Footleg, June 2012
 
-#14th August '52	Colin	
+# 14th August '52	Colin	(Contd from P.49. Upper Mud Series)
 #Upper Mud Series
 
 centreline
@@ -14,6 +17,7 @@ units tape feet
 units depth feet
 
 data normal from to tape compass backcompass clino ignoreall						
+# p. 51-52	(=PDF p.55-56
 18	19	10.1	-	-	DOWN	18 is in crack at top of 11 Foot Drop.
 19	20	8	-	355:00	1:00	(sketch of 18 - 24)
 20	21	24.8	091:00	-	23:00	
@@ -37,8 +41,9 @@ data normal from to tape compass backcompass clino ignoreall
 34	35	13.9	-	341:00	-12:30	35 = A on p.25 = Big rock by D on p.46 (Top of)
 #	35					Total = 2,642'
 35	e2	18	234	-	45	(e) is where passage rejoins streamway. Stn 35 (p.52)-(e) is F.S. 234 (TRUE), Dist 18', Clino +45 (deg), HD 12.7, VD +12.7
-35	D	10	350	-	0	D is in stream. Big rock (start of New Series survey) 10' away at 350 (deg). Big passage starts as continuation of Howards Dig.
-
+35	D	10	-	350	0	D is in stream. Big rock (start of New Series survey) 10' away at 350 (deg). Big passage starts as continuation of Howards Dig.
+						
+# p. 53-54	(=PDF p.57-58)
 27	36	6	-	-	UP	27 = 27 of p.52
 36	37	29.4	-	158:00	12:30	
 37	38	12.1	011:00	-	-38:00	(sketch of 36-54)
@@ -59,7 +64,7 @@ data normal from to tape compass backcompass clino ignoreall
 52	53	51.2	264:00	-	-12:30	
 data diving from to tape compass backcompass depthchange ignoreall						
 53	54	14.2	175:00	-	-3.5	Dry passage enters 2' on North. 53 is marked by a candle 1' below (.) on roof. 54 is H2O level in sump.
-#	54	0				Closed on levels to 1.9 feet.  Not bad! Total 2,208 (? faint)
+#	54					Closed on levels to 1.9 feet.  Not bad! Total 2,208 (? faint)
 
 endcentreline
 

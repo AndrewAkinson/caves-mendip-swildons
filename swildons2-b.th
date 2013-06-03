@@ -1,9 +1,12 @@
 survey swil2b
-#Data from Willie Stanton's Survey Book 1 PDF p51-54
+#Data from Willie Stanton's Survey Book 1 
+# p. 47-50	(=PDF p.51-54)
+
 #Typed in by Footleg, June 2012
 
 #5th August 1951	SWILDONS HOLE SURVEY
-#Side passages off Swildons 2
+#Through Sump 1 to Swildons 2 streamway, start of 4 Letter Link and start of Approach Passage, 
+#Swildons 2 streamway from Creep 2 to Sump 2, inlet from Landing to Muddy Sump
 
 centreline
 cs OSGB:ST 
@@ -59,7 +62,7 @@ data diving from to tape compass backcompass depthchange ignoreall
 data normal from to tape compass backcompass clino ignoreall						
 16	17	14.5	-	265	6	
 17	18	12.6	22	-	6	
-# 18	19	11	-	-	DOWN	18 is in crack at top of "11 foot drop"
+# 18	19	11	-	-	DOWN	18 is in crack at top of "11 foot drop" (This leg duplicated in notes and now only included in file swildons2-c)
 
 endcentreline
 

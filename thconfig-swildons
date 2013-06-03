@@ -5,8 +5,9 @@ source swildons.th
 
 export model -fmt survex -o swildons_th.3d
 export model -o swildons.lox
+export model -fmt kml -o swildons-centreline.kml
 #export map -projection plan -layout local -o swildons_plan.pdf
-export map -proj plan -fmt kml -o swildons.kml
+#export map -proj plan -fmt kml -o swildons.kml
 
 layout local
     #copy Mat_Std
