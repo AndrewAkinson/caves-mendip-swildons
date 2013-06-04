@@ -1,0 +1,18 @@
+survey swilx
+#Data from Willie Stanton's Survey Book 1
+
+#Typed in by Footleg, June 2013
+
+centreline
+cs OSGB:ST 
+date yyyy.mm.dd
+
+#in this survey some angles are in degrees:minutes, others decimal degrees
+units tape feet
+units depth feet
+
+data normal from to tape compass backcompass clino ignoreall						
+
+endcentreline
+
+endsurvey
