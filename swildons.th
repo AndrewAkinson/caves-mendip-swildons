@@ -1,17 +1,14 @@
 encoding  utf-8
 survey swildons
 #Swildons Hole, Priddy, Mendip, Somerset, UK
-#Master Survey Project. Created by Paul 'Footleg' Fretwell, June 2012
+#Survey Centreline Project. Created by Paul 'Footleg' Fretwell, June 2012
 
-#  input swil1.th2  #Made up walls drawing just to test Therion project setup
-
-#  map testPlan -title "Swildons Plan"
-#    swilSP1
-#  endmap
+#This file should only contain the survey data. Any drawings (maps) should be managed
+#in a separate file which imports this file.
 
   centerline
     cs OSGB:ST 
-    date 2012.06.14
+    date 2013.06.04
 
     station Ent "Swildons Hole" entrance
     fix Ent 53121 51298 235  #Lat:51.25890870001207, Lon: -2.673194110393524 (picked off Googlemaps)
