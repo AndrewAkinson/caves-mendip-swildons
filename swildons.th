@@ -8,7 +8,7 @@ survey swildons
 
   centerline
     cs OSGB:ST 
-    date 2013.06.04
+    date 2013.06.09
 
     station Ent "Swildons Hole" entrance
     fix Ent 53121 51298 235  #Lat:51.25890870001207, Lon: -2.673194110393524 (picked off Googlemaps)
@@ -23,7 +23,8 @@ survey swildons
     equate  DO@swil1a  DO@swil1h
     equate  FB@swil1h  FB@swil1i
     equate  CS@swil1b  CS@swil1i
-	
+    equate  ag@swil1g  ag@swil1j
+  
     equate  A@swil2a  A@swil2b
     equate  C1@swil2a  C1@swil2b
     equate  M@swil2a  M@swil2b
@@ -47,6 +48,7 @@ survey swildons
   input swildons1-g.th
   input swildons1-h.th
   input swildons1-i.th
+  input swildons1-j.th
 
   input swildons2-a.th
   input swildons2-b.th

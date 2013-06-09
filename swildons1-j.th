@@ -1,0 +1,74 @@
+survey swil1j
+#Data from Willie Stanton's Survey Book 1
+# p. 71-74	(=PDF p.73-76)
+
+#Typed in by Footleg, June 2013
+
+# 21-22nd April 1957	
+#Chris Hawkes	
+#Paradise Regained, Mud Sump to Blue Pencil Passage			
+	
+centreline
+cs OSGB:ST 
+date 1957.04.21
+
+#in this survey some angles are in degrees:minutes, others decimal degrees
+units tape feet
+units depth feet
+
+data normal from to tape compass backcompass clino ignoreall						
+ag	98	3.3	-	324:00	23:00	ag on page 65
+98	99	19.5	262:45	-	-19:30	
+data diving from to tape compass backcompass depthchange ignoreall						
+99	100	7.3	262:00	-	0.2	Near side of pool in Mud sump
+data normal from to tape compass backcompass clino ignoreall						
+100	101	10.5	-	033:20	38:20	Far side of pool in Mud sump
+101	102	15.5	185:10	-	-7:00	
+102	103	28.9	-	323:20	20:30	
+103	104	7.5	161:30	-	-12:30	
+104	105	6.7	-	296:40	10:30	
+105	106	20.2	139:40	-	8:30	
+106	107	3.3	-	115:00	6:00	
+107	108	15	155:00	-	-8:50	
+108	109	40.2	-	056:40	7:30	
+109	110	20.4	247:00	-	-24:30	
+110	111	26	-	068:30	20:30	
+111	112	31.5	259:30	-	-14:40	
+112	113	13.9	231:00	-	-12:30	
+113	114	17.7	-	110:00	49:00	Foot of Mud Shute
+114	115	7.6	312:00	-	1:00	
+115	116	9.9	-	076:00	-14:30	
+116	117	19.8	-	124:40	-6.088276044	Over 12' Drop. Candle put 1.1' lower for clino (Using calculated clino value for adjusted vertical drop of 2.1 feet. Original clino reading was -3:00. Calculated reading is steeper as true station was higher than candle postion.)
+117	118	18.1	294:30	-	-11:10	Double passage 2' on
+118	119	4.3	-	134:00	41:00	
+119	120	6.2	254:00	-	-23:30	On rock rib
+120	121	9.2	222:00	-	0	
+121	122	10	-	011:50	24:00	
+122	123	22	252:30	-	-10:00	Passage (small) on left at 6'
+123	124	18.7	-	031:00	16:00	
+124	125	40.7	281:00	-	-14:15	Stn 124 marked by double ring on roof
+125	126	13.8	-	147:15	5:30	
+126	127	20.5	266:20	-	-9:15	
+127	128	4.3	-	146:00	17:00	
+128	129	10.3	021:30	-	8:20	
+129	130	43.2	-	113:10	-10:20	
+130	131	37.8	293:40	-	-3:00	
+131	132	9.3	-	167:00	20:30	
+132	133	14.6	271:30	-	-11:30	
+133	134	14.7	-	161:00	20:40	
+134	135	21.5	009:30	-	-6:20	
+						
+# p. 73-74	(=PDF p.75-76)					
+135	136	57.2	-	084:20	-13:40	
+136	137	18.4	007:30	-	-6:00	
+137	138	24.8	-	252:15	33:20	
+138	139	19	052:00	-	16:30	
+139	140	35	-	094:10	-19:20	
+140	141	51.6	265:50	-	-19:00	
+141	142	21.6	-	149:15	11:00	
+142	143	22.4	042:20	-	28:30	
+# 143						knob on roof 4 feet from entrance pit of Blue Pencil Passage
+
+endcentreline
+
+endsurvey
