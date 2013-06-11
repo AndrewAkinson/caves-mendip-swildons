@@ -21,6 +21,7 @@ survey swildons
     equate  AL@swil1d  AL@swil1f
     equate  o@swil1f  o@swil1g
     equate  DO@swil1a  DO@swil1h
+    equate  DA@swil1b  DA@swil1h
     equate  FB@swil1h  FB@swil1i
     equate  CS@swil1b  CS@swil1i
     equate  ag@swil1g  ag@swil1j
