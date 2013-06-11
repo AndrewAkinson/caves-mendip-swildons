@@ -2,8 +2,27 @@
 
 ;surveyors: W.I.Stanton
 ;name: Swildons Hole
+
+*equate Swil2.t1.B1 Swil1.t3.B1
+
+
+*begin Swil2
+
+*equate t1.A t2.A
+*equate t1.C1 t2.C1
+*equate t1.M t2.M
+*equate t1.T t2.T
+*equate t1.U t2.U
+*equate t2.e2 t5.e2
+*equate t1.C1 t2.C1
+*equate t2.18 t5.18
+*equate t1.D t5.D
+*equate t5.46 t14.46
+
+*begin t1
+
 *date 1951.07.21
-;*CALIBRATE declination ?
+*CALIBRATE declination 9.66
 
 ;From	To	Tape	Compass	Clino
 A	B	6.40	283	8.5	;A is at the base of the cable spike on the downstream side of Sump I	
@@ -29,8 +48,16 @@ T	U	14.94	148	-2.0
 ;U					;Beasts (or Pearls? Not clear in scan) seen here.    Total = 650'	
 A1	B1	9.27	146	0.0	;A1 is far end of "Priddy Green" passage. At choke	
 B1	C1	11.43	248	-6.0	;B1 is ent to P.G. pass, above stalagmite keloid (sp.?)	
+
+*end t1
+
+*begin t2
 ;p. 47-50	(=PDF p.51-54)					
-;5th August 1951	SWILDONS HOLE SURVEY					
+;5th August 1951	SWILDONS HOLE SURVEY		
+
+*date 1951.08.05
+*CALIBRATE declination 9.65
+			
 C1	D1	3.60	265	-24.0	;On rocky bank.	
 D1	A	11.22	251	-3.6	;D1 to near side of Sump I 11.8'. D1 to far side of Sump I 18'. D1 is in pool at stake for cable.	
 U	V	8.84	187	0.0	;Lake begins as 10'. (Little sketch)	
@@ -70,38 +97,16 @@ M	1	3.57	325	-20.0
 17	18	3.84	22	6.0		
 ;18	19	3.35	-	-V	;18 is in crack at top of "11 foot drop"	
 					;Total = 1562'	
-;p. 51-52	(=PDF p.55-56)					
-;30th March 1952						
-B1	AA	23.81	114	9.5	;B1 ('beta' in original notes) is station B1 of page 45, at entrance to "P.G." passage	
-AA	AB	7.35	116	-5.5	;AA on a big high rock	
-AB	AC	8.90	98	0.5	;AB on big rock. Stream sinks below boulders.	
-AC	AD	3.23	121	22.5	;AC on dirty great big rock.	
-AD	AE	14.73	110	9.7	;Stream rises from boulders.	
-AE	AF	5.18	51	10.3	;Stream sinks below boulders.	
-AF	AG	6.16	133	3.0	;AF above waterfall.	
-AG	AH	3.08	193	11.3		
-AH	AI	12.68	112	4.8		
-AI	AJ	10.43	139	6.5		
-AJ	AK	9.70	106	14.5		
-AK	AL	3.45	44	-0.5	;AK is below hole into Upper Grottos. Asellus (sp?) present.	
-;AL					;Total = 1,918'	
-						
-;2nd April 1952	Cono & Roy Blewett					
-AL	AN	3.90	307	-4.5	;AL is start of St. Pauls survey	
-AN	AO	5.12	25	26.0	;AN is at S. end of lower big pot.	
-AO	AP	8.45	64	12.0		
-AP	AQ	7.07	94	10.5		
-AQ	AR	3.26	136	-5.5		
-AR	AS	8.08	12	28.5		
-AS	AT	11.77	350	10.5		
-AT	AU	7.10	322	-4.0		
-AU	AV	7.10	66	9.0		
-AV	AW	7.35	109	27.5	;AV is in middle of upper big pot.	
-AW	AX	4.45	80	23.5		
-AX	AY	4.57	128	13.5	;AY is on stumpy stalagmite on cascade on E side of passage.	
-;AY					;Total = 2,188'	
+*end t2					
+			
+
+*begin t5
 						
 ;14th August '52	Colin					
+
+*date 1952.08.14
+*CALIBRATE declination 9.52
+
 18	19	3.08	-	-V	;18 is in crack at top of 11 Foot Drop.	
 19	20	2.44	175	1.0	;(sketch of 18 - 24)	
 20	21	7.56	91	23.0		
@@ -144,8 +149,126 @@ AX	AY	4.57	128	13.5	;AY is on stumpy stalagmite on cascade on E side of passage.
 52	53	15.61	264	-12.5		
 53	54	4.19	175	-14.7	;Dry passage enters 2' on North. 53 is marked by a candle 1' below (.) on roof. 54 is H2O level in sump.	
 ;54					;Closed on levels to 1.9 feet.  Not bad! Total 2,208 (? faint)	
-						
+
+*end t5
+
+*begin t14
+
+;August 30th 1953						
+
+*date 1953.08.30
+*CALIBRATE declination 9.38
+
+46	60	10.46	15	13.0		
+60	61	12.74	134	3.5		
+61	62	6.98	13	6.0		
+62	63	9.24	357	-5.0		
+63	64	3.81	23	12.5		
+64	65	4.79	345	3.5		
+65	66	5.88	7	13.5		
+66	67	9.21	0	-1.0		
+67	68	14.91	348	-4.0		
+68	69	4.51	42	5.5		
+69	70	6.40	5	-6.5		
+70	71	11.22	103	4.5		
+71	72	11.65	19	5.0		
+72	73	3.63	352	-10.0		
+73	74	10.43	7	-1.5		
+74	75	2.77	100	0.0		
+75	76	12.41	130	6.5		
+76	77	5.34	161	-1.5		
+77	78	2.32	158	25.5		
+78	79	10.67	176	4.0		
+79	80	13.93	145	0.5		
+80	81	8.29	158	0.5		
+81	82	5.82	104	7.0		
+82	83	12.10	140	3.0		
+83	84	10.82	139	5.5		
+84	85	8.87	74	16.0		
+85	86	7.71	13	21.0		
+86	87	7.04	353	18.5		
+87	88	15.64	88	12.5		
+88	89	5.03	61	22.5		
+89	90	8.05	31	14.5		
+;p. 71-72	(=PDF p.73-74)					
+90	91	14.94	351	3.5		
+91	92	10.91	35	26.5		
+92	93	14.70	18	8.5		
+93	94	5.64	31	-9.0		
+94	95	7.93	3	-4.5		
+;95						
+
+*end t14
+
+*end Swil2
+
+*begin Swil1
+
+*equate  t6.DH t7.DH
+*equate  t7.CN t8.CN
+*equate  t8.AY t4.AY
+*equate  t4.AL t3.AL
+*equate  t4.AL t9.AL
+*equate  t9.o t10.o
+*equate  t6.DO t11.DO
+*equate  t7.DA t11.DA
+*equate  t6.EC t12.EC
+*equate  t11.FB t13.FB
+*equate  t7.CS t13.CS
+*equate  t10.ag t15.ag
+
+*begin t3
+;p. 51-52	(=PDF p.55-56)					
+;30th March 1952
+
+*date 1952.03.30
+*CALIBRATE declination 9.57
+
+B1	AA	23.81	114	9.5	;B1 ('beta' in original notes) is station B1 of page 45, at entrance to "P.G." passage	
+AA	AB	7.35	116	-5.5	;AA on a big high rock	
+AB	AC	8.90	98	0.5	;AB on big rock. Stream sinks below boulders.	
+AC	AD	3.23	121	22.5	;AC on dirty great big rock.	
+AD	AE	14.73	110	9.7	;Stream rises from boulders.	
+AE	AF	5.18	51	10.3	;Stream sinks below boulders.	
+AF	AG	6.16	133	3.0	;AF above waterfall.	
+AG	AH	3.08	193	11.3		
+AH	AI	12.68	112	4.8		
+AI	AJ	10.43	139	6.5		
+AJ	AK	9.70	106	14.5		
+AK	AL	3.45	44	-0.5	;AK is below hole into Upper Grottos. Asellus (sp?) present.	
+;AL					;Total = 1,918'	
+
+*end t3
+
+*begin t4
+;2nd April 1952	Cono & Roy Blewett					
+
+*date 1952.04.02
+*CALIBRATE declination 9.57
+	
+AL	AN	3.90	307	-4.5	;AL is start of St. Pauls survey	
+AN	AO	5.12	25	26.0	;AN is at S. end of lower big pot.	
+AO	AP	8.45	64	12.0		
+AP	AQ	7.07	94	10.5		
+AQ	AR	3.26	136	-5.5		
+AR	AS	8.08	12	28.5		
+AS	AT	11.77	350	10.5		
+AT	AU	7.10	322	-4.0		
+AU	AV	7.10	66	9.0		
+AV	AW	7.35	109	27.5	;AV is in middle of upper big pot.	
+AW	AX	4.45	80	23.5		
+AX	AY	4.57	128	13.5	;AY is on stumpy stalagmite on cascade on E side of passage.	
+;AY					;Total = 2,188'	
+
+*end t4
+
+*begin t6
+
 ;Nov. 23rd '52	Jack Broadley					
+
+*date 1952.11.23
+*CALIBRATE declination 9.48
+
 EC	EB	3.66	283	-6.0	;EC is on dimple in projecting rock 10' below entrance on E.	
 EB	EA	0.91	11	-6.0		
 EA	DZ	1.83	-	-V	;(sketch from Ent. EC-DO)	
@@ -164,8 +287,16 @@ DK	DJ	5.24	346	-22.0
 DJ	DI	2.71	318	-13.5		
 DI	DH	9.76	304	-17.0		
 ;DH					;is 2" candle on smoke BM below smoke (.)	
-						
+
+*end t6
+
+*begin t7
+
 ;21st Dec '52	Howard & Jock.					
+
+*date 1952.12.21
+*CALIBRATE declination 9.48
+
 DH	DG	1.71	355	30.0		
 DG	DF	2.65	317	2.0		
 DF	DE	0.95	267	21.0		
@@ -188,9 +319,17 @@ CP	CO	1.25	351	0.0
 CO	CN	2.90	348	4.5		
 CN	CM	7.77	335	-21.5	;CM = On stalagmite projection over 40 ft pt.	
 ;CM						
-						
+
+*end t7
+
+*begin t8
+
 ;p. 61-64	(=PDF p.65-68)					
 ;8th Feb '53						
+
+*date 1953.02.08
+*CALIBRATE declination 9.46
+
 AY	AZ	5.37	79	30.5		
 AZ	BA	11.16	114	21.3		
 BA	BB	3.29	360	-38.3		
@@ -232,60 +371,85 @@ CJ	CK	3.75	328	-4.7	;side of pot at entrance of passage
 CK	CL	10.88	92	71.0	;side of pot	
 CL	CN	0.98	100	38.7	;lip of pot	
 ;CN					;see p.55	
-;1st March 1953	Phil, Don, Oliver, Colin					
-AL	a3	1.04	228	-17.1	;See p.51 Below Trats Grotto	
-a3	b3	5.91	184	56.5		
-b3	c3	3.29	50	30.3	;Top of pit	
-c3	d3	7.26	204	19.7	;Foot of cascade	
-d3	e3	15.85	125	2.5	;(small sketch a-e)	
-e3	f3	7.16	125	8.8	;(sketch e-i)	
-f3	g3	5.15	162	-5.0		
-g3	h3	2.32	193	3.8		
-h3	i3	5.55	182	5.5		
-i3	j3	2.38	187	-7.0	;(sketch j-o)	
-j3	k3	8.81	194	-17.5		
-k3	l3	6.80	208	4.0		
-l3	m3	6.98	187	0.7		
-m3	n3	5.73	224	-5.5		
-n3	o3	14.36	251	-11.5	;On Olivers boulder	
-;o3						
-;14th March 1953	Howard					
-o3	p3	7.32	282	-9.3	;(sketch o-t)	
-p3	q3	10.49	250	-14.5		
-q3	r3	6.94	320	-8.8	;Sump 15' on at 280deg true WL 5 WR 4	
-q3	s3	6.59	150	20.5		
-s3	t3	5.30	246	-7.5		
-t3	u3	5.55	255	-12.7	;(sketch t-u) u-> Howards Loop	
-t3	v3	5.27	166	20.5	;v in a cross rift 4' from Pearly Gate	
-v3	w3	4.94	166	-2.8		
-w3	x3	5.43	93	19.7	;(sketch w-x)	
-x3	y3	7.41	147	10.0		
-y3	z3	1.83	-	-V		
-z3	aa3	3.81	147	-2.7	;Bottom of drop. View into Damascus	
-aa3	ab3	3.41	213	-22.5	;Above pool	
-ab3	ac3	2.44	173	11.5	;Bearing 238 true into Howards Loop	
-ac3	ad3	4.36	202	-12.0	;(sketch ab-ac)	
-ad3	ae3	3.87	206	6.0		
-ae3	af3	9.30	263	-8.7	;15' aven explored by Oliver just before station	
-af3	ag3	8.35	292	0.3		
-ag3	ah3	4.18	254	-20.3	;(sketch ag) 6" above water. Sump level 60.1	
-z3	ai3	5.85	142	22.0		
-ai3	aj3	2.20	97	55.0		
-aj3	ak3	6.01	99	18.0		
-ak3	al3	2.80	106	-22.0		
-al3	am3	4.76	101	7.4	;Near side of duck (in dry weather)	
-am3	an3	3.75	80	22.0	;Far side of duck (in dry weather)	
-an3	ao3	4.42	114	50.0		
-ao3	ap3	5.43	103	-6.5		
-ap3	aq3	2.35	26	-53.0		
-aq3	ar3	2.59	3	0.0		
-ar3	as3	3.29	22	0.0	;(sketch at-au) descends at 15 or 20 degrees. i.e. -9 feet vertical. Sump?	
-as3	at3	5.61	3	-7.8		
-at3	au3	3.23	355	0.0		
-						
+
+*end t8
+
+*begin t9
+
+;1st March 1953	Phil, Don, Oliver, Colin
+
+*date 1953.03.01
+*CALIBRATE declination 9.46
+				
+AL	a	1.04	228	-17.1	;See p.51 Below Trats Grotto
+a	b	5.91	184	56.5	
+b	c	3.29	50	30.3	;Top of pit
+c	d	7.26	204	19.7	;Foot of cascade
+d	e	15.85	125	2.5	;(small sketch a-e)
+e	f	7.16	125	8.8	;(sketch e-i)
+f	g	5.15	162	-5.0	
+g	h	2.32	193	3.8	
+h	i	5.55	182	5.5	
+i	j	2.38	187	-7.0	;(sketch j-o)
+j	k	8.81	194	-17.5	
+k	l	6.80	208	4.0	
+l	m	6.98	187	0.7	
+m	n	5.73	224	-5.5	
+n	o	14.36	251	-11.5	;On Olivers boulder
+;o						
+
+*end t9
+
+*begin t10
+
+;14th March 1953	Howard	
+
+*date 1953.03.14
+*CALIBRATE declination 9.46
+
+o	p	7.32	282	-9.3	;(sketch o-t)
+p	q	10.49	250	-14.5	
+q	r	6.94	320	-8.8	;Sump 15' on at 280deg true WL 5 WR 4
+q	s	6.59	150	20.5	
+s	t	5.30	246	-7.5	
+t	u	5.55	255	-12.7	;(sketch t-u) u-> Howards Loop
+t	v	5.27	166	20.5	;v in a cross rift 4' from Pearly Gate
+v	w	4.94	166	-2.8	
+w	x	5.43	93	19.7	;(sketch w-x)
+x	y	7.41	147	10.0	
+y	z	1.83	-	-V	
+z	aa	3.81	147	-2.7	;Bottom of drop. View into Damascus
+aa	ab	3.41	213	-22.5	;Above pool
+ab	ac	2.44	173	11.5	;Bearing 238 true into Howards Loop
+ac	ad	4.36	202	-12.0	;(sketch ab-ac)
+ad	ae	3.87	206	6.0	
+ae	af	9.30	263	-8.7	;15' aven explored by Oliver just before station
+af	ag	8.35	292	0.3	
+ag	ah	4.18	254	-20.3	;(sketch ag) 6" above water. Sump level 60.1
+z	ai	5.85	142	22.0	
+ai	aj	2.20	97	55.0	
+aj	ak	6.01	99	18.0	
+ak	al	2.80	106	-22.0	
+al	am	4.76	101	7.4	;Near side of duck (in dry weather)
+am	an	3.75	80	22.0	;Far side of duck (in dry weather)
+an	ao	4.42	114	50.0	
+ao	ap	5.43	103	-6.5	
+ap	aq	2.35	26	-53.0	
+aq	ar	2.59	3	0.0	
+ar	as	3.29	22	0.0	;(sketch at-au) descends at 15 or 20 degrees. i.e. -9 feet vertical. Sump?
+as	at	5.61	3	-7.8	
+at	au	3.23	355	0.0	
+
+*end t10
+
+*begin t11
 						
 ;p. 65-69	(=PDF p.69-72)					
 ;2nd May 1953	Oliver					
+
+*date 1953.05.02
+*CALIBRATE declination 9.43
+
 DO	FA	5.34	352	-0.5	;DO within one foot of DO on p.53	
 FA	FB	1.46	358	-18.5	;Corner of Kenneys dig passage 0 - 0.7	
 FB	FC	2.99	324	29.5	;3" candle on wee stalagmite	
@@ -312,8 +476,16 @@ FT	FU	5.80	8	21.6	;Boss opposite squeeze. Passage to choke 15' at 160deg
 FU	FV	4.22	46	21.2	;(sketch T-U-V-W)  New Grottoes	
 FV	FW	6.16	75	8.5		
 ;FW					;Total = 6,448'	
-						
+
+*end t11
+
+*begin t12
+
 ;16th May '53	Luke 	(a little surface tie up)				
+
+*date 1953.05.16
+*CALIBRATE declination 9.43
+
 *entrance ED
 EC	ED	2.99	166	45.3	;ED is the obtuse angle in the grating (sketch of grating marking ED)	
 *flags surface  
@@ -323,7 +495,16 @@ EE	EG	17.47	230	10.0	;EF is 5' above ground level
 EE	EH	58.02	328	8.0	;EG is 4.5' up; EH is 4' up.	
 ;EH						
 *flags not surface ;						
+
+*end t12
+
+*begin t13
+
 ;24th May '53	Oliver (+ Richard)					
+
+*date 1953.05.24
+*CALIBRATE declination 9.43
+
 FB	FX	4.76	215	22.0	;See p.67 above	
 FX	FY	4.60	173	-33.5	;(sketch FB,FX,FY,FZ,GA,GR,GB,GC,GD)	
 FY	FZ	5.00	259	-25.0		
@@ -353,48 +534,18 @@ GP	GQ	8.45	121	15.0	;Sketch marks GQ as 'on boss'
 GQ	GR	2.99	93	19.5		
 ;GR					;Vert error 0.1' in 670' = 0.015%!	
 					;Totals (unclear in scan)(7,005'?) then (7445'?)	
-;August 30th 1953						
-46	60	10.46	15	13.0		
-60	61	12.74	134	3.5		
-61	62	6.98	13	6.0		
-62	63	9.24	357	-5.0		
-63	64	3.81	23	12.5		
-64	65	4.79	345	3.5		
-65	66	5.88	7	13.5		
-66	67	9.21	0	-1.0		
-67	68	14.91	348	-4.0		
-68	69	4.51	42	5.5		
-69	70	6.40	5	-6.5		
-70	71	11.22	103	4.5		
-71	72	11.65	19	5.0		
-72	73	3.63	352	-10.0		
-73	74	10.43	7	-1.5		
-74	75	2.77	100	0.0		
-75	76	12.41	130	6.5		
-76	77	5.34	161	-1.5		
-77	78	2.32	158	25.5		
-78	79	10.67	176	4.0		
-79	80	13.93	145	0.5		
-80	81	8.29	158	0.5		
-81	82	5.82	104	7.0		
-82	83	12.10	140	3.0		
-83	84	10.82	139	5.5		
-84	85	8.87	74	16.0		
-85	86	7.71	13	21.0		
-86	87	7.04	353	18.5		
-87	88	15.64	88	12.5		
-88	89	5.03	61	22.5		
-89	90	8.05	31	14.5		
-;p. 71-72	(=PDF p.73-74)					
-90	91	14.94	351	3.5		
-91	92	10.91	35	26.5		
-92	93	14.70	18	8.5		
-93	94	5.64	31	-9.0		
-94	95	7.93	3	-4.5		
-;95						
+
+*end t13
+
+
+*begin t15
 						
 ;21-22nd April 1957	Chris Hawkes	Paradise Regained, Mud Sump to Blue Pencil Passage				
-ag3	98	1.01	144	23.0	;ag on page 65	
+
+*date 1957.05.01
+*CALIBRATE declination 8.97
+
+ag	98	1.01	144	23.0	;ag on page 65	
 98	99	5.95	263	-19.5		
 99	100	2.23	262	1.6	;Near side of pool in Mud sump	
 100	101	3.20	213	38.3	;Far side of pool in Mud sump	
@@ -443,5 +594,11 @@ ag3	98	1.01	144	23.0	;ag on page 65
 141	142	6.59	329	11.0		
 142	143	6.83	42	28.5		
 ;143					;knob on roof 4 feet from entrance pit of Blue Pencil Passage	
+
+*end t15
+
+
+*end Swil1
+
 
 *end WStantonNotebook1
