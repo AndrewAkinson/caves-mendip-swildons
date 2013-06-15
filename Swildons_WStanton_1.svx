@@ -3,8 +3,11 @@
 ;surveyors: W.I.Stanton
 ;name: Swildons Hole
 
-*equate Swil2.t1.B1 Swil1.t3.B1
+*entrance Ent
+*fix Ent 53121 51298 235  ; Lat:51.25890870001207, Lon: -2.673194110393524 (picked off Googlemaps)
 
+*equate Ent Swil1.t12.ED
+*equate Swil2.t1.B1 Swil1.t3.B1
 
 *begin Swil2
 
@@ -486,7 +489,6 @@ FV	FW	6.16	75	8.5
 *date 1953.05.16
 *CALIBRATE declination 9.43
 
-*entrance ED
 EC	ED	2.99	166	45.3	;ED is the obtuse angle in the grating (sketch of grating marking ED)	
 *flags surface  
 ED	EE	11.62	222	19.0	;Depth Sump II = 400.9' = 378' O.D.	
