@@ -1,7 +1,8 @@
 encoding  utf-8
-survey swildons
+survey wstanton
 #Swildons Hole, Priddy, Mendip, Somerset, UK
-#Survey Centreline Project. Created by Paul 'Footleg' Fretwell, June 2012
+#Survey centreline data from Willie Stanton notebooks. 
+#Therion project created by Paul 'Footleg' Fretwell, June 2012 - June 2013
 
 #This file should only contain the survey data. Any drawings (maps) should be managed
 #in a separate file which imports this file.
