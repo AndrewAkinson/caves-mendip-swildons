@@ -207,18 +207,24 @@ M	1	3.57	325	-20.0
 
 *begin Swil1
 
-*equate  t6.DH t7.DH
-*equate  t7.CN t8.CN
-*equate  t8.AY t4.AY
-*equate  t4.AL t3.AL
-*equate  t4.AL t9.AL
-*equate  t9.o t10.o
-*equate  t6.DO t11.DO
-*equate  t7.DA t11.DA
-*equate  t6.EC t12.EC
-*equate  t11.FB t13.FB
-*equate  t7.CS t13.CS
-*equate  t10.ag t15.ag
+*equate t6.DH t7.DH
+*equate t7.CN t8.CN
+*equate t8.AY t4.AY
+*equate t4.AL t3.AL
+*equate t4.AL t9.AL
+*equate t9.o t10.o
+*equate t6.DO t11.DO
+*equate t7.DA t11.DA
+*equate t6.EC t12.EC
+*equate t11.FB t13.FB
+*equate t7.CS t13.CS
+*equate t10.ag t15.ag
+*equate t15.124 t16.124
+*equate t15.143 t16.143
+*equate t15.113 t17.113
+*equate t15.113 t18.113
+*equate t17.215 t18.215
+*equate t17.220 t18.220
 
 *begin t3
 ;p. 51-52	(=PDF p.55-56)					
@@ -599,6 +605,85 @@ ag	98	1.01	144	23.0	;ag on page 65
 
 *end t15
 
+*begin t16
+
+*date 1960.05.22
+*CALIBRATE declination 8 ;Estimate (needs setting to correct value)
+
+;p. 75-78	(=PDF p.77-80)				
+;May 22 1960	Howard, Chris Hawkes, Derek Ford	Side Passages in Paradise Regained			
+143	201	11.71	346	18.5	;143 - see p.73
+201	202	10.88	62	23.0	
+202	203	5.12	322	-3.5	
+203	204	3.29	248	-20.5	
+;204					;204 is on knob low on wall, circle and dot on wall above
+124	124a	0.46	-	+V	
+124a	205	8.60	235	-17.5	;124 is 1.5' above 124 of p.71
+205	206	16.68	91	14.0	
+206	207	13.29	67	0.6	;207 marked on roof, alt 503.4
+205	208	12.10	263	-16.0	
+208	209	5.09	256	-11.5	
+209	210	0.79	-	+V	
+210	211	11.07	221	25.0	;Kenneys Belly!
+211	212	8.17	175	34.5	
+212	212a	27.44	20	50.0	;212 marked by arrow on dripstone wall in Fault Ch. (up Olivers 'ole)
+
+*end t16
+
+*begin t17
+
+*date 1960.07.12
+*CALIBRATE declination 8 ;Estimate (needs setting to correct value)
+
+;July 12th 1960	Derek Ford	Side Passages in Paradise Regained - Maypole Series			
+113	213	8.38	63	15.5	
+213	214	5.58	79	9.0	
+214	215	3.96	66	-25.5	
+215	216	18.72	77	29.5	;215 marked … in Pitch Chamber. Maypole Series starts about 30' along
+216	217	4.05	72	1.5 	;between 2 holes in floor
+217	218	5.58	49	13.5	;Hole in floor 6' on, 4' diam
+218	219	6.71	74	13.0	;Highish rift
+219	220	9.85	105	-22.5	;Oxbow on left at 12'
+220	221	6.01	114	20.0	;Passage on left
+221	222	6.16	163	42.0	;Maypole Junction
+222	223	9.97	94	23.5	
+223	choke	3.05	47	0.0	;… on roof
+					
+221	224	6.31	89	51.0	;Maypole Junction
+224	225	5.34	65	37.5	
+225	226	11.07	105	13.0	;cross joints at 27' & 34'
+;226						;Smoke mark .stal. on roof also candle + mud
+
+*end t17
+
+*begin t18
+
+*date 1960.07.14
+*CALIBRATE declination 8 ;Estimate (needs setting to correct value)
+
+;July 14th 1960	Joe Candy	Side Passages in Paradise Regained - Maypole Series, Candys Calamity, Shatter Pot.			
+220	227	3.75	28	-6.0	
+227	228	9.54	7	-42.0	;Lip of 8' drop
+;228					
+113	229	2.59	97	38.0	
+229	230	10.24	189	46.5	
+230	231	2.84	312	14.0	
+231	232	5.73	267	-15.0	
+;232					
+230	233	2.87	78	26.0	
+233	234	11.43	98	17.5	;6' passage on left at 15'
+234	235	3.02	196	0.0	
+235	236	9.48	103	15.0	;Wide low passage diverges on right at 8'
+236	237	4.57	200	-3.0	;Approx. bearing for this and following legs
+237	238	13.11	100	15.0	;Candys Calamity
+215	239	4.27	124	8.0 	;In pitch chamber
+239	240	19.60	140	-43.3	;Lip of pitch 8' on
+240	241	7.80	235	-18.8	
+240	242	6.10	8	16.0	
+242	243	6.10	69	20.0	
+;243					
+
+*end t18
 
 *end Swil1
 
