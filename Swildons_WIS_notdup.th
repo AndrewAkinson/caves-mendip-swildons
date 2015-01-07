@@ -1,0 +1,60 @@
+encoding  utf-8
+survey wstanton
+#Swildons Hole, Priddy, Mendip, Somerset, UK
+#Survey centreline data from Willie Stanton notebooks. 
+#Therion project created by Paul 'Footleg' Fretwell, June 2012 - June 2013
+
+#Data which is covered by the 2012 and later resurvey is commented out in this file.
+
+  centerline
+    cs OSGB:ST 
+    date 2013.06.09
+
+#    station Ent "Swildons Hole" entrance
+#    fix Ent 53121 51298 235  #Lat:51.25890870001207, Lon: -2.673194110393524 (picked off Googlemaps)
+
+#    equate  Ent  EC@swil1a
+#    equate  DH@swil1a  DH@swil1b
+    equate  CN@swil1b  CN@swil1c
+    equate  AY@swil1c  AY@swil1d
+    equate  AL@swil1d  AL@swil1e
+    equate  AL@swil1d  AL@swil1f
+    equate  o@swil1f  o@swil1g
+#    equate  DO@swil1a  DO@swil1h
+#    equate  DA@swil1b  DA@swil1h
+#    equate  FB@swil1h  FB@swil1i
+    equate  CS@swil1b  CS@swil1i
+    equate  ag@swil1g  ag@swil1j
+  
+    equate  A@swil2a  A@swil2b
+    equate  C1@swil2a  C1@swil2b
+    equate  M@swil2a  M@swil2b
+    equate  T@swil2a  T@swil2b
+    equate  U@swil2a  U@swil2b
+    equate  e2@swil2b  e2@swil2c
+    equate  C1@swil2a  C1@swil2b
+    equate  B1@swil2a  B1@swil1e
+    equate  18@swil2b  18@swil2c
+    equate  D@swil2a  D@swil2c
+    equate  46@swil2c  46@swil2d
+
+  endcentreline
+
+#  input swildons1-a.th
+  input swildons1-b.th
+  input swildons1-c.th
+  input swildons1-d.th
+  input swildons1-e.th
+  input swildons1-f.th
+  input swildons1-g.th
+#  input swildons1-h.th
+  input swildons1-i.th
+  input swildons1-j.th
+
+  input swildons2-a.th
+  input swildons2-b.th
+  input swildons2-c.th
+  input swildons2-d.th
+  
+endsurvey
+
