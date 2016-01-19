@@ -1,6 +1,6 @@
 encoding  utf-8
 
-source Swildons_Master.th
+source Swildons.th
 
 export model -fmt survex -o swildons_th.3d
 export model -o swildons.lox

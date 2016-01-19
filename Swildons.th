@@ -1,0 +1,13 @@
+encoding  utf-8
+#Swildons Hole, Priddy, Mendip, Somerset, UK
+#Master Survey Project. Lead by Paul 'Footleg' Fretwell, Jun. 2013 - Jan. 2016
+
+survey SwildonsHole
+  #import cave centreline
+  input Swildons_Centreline.th
+
+  #import maps for plan drawings
+  input Swildons_MAP_EntranceSeries.th
+  
+endsurvey
+
