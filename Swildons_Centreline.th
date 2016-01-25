@@ -16,6 +16,9 @@ survey Swildons
   input Swildons_ShortDryWay.th
   input Swildons_KenneysDigToShowerbath.th
   input Swildons_LowerEntAreaViaShowerbathToBaptism.th
+  input Swildons_WetWayOxbows.th
+  input Swildons_Old40Route.th
+  input Swildons_WaterRiftToFoldedStrataCorner.th
 
   centreline
     copyright 2016 "Paul 'Footleg' Fretwell"
@@ -39,7 +42,11 @@ survey Swildons
     equate 2.8@LongDryWay 10.0@KenneysDigToShowerbath 
     equate 2.0@LongDryWay 20.0@ShowerbathArea 
     equate 10.18@KenneysDigToShowerbath 20.27@ShowerbathArea 
-
+    equate 10.9@KenneysDigToShowerbath 11.0@WetWayOxbows
+    equate 11.44@WetWayOxbows 6.11@OldGrottoToWaterChamber 
+    equate 6.11@OldGrottoToWaterChamber 8.0@WaterRift
+    equate 8.4@WaterRift 9.0@Old40Route
+    
   endcentreline
 endsurvey
 

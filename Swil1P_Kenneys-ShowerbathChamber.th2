@@ -98,7 +98,7 @@ area clay
   l24-579-1053
 endarea
 
-line border -id l24-579-1053 -subtype invisible
+line border -id l24-579-1053 -reverse on -subtype invisible
   589.75 1078.5
   520.0 1165.0
   594.0 1327.0
@@ -190,7 +190,7 @@ area clay
   l49-456-889
 endarea
 
-line border -id l50-592-1012
+line border -id l50-592-1012 -reverse on
   428.25 909.0
   405.0 1029.5
   585.0 1067.5

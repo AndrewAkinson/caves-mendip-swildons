@@ -15,20 +15,20 @@
 *EQUATE OldGrotto2WC.11 WaterRift.0
 *EQUATE WaterRift.4 FortyRoute.0
 *EQUATE WaterRift.12 FortyRoute.11
-*EQUATE ShowerbathArea.9 WetWaysOxbows.0
+*EQUATE ShowerbathToBaptism.9 WetWaysOxbows.0
 *EQUATE OldGrotto2WC.11 WetWaysOxbows.44
 *EQUATE WetWaysOxbows.24 ButcombeOxbows.0
 *EQUATE ButcombeOxbows.30 WetWaysOxbows.18
 
 
-*EQUATE LongDryWay.8 ShowerbathArea.0
-*EQUATE ShowerbathArea.20 LongDryWay.2
-*EQUATE ShowerbathArea.13 KenneysDigToShowerbath.20
-*EQUATE ShowerbathArea.18 KenneysDigToShowerbath.27
+*EQUATE LongDryWay.8 ShowerbathToBaptism.0
+*EQUATE ShowerbathToBaptism.20 LongDryWay.2
+*EQUATE ShowerbathToBaptism.13 ShowerbathToBaptism.20
+*EQUATE ShowerbathToBaptism.18 ShowerbathToBaptism.27
 
-*EQUATE EntranceZigZags.5 KenneysDigToShowerbath.0
-*EQUATE KenneysDigToShowerbath.23 ShortDryWay.pt1.3
-*EQUATE KenneysDigToShowerbath.19 EntranceZigZags.5
+*EQUATE EntranceZigZags.5 ShowerbathToBaptism.0
+*EQUATE ShowerbathToBaptism.23 ShortDryWay.pt1.3
+*EQUATE ShowerbathToBaptism.19 EntranceZigZags.5
 
 *BEGIN surfacegps
 
@@ -1174,7 +1174,7 @@
 *END OldGrotto2WC
 
 
-*BEGIN ShowerbathArea
+*BEGIN ShowerbathToBaptism
 ;pda Badger
 ;distoX (Owned by Gary Cullen) operated by Paul Dold
 
@@ -1347,10 +1347,10 @@
 *data passage station left right up down
 3	 0.29	 0.70	 1.68	 1.79
 18	 0.24	 0.60	 0.24	 0.00
-*END ShowerbathArea
+*END ShowerbathToBaptism
 
 
-*BEGIN KenneysDigToShowerbath
+*BEGIN ShowerbathToBaptism
 ;WSCC DistoX-Footleg
 ;PDA-Ben Kent
 
@@ -1563,7 +1563,7 @@
 26	 0.33	 0.42	 0.00	 0.45
 27	 0.73	 0.22	 0.24	 0.00
 
-*END KenneysDigToShowerbath
+*END ShowerbathToBaptism
 
 
 *BEGIN WaterRift
