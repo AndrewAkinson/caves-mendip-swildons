@@ -12,7 +12,7 @@ survey OldGrottoToWaterChamber
 
     data normal from to tape compass clino ignoreall
       extend right
-    #6.0  6.1  3.316  25.02  -14.29  
+    #6.0  6.1  3.316  25.02  -14.29  6.0=little dimple in middle of large stalagmite boss directly in front of you when entering from Short Dry Way
     #6.0  6.1  3.317  25.09  -14.34  
     #6.0  6.1  3.317  24.99  -14.36  
     6.0  6.1  3.317  25.03  -14.33  Calculated leg from 3 above

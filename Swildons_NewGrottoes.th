@@ -12,7 +12,7 @@ survey NewGrottoes
 
 		data normal from to tape compass clino ignoreall
 		  extend right
-		#5.0  5.1  1.56  49.27  7.27  
+		#5.0  5.1  1.56  49.27  7.27  5.0=tip of little stumpy stalagmite on edge of boulder. 15cm high stal. 60cm tall boulder face.
 		#5.0  5.1  1.559  49.37  7.25  
 		#5.0  5.1  1.559  49.43  7.29  
 		5.0  5.1  1.559  49.36  7.27  Calculated leg from 3 above
