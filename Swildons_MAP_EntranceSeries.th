@@ -7,16 +7,22 @@ encoding  utf-8
 
 join swil1LongDryWaySP1@Swildons ShortDryWaySP1@ShortDryWay.Swildons
 join KenneysSP1@KenneysDigToShowerbath.Swildons swil1LongDryWaySP1@Swildons
+join ShortDryWaySP3@ShortDryWay.Swildons swil1ShortDryWaySP2@Swildons
 
 map EntranceSeriesPlan -title "Entrance Series"
   swil1EntranceSP1@Swildons
   swil1EntranceSP2@Swildons
   swil1LongDryWaySP1@Swildons
+  swil1LongDryWaySP2@Swildons
   KenneysSP2@KenneysDigToShowerbath.Swildons
   KenneysSP1@KenneysDigToShowerbath.Swildons
     break
-  ShortDryWaySP3@ShortDryWay.Swildons
-  ShortDryWaySP2@ShortDryWay.Swildons
   ShortDryWaySP1@ShortDryWay.Swildons
+  ShortDryWaySP2@ShortDryWay.Swildons
+  ShortDryWaySP3@ShortDryWay.Swildons
+  swil1OldGrottoSP1@Swildons
+  swil1ShortDryWaySP2@Swildons
+    break
+  swil1OldGrottoStreamSP1@Swildons
 endmap
 

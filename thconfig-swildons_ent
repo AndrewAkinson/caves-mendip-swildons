@@ -29,4 +29,5 @@ layout local
     #Comment out this for b&w PDFs. Include it for colour PDFs.
     copy LayoutColourSymbols
 	
+    #debug on
 endlayout
