@@ -5,7 +5,7 @@ survey WetWayOxbows
 
 centreline
   copyright 2016 "Paul 'Footleg' Fretwell"
-  team "Footleg" notes
+  team "Paul 'Footleg'/Fretwell" notes
   team "Paul Dold" instruments
   team "Ben Kent" instruments
   date 2016.01.16
@@ -229,5 +229,4 @@ centreline
 endcentreline
 
 endsurvey
-
 

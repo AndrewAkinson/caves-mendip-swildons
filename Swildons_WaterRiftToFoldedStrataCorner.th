@@ -4,7 +4,7 @@ survey WaterRift
   #input Swil1P_xxx.th2
 
 centreline
-  team "Badger" notes           #PDA
+  team "Tony 'Badger'/Radmall" notes           #PDA
   team "Paul Dold" instruments  #Gary Cullen DistoX
   team "Josh White" instruments #Gary Cullen DistoX
   date 2013.06.29

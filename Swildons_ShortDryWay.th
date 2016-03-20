@@ -8,9 +8,9 @@ survey ShortDryWay
 
     date 2013.02.24
 
-    team "Footleg" notes
+    team "Paul 'Footleg'/Fretwell" notes
     team "Paul Dold" instruments
-    team "Badger" instruments
+    team "Tony 'Badger'/Radmall" instruments
 
     data normal from to tape compass clino ignoreall
       extend right

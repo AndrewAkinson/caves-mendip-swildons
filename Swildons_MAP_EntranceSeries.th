@@ -10,13 +10,19 @@ join KenneysSP1@KenneysDigToShowerbath.Swildons swil1LongDryWaySP1@Swildons
 join ShortDryWaySP3@ShortDryWay.Swildons swil1ShortDryWaySP2@Swildons
 
 map EntranceSeriesPlan -title "Entrance Series"
+  swil1LongDryWaySP4@Swildons
+    break
   swil1EntranceSP1@Swildons
   swil1EntranceSP2@Swildons
+  swil1LongDryWaySP3@Swildons
   swil1LongDryWaySP1@Swildons
   swil1LongDryWaySP2@Swildons
   KenneysSP2@KenneysDigToShowerbath.Swildons
   KenneysSP1@KenneysDigToShowerbath.Swildons
     break
+  swil1LongDryWaySP5@Swildons
+  swil1BoulderChamberSP1@Swildons
+  swil1BoulderChamberSP2@Swildons
   ShortDryWaySP1@ShortDryWay.Swildons
   ShortDryWaySP2@ShortDryWay.Swildons
   ShortDryWaySP3@ShortDryWay.Swildons

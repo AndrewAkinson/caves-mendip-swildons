@@ -12,7 +12,7 @@ layout local
     copy GB_Std
 
     scale 1 200
-    base-scale 1 200
+    base-scale 1 180
 
     symbol-hide line survey
     
