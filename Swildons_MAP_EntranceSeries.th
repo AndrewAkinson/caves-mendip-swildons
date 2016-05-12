@@ -7,6 +7,8 @@ encoding  utf-8
 
 join swil1LongDryWaySP1@Swildons ShortDryWaySP1@ShortDryWay.Swildons
 join KenneysSP1@KenneysDigToShowerbath.Swildons swil1LongDryWaySP1@Swildons
+join KenneysSP1@KenneysDigToShowerbath.Swildons BaptismCrawlSP1@ShowerbathArea.Swildons
+join ShortDryWaySP1@ShortDryWay.Swildons BaptismCrawlSP1@ShowerbathArea.Swildons
 join ShortDryWaySP3@ShortDryWay.Swildons swil1ShortDryWaySP2@Swildons
 
 map EntranceSeriesPlan -title "Swildons Hole - Entrance Series"
@@ -23,11 +25,13 @@ map EntranceSeriesPlan -title "Swildons Hole - Entrance Series"
     break
   swil1DryWayStreamSP2@Swildons
   swil1LongDryWaySP5@Swildons
+  swil1NewGrottoesSP1@Swildons
   swil1BoulderChamberSP1@Swildons
   swil1BoulderChamberSP2@Swildons
   ShortDryWaySP1@ShortDryWay.Swildons
   ShortDryWaySP2@ShortDryWay.Swildons
   ShortDryWaySP3@ShortDryWay.Swildons
+  BaptismCrawlSP1@ShowerbathArea.Swildons
   swil1OldGrottoSP1@Swildons
   swil1ShortDryWaySP2@Swildons
     break

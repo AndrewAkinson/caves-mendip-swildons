@@ -1,6 +1,8 @@
 encoding  utf-8
 survey ShowerbathArea
 
+input Swil1P_ShowerbathChamberBaptism.th2
+
 centreline
   team "Ben Kent" notes
   team "Paul 'Footleg'/Fretwell" instruments
