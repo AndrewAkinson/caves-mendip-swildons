@@ -1,6 +1,6 @@
 encoding  utf-8
-##XTHERION## xth_me_area_adjust -136.0 -136.0 4143.7480315004 2962.6456692944002
-##XTHERION## xth_me_area_zoom_to 50
+##XTHERION## xth_me_area_adjust -130.0 -130.0 4143.7480315004 2962.6456692944002
+##XTHERION## xth_me_area_zoom_to 200
 ##XTHERION## xth_me_image_insert {3195.79188977 1 1.0} {622.124173229 1.1} PocketTopo/Swil20130223_EntToWaterChamberViaPrettyWay_th_p.xvi 0 {}
 
 
@@ -179,16 +179,16 @@ line floor-step -reverse on -outline out -clip off
   smooth off
 endline
 
-point 3113.0 571.75 label -text "C4m" -scale m
+point 3279.0 409.75 label -text "(C4m)" -scale m
 
 line arrow
-  3176.0 490.5
-  3161.25 568.5
+  3243.0 501.5
+  3166.5 574.5
 endline
 
-point 3187.0 439.5 label -text "<centre>Tree<br>Entrance" -scale l
+point 3277.5 474.5 label -text "<centre>Tree<br>Entrance" -scale l
 
-point 3365.25 675.5 label -text "<centre>Entrance<br>Blockhouse" -scale l
+point 3349.25 745.5 label -text "<centre>Entrance<br>Blockhouse" -scale l
 
 point 2931.0 1385.5 label -text "Zig Zags" -scale l
 
@@ -402,15 +402,15 @@ endline
 line wall
 endline
 
-line pit -close on
+line pit -close on -outline in
   3065.75 888.75
   3061.0 881.25 3057.0 877.0 3053.5 869.5
   3050.0 862.0 3046.75 852.0 3045.25 848.25
   3043.75 844.5 3046.0 841.5 3049.0 841.5
-  3052.0 841.5 3053.75 841.25 3055.5 842.25
-  3057.25 843.25 3060.5 848.75 3061.75 852.0
-  3063.0 855.25 3067.5 867.0 3069.25 870.75
-  3071.0 874.5 3073.25 881.25 3075.25 885.0
+  3052.0 841.5 3053.45 841.85 3055.25 842.75
+  3057.75 844.0 3059.75 851.0 3061.0 854.25
+  3062.25 857.5 3065.5 866.5 3067.25 870.25
+  3069.0 874.0 3072.0 882.0 3074.0 885.75
   smooth off
   3065.75 888.75
 endline
@@ -751,12 +751,13 @@ line floor-step -reverse on
   2808.0 861.25
 endline
 
-line pit -reverse on
-  2824.25 865.5
-  2816.0 871.0 2810.75 876.5 2811.0 883.75
+line pit -close on -reverse on -outline in
+  2840.5 869.75
+  2825.0 865.5
+  2816.75 871.0 2810.75 876.5 2811.0 883.75
   2811.25 891.0 2812.51 896.63 2823.5 899.25
   2834.0 901.75 2838.25 899.25 2841.5 889.75
-  2845.04 879.41 2842.25 873.75 2840.5 869.75
+  2845.04 879.41 2840.5 869.75 2840.5 869.75
   smooth off
 endline
 
@@ -767,11 +768,18 @@ line rock-border
   2852.25 873.0
 endline
 
-line floor-step
-  2931.75 778.0
-  2918.75 775.0 2915.0 766.5 2917.25 753.5
+line border -subtype invisible -outline in
+  2941.5 738.75
+  2944.5 746.5 2947.0 753.75 2946.25 759.5
+  2945.02 768.96 2934.75 774.5 2931.75 776.75
+  smooth off
+endline
+
+line floor-step -outline in
+  2931.75 776.75
+  2918.75 773.75 2915.0 766.5 2917.25 753.5
   2919.71 739.27 2924.58 735.88 2930.25 734.75
-  2936.5 733.5 2940.0 735.5 2941.75 737.0
+  2936.5 733.5 2939.75 737.25 2941.5 738.75
   smooth off
 endline
 
@@ -783,10 +791,8 @@ line border -outline out -visibility off
 endline
 
 line wall
-  2987.5 576.0
-  2974.75 598.0 2960.25 625.5 2948.5 642.75
-  2936.75 660.0 2921.75 673.25 2920.75 686.25
-  2919.75 699.25 2922.5 700.25 2928.0 707.5
+  2921.0 683.5
+  2916.81 693.98 2920.0 699.0 2928.0 707.5
   smooth off
 endline
 
@@ -807,9 +813,8 @@ line wall
   2817.5 796.75 2819.75 785.0 2820.0 780.0
   2820.25 775.0 2823.75 769.0 2827.75 763.0
   2831.75 757.0 2837.5 745.5 2844.25 731.75
-  2851.0 718.0 2866.5 696.25 2876.75 683.0
-  2887.0 669.75 2896.75 658.5 2910.75 641.5
-  2924.75 624.5 2948.5 601.0 2977.75 568.0
+  2851.0 718.0 2859.25 704.75 2869.5 691.5
+  2879.75 678.25 2883.0 675.0 2889.0 668.0
   smooth off
 endline
 
@@ -2904,6 +2909,14 @@ area pebbles
   l449-948-1934
   l478-901-1939
 endarea
+
+endscrap
+
+
+
+scrap elevfixSP -projection plan -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+
+point 3444.5 648.0 station -name bottom -visibility off
 
 endscrap
 

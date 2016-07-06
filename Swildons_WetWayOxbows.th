@@ -1,7 +1,7 @@
 encoding  utf-8
 survey WetWayOxbows
 
-  #input Swil1P_xxx.th2
+  input Swil1P_WetWayOxbows.th2
 
 centreline
   copyright 2016 "Paul 'Footleg' Fretwell"
