@@ -47,6 +47,7 @@ survey Swildons
     equate 11.44@WetWayOxbows 6.11@OldGrottoToWaterChamber 
     equate 6.11@OldGrottoToWaterChamber 8.0@WaterRift
     equate 8.4@WaterRift 9.0@Old40Route
+    equate 8.12@WaterRift 9.11@Old40Route
     
   endcentreline
 endsurvey

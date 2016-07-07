@@ -1,0 +1,12 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -128.0 -128.0 2568.9448818897636 1624.062992125984
+##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_image_insert {2160.2788188976374 1 1.0} {520.830472440945 8.0} PocketTopo/Swil20130629_WaterChamberToCornerWithFolderStrata_th_p.xvi 0 {}
+
+
+
+scrap WaterChamberSP1 -projection plan -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+
+endscrap
+
+
