@@ -5,7 +5,7 @@ encoding  utf-8
 
 
 
-scrap WaterChamberSP1 -projection plan -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+scrap WaterChamberSP1 -projection plan -author 2016.07.09 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 endscrap
 
