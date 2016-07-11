@@ -10,7 +10,9 @@ survey Swildons
   input Swildons_LongDryPrettyWay.th
   input Swildons_NewGrottoes.th
   input Swildons_OldGrottoToWaterChamber.th
-  #Combined sketch for all 4 of the above
+  input Swildons_InletOffOldGrottoToWaterChamber.th
+  
+  #Combined sketch for all 5 of the above
   input Swil1P_Ent-OldGrotto-WaterChamber.th2
   
   input Swildons_ShortDryWay.th
@@ -45,6 +47,7 @@ survey Swildons
     equate 2.0@LongDryWay 20.0@ShowerbathArea 
     equate 10.18@KenneysDigToShowerbath 20.27@ShowerbathArea 
     equate 10.9@KenneysDigToShowerbath 11.0@WetWayOxbows
+    equate 6.8@OldGrottoToWaterChamber 6.8@InletOffOldGrottoToWaterChamber
     equate 11.44@WetWayOxbows 6.11@OldGrottoToWaterChamber 
     equate 6.11@OldGrottoToWaterChamber 8.0@WaterRift
     equate 8.4@WaterRift 9.0@Old40Route

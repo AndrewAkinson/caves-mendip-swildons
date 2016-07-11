@@ -1,11 +1,11 @@
 encoding  utf-8
-##XTHERION## xth_me_area_adjust -130.0 -130.0 4143.7480315004 2962.6456692944002
+##XTHERION## xth_me_area_adjust -130.0 -130.0 4143.748503943229 2962.6435433077395
 ##XTHERION## xth_me_area_zoom_to 200
-##XTHERION## xth_me_image_insert {3195.79188977 1 1.0} {622.124173229 1.1} PocketTopo/Swil20130223_EntToWaterChamberViaPrettyWay_th_p.xvi 0 {}
+##XTHERION## xth_me_image_insert {3174.8818897700003 1 1.0} {506.614173229 1.0} PocketTopo/Swil20130223_EntToWaterChamberViaPrettyWay_th_p.xvi 0 {}
 
 
 
-scrap swil1EntranceSP1 -projection plan -station-names "" @ZigZags -author 2013.06.15 "Footleg" -copyright 2013 "Paul 'Footleg' Fretwell" -scale [0.0 -0.0 393.7 393.7 0.0 0.0 10 10 m]
+scrap EntranceSP1 -projection plan -station-names "" @ZigZags -author 2013.06.15 "Footleg" -copyright 2013 "Paul 'Footleg' Fretwell" -scale [0.0 -0.0 393.7 393.7 0.0 0.0 10 10 m]
 
 line border -clip off
   3201.75 636.75
@@ -713,7 +713,7 @@ endscrap
 
 
 
-scrap swil1EntranceSP2 -projection plan -station-names "" @LongDryWay -author 2013.06.15 "Footleg" -copyright 2013 "Paul 'Footleg' Fretwell" -scale [0.0 -0.0 393.7 393.7 0.0 0.0 10 10 m]
+scrap EntranceSP2 -projection plan -station-names "" @LongDryWay -author 2013.06.15 "Footleg" -copyright 2013 "Paul 'Footleg' Fretwell" -scale [0.0 -0.0 393.7 393.7 0.0 0.0 10 10 m]
 
 line border -outline out -visibility off
   2948.25 758.5
@@ -830,7 +830,7 @@ endscrap
 
 
 
-scrap swil1LongDryWaySP1 -projection plan -station-names "" @LongDryWay -author 2016.01.18 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0.0 -0.0 393.7 393.7 0.0 0.0 10 10 m]
+scrap LongDryWaySP1 -projection plan -station-names "" @LongDryWay -author 2016.01.18 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0.0 -0.0 393.7 393.7 0.0 0.0 10 10 m]
 
 point 2630.0 1760.0 label -text "Long Dry Way<br>(Pretty Way)" -scale l
 
@@ -1008,7 +1008,7 @@ endscrap
 
 
 
-scrap swil1LongDryWaySP2 -projection plan -station-names "" @LongDryWay -author 2016.03.17 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0.0 -0.0 393.7 393.7 0.0 0.0 10 10 m]
+scrap LongDryWaySP2 -projection plan -station-names "" @LongDryWay -author 2016.03.17 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0.0 -0.0 393.7 393.7 0.0 0.0 10 10 m]
 
 line rock-border -close on
   2590.75 1889.5
@@ -1233,7 +1233,7 @@ endscrap
 
 
 
-scrap swil1LongDryWaySP3 -projection plan -station-names "" @LongDryWay -author 2016.03.17 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+scrap LongDryWaySP3 -projection plan -station-names "" @LongDryWay -author 2016.03.17 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 line ceiling-step -reverse on
   3086.25 1649.5
@@ -1304,7 +1304,7 @@ endscrap
 
 
 
-scrap swil1LongDryWaySP4 -projection plan -station-names "" @LongDryWay -author 2016.03.17 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+scrap LongDryWaySP4 -projection plan -station-names "" @LongDryWay -author 2016.03.17 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 line rock-border -close on -clip off
   3152.75 1639.25
@@ -1338,7 +1338,7 @@ endscrap
 
 
 
-scrap swil1LongDryWaySP5 -projection plan -station-names "" @LongDryWay -author 2016.03.18 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+scrap LongDryWaySP5 -projection plan -station-names "" @LongDryWay -author 2016.03.18 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 line wall
   2839.0 2057.5
@@ -1424,7 +1424,7 @@ endscrap
 
 
 
-scrap swil1DryWayStreamSP1 -projection plan -station-names "" @LongDryWay -author 2016.04.26 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+scrap DryWayStreamSP1 -projection plan -station-names "" @LongDryWay -author 2016.04.26 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 line floor-step -reverse on -outline out
   2386.0 2216.5
@@ -1672,7 +1672,7 @@ endscrap
 
 
 
-scrap swil1DryWayStreamSP2 -projection plan -station-names "" @LongDryWay -author 2016.05.04 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+scrap DryWayStreamSP2 -projection plan -station-names "" @LongDryWay -author 2016.05.04 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 point 2078.0 2156.0 label -text "Long Dry Way<br>(Pretty Way)" -scale l
 
@@ -1760,7 +1760,7 @@ endscrap
 
 
 
-scrap swil1NewGrottoesSP1 -projection plan -station-names "" @NewGrottoes -author 2016.05.06 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+scrap NewGrottoesSP1 -projection plan -station-names "" @NewGrottoes -author 2016.05.06 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 point 3350.5 2098.0 gradient -orientation 245.9
 
@@ -2036,7 +2036,7 @@ endscrap
 
 
 
-scrap swil1BoulderChamberSP1 -projection plan -station-names "" @LongDryWay -author 2016.03.18 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+scrap BoulderChamberSP1 -projection plan -station-names "" @LongDryWay -author 2016.03.18 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 point 2668.0 2300.0 label -text "Boulder Chamber" -scale l
 
@@ -2220,7 +2220,7 @@ endscrap
 
 
 
-scrap swil1BoulderChamberSP2 -projection plan -station-names "" @LongDryWay -author 2016.03.18 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+scrap BoulderChamberSP2 -projection plan -station-names "" @LongDryWay -author 2016.03.18 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 point 3336.6118897700003 1653.384173229 station -name 2.42
 
@@ -2266,7 +2266,7 @@ endscrap
 
 
 
-scrap swil1OldGrottoSP1 -projection plan -station-names "" @LongDryWay -author 2015.01.11 "Footleg" -copyright 2015 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+scrap OldGrottoSP1 -projection plan -station-names "" @LongDryWay -author 2015.01.11 "Footleg" -copyright 2015 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 point 1102.0 2496.0 label -text "Old Grotto" -scale l
 
@@ -2591,7 +2591,7 @@ endscrap
 
 
 
-scrap swil1ShortDryWaySP2 -projection plan -station-names "" @ShortDryWay -author 2015.01.11 "Footleg" -copyright 2015 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+scrap ShortDryWaySP2 -projection plan -station-names "" @ShortDryWay -author 2015.01.11 "Footleg" -copyright 2015 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 point 1691.2614173228335 2006.8462992125983 station -name 4.0
 
@@ -2663,7 +2663,7 @@ endscrap
 
 
 
-scrap swil1OldGrottoStreamSP1 -projection plan -station-names "" @OldGrottoToWaterChamber -author 2016.05.12 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+scrap OldGrottoStreamSP1 -projection plan -station-names "" @OldGrottoToWaterChamber -author 2016.05.12 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 line wall
   1193.0 2323.0
@@ -2782,10 +2782,10 @@ endline
 
 line border -id l478-901-1939 -subtype invisible
   924.5 1933.0
-  544.5 1966.5
-  540.5 1903.5
-  504.0 1903.0
-  504.0 1966.0
+  526.5 1961.0
+  525.0 1902.5
+  494.0 1902.5
+  492.5 1937.0
   417.5 1934.5
   333.5 1486.5
   414.0 1445.5
@@ -2809,8 +2809,6 @@ line border -id l476-693-1905 -close on
   598.5 1899.5 610.0 1898.0 623.0 1896.5
   636.0 1895.0 634.5 1893.5 652.5 1889.0
 endline
-
-point 524.5 1927.5 curtain
 
 point 1265.0 2322.0 water-flow -orientation 277.6
 
@@ -2909,6 +2907,43 @@ area pebbles
   l449-948-1934
   l478-901-1939
 endarea
+
+point 511.0 1920.0 curtain
+
+endscrap
+
+
+
+scrap OldGrottoStreamSP2 -projection plan -station-names "" @InletOffOldGrottoToWaterChamber -author 2016.07.11 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+
+line wall -subtype invisible
+  443.0 1900.0
+  453.5 1911.0 464.0 1919.5 475.5 1922.0
+  487.0 1924.5 494.5 1924.5 502.0 1932.5
+  509.5 1940.5 511.5 1943.5 518.5 1946.0
+  525.5 1948.5 527.5 1950.0 536.0 1951.5
+endline
+
+line wall
+  536.0 1951.5
+  524.0 1951.0 518.0 1953.5 506.0 1947.0
+  501.08 1944.34 494.0 1945.5 488.5 1943.0
+  480.3 1939.27 471.0 1943.5 467.5 1948.5
+  464.0 1953.5 453.0 1971.0 448.0 1980.5
+  443.0 1990.0 433.5 1997.0 428.5 2007.0
+  423.5 2017.0 420.5 2029.0 418.5 2031.5
+  416.5 2034.0 413.0 2034.0 410.5 2032.5
+  408.0 2031.0 409.5 2027.5 412.0 2022.0
+  414.5 2016.5 420.0 2003.5 432.0 1984.0
+  444.0 1964.5 451.5 1955.5 454.5 1948.5
+  457.5 1941.5 457.5 1936.5 454.5 1931.0
+  451.5 1925.5 448.0 1918.5 447.0 1914.0
+  446.0 1909.5 444.5 1906.5 443.0 1900.0
+endline
+
+point 414.17188977000023 2031.574173229 station -name 6.13
+
+point 457.91188977 1944.2541732290001 station -name 6.12
 
 endscrap
 

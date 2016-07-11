@@ -5,12 +5,12 @@ encoding  utf-8
 
 # (input statements for drawings are in the corresponding centreline data .th files)
 
-join swil1LongDryWaySP1@Swildons ShortDryWaySP1@ShortDryWay.Swildons
-join KenneysSP1@KenneysDigToShowerbath.Swildons swil1LongDryWaySP1@Swildons
+join LongDryWaySP1@Swildons ShortDryWaySP1@ShortDryWay.Swildons
+join KenneysSP1@KenneysDigToShowerbath.Swildons LongDryWaySP1@Swildons
 join KenneysSP1@KenneysDigToShowerbath.Swildons BaptismCrawlSP1@ShowerbathArea.Swildons
 join ShortDryWaySP1@ShortDryWay.Swildons BaptismCrawlSP1@ShowerbathArea.Swildons
-join ShortDryWaySP3@ShortDryWay.Swildons swil1ShortDryWaySP2@Swildons
-join swil1EntranceSP2@Swildons ShowerbathSP1@ShowerbathArea.Swildons
+join ShortDryWaySP3@ShortDryWay.Swildons ShortDryWaySP2@Swildons
+join EntranceSP2@Swildons ShowerbathSP1@ShowerbathArea.Swildons
 join KenneysSP2@KenneysDigToShowerbath.Swildons ShowerbathSP3@ShowerbathArea.Swildons
 join ShowerbathSP4@KenneysDigToShowerbath.Swildons ShowerbathSP3@ShowerbathArea.Swildons
 join KenneysSP2@KenneysDigToShowerbath.Swildons UpperOxbowsSP1@WetWayOxbows.Swildons
@@ -21,38 +21,39 @@ join ButcombeChamberSP1@ButcombeOxbows.Swildons UpperOxbowsSP2@WetWayOxbows.Swil
 map EntranceSeriesPlan -title "Swildons Hole - Entrance Series"
 #  elevfixSP@Swildons
   ButcombeChamberSP1@ButcombeOxbows.Swildons
-  swil1LongDryWaySP4@Swildons
+  LongDryWaySP4@Swildons
     break
-  swil1EntranceSP1@Swildons
-  swil1EntranceSP2@Swildons
-  swil1LongDryWaySP3@Swildons
-  swil1LongDryWaySP1@Swildons
-  swil1LongDryWaySP2@Swildons
+  EntranceSP1@Swildons
+  EntranceSP2@Swildons
+  LongDryWaySP3@Swildons
+  LongDryWaySP1@Swildons
+  LongDryWaySP2@Swildons
   KenneysSP2@KenneysDigToShowerbath.Swildons
   KenneysSP1@KenneysDigToShowerbath.Swildons
   WetWaySP2@WetWayOxbows.Swildons
   WetWaySP1@WetWayOxbows.Swildons
   UpperOxbowsSP2@WetWayOxbows.Swildons
   UpperOxbowsSP1@WetWayOxbows.Swildons
-  swil1DryWayStreamSP1@Swildons
+  DryWayStreamSP1@Swildons
   ShowerbathSP1@ShowerbathArea.Swildons
     break
   ShowerbathSP2@ShowerbathArea.Swildons
   ShowerbathSP3@ShowerbathArea.Swildons
   ShowerbathSP4@KenneysDigToShowerbath.Swildons
     break
-  swil1DryWayStreamSP2@Swildons
-  swil1LongDryWaySP5@Swildons
-  swil1NewGrottoesSP1@Swildons
-  swil1BoulderChamberSP1@Swildons
-  swil1BoulderChamberSP2@Swildons
+  DryWayStreamSP2@Swildons
+  LongDryWaySP5@Swildons
+  NewGrottoesSP1@Swildons
+  BoulderChamberSP1@Swildons
+  BoulderChamberSP2@Swildons
   ShortDryWaySP1@ShortDryWay.Swildons
   ShortDryWaySP2@ShortDryWay.Swildons
   ShortDryWaySP3@ShortDryWay.Swildons
   BaptismCrawlSP1@ShowerbathArea.Swildons
-  swil1OldGrottoSP1@Swildons
-  swil1ShortDryWaySP2@Swildons
+  OldGrottoSP1@Swildons
+  ShortDryWaySP2@Swildons
     break
-  swil1OldGrottoStreamSP1@Swildons
+  OldGrottoStreamSP2@Swildons
+  OldGrottoStreamSP1@Swildons
 endmap
 
