@@ -22,6 +22,7 @@ survey Swildons
   input Swildons_Old40Route.th
   input Swildons_WaterRiftToFoldedStrataCorner.th
   input Swildons_ButcombeOxbows.th
+  input Swildons_WaterChamber.th
 
   centreline
     copyright 2016 "Paul 'Footleg' Fretwell"
@@ -50,6 +51,8 @@ survey Swildons
     equate 6.8@OldGrottoToWaterChamber 6.8@InletOffOldGrottoToWaterChamber
     equate 11.44@WetWayOxbows 6.11@OldGrottoToWaterChamber 
     equate 6.11@OldGrottoToWaterChamber 8.0@WaterRift
+    equate 6.11@OldGrottoToWaterChamber 13.0@WaterChamber
+    equate 13.27@WaterChamber 11.33@WetWayOxbows
     equate 8.4@WaterRift 9.0@Old40Route
     equate 8.12@WaterRift 9.11@Old40Route
     equate 11.24@WetWayOxbows 12.0@ButcombeOxbows 

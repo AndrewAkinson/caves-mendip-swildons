@@ -1,6 +1,6 @@
 encoding  utf-8
-##XTHERION## xth_me_area_adjust -130.0 -130.0 4143.748503943229 2962.6435433077395
-##XTHERION## xth_me_area_zoom_to 200
+##XTHERION## xth_me_area_adjust -129.0 -129.0 4143.748503943229 2962.6435433077395
+##XTHERION## xth_me_area_zoom_to 400
 ##XTHERION## xth_me_image_insert {3174.8818897700003 1 1.0} {506.614173229 1.0} PocketTopo/Swil20130223_EntToWaterChamberViaPrettyWay_th_p.xvi 0 {}
 
 
@@ -2922,6 +2922,7 @@ line wall -subtype invisible
   487.0 1924.5 494.5 1924.5 502.0 1932.5
   509.5 1940.5 511.5 1943.5 518.5 1946.0
   525.5 1948.5 527.5 1950.0 536.0 1951.5
+  smooth off
 endline
 
 line wall
@@ -2939,6 +2940,7 @@ line wall
   457.5 1941.5 457.5 1936.5 454.5 1931.0
   451.5 1925.5 448.0 1918.5 447.0 1914.0
   446.0 1909.5 444.5 1906.5 443.0 1900.0
+  smooth off
 endline
 
 point 414.17188977000023 2031.574173229 station -name 6.13
