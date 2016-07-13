@@ -13,10 +13,10 @@ join ShortDryWaySP3@ShortDryWay.Swildons ShortDryWaySP2@Swildons
 join EntranceSP2@Swildons ShowerbathSP1@ShowerbathArea.Swildons
 join KenneysSP2@KenneysDigToShowerbath.Swildons ShowerbathSP3@ShowerbathArea.Swildons
 join ShowerbathSP4@KenneysDigToShowerbath.Swildons ShowerbathSP3@ShowerbathArea.Swildons
-join KenneysSP2@KenneysDigToShowerbath.Swildons UpperOxbowsSP1@WetWayOxbows.Swildons
-join KenneysSP2@KenneysDigToShowerbath.Swildons WetWaySP1@WetWayOxbows.Swildons
-join KenneysSP2@KenneysDigToShowerbath.Swildons WetWaySP2@WetWayOxbows.Swildons
-join ButcombeChamberSP1@ButcombeOxbows.Swildons UpperOxbowsSP2@WetWayOxbows.Swildons
+join KenneysSP2@KenneysDigToShowerbath.Swildons UpperOxbowsSP1@Swildons
+join KenneysSP2@KenneysDigToShowerbath.Swildons WetWaySP1@Swildons
+join KenneysSP2@KenneysDigToShowerbath.Swildons WetWaySP2@Swildons
+join ButcombeChamberSP1@ButcombeOxbows.Swildons UpperOxbowsSP2@Swildons
 
 map EntranceSeriesPlan -title "Swildons Hole - Entrance Series"
 #  elevfixSP@Swildons
@@ -30,10 +30,10 @@ map EntranceSeriesPlan -title "Swildons Hole - Entrance Series"
   LongDryWaySP2@Swildons
   KenneysSP2@KenneysDigToShowerbath.Swildons
   KenneysSP1@KenneysDigToShowerbath.Swildons
-  WetWaySP2@WetWayOxbows.Swildons
-  WetWaySP1@WetWayOxbows.Swildons
-  UpperOxbowsSP2@WetWayOxbows.Swildons
-  UpperOxbowsSP1@WetWayOxbows.Swildons
+  WetWaySP2@Swildons
+  WetWaySP1@Swildons
+  UpperOxbowsSP2@Swildons
+  UpperOxbowsSP1@Swildons
   DryWayStreamSP1@Swildons
   ShowerbathSP1@ShowerbathArea.Swildons
     break

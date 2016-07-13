@@ -4,25 +4,35 @@ encoding  utf-8
 
 survey Swildons
 
+  #Centreline data from Willie Stanton original survey 
   input Swildons_WIS_notdup.th
+  
+  #Data files which share a .th2 file (imported here too)
   
   input Swildons_ZigZags.th
   input Swildons_LongDryPrettyWay.th
   input Swildons_NewGrottoes.th
   input Swildons_OldGrottoToWaterChamber.th
   input Swildons_InletOffOldGrottoToWaterChamber.th
-  
   #Combined sketch for all 5 of the above
   input Swil1P_Ent-OldGrotto-WaterChamber.th2
   
+  input Swildons_WetWayOxbows.th
+  input Swildons_WetWayKeyhole.th
+  #Combined sketch for all 2 of the above
+  input Swil1P_WetWayOxbows.th2
+  
+  #The following data files import their respective sketches
+  #directly inside their sub-survey data blocks.
   input Swildons_ShortDryWay.th
   input Swildons_KenneysDigToShowerbath.th
   input Swildons_LowerEntAreaViaShowerbathToBaptism.th
-  input Swildons_WetWayOxbows.th
   input Swildons_Old40Route.th
   input Swildons_WaterRiftToFoldedStrataCorner.th
   input Swildons_ButcombeOxbows.th
   input Swildons_WaterChamber.th
+  input Swildons_OxbowJunction.th
+  input Swildons_LowerOxbow.th
 
   centreline
     copyright 2016 "Paul 'Footleg' Fretwell"
@@ -56,7 +66,12 @@ survey Swildons
     equate 8.4@WaterRift 9.0@Old40Route
     equate 8.12@WaterRift 9.11@Old40Route
     equate 11.24@WetWayOxbows 12.0@ButcombeOxbows 
-
+    equate 11.33@WetWayOxbows 14.0@WetWayKeyhole 
+    equate 11.11@WetWayOxbows 14.6@WetWayKeyhole 
+    equate 12.27@ButcombeOxbows 15.0@OxbowJunction
+    equate 12.27@ButcombeOxbows 16.0@LowerOxbow
+    equate 13.20@WaterChamber 16.16@LowerOxbow
+    
   endcentreline
 endsurvey
 

@@ -6,8 +6,8 @@ survey WaterChamber
 
     date 2016.07.09
 
-    team "Paul 'Footleg'/Fretwell" notes
-    team "Thomas Starnes" instruments
+    team "Thomas Starnes" notes
+    team "Paul 'Footleg'/Fretwell" instruments
     team "Paul Wilman" dog
     
     data normal from to compass clino tape
@@ -138,7 +138,7 @@ survey WaterChamber
     13.19 - 81.22 -3.76 1.130
     13.19 - 257.95 -28.10 2.265
     13.19 - 113.96 -79.02 0.620
-    13.19 13.20 186.10 -18.57 1.162  #13.20=tip of grey rock fin at start of lower oxbow crawl
+    13.19 13.20 186.10 -18.57 1.162  #13.20=16.16 tip of grey rock fin at start of lower oxbow crawl
     13.20 - 227.64 -10.13 0.421
     13.20 - 60.96 15.79 1.801
     13.20 - 60.54 51.65 0.672

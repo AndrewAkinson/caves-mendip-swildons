@@ -5,7 +5,7 @@ encoding  utf-8
 
 
 
-scrap UpperOxbowsSP1 -projection plan -author 2016.07.04 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+scrap UpperOxbowsSP1 -projection plan -station-names "" @WetWayOxbows  -author 2016.07.04 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 line border
   2448.0 304.0
@@ -82,7 +82,7 @@ endscrap
 
 
 
-scrap UpperOxbowsSP2 -projection plan -author 2016.07.06 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+scrap UpperOxbowsSP2 -projection plan -station-names "" @WetWayOxbows  -author 2016.07.06 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 area water
   l32-2455-107
@@ -255,7 +255,7 @@ endscrap
 
 
 
-scrap WetWaySP1 -projection plan -author 2016.07.06 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+scrap WetWaySP1 -projection plan -station-names "" @WetWayOxbows  -author 2016.07.06 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 line border
   1989.25 643.5
@@ -317,6 +317,8 @@ endscrap
 
 scrap WetWaySP2 -projection plan -author 2016.07.07 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
+point 1727.7604724409443 767.0818110236221 station -name 14.5@WetWayKeyhole
+
 point 1881.0 655.75 water-flow -orientation 296.1
 
 point 1976.25 672.25 water-flow -orientation 176.4
@@ -352,6 +354,7 @@ line wall -subtype invisible
   1946.0 677.0 1939.75 675.0 1938.5 668.5
   1937.25 662.0 1938.5 661.75 1942.5 657.5
   1945.88 653.91 1947.69 649.57 1942.5 647.5
+  smooth off
 endline
 
 line floor-step -id l72-1967-665
@@ -359,6 +362,7 @@ line floor-step -id l72-1967-665
   1968.0 669.5 1966.75 666.75 1966.0 661.25
   1965.25 655.75 1963.75 650.0 1957.75 648.25
   1951.75 646.5 1946.0 646.75 1942.5 647.5
+  smooth off
 endline
 
 line wall -subtype invisible
@@ -384,6 +388,7 @@ line floor-step -reverse on -outline out
   1690.75 739.0
   1695.1 740.18 1698.12 739.36 1700.25 737.5
   1702.25 735.75 1703.75 734.5 1705.0 728.75
+  smooth off
 endline
 
 line wall
@@ -391,6 +396,7 @@ line wall
   1710.5 780.75 1705.25 776.25 1702.75 771.5
   1700.25 766.75 1697.5 759.0 1695.5 752.75
   1693.5 746.5 1692.5 741.25 1690.75 739.0
+  smooth off
 endline
 
 line wall -subtype invisible
@@ -400,6 +406,7 @@ line wall -subtype invisible
   1725.5 737.0 1732.25 736.0 1739.5 732.0
   1746.75 728.0 1752.0 726.25 1756.75 724.25
   1761.5 722.25 1764.5 722.25 1769.5 718.75
+  smooth off
 endline
 
 line wall -subtype invisible
@@ -407,6 +414,7 @@ line wall -subtype invisible
   1777.25 713.25 1788.0 703.5 1796.5 697.5
   1805.0 691.5 1812.0 686.25 1817.25 682.25
   1822.5 678.25 1840.15 667.05 1849.5 662.25
+  smooth off
 endline
 
 line wall
@@ -423,9 +431,9 @@ line wall
   smooth off
 endline
 
-point 1781.1004724409445 741.2218110236221 station -name 11.11
+point 1781.1004724409445 741.2218110236221 station -name 11.11@WetWayOxbows
 
-point 1822.2804724409443 678.7018110236221 station -name 11.10
+point 1822.2804724409443 678.7018110236221 station -name 11.10@WetWayOxbows
 
 line border -reverse on -outline out -subtype invisible
   1983.0 677.5
@@ -483,13 +491,13 @@ line wall
   smooth off
 endline
 
-point 1953.4204724409444 623.2318110236222 station -name 11.6
+point 1953.4204724409444 623.2318110236222 station -name 11.6@WetWayOxbows
 
-point 1977.6404724409444 685.5518110236221 station -name 11.7
+point 1977.6404724409444 685.5518110236221 station -name 11.7@WetWayOxbows
 
-point 1907.1304724409445 806.141811023622 station -name 11.8
+point 1907.1304724409445 806.141811023622 station -name 11.8@WetWayOxbows
 
-point 2164.7204724409444 808.8218110236221 station -name 11.9
+point 2164.7204724409444 808.8218110236221 station -name 11.9@WetWayOxbows
 
 endscrap
 

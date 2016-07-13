@@ -21,8 +21,8 @@ a) Data
 7) For each survey trip, create a new Therion Text project file containing a survey <name> / endsurvey block.
    Import the survey data into this from the Therion export file, creating a centreline block inside the survey block.
    Add team and copyright information into this new survey centreline block.
-8) Open the Swildons_Centreline.th file and add an input statement to include the new data .th file.
-9) Open the corresponding Text export file from PocketTopo, and copy and station comments into the .th file centreline data.
+8) Open the corresponding Text export file from PocketTopo, and copy and station comments into the .th file centreline data.
+9) Open the Swildons_Centreline.th file and add an input statement to include the new data .th file.
 10) Add equates into the Swildons_Centreline.th file to attach the new survey data to the existing centreline.
 11) Remove obsolete equate legs from within centreline data block (zero length legs).
 12) Mark any duplicate legs as duplicates.
@@ -30,7 +30,10 @@ a) Data
 
 b) Sketches
 x) For each survey trip, create a new Therion sketch project file, and import the plan drawing into this from the Therion export file.
-
+y) If the entire set of survey data for the sketch is in a single .th file then add the input statement into that .th file to import
+   the sketch (.th2 file) inside the survey block in that .th file.
+   If the sketch covers survey data from multiple .th files then add the input statements into the Swildons_Centreline.th file 
+   directly after the input statements for the set of .th data files covering the sketch.
 
 
 ---
