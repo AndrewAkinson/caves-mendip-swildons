@@ -18,7 +18,7 @@ join KenneysSP2@KenneysDigToShowerbath.Swildons WetWaySP1@Swildons
 join KenneysSP2@KenneysDigToShowerbath.Swildons WetWaySP2@Swildons
 join ButcombeChamberSP1@ButcombeOxbows.Swildons UpperOxbowSP2@Swildons
 join OldGrottoStreamSP2@Swildons WaterChamberSP1@WaterChamber.Swildons
-join WetWaySP4@Swildons WaterChamberSP3@WaterChamber.Swildons
+join WetWaySP4@Swildons WetWaySP5@WaterChamber.Swildons
 
 map EntranceSeriesPlan -title "Swildons Hole - Entrance Series"
 #  elevfixSP@Swildons
@@ -32,14 +32,11 @@ map EntranceSeriesPlan -title "Swildons Hole - Entrance Series"
   LongDryWaySP2@Swildons
   KenneysSP2@KenneysDigToShowerbath.Swildons
   KenneysSP1@KenneysDigToShowerbath.Swildons
-  WaterChamberSP3@WaterChamber.Swildons
-  WaterChamberSP2@WaterChamber.Swildons
-  WaterChamberSP1@WaterChamber.Swildons
-  WetWaySP4@Swildons
   WetWaySP3@Swildons
   WetWaySP2@Swildons
   WetWaySP1@Swildons
     break
+  UpperOxbowSP4@Swildons
   UpperOxbowSP3@Swildons
   UpperOxbowSP2@Swildons
   UpperOxbowSP1@Swildons
@@ -65,5 +62,9 @@ map EntranceSeriesPlan -title "Swildons Hole - Entrance Series"
   OldGrottoStreamSP3@Swildons
   OldGrottoStreamSP2@Swildons
   OldGrottoStreamSP1@Swildons
+  WetWaySP4@Swildons
+  WetWaySP5@WaterChamber.Swildons
+  WetWaySP6@WaterChamber.Swildons
+  WaterChamberSP1@WaterChamber.Swildons
 endmap
 
