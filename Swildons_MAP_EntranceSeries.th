@@ -67,5 +67,7 @@ map EntranceSeriesPlan -title "Swildons Hole - Entrance Series"
   WetWaySP6@WaterChamber.Swildons
   WaterChamberSP2@WaterChamber.Swildons
   WaterChamberSP1@WaterChamber.Swildons
+  WaterChamberDigSP1@WaterChamber.Swildons
+  WaterChamberDigSP2@WaterChamber.Swildons
 endmap
 
