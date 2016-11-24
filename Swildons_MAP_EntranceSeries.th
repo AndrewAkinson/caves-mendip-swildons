@@ -22,6 +22,7 @@ join WetWaySP4@Swildons WetWaySP5@WaterChamber.Swildons
 
 map EntranceSeriesPlan -title "Swildons Hole - Entrance Series"
 #  elevfixSP@Swildons
+  ButcombeChamberSP2@ButcombeOxbows.Swildons
   ButcombeChamberSP1@ButcombeOxbows.Swildons
   LongDryWaySP4@Swildons
     break
