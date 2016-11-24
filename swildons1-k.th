@@ -1,0 +1,38 @@
+survey swil1k
+#Data from Willie Stanton's Survey Book 1
+# p. 75-78	(=PDF p.77-80)
+
+#Typed in by Footleg, Nov. 2016
+
+# May 22 1960	
+#Howard, Chris Hawkes, Derek Ford	
+#Side Passages in Paradise Regained			
+	
+centreline
+cs OSGB:ST 
+date 1960.05.22
+
+#in this survey some angles are in degrees:minutes, others decimal degrees
+units tape feet
+units depth feet
+
+data normal from to tape compass backcompass clino ignoreall						
+143	201	38.4	-	165:30	18:30	143 - see p.73
+201	202	35.7	061:30	-	23:00	
+202	203	16.8	-	142:00	-3:30	
+203	204	10.8	248:00	-	-20:30	
+# 204						204 is on knob low on wall, circle and dot on wall above
+						
+124	205	28.2	-	054:30	-17:30	124 is 1.5' above 124 of p.71
+205	206	54.7	091:00	-	14:00	
+206	207	43.6	-	247:00	14:00 (estimate)	207 marked on roof, alt 503.4
+205	208	39.7	263:00	-	-16:00	
+208	209	16.7	-	076:00	-11:30	
+209	210	2.6	-	-	UP	
+210	211	36.3	-	041:00	25:00	Kenneys Belly!
+211	212	26.8	175:00	-	34:30	
+# 212	up Olivers 'ole	90?	20	-	50	212 marked by arrow on dripstone wall in Fault Ch.
+
+endcentreline
+
+endsurvey

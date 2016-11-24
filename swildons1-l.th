@@ -1,0 +1,40 @@
+survey swil1l
+#Data from Willie Stanton's Survey Book 1
+# p. 75-78	(=PDF p.77-80)
+
+#Typed in by Footleg, Nov. 2016
+
+# July 12th 1960	
+#Derek Ford	
+#Side Passages in Paradise Regained - Maypole Series				
+	
+centreline
+cs OSGB:ST 
+date 1960.07.12
+
+#in this survey some angles are in degrees:minutes, others decimal degrees
+units tape feet
+units depth feet
+
+data normal from to tape compass backcompass clino ignoreall						
+113	213	27.5	-	243:00	15:30	
+213	214	18.3	079:00	-	9	
+214	215	13	-	245:30	-25:30	
+215	216	61.4	076:30	-	29:30	215 marked … in Pitch Chamber. Maypole Series starts about 30' along
+216	217	13.3	-	251:40	1:30	between 2 holes in floor
+217	218	18.3	048:30	-	13:30	Hole in floor 6' on, 4' diam
+218	219	22	-	254:00	13:00	Highish rift
+219	220	32.3	104:30	-	-22:30	Oxbow on left at 12'
+220	221	19.7	-	294:00	20:00	Passage on left
+221	222	20.2	162:30	-	42:00	Maypole Junction
+222	223	32.7	-	274:00	23:30	
+223	choke	10	47	-	0	gravel:choke	… on roof
+						
+221	224	20.7	089:00	-	51:00	Maypole Junction
+224	225	17.5	-	244:30	37:30	
+225	226	36.3	104:40	-	13:00	cross joints at 27' & 34'
+# 226			Dig:10' on at 040, choke 10' further at 060			Smoke mark .stal. on roof also candle + mud
+
+endcentreline
+
+endsurvey

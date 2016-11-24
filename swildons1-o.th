@@ -1,0 +1,38 @@
+survey swil1o
+#Data from Willie Stanton's Survey Book 1
+# (=PDF p.83-84)
+
+#Typed in by Footleg, Nov. 2016
+
+# Oct. 1st-2nd 1960
+#Fred Davies
+#DOUBLE TROUBLE SERIES, CRYSTAL POOL PASSAGE (Glistening Gallery)				
+	
+centreline
+cs OSGB:ST 
+date 1960.10.01
+
+#in this survey some angles are in degrees:minutes, others decimal degrees
+units tape feet
+units depth feet
+
+data normal from to tape compass backcompass clino ignoreall						
+262	263	10.7	-	109:30	28:00	
+263	264	29.3	291:00	-	-15:00	
+264	265	29.8	-	100:30	1:00	Sump on right
+265	266	15.1	323:30	-	-16:20	Huge boss on left
+266	267	17.5	-	113:00	-18:00	
+267	268	17.2	315:30	-	-15:00	
+268	269	7.3	333:00	-	0	Start of squeeze
+269	270	25.5	-	139:00	-8:30	Near end of squeeze
+270	271	25.9	327:40	-	-7:00	Below beautiful chimney
+271	272	40	-	134:30	-5:00	Aven on right at 22'
+272	273	12.7	011:00	-	-14:00	273 marked by cross above choke, 3' above bottom of choke
+# 273						
+
+# Glistening Gallery starts here; is approx 234' long at F.S. 290 & descending about 				
+# 12deg. Constrictions at 69' & 120'				
+
+endcentreline
+
+endsurvey

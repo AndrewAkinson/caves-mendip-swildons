@@ -684,6 +684,58 @@ ag	98	1.01	144	23.0	;ag on page 65
 ;243					
 
 *end t18
+*equate t16.204 t19.204
+*equate t19.262 t20.262
+*begin t19
+
+*date 1960.09.17
+*CALIBRATE declination 8 ;Estimate (needs setting to correct value)
+
+;Sept 17th 1960	Chris Hawkes	Double Trouble & Doomed Grotto			
+204	244	1.25	318	1.0	;204 is start of Double Trouble, see p. 75
+244	245	4.70	351	-9.0	
+245	246	4.30	335	8.0	;245 is at lowest point
+246	247	9.21	328	1.5	;At top of slope, near drain pool. Roof heightens just beyond
+247	248	0.95	3	14.5	;Aven overhead
+248	249	2.80	261	-12.5	;On lip of dig
+249	250	1.55	287	16.0	;Right in it!
+250	251	4.76	11	2.0	
+251	252	13.84	36	7.5	
+252	253	8.05	343	4.0	
+253	254	2.07	28	13.5	
+254	255	11.40	13	-6.0	;Bang squeeze 7' on
+255	256	2.53	79	-17.0	;Right Angle bend
+256	257	1.62	4	-17.5	
+257	258	7.71	355	7.0	;Entrance of Doomed Grotto
+258	259	12.41	5	2.5	
+259	260	2.90	350	2.0	
+260	261	4.21	9	-6.0	
+261	262	9.15	355	0.0	
+;262					;262 is on E' most of 3 stal bosses (picture)
+				
+
+*end t19
+
+*begin t20
+
+*date 1960.10.01
+*CALIBRATE declination 8 ;Estimate (needs setting to correct value)
+
+;Oct. 1st-2nd 1960	Fred Davies	DOUBLE TROUBLE SERIES, CRYSTAL POOL PASSAGE (Glistening Gallery)			
+262	263	3.26	290	28.0	
+263	264	8.93	291	-15.0	
+264	265	9.09	281	1.0	;Sump on right
+265	266	4.60	324	-16.3	;Huge boss on left
+266	267	5.34	293	-18.0	
+267	268	5.24	316	-15.0	
+268	269	2.23	333	0.0	;Start of squeeze
+269	270	7.77	319	-8.5	;Near end of squeeze
+270	271	7.90	328	-7.0	;Below beautiful chimney
+271	272	12.20	315	-5.0	;Aven on right at 22'
+272	273	3.87	11	-14.0	;273 marked by cross above choke, 3' above bottom of choke
+;273					
+
+*end t20
 
 *end Swil1
 

@@ -1,0 +1,43 @@
+survey swil1m
+#Data from Willie Stanton's Survey Book 1
+# p. 75-78	(=PDF p.77-80)
+
+#Typed in by Footleg, Nov. 2016
+
+# July 14th 1960	
+#Joe Candy	
+#Side Passages in Paradise Regained - Maypole Series, Candys Calamity, Shatter Pot.				
+	
+centreline
+cs OSGB:ST 
+date 1960.07.14
+
+#in this survey some angles are in degrees:minutes, others decimal degrees
+units tape feet
+units depth feet
+
+data normal from to tape compass backcompass clino ignoreall						
+220	227	12.3	-	208:00	-6:00	
+227	228	31.3	006:30	-	-42:00	Lip of 8' drop
+# 228			Passage:continues 15' at 350deg Corner of Airless Oxbow 18' at 307deg. Bottom of A.O. 3' lower than 228			
+113	229	8.5	-	276:30	38:00	
+229	230	33.6	189:15	-	46:30	
+230	231	9.3	-	131:30	14:00	
+231	232	18.8	267:00	-	-15:00	
+# 232			Choke:1' on in same line			
+230	233	9.4	-	258	26:00	
+233	234	37.5	98	-	17:30	6' passage on left at 15'
+234	235	9.9	196	-	0	
+235	236	31.1	103	-	15:00	Wide low passage diverges on right at 8'
+236	237	15	200	-	-3	Approx. bearing for this and following legs
+237	238	43	100	-	15	Candys Calamity
+215	239	14	123:30	-	8:00	In pitch chamber
+239	240	64.3	-	319:30	-43:15	Lip of pitch 8' on
+240	241	25.6	235:00	-	-18:45	
+240	242	20	8	-	16:00	
+242	243	20	69	-	20:00	
+# 243						
+
+endcentreline
+
+endsurvey
