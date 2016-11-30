@@ -1,3 +1,4 @@
+*SET NAMES '
 *begin WStantonNotebook1
 
 ;surveyors: W.I.Stanton
@@ -684,8 +685,7 @@ ag	98	1.01	144	23.0	;ag on page 65
 ;243					
 
 *end t18
-*equate t16.204 t19.204
-*equate t19.262 t20.262
+
 *begin t19
 
 *date 1960.09.17
@@ -737,7 +737,89 @@ ag	98	1.01	144	23.0	;ag on page 65
 
 *end t20
 
-*end Swil1
+*begin t21
 
+*date 1962.11.24
+*CALIBRATE declination 7.5 ;Estimate (needs setting to correct value)
+
+;Nov. 24 1962	Oliver C. Lloyd	VICARAGE PASSAGE			Bearings map. , var. c. 8 00 W  "compass reads 0 30 too little"
+273	L12	2.60	214	20.6	;Lowest point Glistening Gallery - above
+L12	L11	3.60	34	-30.6	
+L11	L10	1.68	24	0.0	
+L10	L9	2.35	64	0.0	
+L9	L8	5.79	348	8.0	
+L8	L7	4.66	262	-9.0	
+L7	L6	3.35	352	10.0	
+L6	L5	0.37	-	+V	
+L5	L4	13.05	338	8.0	
+L4	L3	7.23	256	-12.0	
+L3	L2	4.57	308	0.0	
+L2	L1	3.14	325	-4.0	
+L1	L10'	6.01	1	11.0	
+					
+L10'	L9'	11.89	238	-18.0	
+L9'	L8'	4.70	144	-10.0	
+L8'	L7'	3.05	336	-56.0	
+L7'	L6'	2.23	322	-21.0	
+L6'	L5'	1.28	8	-26.0	
+L5'	L4'	6.10	315	-43.0	
+L4'	L3'	3.26	166	-12.0	
+L3'	L1'	3.05	173	-36.0	
+L1'	PSP	15.24	238	-26.0	;PSP - 384.0, 4' above stream level.
+L1'	L2'	4.27	316	0.0	
+					
+L9'	L13	6.71	290	-13.0	;"compass reads 0 30 too little". i.e. var = 7 30
+L13	L14	9.82	342	0.0	
+L14	L15	7.01	336	3.0	
+L15	L16	6.34	352	8.0	
+L16	L17	7.62	14	25.0	
+L17	L18	10.82	290	-17.0	
+L18	L19	8.54	323	0.0	
+L19	L20	10.82	286	-11.0	
+L20	L21	5.18	2	11.0	
+L21	L22	7.01	16	-22.0	
+;L22					
+					
+;p. 37-38	(=PDF p.41-42)				
+;		VICARAGE PASSAGE AFTER OLIVER LLOYD			;Bearings magnetic, variation 7 30 W
+L22	L24	7.53	353	15.0	
+L24	L25	1.02	6	-63.4
+L25	L26	10.06	6	0.0	
+L26	L27	5.24	91	-12.0	
+L27	L28	3.51	109	0.0	
+L28	L29	12.90	109	0.0	
+L29	L30	24.24	83	25.0	
+L30	L31	8.84	93	25.0	
+;L31					;Above dig.
+
+
+*end t21
+
+*begin t22
+
+*date 1962.11.24
+*CALIBRATE declination 8 ;Estimate (needs setting to correct value)
+
+;		ABANDON HOPE SURVEY AFTER OLIVER LLOYD			;Var 8 00 W
+PSP	AH1	2.80	292	-12.0	;Vertically below lip of 11' drop, 4' from floor, 1' from LHS
+AH1	AH2	1.74	352	-5.0	
+AH2	AH3	1.89	26	-5.0	
+AH3	AH4	9.60	354	12.0	
+AH4	AH5	4.63	354	14.0	
+AH5	AH6	2.38	32	30.0	
+AH6	AH7	2.53	330	24.0	
+AH7	AH8	4.24	300	23.0	
+AH8	AH9	2.96	342	-13.0	
+;AH9					;Start of dig, goes 35' further
+
+*end t22
+
+
+*equate t16.204 t19.204
+*equate t19.262 t20.262
+*equate t20.273 t21.273
+*equate t21.PSP t22.PSP
+
+*end Swil1
 
 *end WStantonNotebook1
