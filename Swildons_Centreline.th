@@ -40,8 +40,8 @@ survey Swildons
     cs OSGB:ST 
     station Ent "Swildons Hole" entrance
     fix Ent 53122.3 51308.5 237.3 #From surface survey using two GPS fixes nearby under open clear sky. Done by Footleg 30 Jun 2013
-	#fix Ent 53126 51303 248 #From GPS WAAS fix over door of blockhouse after tree was cut back. Done by Footleg 09 Jul 2016
-	
+  #fix Ent 53126 51303 248 #From GPS WAAS fix over door of blockhouse after tree was cut back. Done by Footleg 09 Jul 2016
+  
     fix bottom 53130 51310 140 #Fake station to pin lowest elevation in colour by elevation
 
     equate Ent 1.3@ZigZags
@@ -72,6 +72,7 @@ survey Swildons
     equate 11.11@WetWayOxbows 14.6@WetWayKeyhole 
     equate 12.27@ButcombeOxbows 15.0@OxbowJunction
     equate 12.27@ButcombeOxbows 16.0@LowerOxbow
+    equate 12.30@ButcombeOxbows 11.18@WetWayOxbows
     equate 13.20@WaterChamber 16.16@LowerOxbow
     
   endcentreline

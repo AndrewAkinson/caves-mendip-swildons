@@ -1,6 +1,6 @@
 encoding  utf-8
-##XTHERION## xth_me_area_adjust -130.0 -130.0 2903.5 1355.0
-##XTHERION## xth_me_area_zoom_to 200
+##XTHERION## xth_me_area_adjust -128.5 -128.5 2902.0 1353.125
+##XTHERION## xth_me_area_zoom_to 800
 ##XTHERION## xth_me_image_insert {169.1704724409442 1 1.0} {1111.421811023622 6.11} PocketTopo/Swil20160709_WetWayOxbows_th_p.xvi 0 {}
 
 
@@ -286,11 +286,11 @@ point 1388.0 835.75 water-flow -orientation 340.2
 
 point 1481.25 609.5 water-flow -orientation 340.2
 
-area water
+area water -clip off
   l127-1525-529
 endarea
 
-line border -id l127-1525-529 -close on -reverse on -subtype invisible
+line border -id l127-1525-529 -close on -reverse on -clip off
   1483.0 529.25
   1481.15 540.37 1481.25 549.0 1486.0 554.5
   1490.75 560.0 1499.0 564.75 1506.25 557.5
@@ -359,9 +359,8 @@ line border -subtype invisible -outline out
 endline
 
 line wall
-  1516.0 491.5
-  1516.75 495.25 1519.0 497.5 1526.5 495.5
-  1534.0 493.5 1541.0 492.5 1550.0 492.5
+  1525.25 496.13
+  1532.75 494.13 1541.0 492.5 1550.0 492.5
   1559.0 492.5 1570.0 494.0 1583.0 493.0
   smooth off
 endline
@@ -470,9 +469,8 @@ line wall
   1373.25 737.75 1379.0 726.75 1387.5 713.25
   1396.0 699.75 1406.25 680.75 1418.0 663.25
   1429.75 645.75 1435.75 636.75 1444.25 613.0
-  1452.75 589.25 1455.25 586.25 1463.25 574.25
-  1471.25 562.25 1477.75 556.75 1476.0 543.75
-  1474.63 533.56 1470.5 530.25 1466.75 524.0
+  1452.75 589.25 1457.76 587.58 1463.25 574.25
+  1468.5 561.5 1477.72 560.38 1477.25 547.25
   smooth off
 endline
 

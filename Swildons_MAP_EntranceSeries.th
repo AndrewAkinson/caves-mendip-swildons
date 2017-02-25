@@ -1,6 +1,6 @@
 encoding  utf-8
 #Swildons Hole, Priddy, Mendip, Somerset, UK
-#Resurvey Project. Lead by Paul 'Footleg' Fretwell, Jun. 2013 - Jul. 2016
+#Resurvey Project. Lead by Paul 'Footleg' Fretwell, Jun. 2013 - Feb. 2017
 #Plan Maps for Entrance Series
 
 # (input statements for drawings are in the corresponding centreline data .th files)
@@ -19,11 +19,10 @@ join KenneysSP2@KenneysDigToShowerbath.Swildons WetWaySP2@Swildons
 join ButcombeChamberSP1@ButcombeOxbows.Swildons UpperOxbowSP2@Swildons
 join OldGrottoStreamSP2@Swildons WaterChamberSP1@WaterChamber.Swildons
 join WetWaySP4@Swildons WetWaySP5@WaterChamber.Swildons
+join UpperOxbowSP3@Swildons ButcombeOxbowSP1@ButcombeOxbows.Swildons
 
 map EntranceSeriesPlan -title "Swildons Hole - Entrance Series"
-#  elevfixSP@Swildons
-  ButcombeChamberSP2@ButcombeOxbows.Swildons
-  ButcombeChamberSP1@ButcombeOxbows.Swildons
+  elevfixSP@Swildons
   LongDryWaySP4@Swildons
     break
   EntranceSP1@Swildons
@@ -43,6 +42,9 @@ map EntranceSeriesPlan -title "Swildons Hole - Entrance Series"
   UpperOxbowSP1@Swildons
   DryWayStreamSP1@Swildons
   ShowerbathSP1@ShowerbathArea.Swildons
+  ButcombeChamberSP2@ButcombeOxbows.Swildons
+  ButcombeChamberSP1@ButcombeOxbows.Swildons
+  ButcombeOxbowSP1@ButcombeOxbows.Swildons
     break
   ShowerbathSP2@ShowerbathArea.Swildons
   ShowerbathSP3@ShowerbathArea.Swildons
