@@ -47,7 +47,8 @@ survey Swildons
     equate Ent 1.3@ZigZags
 
 #    equate 3.2@ShortDryWay DM@swil1a.wstanton
-    equate 6.7@OldGrottoToWaterChamber CX@swil1b.wstanton
+#    equate 6.7@OldGrottoToWaterChamber CX@swil1b.wstanton
+    equate 8.16@WaterRift CG@swil1c.wstanton
 
     equate 1.5@ZigZags 2.0@LongDryWay 
     equate 1.21@ZigZags 2.5@LongDryWay 

@@ -1,0 +1,60 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -130.0 -130.0 521.7007874015748 703.5
+##XTHERION## xth_me_area_zoom_to 200
+##XTHERION## xth_me_image_insert {271.2160629921259 1 1.0} {481.3729921259842 15.0} PocketTopo/Swil20160709_OxbowJunction_th_p.xvi 0 {}
+
+
+
+scrap OxbowJunctionSP1 -projection plan -author 2017.02.25 "Footleg" -copyright 2017 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+
+line wall
+  210.75 362.0
+  218.0 372.0 220.0 378.25 224.5 386.25
+  229.0 394.25 236.0 403.0 242.75 408.25
+  smooth off
+endline
+
+line border -outline out
+  198.25 503.0
+  200.0 474.5 200.0 464.5 205.5 450.0
+endline
+
+line floor-step -outline out
+  205.5 450.0
+  216.46 425.51 227.5 416.5 242.75 408.25
+  smooth off
+endline
+
+line wall
+  163.5 480.25
+  64.67 451.18 125.5 269.25 210.75 362.0
+  smooth off
+endline
+
+line wall -reverse on
+  163.5 480.25
+  165.75 473.75 167.75 470.5 173.0 471.0
+  178.25 471.5 189.0 478.5 192.75 486.0
+  196.5 493.5 197.5 495.0 198.25 503.0
+  smooth off
+endline
+
+point 171.92606299212594 313.78299212598415 station -name 15.8
+
+point 189.84606299212578 395.4729921259842 station -name 15.7
+
+point 180.5860629921258 438.70299212598417 station -name 15.1
+
+point 179.9560629921259 447.08299212598416 station -name 15.2
+
+point 132.43606299212593 503.0729921259842 station -name 15.3
+
+point 99.17606299212594 519.0129921259842 station -name 15.4
+
+point 110.11606299212576 539.4129921259841 station -name 15.5
+
+point 80.39606299212596 573.8929921259842 station -name 15.6
+
+endscrap
+
+

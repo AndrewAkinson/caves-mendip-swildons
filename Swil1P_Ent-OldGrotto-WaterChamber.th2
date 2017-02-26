@@ -2591,7 +2591,7 @@ endscrap
 
 
 
-scrap ShortDryWaySP2 -projection plan -station-names "" @ShortDryWay -author 2015.01.11 "Footleg" -copyright 2015 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+scrap ShortDryWaySP5 -projection plan -station-names "" @ShortDryWay -author 2015.01.11 "Footleg" -copyright 2015 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 point 1691.2614173228335 2006.8462992125983 station -name 4.0
 
@@ -2731,6 +2731,7 @@ line wall
   1031.5 2002.0 1029.0 1995.5 1018.0 1982.5
   1007.0 1969.5 993.5 1961.5 976.5 1955.5
   959.5 1949.5 941.5 1944.5 924.5 1933.0
+  smooth off
 endline
 
 point 1265.0 2322.0 water-flow -orientation 277.6
@@ -2829,6 +2830,7 @@ line wall
   608.5 1931.5 598.0 1935.5 582.5 1937.5
   567.0 1939.5 554.0 1941.5 549.5 1944.0
   545.0 1946.5 542.5 1951.5 536.0 1951.5
+  smooth off
 endline
 
 line border -outline out -subtype invisible
@@ -2837,6 +2839,7 @@ line border -outline out -subtype invisible
   507.5 1943.0 509.0 1938.5 502.0 1932.5
   495.0 1926.5 488.5 1924.0 475.5 1922.0
   462.5 1920.0 445.51 1903.87 443.0 1900.0
+  smooth off
 endline
 
 line wall
@@ -2917,6 +2920,7 @@ line wall
   849.5 1856.5
   874.0 1860.0 906.0 1864.0 922.0 1872.5
   938.0 1881.0 953.0 1892.0 971.0 1903.0
+  smooth off
 endline
 
 line border -id l490-974-1911 -subtype invisible -outline out
@@ -2925,6 +2929,7 @@ line border -id l490-974-1911 -subtype invisible -outline out
   983.25 1924.25 983.75 1928.75 980.0 1933.0
   976.25 1937.25 962.75 1933.5 955.5 1932.0
   948.84 1930.62 948.0 1939.0 924.5 1933.0
+  smooth off
 endline
 
 line wall

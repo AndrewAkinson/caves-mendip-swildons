@@ -15,7 +15,7 @@ survey wstanton
 
 #    equate  Ent  EC@swil1a
 #    equate  DH@swil1a  DH@swil1b
-    equate  CN@swil1b  CN@swil1c
+#    equate  CN@swil1b  CN@swil1c
     equate  AY@swil1c  AY@swil1d
     equate  AL@swil1d  AL@swil1e
     equate  AL@swil1d  AL@swil1f
@@ -23,7 +23,7 @@ survey wstanton
 #    equate  DO@swil1a  DO@swil1h
 #    equate  DA@swil1b  DA@swil1h
 #    equate  FB@swil1h  FB@swil1i
-    equate  CS@swil1b  CS@swil1i
+#    equate  CS@swil1b  CS@swil1i
     equate  ag@swil1g  ag@swil1j
     equate  124@swil1j  124@swil1k
     equate  143@swil1j  143@swil1k
@@ -49,14 +49,14 @@ survey wstanton
   endcentreline
 
 #  input swildons1-a.th
-  input swildons1-b.th
+#  input swildons1-b.th
   input swildons1-c.th
   input swildons1-d.th
   input swildons1-e.th
   input swildons1-f.th
   input swildons1-g.th
 #  input swildons1-h.th
-  input swildons1-i.th
+#  input swildons1-i.th
   input swildons1-j.th
   input swildons1-k.th
   input swildons1-l.th
