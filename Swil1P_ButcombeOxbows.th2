@@ -323,11 +323,13 @@ scrap ButcombeOxbowSP1 -projection plan -author 2017.02.25 "Footleg" -copyright 
 line border -reverse on -outline out
   86.5 746.5
   116.0 749.5 123.5 717.0 121.5 696.5
+  smooth off
 endline
 
 line border -reverse on -outline out -subtype invisible
   81.0 798.0
   80.5 775.0 79.0 767.0 86.5 746.5
+  smooth off
 endline
 
 line rock-border -close on
@@ -482,6 +484,8 @@ point 398.5806299212595 638.0676377952753 station -name 12.24
 point 531.8906299212597 620.6676377952754 station -name 12.23
 
 point 606.3406299212596 546.5776377952755 station -name 12.22
+
+point 116.5 738.0 dimensions -value [1.5 0.5]
 
 endscrap
 

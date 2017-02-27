@@ -36,6 +36,7 @@ map EntranceSeriesPlan -title "Swildons Hole - Entrance Series"
   WetWaySP3@Swildons
   WetWaySP2@Swildons
   WetWaySP1@Swildons
+  OxbowJunctionSP4@OxbowJunction.Swildons
     break
   UpperOxbowSP4@Swildons
   UpperOxbowSP3@Swildons
@@ -43,6 +44,8 @@ map EntranceSeriesPlan -title "Swildons Hole - Entrance Series"
   UpperOxbowSP1@Swildons
   DryWayStreamSP1@Swildons
   ShowerbathSP1@ShowerbathArea.Swildons
+  OxbowJunctionSP3@OxbowJunction.Swildons
+  OxbowJunctionSP2@OxbowJunction.Swildons
   OxbowJunctionSP1@OxbowJunction.Swildons
   ButcombeChamberSP2@ButcombeOxbows.Swildons
   ButcombeChamberSP1@ButcombeOxbows.Swildons
