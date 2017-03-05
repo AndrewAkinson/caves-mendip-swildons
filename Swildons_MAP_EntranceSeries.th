@@ -21,6 +21,8 @@ join OldGrottoStreamSP2@Swildons WaterChamberSP1@WaterChamber.Swildons
 join WetWaySP4@Swildons WetWaySP5@WaterChamber.Swildons
 join UpperOxbowSP3@Swildons ButcombeOxbowSP1@ButcombeOxbows.Swildons
 join OxbowJunctionSP1@OxbowJunction.Swildons ButcombeOxbowSP1@ButcombeOxbows.Swildons
+join LowerOxbowSP3@LowerOxbow.Swildons WaterChamberSP1@WaterChamber.Swildons
+join WaterChamberSP1@WaterChamber.Swildons WaterRiftSP1@WaterRift.Swildons
 
 map EntranceSeriesPlan -title "Swildons Hole - Entrance Series"
   elevfixSP@Swildons
@@ -66,9 +68,11 @@ map EntranceSeriesPlan -title "Swildons Hole - Entrance Series"
   BaptismCrawlSP1@ShowerbathArea.Swildons
   OldGrottoSP1@Swildons
   ShortDryWaySP5@Swildons
+  Old40SP1@Old40Route.Swildons
     break
   LowerOxbowSP1@LowerOxbow.Swildons
   LowerOxbowSP2@LowerOxbow.Swildons
+  LowerOxbowSP3@LowerOxbow.Swildons
   OldGrottoStreamSP3@Swildons
   OldGrottoStreamSP2@Swildons
   OldGrottoStreamSP1@Swildons
@@ -79,5 +83,6 @@ map EntranceSeriesPlan -title "Swildons Hole - Entrance Series"
   WaterChamberSP1@WaterChamber.Swildons
   WaterChamberDigSP1@WaterChamber.Swildons
   WaterChamberDigSP2@WaterChamber.Swildons
+  WaterRiftSP1@WaterRift.Swildons
 endmap
 

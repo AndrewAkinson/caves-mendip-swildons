@@ -1,6 +1,6 @@
 encoding  utf-8
-##XTHERION## xth_me_area_adjust -129.0 -137.0 2253.9842519685035 1038.0
-##XTHERION## xth_me_area_zoom_to 400
+##XTHERION## xth_me_area_adjust -130.0 -138.5 2253.9842519685035 1039.0
+##XTHERION## xth_me_area_zoom_to 200
 ##XTHERION## xth_me_image_insert {910.1213385826768 1 1.0} {278.5076377952756 13.0} PocketTopo/Swil20160709_WaterChamber_th_p.xvi 0 {}
 
 
@@ -59,13 +59,24 @@ line border -id l65-982-200 -subtype invisible
   smooth off
 endline
 
-line floor-step -id l64-1096-99
+line floor-step -id l157-1129-83
   1077.0 110.0
   1096.5 96.0 1116.0 88.0 1136.0 80.0
   1156.0 72.0 1160.5 68.0 1162.0 58.5
-  1163.5 49.0 1169.5 36.5 1174.0 38.0
-  1178.5 39.5 1180.5 40.0 1181.5 50.0
-  1182.5 60.0 1184.5 66.5 1191.5 71.5
+  1163.5 49.0 1168.13 40.01 1172.63 40.13
+  smooth off
+endline
+
+point 1597.0 184.0 dimensions -value [7 0]
+
+point 1350.0 140.5 dimensions -value [7 0]
+
+point 1171.0 95.0 dimensions -value [7 0]
+
+line border -id l158-1211-80 -subtype invisible
+  1172.63 40.13
+  1177.13 41.63 1179.75 42.13 1180.75 52.13
+  1181.75 62.13 1184.5 66.5 1191.5 71.5
   1198.5 76.5 1212.5 81.0 1228.0 85.25
   smooth off
 endline
@@ -152,7 +163,7 @@ line border -id l86-824-490 -subtype invisible -outline out
   smooth off
 endline
 
-line floor-step
+line floor-step -outline out
   542.75 328.25
   555.5 320.5 563.5 317.0 566.5 314.5
   569.5 312.0 574.5 312.5 578.5 318.5
@@ -283,7 +294,7 @@ line wall -close on -outline in
   839.5 131.5 841.5 130.0 832.5 134.0
 endline
 
-line floor-step -outline out
+line floor-step -clip off
   603.5 361.0
   585.0 365.0 572.5 369.5 562.5 372.0
   552.5 374.5 534.5 374.5 528.5 370.0
@@ -403,8 +414,6 @@ line wall -reverse on
   1327.5 112.75 1323.0 113.25 1311.0 110.5
   1299.0 107.75 1275.25 97.5 1258.75 92.5
   1242.25 87.5 1232.25 88.25 1228.0 85.25
-  1223.75 82.25 1225.0 73.0 1227.25 70.5
-  1229.5 68.0 1230.75 65.5 1232.5 62.75
   smooth off
 endline
 
@@ -473,7 +482,8 @@ endline
 area pebbles
   l65-982-200
   l63-1004-160
-  l64-1096-99
+  l157-1129-83
+  l158-1211-80
   l66-1316-89
 endarea
 
@@ -552,6 +562,7 @@ point 549.0 219.5 gradient -orientation 246.2
 line floor-step -outline out
   373.75 173.75
   381.25 179.0 390.75 197.5 372.25 208.75
+  smooth off
 endline
 
 line wall
@@ -563,6 +574,7 @@ line wall
   503.5 182.0 510.5 187.75 518.5 192.5
   526.5 197.25 529.75 198.25 542.0 202.25
   554.25 206.25 551.25 206.25 563.5 207.75
+  smooth off
 endline
 
 line wall
@@ -576,6 +588,7 @@ line wall
   453.75 207.75 446.5 206.25 437.0 208.0
   427.5 209.75 426.25 210.75 416.25 210.25
   406.25 209.75 386.5 207.25 372.25 208.75
+  smooth off
 endline
 
 point 469.171338582677 175.11763779527564 station -name 13.12
@@ -624,6 +637,7 @@ line border -id l149-86-282
   79.5 257.75 83.0 260.0 84.75 268.25
   86.53 276.63 85.75 283.0 83.25 288.5
   79.95 295.77 78.0 298.0 74.5 302.0
+  smooth off
 endline
 
 line wall
@@ -656,11 +670,13 @@ line wall
   284.25 181.75 292.75 182.0 304.5 180.0
   316.25 178.0 331.0 174.0 344.5 173.25
   358.0 172.5 360.5 174.0 373.75 173.75
+  smooth off
 endline
 
 line border -subtype invisible -outline out
   373.75 173.75
   384.0 185.5 389.0 196.25 372.25 208.75
+  smooth off
 endline
 
 point 264.96133858267694 190.94763779527557 station -name 13.13

@@ -1,11 +1,75 @@
 encoding  utf-8
-##XTHERION## xth_me_area_adjust -128.0 -128.0 2568.9448818897636 1624.062992125984
-##XTHERION## xth_me_area_zoom_to 100
+##XTHERION## xth_me_area_adjust -129.0 -129.0 2568.9448818897636 1624.062992125984
+##XTHERION## xth_me_area_zoom_to 400
 ##XTHERION## xth_me_image_insert {2160.2788188976374 1 1.0} {520.830472440945 8.0} PocketTopo/Swil20130629_WaterChamberToCornerWithFolderStrata_th_p.xvi 0 {}
 
 
 
-scrap WaterChamberSP1 -projection plan -author 2016.07.09 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+scrap WaterRiftSP1 -projection plan -author 2017.03.05 "Footleg" -copyright 2017 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+
+point 1780.0 598.5 dimensions -value [6.5 1]
+
+point 1839.25 582.75 dimensions -value [6.5 1.5]
+
+line border -outline out -subtype invisible
+  1791.75 573.0
+  1809.25 566.5 1809.31 563.2 1815.5 560.5
+  1825.25 556.25 1830.44 562.94 1834.5 568.5
+  1839.25 575.0 1842.98 579.77 1846.0 586.5
+  1849.25 593.75 1850.75 598.5 1850.5 606.75
+  smooth off
+endline
+
+line wall
+  1850.5 606.75
+  1833.0 612.75 1821.75 615.0 1810.0 617.5
+  1803.05 618.98 1795.75 620.0 1788.75 619.0
+  smooth off
+endline
+
+line wall
+  1788.75 619.0
+  1777.0 617.5 1758.0 630.0 1743.0 652.5
+endline
+
+line wall -subtype invisible
+  1743.0 652.5
+  1728.5 671.75 1699.9 684.06 1684.25 693.0
+endline
+
+line wall
+  1684.25 693.0
+  1672.0 700.0 1665.5 698.75 1654.75 713.25
+  1644.0 727.75 1645.5 725.75 1630.0 743.75
+  1614.5 761.75 1609.0 763.75 1600.0 767.5
+  1591.0 771.25 1590.0 768.25 1586.25 771.5
+  smooth off
+endline
+
+line wall
+  1580.25 759.75
+  1583.5 757.5 1586.25 755.0 1591.75 747.75
+  1597.25 740.5 1605.0 728.25 1619.0 710.75
+  1633.0 693.25 1638.0 686.0 1642.5 682.0
+  1647.0 678.0 1648.0 673.75 1652.75 669.5
+  1657.5 665.25 1672.75 654.25 1683.75 643.5
+  1694.75 632.75 1714.0 613.75 1722.25 603.75
+  1730.5 593.75 1742.5 578.25 1748.25 576.25
+  1754.0 574.25 1777.75 575.0 1791.75 573.0
+  smooth off
+endline
+
+point 2063.7788188976374 721.220472440945 station -name 8.1
+
+point 2022.9488188976375 574.2504724409449 station -name 8.2
+
+point 1581.8488188976376 759.0504724409449 station -name 8.6
+
+point 1634.1388188976375 695.910472440945 station -name 8.5
+
+point 1773.4688188976374 608.7804724409449 station -name 8.4
+
+point 1820.7488188976376 575.6304724409449 station -name 8.3
 
 endscrap
 
