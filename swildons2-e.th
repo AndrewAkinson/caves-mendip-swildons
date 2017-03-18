@@ -1,0 +1,82 @@
+survey swil2e
+#Data from Willie Stanton's Survey Book 1
+# p. ?? (=PDF p.79-80,83-84)
+# p. 37-38	(=PDF p.41-42)			
+
+#Typed in by Footleg, Nov 2016
+
+# Nov. 24 1962	Oliver C. Lloyd	
+# VICARAGE PASSAGE				
+
+centreline
+cs OSGB:ST 
+date 1962.11.24
+
+#in this survey some angles are in degrees:minutes, others decimal degrees
+units tape feet
+units depth feet
+
+data normal from to tape compass backcompass clino ignoreall						
+273	L12	8.5440	214:00	-	20.556	Lowest point Glistening Gallery - above
+L12	L11	11.8	-	214:00	0	
+L11	L10	5.5	-	204:00	0:00	
+L10	L9	7.7	-	244:00	0:00	
+L9	L8	19	-	168:00	8:00	
+L8	L7	15.3	-	082:00	-9:00	
+L7	L6	11	-	172:00	10:00	
+L6	L5	1.2	-	-	UP	
+L5	L4	42.8	-	158:00	8:00	
+L4	L3	23.7	-	076:00	-12:00	
+L3	L2	15	-	128:00	0:00	
+L2	L1	10.3	-	145:00	-4:00	
+L1	L10'	19.7	-	181:00	11:00	
+						
+L10'	L9'	39	-	058:00	-18:00	
+L9'	L8'	15.4	-	324:00	-10:00	
+L8'	L7'	10	-	156:00	-56:00	
+L7'	L6'	7.3	-	142:00	-21:00	
+L6'	L5'	4.2	-	188:00	-26:00	
+L5'	L4'	20	-	135:00	-43:00	
+L4'	L3'	10.7	-	346:00	-12:00	
+L3'	L1'	10	-	353:00	-36:00	
+L1'	PSP	50	-	058:00	-26:00	PSP - 384.0, 4' above stream level.
+L1'	L2'	14	-	136:00	0:00	
+						
+L9'	L13	22	290:00	-	-13:00	"compass reads 0 30 too little". i.e. var = 7 30
+L13	L14	32.2	342:00	-	0:00	
+L14	L15	23	336:00	-	3:00	
+L15	L16	20.8	352:00	-	8:00	
+L16	L17	25	014:00	-	25:00	
+L17	L18	35.5	290:00	-	-17:00	
+L18	L19	28	323:00	-	0:00	
+L19	L20	35.5	286:00	-	-11:00	
+L20	L21	17	002:00	-	11:00	
+L21	L22	23	016:00	-	-22:00	
+						
+						
+# p. 37-38	(=PDF p.41-42)					
+#						Bearings magnetic, variation 7 30 W
+L22	L24	24.7	353:00	-	15:00	
+L24	L25	3.354101966	006:00	-	-63.43494882	
+L25	L26	33  	006:00	-	0:00	
+L26	L27	17.2	091:00	-	-12:00	
+L27	L28	11.5	109:00	-	0:00	
+L28	L29	42.3	109:00	-	0:00	
+L29	L30	79.5	083:00	-	25:00	
+L30	L31	29	093:00	-	25:00	
+# L31						Above dig.
+#						Var 8 00 W
+PSP	AH1	9.2	292:00	-	-12:00	Vertically below lip of 11' drop, 4' from floor, 1' from LHS
+AH1	AH2	5.7	352:00	-	-5:00	
+AH2	AH3	6.2	026:00	-	-5:00	
+AH3	AH4	31.5	354:00	-	12:00	
+AH4	AH5	15.2	354:00	-	14:00	
+AH5	AH6	7.8	032:00	-	30:00	
+AH6	AH7	8.3	330:00	-	24:00	
+AH7	AH8	13.9	300:00	-	23:00	
+AH8	AH9	9.7	342:00	-	-13:00	
+# AH9						Start of dig, goes 35' further
+
+endcentreline
+
+endsurvey

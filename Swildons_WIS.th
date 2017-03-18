@@ -2,7 +2,7 @@ encoding  utf-8
 survey wstanton
 #Swildons Hole, Priddy, Mendip, Somerset, UK
 #Survey centreline data from Willie Stanton notebooks. 
-#Therion project created by Paul 'Footleg' Fretwell, June 2012 - June 2013
+#Therion project created by Paul 'Footleg' Fretwell, June 2012 - Mar 2017
 
 #This file should only contain the survey data. Any drawings (maps) should be managed
 #in a separate file which imports this file.
@@ -46,6 +46,7 @@ survey wstanton
     equate  18@swil2b  18@swil2c
     equate  D@swil2a  D@swil2c
     equate  46@swil2c  46@swil2d
+    equate  273@swil1o  273@swil2e
 
   endcentreline
 
@@ -69,6 +70,7 @@ survey wstanton
   input swildons2-b.th
   input swildons2-c.th
   input swildons2-d.th
+  input swildons2-e.th
   
 endsurvey
 
