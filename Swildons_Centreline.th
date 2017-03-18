@@ -33,9 +33,11 @@ survey Swildons
   input Swildons_WaterChamber.th
   input Swildons_OxbowJunction.th
   input Swildons_LowerOxbow.th
+  input Swildons_CisternDig.th
+  input Swildons_Old40to20.th
 
   centreline
-    copyright 2016 "Paul 'Footleg' Fretwell"
+    copyright 2017 "Paul 'Footleg' Fretwell"
     
     cs OSGB:ST 
     station Ent "Swildons Hole" entrance
@@ -68,9 +70,12 @@ survey Swildons
     equate 13.27@WaterChamber 11.33@WetWayOxbows
     equate 8.4@WaterRift 9.0@Old40Route
     equate 8.12@WaterRift 9.11@Old40Route
+    equate 8.12@WaterRift 17.0@Old40to20
+    equate 8.16@WaterRift 6.0@Old40to20
     equate 11.24@WetWayOxbows 12.0@ButcombeOxbows 
     equate 11.33@WetWayOxbows 14.0@WetWayKeyhole 
     equate 11.11@WetWayOxbows 14.6@WetWayKeyhole 
+    equate 11.37@WetWayOxbows 18.0@CisternDig 
     equate 12.27@ButcombeOxbows 15.0@OxbowJunction
     equate 12.27@ButcombeOxbows 16.0@LowerOxbow
     equate 12.30@ButcombeOxbows 11.18@WetWayOxbows
