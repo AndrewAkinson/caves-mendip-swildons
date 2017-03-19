@@ -8,6 +8,9 @@ survey SwildonsHole
 
   #import maps for plan drawings
   input Swildons_MAP_EntranceSeries.th
+
+  #import maps for elevation drawings
+  input Swildons_MAP-elev_EntranceSeries.th
   
 endsurvey
 

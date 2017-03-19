@@ -1,0 +1,14 @@
+encoding  utf-8
+#Swildons Hole, Priddy, Mendip, Somerset, UK
+#Resurvey Project. Lead by Paul 'Footleg' Fretwell, Jun. 2013 - Mar. 2017
+#Elevation Maps for Entrance Series
+
+# (input statements for drawings are in the corresponding centreline data .th files)
+
+# join LongDryWaySP1@Swildons ShortDryWaySP1@ShortDryWay.Swildons
+
+map EntranceSeriesElevEW -projection [elevation 000] -title "Swildons Hole - Entrance Series Elevation"
+ # elevfixSP@Swildons
+  ShortDryWaySE1@ShortDryWay.Swildons
+endmap
+
