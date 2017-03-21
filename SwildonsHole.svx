@@ -12,9 +12,6 @@
 *EQUATE LongDryWay.62 OldGrotto2WC.4
 *EQUATE LongDryWay.59 OldGrotto2WC.0
 *EQUATE LongDryWay.59 ShortDryWay.pt2.3
-*EQUATE OldGrotto2WC.11 WaterRift.0
-*EQUATE WaterRift.4 FortyRoute.0
-*EQUATE WaterRift.12 FortyRoute.11
 *EQUATE ShowerbathArea.9 WetWaysOxbows.0
 *EQUATE ShowerbathArea.7 WetWaysOxbows.2
 *EQUATE OldGrotto2WC.11 WetWaysOxbows.44
@@ -38,6 +35,12 @@
 *EQUATE EntranceZigZags.5 KenneysDigToShowerbath.0
 *EQUATE KenneysDigToShowerbath.23 ShortDryWay.pt1.3
 *EQUATE KenneysDigToShowerbath.19 EntranceZigZags.5
+
+*EQUATE OldGrotto2WC.11 WaterRift.0
+*EQUATE WaterRift.4 FortyRoute.0
+*EQUATE WaterRift.12 FortyRoute.11
+*EQUATE WaterRift.12 Streamway40to20.0
+*EQUATE WaterRift.16 Streamway40to20.6
 
 *BEGIN surfacegps
 
@@ -2115,9 +2118,6 @@
 
 *END WaterRift
 
-*EQUATE WaterRift.12 Streamway40to20.0
-*EQUATE WaterRift.16 Streamway40to20.6
-
 
 *BEGIN FortyRoute
 ;WSCC DistoX-Footleg
@@ -2937,7 +2937,7 @@
 0	0d	 0.37	183.31	-86.56
 0	0e	 1.42	342.44	 65.26
 *FLAGS NOT SPLAY
-0	1	 1.46	345.76	 62.50
+0	1	 1.46	345.76	 62.50  ;0=tip of calcite flake nearest middle of passage next to rope climb up
 1	0	 1.44	166.11	-60.94
 *FLAGS SPLAY
 1	1a	 0.45	 94.89	  2.87
