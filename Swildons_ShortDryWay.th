@@ -3,6 +3,7 @@ survey ShortDryWay
 
   input Swil1P_ShortDryWay.th2
   input Swil1E_ShortDryWay.th2
+  input Swil1E_ShortDryWay2.th2
 
   centreline
     copyright 2013 "Paul 'Footleg' Fretwell"

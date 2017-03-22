@@ -1,0 +1,18 @@
+encoding  utf-8
+##XTHERION## xth_me_area_adjust -128.0 -128.0 521.7007874015748 757.9212598425196
+##XTHERION## xth_me_area_zoom_to 800
+##XTHERION## xth_me_image_insert {125.3502362204722 1 1.0} {458.4606299212599 18.0} PocketTopo/Swil20170311_CisternDig_th_p.xvi 0 {}
+
+
+
+scrap scrap1 -projection plan -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+
+point 119.68023622047258 517.8706299212599 station -name 18.2
+
+point 118.82023622047245 484.6106299212599 station -name 18.1
+
+point 125.3502362204722 458.4606299212599 station -name 18.0
+
+endscrap
+
+
