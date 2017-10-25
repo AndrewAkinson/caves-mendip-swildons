@@ -1,6 +1,6 @@
 encoding  utf-8
-##XTHERION## xth_me_area_adjust -129.0 -129.0 1427.2125984251966 876.031496062992
-##XTHERION## xth_me_area_zoom_to 400
+##XTHERION## xth_me_area_adjust -130.0 -130.0 1427.2125984251966 876.031496062992
+##XTHERION## xth_me_area_zoom_to 200
 ##XTHERION## xth_me_image_insert {1268.6963779527557 1 1.0} {109.7194488188976 16.0} PocketTopo/Swil20160710_LowerOxbow_th_p.xvi 0 {}
 
 
@@ -182,6 +182,8 @@ line border
   smooth off
 endline
 
+point 761.0 311.0 label -orientation 33.2 -text "Lower Oxbow" -scale l
+
 line wall
   898.25 134.25
   892.0 137.25 889.0 139.0 885.25 141.0
@@ -274,6 +276,7 @@ line border -id l48-155-682
   173.75 650.75 170.75 655.0 169.75 659.25
   168.75 663.5 165.0 670.25 158.75 677.0
   152.5 683.75 147.25 688.5 144.25 693.0
+  smooth off
 endline
 
 area clay
@@ -306,6 +309,7 @@ endline
 line border
   457.5 349.75
   459.75 347.75 460.75 346.75 464.25 344.5
+  smooth off
 endline
 
 line border
@@ -319,6 +323,7 @@ line border
   408.25 376.5 412.0 374.25 421.25 372.75
   430.5 371.25 436.0 368.75 440.75 364.75
   445.5 360.75 446.0 359.75 448.5 357.25
+  smooth off
 endline
 
 line rock-border -close on
@@ -350,6 +355,7 @@ line wall
   203.75 672.5 201.75 679.0 200.25 690.5
   198.75 702.0 195.0 709.0 191.25 715.75
   187.5 722.5 182.5 729.75 189.0 736.75
+  smooth off
 endline
 
 line wall
@@ -365,6 +371,7 @@ line wall
   398.25 330.75 401.75 342.0 413.75 346.5
   425.75 351.0 430.5 350.75 439.5 349.5
   448.5 348.25 452.75 348.0 464.25 344.5
+  smooth off
 endline
 
 line floor-step -outline out
@@ -372,6 +379,7 @@ line floor-step -outline out
   136.5 697.0 137.0 701.75 138.25 705.75
   139.5 709.75 143.0 721.0 152.25 725.5
   161.5 730.0 175.25 730.5 189.0 736.75
+  smooth off
 endline
 
 line wall
@@ -394,6 +402,7 @@ line wall
   361.25 191.25 361.75 184.25 368.5 175.75
   375.25 167.25 376.75 165.0 378.75 162.25
   380.75 159.5 382.5 156.5 381.25 149.25
+  smooth off
 endline
 
 point 136.02637795275587 687.4794488188977 station -name 16.16

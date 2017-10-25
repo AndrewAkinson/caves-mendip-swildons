@@ -1,5 +1,5 @@
 encoding  utf-8
-##XTHERION## xth_me_area_adjust -128.5 -128.5 2902.0 1353.125
+##XTHERION## xth_me_area_adjust -130.0 -130.0 2903.5 1349.5
 ##XTHERION## xth_me_area_zoom_to 200
 ##XTHERION## xth_me_image_insert {169.1704724409442 1 1.0} {1111.421811023622 6.11} PocketTopo/Swil20160709_WetWayOxbows_th_p.xvi 0 {}
 
@@ -432,6 +432,14 @@ line ceiling-step -clip off
   smooth off
 endline
 
+line floor-step
+  1248.75 1062.25
+  1255.5 1039.0 1256.0 1029.0 1264.5 1018.0
+  1273.0 1007.0 1286.5 993.5 1296.5 986.0
+  1306.5 978.5 1314.5 975.5 1323.0 961.0
+  1331.5 946.5 1336.5 936.5 1340.0 925.5
+endline
+
 line wall
   1248.75 1062.25
   1243.0 1070.0 1237.75 1075.75 1230.75 1082.75
@@ -700,7 +708,9 @@ line border -id l107-1687-770 -subtype invisible
   1690.75 739.0
 endline
 
-point 1941.5 582.5 label -text "Wet Way" -scale l
+point 1993.5 598.5 label -text "C3m" -scale s
+
+point 1831.0 612.5 label -text "Wet Way" -scale l
 
 line border -id l70-2260-935 -reverse on -subtype invisible
   2227.0 864.0

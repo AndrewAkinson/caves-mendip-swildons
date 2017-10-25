@@ -286,7 +286,7 @@ point 821.9306299212597 527.9176377952754 station -name 12.2
 
 point 847.5606299212596 560.9076377952754 station -name 12.1
 
-point 523.25 295.0 label -scale l -text "Butcombe Chamber"
+point 542.75 280.5 label -scale l -text "Butcombe Chamber<br>"
 
 line wall
   760.75 273.25
