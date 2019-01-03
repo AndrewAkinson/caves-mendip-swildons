@@ -40,6 +40,7 @@ map EntranceSeriesPlan -title "Swildons Hole - Entrance Series"
   WetWaySP2@Swildons
   WetWaySP1@Swildons
   OxbowJunctionSP4@OxbowJunction.Swildons
+  CisternDigSP1@CisternDig.Swildons
     break
   UpperOxbowSP4@Swildons
   UpperOxbowSP3@Swildons

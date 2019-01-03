@@ -3,7 +3,7 @@ survey LowerOxbow
 
   input Swil1P_LowerOxbow.th2
 
-    centreline
+  centreline
     copyright 2016 "Paul 'Footleg' Fretwell"
 
     date 2016.07.10

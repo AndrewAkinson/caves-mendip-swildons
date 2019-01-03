@@ -8,6 +8,7 @@ select EntranceSeriesPlan@SwildonsHole
 export map -projection plan -layout local -o Swildons_Ent-plan.pdf
 export map -projection [elevation 000] -layout local -o Swildons_Ent-elevEW.pdf
 export model -o swildons.lox
+export model -format vrml -o swildons.vrml
 
 layout local
     copy GB_Std
