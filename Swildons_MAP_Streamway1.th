@@ -9,5 +9,6 @@ encoding  utf-8
 
 map Streamway1Plan -title "Swildons 1 - Streamway"
   Old40to20SP2@Old40to20.Swildons
+  Old40to20SP3@Old40to20.Swildons
 endmap
 

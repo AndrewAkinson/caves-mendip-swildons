@@ -35,9 +35,10 @@ survey Swildons
   input Swildons_LowerOxbow.th
   input Swildons_CisternDig.th
   input Swildons_Old40to20.th
+  input Swildons_RollingThunder.th
 
   centreline
-    copyright 2017 "Paul 'Footleg' Fretwell"
+    copyright 2019 "Paul 'Footleg' Fretwell"
     
     cs OSGB:ST 
     station Ent "Swildons Hole" entrance
@@ -80,6 +81,7 @@ survey Swildons
     equate 12.27@ButcombeOxbows 16.0@LowerOxbow
     equate 12.30@ButcombeOxbows 11.18@WetWayOxbows
     equate 13.20@WaterChamber 16.16@LowerOxbow
+    equate 9.11@Old40Route 25.0@RollingThunder
     
   endcentreline
 endsurvey
