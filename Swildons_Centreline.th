@@ -36,6 +36,7 @@ survey Swildons
   input Swildons_CisternDig.th
   input Swildons_Old40to20.th
   input Swildons_RollingThunder.th
+  input Swildons_20ToBarnesLoop
 
   centreline
     copyright 2019 "Paul 'Footleg' Fretwell"
@@ -82,6 +83,7 @@ survey Swildons
     equate 12.30@ButcombeOxbows 11.18@WetWayOxbows
     equate 13.20@WaterChamber 16.16@LowerOxbow
     equate 9.11@Old40Route 25.0@RollingThunder
+    equate 17.24@Old40to20 21.0@20ftToBarnesLoop
     
   endcentreline
 endsurvey
