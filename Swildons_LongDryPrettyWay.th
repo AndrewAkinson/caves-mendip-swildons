@@ -1,8 +1,6 @@
 encoding  utf-8
 survey LongDryWay
 
-  input Swil1E_Ent-LongDryWay-WaterChamber.th2
-
   centreline
     copyright 2013 "Paul 'Footleg' Fretwell"
 

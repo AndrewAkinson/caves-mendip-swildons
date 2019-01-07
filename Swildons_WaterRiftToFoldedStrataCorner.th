@@ -1,8 +1,6 @@
 encoding  utf-8
 survey WaterRift
 
-  input Swil1P_WaterChamberToBelow40.th2
-
 centreline
   team "Tony 'Badger'/Radmall" notes           #PDA
   team "Paul Dold" instruments  #Gary Cullen DistoX
