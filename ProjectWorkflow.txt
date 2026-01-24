@@ -52,3 +52,4 @@ and drawings can be incorporated into the already processed data from the origin
 5) Take the .xvi sketch file which the previous step generated, and either rename it to replace the original .xvi file 
    or update the filename in the corresponding .th2 file to reference the new .xvi file.
 6) Reopen the .th2 file in the map editor to see the updated background sketch. The scraps can now be ammended.
+ 
