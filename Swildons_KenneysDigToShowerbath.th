@@ -1,6 +1,8 @@
 encoding  utf-8
 survey KenneysDigToShowerbath
 
+  input Swil1P_Kenneys-ShowerbathChamber.th2
+  
   centreline
     team "Tony 'Badger'/Radmall" notes
     team "Paul Dold" instruments

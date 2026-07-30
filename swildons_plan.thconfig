@@ -1,0 +1,33 @@
+encoding  utf-8
+input ../../gb_layout.thc
+
+source swildonsmaster.th
+
+select MasterPlan@SwildonsHole
+
+export map -projection plan -layout local -o Swildons_Hole-plan.pdf
+export model -o swildons.lox
+
+layout local
+    copy GB_Std
+
+    scale 1 500
+    base-scale 1 350
+
+    symbol-hide line survey
+    
+    #color by altitude (comment out this for b&w PDFs or for single colour filled passages)
+    color map-fg altitude
+	
+    #Single passage fill color (comment out this for b&w PDFs or for colour by altitude)
+	#color map-fg [50 50 50] # mid-grey
+	
+    #Map background fill color (comment these out for white background, or include one for background colour)
+	#color map-bg [97 86 38] # yellow brown
+	#color map-bg [75 75 75] # light-grey
+
+    #Comment out this for b&w PDFs. Include it for colour PDFs.
+    copy LayoutColourSymbols
+	
+    #debug on
+endlayout

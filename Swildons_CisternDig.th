@@ -1,5 +1,7 @@
 encoding  utf-8
 survey CisternDig
+  
+  input Swil1P_CisternDig.th2
 
   centreline
     copyright 2017 "Paul 'Footleg' Fretwell"

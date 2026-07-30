@@ -5,16 +5,25 @@ encoding  utf-8
 survey Swildons
 
   #Centreline data from Willie Stanton original survey 
-  input Swildons_WIS_notdup.th
+  input ../Swildons_WIS_notdup.th
   
-  #DistoX Resurvey data
-  input Swildons_ZigZags.th
+  #Data files which share a .th2 file (imported here too)
+  
+  input ../Swildons_ZigZags.th
   input Swildons_LongDryPrettyWay.th
-  input Swildons_NewGrottoes.th
-  input Swildons_OldGrottoToWaterChamber.th
-  input Swildons_InletOffOldGrottoToWaterChamber.th
-  input Swildons_WetWayOxbows.th
-  input Swildons_WetWayKeyhole.th
+  input ../Swildons_NewGrottoes.th
+  input ../Swildons_OldGrottoToWaterChamber.th
+  input ../Swildons_InletOffOldGrottoToWaterChamber.th
+  #Combined sketch for all 5 of the above
+  input Swil1P_Ent-OldGrotto-WaterChamber.th2
+  
+  input ../Swildons_WetWayOxbows.th
+  input ../Swildons_WetWayKeyhole.th
+  #Combined sketch for all 2 of the above
+  input Swil1P_WetWayOxbows.th2
+  
+  #The following data files import their respective sketches
+  #directly inside their sub-survey data blocks.
   input Swildons_ShortDryWay.th
   input Swildons_KenneysDigToShowerbath.th
   input Swildons_LowerEntAreaViaShowerbathToBaptism.th
