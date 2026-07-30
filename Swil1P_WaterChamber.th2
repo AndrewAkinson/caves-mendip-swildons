@@ -1,7 +1,7 @@
 encoding  utf-8
 ##XTHERION## xth_me_area_adjust -130.0 -138.5 2253.9842519685035 1039.0
 ##XTHERION## xth_me_area_zoom_to 200
-##XTHERION## xth_me_image_insert {910.1213385826768 1 1.0} {278.5076377952756 13.0} ../PocketTopo/Swil20160709_WaterChamber_th_p.xvi 0 {}
+##XTHERION## xth_me_image_insert {910.1213385826768 1 1.0} {278.5076377952756 13.0} PocketTopo/Swil20160709_WaterChamber_th_p.xvi 0 {}
 
 
 
