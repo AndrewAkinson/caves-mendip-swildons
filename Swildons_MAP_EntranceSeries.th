@@ -110,6 +110,7 @@ map EntranceSeriesSections -title "Swildons Hole - Entrance Series cross-section
   LowerOxbowXS@Swildons
   CisternDigXS@Swildons
   RollingThunderXS@Swildons
+  WetWayKeyholeXS@Swildons
 endmap
 
 map EntranceSeriesPlanSections -title "Swildons Hole - Entrance Series"

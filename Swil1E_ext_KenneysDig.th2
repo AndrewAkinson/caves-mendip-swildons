@@ -3188,24 +3188,24 @@ point 10.29 798.93 label -text "10.7" -scale xs
 
 point -84.81 887.72 label -text "10.7" -scale xs
 
-point 1000.00 1000.00 station -name 10.17@KenneysDigToShowerbath
-
-point 179.92 1162.99 station -name 10.1@KenneysDigToShowerbath
-
-point 169.69 644.09 station -name 10.9@KenneysDigToShowerbath
-
-point 182.68 979.92 station -name 10.5@KenneysDigToShowerbath
-
-point 190.16 1024.80 station -name 10.3@KenneysDigToShowerbath
-
-point 647.64 806.30 station -name 10.15@KenneysDigToShowerbath
-
-point -80.71 1003.94 station -name 10.4@KenneysDigToShowerbath
-
-point 482.28 631.89 station -name 10.12@KenneysDigToShowerbath
+point 152.76 1137.40 station -name 10.2@KenneysDigToShowerbath
 
 point 57.09 811.42 station -name 10.7@KenneysDigToShowerbath
 
-point 152.76 1137.40 station -name 10.2@KenneysDigToShowerbath
+point 482.28 631.89 station -name 10.12@KenneysDigToShowerbath
+
+point 179.92 1162.99 station -name 10.1@KenneysDigToShowerbath
+
+point 190.16 1024.80 station -name 10.3@KenneysDigToShowerbath
+
+point 182.68 979.92 station -name 10.5@KenneysDigToShowerbath
+
+point -80.71 1003.94 station -name 10.4@KenneysDigToShowerbath
+
+point 1000.00 1000.00 station -name 10.17@KenneysDigToShowerbath
+
+point 169.69 644.09 station -name 10.9@KenneysDigToShowerbath
+
+point 647.64 806.30 station -name 10.15@KenneysDigToShowerbath
 
 endscrap

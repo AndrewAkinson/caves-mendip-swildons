@@ -6,8 +6,8 @@ encoding  utf-8
 #  A planning sheet for continuing the resurvey: the drawn plan, plus
 #  Stanton's survey of everything beyond it (St Paul's, Paradise
 #  Regained, the Maypole Series, Double Trouble, Swildons 2) as
-#  centreline, with survey legs and station names throughout. Stanton's
-#  stations are where the resurvey can tie in.
+#  centreline, with the survey legs of both and station names
+#  throughout. Stanton's stations are where the resurvey can tie in.
 #
 #  A separate file because it is another plan map (Therion takes one
 #  selected map per projection per run). CI runs it with its own log.

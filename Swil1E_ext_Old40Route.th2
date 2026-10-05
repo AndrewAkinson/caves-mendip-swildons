@@ -2326,16 +2326,16 @@ point 1540.95 494.83 label -text "9.1" -scale xs
 
 point 1592.92 634.92 label -text "9.1" -scale xs
 
-point 1474.02 428.74 station -name 9.1@Old40Route
+point 1236.61 677.56 station -name 9.4@Old40Route
+
+point 1185.43 769.69 station -name 9.6@Old40Route
 
 point 1104.33 853.15 station -name 9.7@Old40Route
 
+point 1474.02 428.74 station -name 9.1@Old40Route
+
 point 1303.15 550.00 station -name 9.2@Old40Route
 
-point 1236.61 677.56 station -name 9.4@Old40Route
-
 point 1000.00 1000.00 station -name 9.8@Old40Route
-
-point 1185.43 769.69 station -name 9.6@Old40Route
 
 endscrap

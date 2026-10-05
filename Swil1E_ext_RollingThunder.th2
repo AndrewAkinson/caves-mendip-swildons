@@ -1084,14 +1084,14 @@ endline
 
 point 1179.11 136.32 section -scrap xs_RollingThunder_25_2
 
-point 1055.12 311.81 station -name 25.4@RollingThunder
+point 1043.31 143.31 station -name 25.2@RollingThunder
 
 point 1000.00 1000.00 station -name 25.12@RollingThunder
 
-point 1011.81 647.64 station -name 25.8@RollingThunder
+point 1055.12 311.81 station -name 25.4@RollingThunder
 
 point 1015.75 729.53 station -name 25.9@RollingThunder
 
-point 1043.31 143.31 station -name 25.2@RollingThunder
+point 1011.81 647.64 station -name 25.8@RollingThunder
 
 endscrap

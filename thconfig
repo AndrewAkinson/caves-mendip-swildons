@@ -136,16 +136,6 @@ layout elevation-sheet
   copy LayoutColourSymbols
 endlayout
 
-# A working sheet for resurveying: the drawn plan with the survey legs and
-# station names. Same scale as the plan; zoom into the PDF to read the names
-# (1:250 takes MetaPost over ten minutes).
-layout plan-centreline
-  copy plan-sheet
-  symbol-show line survey
-  debug station-names
-  survey-level 0
-endlayout
-
 # The streamway elevation is long and shallow (about 480 m unrolled,
 # 70 m deep), so it uses the plan's 1:500. It falls from left to right,
 # so the header goes in the empty space under the upstream end.
@@ -173,7 +163,6 @@ endlayout
 
 export map -projection plan            -layout plan-sheet      -o output/Swildons-plan.pdf
 export map -projection plan            -layout plan-bw         -o output/Swildons-plan-bw.pdf
-export map -projection plan            -layout plan-centreline -o output/Swildons-plan-centreline.pdf
 export map -projection [elevation 000] -layout elevation-sheet -o output/Swildons-entrance-elevation.pdf
 export map -projection extended        -layout streamway-elevation -o output/Swildons-streamway-elevation.pdf
 

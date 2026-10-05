@@ -21,6 +21,46 @@ survey SwildonsHole
     Streamway1Plan
   endmap
 
+  #The resurvey's survey legs. A map only draws the legs of the surveys
+  #listed in it, not of those its scraps attach to, so the working
+  #sheets add this to the drawn plan. Add each new trip's survey here.
+  map ResurveyCentreline -projection plan -title "Resurvey centreline"
+    20ftToBarnesLoop@Swildons
+    BarnesLoopToTratmans@Swildons
+    ButcombeOxbows@Swildons
+    CisternDig@Swildons
+    DblPotsDownstream@Swildons
+    InletOffOldGrottoToWaterChamber@Swildons
+    KenneysDigToShowerbath@Swildons
+    LongDryWay@Swildons
+    LowerOxbow@Swildons
+    NewGrottoes@Swildons
+    Old40Route@Swildons
+    Old40to20@Swildons
+    OldGrottoToWaterChamber@Swildons
+    OxbowJunction@Swildons
+    RollingThunder@Swildons
+    ShortDryWay@Swildons
+    ShowerbathArea@Swildons
+    TratmansToSump1@Swildons
+    WaterChamber@Swildons
+    WaterRift@Swildons
+    WetWayKeyhole@Swildons
+    WetWayOxbows@Swildons
+    ZigZags@Swildons
+  endmap
+
+  map PlanWithCentreline -title "Swildons Hole"
+    MasterPlan
+    ResurveyCentreline
+  endmap
+
+  #Extended elevation of everything drawn, from the entrance to Sump 1
+  map WholeCaveExtended -projection extended -title "Swildons Hole - extended elevation"
+    EntranceSeriesExtended
+    StreamwayElevation
+  endmap
+
   #W. I. Stanton's survey as centreline, for planning the resurvey beyond Sump 1
   map StantonCentreline -projection plan -title "W. I. Stanton's survey"
     wstanton@Swildons
@@ -28,6 +68,7 @@ survey SwildonsHole
 
   map PlanWithStanton -title "Swildons Hole - resurvey and W. I. Stanton's survey"
     MasterPlan
+    ResurveyCentreline
     StantonCentreline
   endmap
 endsurvey

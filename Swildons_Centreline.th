@@ -55,6 +55,7 @@ survey Swildons
   input Swil1E_ext_LowerOxbow.th2
   input Swil1E_ext_CisternDig.th2
   input Swil1E_ext_RollingThunder.th2
+  input Swil1E_ext_WetWayKeyhole.th2
 
   centreline
     copyright 2019 "Paul 'Footleg' Fretwell"

@@ -14,6 +14,7 @@ the latest sheets, rebuilt from this repository every time it changes.
 | Sheet | |
 |---|---|
 | [Plan](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan.pdf) | Entrance to Sump 1, coloured by altitude, with cross-sections along the streamway. 1:500. |
+| [Extended elevation](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-extended-elevation.pdf) | The whole drawn cave unrolled along its passages, entrance to Sump 1. 1:500. |
 | [Streamway elevation](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-streamway-elevation.pdf) | Extended elevation from the Old 40 to Sump 1, with Barnes Loop above the streamway. 1:500. |
 | [Entrance Series plan](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-entrance-plan.pdf) | The Entrance Series down to Rolling Thunder, with cross-sections. 1:200. |
 | [Entrance Series extended elevation](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-entrance-extended-elevation.pdf) | The Entrance Series unrolled along its passages. 1:200. |
@@ -95,11 +96,14 @@ underground:
   he did. An unrolled elevation can't close a loop, so where Therion
   breaks one differently from a sketch the sketch is split, and
   passages can show a gap or an overlap there. Barnes Loop is drawn
-  above the streamway as an oxbow.
+  above the streamway as an oxbow. In the side views Footleg drew
+  passages that overlap in other colours (the Wet Way in brown, the
+  upper oxbows in grey), so those are walls too.
 - **Which sketch:** the 2013 Entrance to Water Chamber side view comes
   from the original `.top` file, because the exported station list
   doesn't line up with its sketch. Wet Way Oxbows uses the January 2016
-  sketch, which lines up better than the July 2016 one. The 2017 Dry
+  sketch, which lines up better than the July 2016 one, except for the
+  Wet Way Keyhole, which only the July sketch has. The 2017 Dry
   Way Stream sketch isn't used: its stations aren't in the Therion
   survey.
 
@@ -142,7 +146,7 @@ survey hangs off the new data, and flag the legs it replaces
 | `PocketTopo/` | The original PocketTopo files and their exports. |
 | `WISLogbookTranscription/` | Scans and a transcription of Stanton's logbooks. |
 | `SwildonsHole.svx` | The data in Survex format. |
-| `thconfig`, `thconfig-entrance`, `thconfig-stanton`, `gb_layout.thc` | Build configs and Footleg's British symbol set. |
+| `thconfig`, `thconfig-entrance`, `thconfig-centreline`, `thconfig-stanton`, `gb_layout.thc` | Build configs and Footleg's British symbol set. |
 
 ### Building it yourself
 
@@ -157,12 +161,13 @@ therion() { docker run --rm -v "$PWD:/project" \
   ghcr.io/paperclipmonkey/therion:6.4.0 "$@"; }
 therion thconfig
 therion -l output/therion-entrance.log thconfig-entrance
+therion -l output/therion-centreline.log thconfig-centreline
 therion -l output/therion-stanton.log thconfig-stanton
 ```
 
 Or with Therion installed:
-`therion thconfig`, `therion thconfig-entrance` and
-`therion thconfig-stanton`. The sheets land in `output/`. The older
+`therion thconfig`, `therion thconfig-entrance`,
+`therion thconfig-centreline` and `therion thconfig-stanton`. The sheets land in `output/`. The older
 `swildons_*.thconfig` files from the SVN project still work and write
 into the project root.
 

@@ -26,4 +26,5 @@ map EntranceSeriesExtended -projection extended -title "Swildons Hole - Entrance
   CisternDigEE1@Swildons
   CisternDigEE2@Swildons
   RollingThunderEE1@Swildons
+  WetWayKeyholeEE1@Swildons
 endmap

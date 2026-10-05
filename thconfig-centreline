@@ -1,0 +1,66 @@
+encoding  utf-8
+# =====================================================================
+#  Swildons Hole -- the plan with the resurvey centreline, and the
+#  extended elevation of the whole cave, both 1:500
+# =====================================================================
+#
+#  The whole-cave elevation joins the Entrance Series and streamway
+#  elevations, entrance to Sump 1. It is here rather than in thconfig
+#  because that already has an extended map (the streamway's), and
+#  Therion takes one selected map per projection per run.
+#
+#  A working sheet for resurveying: the drawn plan with the resurvey's
+#  survey legs and station names. Zoom into the PDF to read the names
+#  (1:250 takes MetaPost over ten minutes).
+#
+#  A separate file because it is another plan map: a map only draws the
+#  legs of surveys listed in it, so this one is MasterPlan plus
+#  ResurveyCentreline (swildonsmaster.th), and Therion takes one selected
+#  map per projection per run. CI runs it with its own log.
+# ---------------------------------------------------------------------
+
+input gb_layout.thc
+
+source swildonsmaster.th
+
+select PlanWithCentreline@SwildonsHole
+select WholeCaveExtended@SwildonsHole
+
+layout plan-centreline
+  copy GB_Std
+
+  scale 1 500
+  base-scale 1 350
+
+  symbol-show line survey
+  debug station-names
+  survey-level 0
+
+  # Same place for the header as the main plan (thconfig).
+  map-header 40.5 26 nw
+  legend-columns 4
+  legend-width 26 cm
+
+  color map-fg altitude
+  copy LayoutColourSymbols
+endlayout
+
+# A long, shallow sheet: the header goes underneath it.
+layout whole-elevation
+  copy GB_Std
+
+  scale 1 500
+  base-scale 1 350
+
+  symbol-hide line survey
+
+  map-header 0 0 nw
+  legend-columns 6
+  legend-width 34 cm
+
+  color map-fg altitude
+  copy LayoutColourSymbols
+endlayout
+
+export map -projection extended -layout whole-elevation -o output/Swildons-extended-elevation.pdf
+export map -projection plan -layout plan-centreline -o output/Swildons-plan-centreline.pdf

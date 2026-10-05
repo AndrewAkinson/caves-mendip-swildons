@@ -2339,12 +2339,12 @@ point 1699.98 823.90 label -text "8.3" -scale xs
 
 point 1557.89 470.66 label -text "8.3" -scale xs
 
-point 1670.87 740.55 station -name 8.3@WaterRift
-
-point 1427.56 918.11 station -name 8.6@WaterRift
+point 1004.72 827.17 station -name 8.14@WaterRift
 
 point 1000.00 1000.00 station -name 8.13@WaterRift
 
-point 1004.72 827.17 station -name 8.14@WaterRift
+point 1427.56 918.11 station -name 8.6@WaterRift
+
+point 1670.87 740.55 station -name 8.3@WaterRift
 
 endscrap

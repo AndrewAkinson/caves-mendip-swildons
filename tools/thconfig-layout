@@ -1,0 +1,23 @@
+encoding  utf-8
+# =====================================================================
+#  Therion's station layout, for the sketch conversion tools
+# =====================================================================
+#
+#  Exports where Therion puts every station in plan and in the extended
+#  elevation, as XVI files. tools/sketch2therion reads them to fit
+#  sketches onto the survey. Rerun it after adding or changing survey
+#  data (a new trip, equates, extend flags):
+#
+#    therion -l output/therion-layout.log tools/thconfig-layout
+#
+#  from the top of the repository (see tools/README.md).
+# ---------------------------------------------------------------------
+
+source ../swildonsmaster.th
+source layout.th
+
+select LayoutPlan
+select LayoutExtended
+
+export map -projection plan     -fmt xvi -o ../output/layout-plan.xvi
+export map -projection extended -fmt xvi -o ../output/layout-extended.xvi
