@@ -37,17 +37,37 @@ waypoints = ["1.0@ZigZags", "2.33@LongDryWay", "2.59@LongDryWay",
 # Optional:
 avoid = ["11.13@WetWayOxbows"]   # stations the route must not use
 visit = ["13.13@WaterChamber"]   # dead ends to go into and back out of
+min_branch = 8                    # side passages shorter than this (m) aren't decisions (default 4)
 way_out = true                    # also make a card for the route backwards
 way_out_title = "The way out from Sump 1"
 way_out_subtitle = "..."
 way_out_description = """..."""
 
-# Your own words at a junction, added to the worked-out directions
-# (or a point of interest where there's no junction):
-[[note]]
-at = "2.5@LongDryWay"
-title = "Top of the Long Dry Way"
-text = "The squeeze on the left is tight; the way on is the climb up on the right."
+# Settings for single decisions, by the station they're at (shown on each
+# close-up as "stn 2.33"). These tables go at the END of the file: in
+# TOML everything after a [[decision]] line belongs to it.
+
+[[decision]]
+at = "1.21@ZigZags"
+skip = true                       # obvious: leave it off the card
+
+[[decision]]
+at = "2.33@LongDryWay"
+width = 40                        # metres across the close-up (default about 23)
+title = "Boulder Chamber"         # instead of the nearest passage name
+directions = "Go left over the boulders."   # instead of the worked-out words
+text = "Low and wet in flood."    # an extra note under the directions
+photo = "photos/boulder-chamber.jpg"        # relative to this file
+caption = "Looking into Boulder Chamber from the Long Dry Way"
+
+# At a station with no junction, a [[decision]] with text or a photo
+# adds a point of interest to the card.
+[[decision]]
+at = "2.45@LongDryWay"
+title = "The Pretty Way"
+photo = "photos/pretty-way.jpg"
+
+# [[way_out_decision]] does the same for the reversed card.
 ```
 
 Station names are `station@survey`, as in the centreline sheet
@@ -66,6 +86,24 @@ The directions are worked out from the plan geometry and the heights:
 They describe the survey's geometry, which isn't always how the
 passage feels, so treat them as a draft. Rewrite them with `[[note]]`
 where they're wrong.
+
+## Photos
+
+Put them in `routes/photos/` and point a `[[decision]]` at them. They
+are built into the card itself, so each card is one file that works
+offline on a phone. Keep them small: about 1600 pixels across, a few
+hundred kB (the build warns over 1.5 MB). A photo taken looking the way
+to go helps most.
+
+## Phone and print
+
+Each card is one HTML file and a PDF.
+
+- **Printed**, it is an A3 sheet. A4 also works, at a smaller scale.
+- **On a phone**, the same HTML file stacks into one column with
+  full-width maps. Tapping a number on the map jumps to its close-up.
+  Copy the `.html` file to the phone before the trip. It needs no
+  signal, apart from the web fonts, which fall back to the phone's own.
 
 ## Building them
 

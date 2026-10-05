@@ -60,21 +60,41 @@ def card(route_def, s, base, path):
     route = Route(s, nodes)
     st = route.stats()
     places = route.places()
-    decs = route.decisions()
+    decs = route.decisions(min_branch=route_def.get('min_branch', 4.0))
     groups = group_decisions(route, decs)
-    notes = route_def.get('note', [])
-    for nt in notes:            # attach hand-written notes to the nearest close-up
-        k = s.node(nt['at'])
+    # Your own settings for decisions: skip one, zoom its close-up, give it a
+    # title, words or a photo, or add a point of interest where there's no
+    # junction. [[note]] is the older name for the same thing.
+    base_dir = route_def.get('_dir', 'routes')
+    for d in route_def.get('decision', []) + route_def.get('note', []):
+        k = s.node(d['at'])
         p = s.pos[k][:2]
-        g = min(groups, key=lambda g: math.dist(g['xy'], p), default=None)
-        if g and math.dist(g['xy'], p) < 8:
-            g.setdefault('notes', []).append(nt['text'])
-            if nt.get('title'):
-                g['title'] = nt['title']
-        else:
+        g = next((g for g in groups if any(route.nodes[i] == k for i, _ in g['passes'])), None)
+        if g is None:
+            near = min(groups, key=lambda g: math.dist(g['xy'], p), default=None)
+            if near and math.dist(near['xy'], p) < 8:
+                g = near
+        if d.get('skip'):
+            if g is None:
+                print(f"  warning: no decision at {d['at']} to skip")
+            else:
+                groups.remove(g)
+            continue
+        if g is None:
+            if not (d.get('text') or d.get('photo') or d.get('directions')):
+                print(f"  warning: no decision at {d['at']}")
+                continue
             i = route.nodes.index(k) if k in route.nodes else min(
                 range(len(route.nodes)), key=lambda j: math.dist(route.xy(j), p))
-            groups.append({'xy': p, 'passes': [(i, [])], 'notes': [nt['text']], 'title': nt.get('title'), 'info': True})
+            g = {'xy': p, 'passes': [(i, [])], 'info': True}
+            groups.append(g)
+        if d.get('text'):
+            g.setdefault('notes', []).append(d['text'])
+        for key in ('title', 'width', 'directions', 'caption'):
+            if d.get(key):
+                g[key] = d[key]
+        if d.get('photo'):
+            g['photo'] = R.photo_uri(os.path.join(base_dir, d['photo']))
     groups.sort(key=lambda g: min(route.chain[i] for i, _ in g['passes']))
     for n, g in enumerate(groups, 1):
         g['num'] = n
@@ -98,14 +118,14 @@ def card(route_def, s, base, path):
     lane = 0.55
     o = [R.route_layer(view, pts, 1.5 if not wide else 1.2, 10, lane)]
     for g in groups:
-        o.append(R.badge(view, base.to_svg(g['xy']), g['num'], 2.4 if not wide else 2.1))
+        o.append(f'<a href="#d{g["num"]}">' + R.badge(view, base.to_svg(g['xy']), g['num'], 2.4 if not wide else 2.1) + '</a>')
     start = base.to_svg(route.xy(0))
     end = base.to_svg(route.xy(len(nodes) - 1))
     o.append(R.flag(view, start, 'start'))
     if not st['loop']:
         o.append(R.flag(view, end, 'finish'))
     ov_svg = view.svg("".join(o)).replace(f'width="{ov_w}mm" height="{ov_h}mm"', 'width="100%" height="100%"')
-    overview = f'<div class="overview">{ov_svg}{R.NORTH}{R.scalebar(view)}</div>'
+    overview = f'<div class="overview" style="--ar:{ov_w}/{ov_h}">{ov_svg}{R.NORTH}{R.scalebar(view)}</div>'
 
     # ---- where in the cave: the whole drawn cave, the route and this map's frame ----
     drawn = [s.pos[k][:2] for k in s.pos if s.adj[k]]
@@ -128,8 +148,9 @@ def card(route_def, s, base, path):
     for g in shown:
         first = route.nodes[g['passes'][0][0]]
         g['survey_notes'] = [t for t in s.notes_near(first, 6)]
-        g['text'] = ([route.instruction(i, alts) for i, alts in g['passes'] if not g.get('info')]
-                     + g.get('notes', []) + g['survey_notes'])
+        g['text'] = ([g['directions']] if g.get('directions') else
+                     [route.instruction(i, alts) for i, alts in g['passes'] if not g.get('info')]) \
+            + g.get('notes', []) + g['survey_notes'] + ([g['caption']] if g.get('caption') else [])
 
     def text_mm(g):
         lines = sum(math.ceil((len(t) + 14) / L['chars']) for t in g["text"])
@@ -140,7 +161,7 @@ def card(route_def, s, base, path):
         rest = groups[len(shown):]
         rest_mm = sum(3.5 * math.ceil((len(route.instruction(*g['passes'][0])) + 4) / (L['chars'] * 2.1)) for g in rest)
         avail = L['area'] - rest_mm - 2.6 * len(rows) - sum(max(text_mm(g) for g in r) for r in rows)
-        ph = avail / max(1, len(rows))
+        ph = avail / max(1, sum(2 if any(g.get('photo') for g in r) else 1 for r in rows))
         if ph >= 18 or len(shown) <= 2:
             break
         shown = shown[:-1]
@@ -149,7 +170,7 @@ def card(route_def, s, base, path):
     L['maxn'] = len(shown)
     pulls = []
     for g in shown:
-        cv = R.View(base, g['xy'], 24 * pw / 72, pw, round(ph))
+        cv = R.View(base, g['xy'], g.get('width', 24 * pw / 72), pw, round(ph))
         layer = [R.route_layer(cv, pts, 1.9, 7, lane)]
         lines = []
         for i, alts in g['passes']:
@@ -167,7 +188,7 @@ def card(route_def, s, base, path):
             ahead = [base.to_svg(route.point_at(route.chain[i] + d)[:2]) for d in (2.5, 4.0)]
             ahead = R.offset(ahead, cv.k * lane)
             layer.append(R.arrowhead(cv, ahead, 1.9))
-            if not g.get('info'):
+            if not g.get('info') and not g.get('directions'):
                 pass_label = ''
                 if len(g['passes']) > 1:
                     pass_label = f'<span class="pass">{["1st", "2nd", "3rd", "4th"][min(3, g["passes"].index((i, alts)))]} time:</span> '
@@ -180,9 +201,15 @@ def card(route_def, s, base, path):
             where = f"Near {near}" if near else "Junction"
         dists = ", ".join(f"{route.chain[i]:.0f} m" for i, _ in g['passes'])
         stn = s.name(first).split('@')[0]
+        if g.get('directions'):
+            lines.append(f'<div>{R.esc(g["directions"])}</div>')
         notes_html = "".join(f'<div class="note">{R.esc(t)}</div>' for t in g.get('notes', []))
         notes_html += "".join(f'<div class="note">On the survey: “{R.esc(t)}”</div>' for t in g['survey_notes'])
-        pulls.append(f'<div class="pull">{cv.svg("".join(layer))}<div class="txt"><div class="head">'
+        photo = ''
+        if g.get('photo'):
+            cap = f'<figcaption>{R.esc(g["caption"])}</figcaption>' if g.get('caption') else ''
+            photo = f'<figure class="photo" style="--ph:{ph:.1f}mm"><img src="{g["photo"]}" alt="{R.esc(g.get("caption", where))}">{cap}</figure>'
+        pulls.append(f'<div class="pull" id="d{g["num"]}" style="--ar:{pw}/{max(20, round(ph))}">{cv.svg("".join(layer))}{photo}<div class="txt"><div class="head">'
                      f'<span class="num">{g["num"]}</span><span class="where">{R.esc(where)}</span>'
                      f'<span class="dist">{dists} · stn {R.esc(stn)}</span></div>{"".join(lines)}{notes_html}</div></div>')
     more = ''
@@ -201,7 +228,7 @@ def card(route_def, s, base, path):
              (f"{len(groups)}", "decisions to make")]
     num = re.match(r'(\d+)', slug(path))
     date = datetime.date.today().isoformat()
-    page = f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{R.esc(route_def["title"])} · Swildons Hole route card</title>
+    page = f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>{R.esc(route_def["title"])} · Swildons Hole route card</title>
 {R.FONTS}<style>{R.CSS}</style></head><body>
 <svg class="basemap" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">{base.inner.replace(' id="root"', ' id="basemap-root"', 1)}</svg>
 <div class="sheet{' wide' if wide else ''}">
@@ -259,10 +286,11 @@ def main(argv=None):
     index = []
     for path in a.routes or sorted(glob.glob('routes/*.toml')):
         rd = tomllib.load(open(path, 'rb'))
+        rd['_dir'] = os.path.dirname(os.path.abspath(path))
         cards = [(slug(path), rd)]
         if rd.get('way_out'):
             # the same route backwards, with its own directions
-            back = dict(rd, waypoints=rd['waypoints'][::-1], note=[],
+            back = dict(rd, waypoints=rd['waypoints'][::-1], note=[], decision=rd.get('way_out_decision', []),
                         title=rd.get('way_out_title', 'The way out: ' + rd['title']),
                         subtitle=rd.get('way_out_subtitle', 'The same route in reverse, back to the start'),
                         description=rd.get('way_out_description', rd.get('description', '')))

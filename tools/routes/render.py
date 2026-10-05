@@ -34,6 +34,18 @@ def esc(t):
     return html.escape(str(t), quote=True)
 
 
+def photo_uri(path):
+    """A photo as a data: URI, so the card is one self-contained file (it works
+    offline on a phone underground). Keep photos to a few hundred kB."""
+    import base64
+    import mimetypes
+    mime = mimetypes.guess_type(path)[0] or 'image/jpeg'
+    data = open(path, 'rb').read()
+    if len(data) > 1_500_000:
+        print(f"  warning: {path} is {len(data) // 1000} kB; resize it to about 1600 px wide")
+    return f"data:{mime};base64," + base64.b64encode(data).decode()
+
+
 def chaikin(pts, n=2):
     for _ in range(n):
         if len(pts) < 3:
@@ -333,6 +345,41 @@ footer { grid-column: 1 / 3; display: grid; grid-template-columns: auto 1fr; ali
 .sheet.wide aside { grid-row: 4; grid-column: 1; grid-template-columns: repeat(6, 1fr); }
 .sheet.wide aside h2 { grid-column: 1 / 7; }
 .sheet.wide .more { grid-column: 1 / 7; }
+.photo { margin: 0; position: relative; border-bottom: 0.3mm solid #e2ded5; }
+.photo img { display: block; width: 100%; height: var(--ph, 40mm); object-fit: cover; }
+.photo figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 0.8mm 2mm; font-size: 2.4mm;
+                    color: #fff; background: linear-gradient(transparent, rgba(0,0,0,0.65)); }
+.overview a, .pull a { cursor: pointer; }
+
+/* On a phone (or any narrow screen): one column, maps full width, tap a number
+   on the map to jump to its close-up. Printing keeps the A3 sheet. */
+@media screen and (max-width: 1100px) {
+  html, body { width: auto; height: auto; }
+  body { font-size: 16px; }
+  .sheet, .sheet.wide { display: block; width: auto; height: auto; padding: 14px; }
+  header { display: block; padding-bottom: 12px; }
+  h1 { font-size: 30px; }
+  .kicker { font-size: 12px; } .subtitle { font-size: 17px; } .desc { font-size: 15px; } .via { font-size: 13px; }
+  .sheet * { min-width: 0; max-width: 100%; }
+  .side { display: block; margin-top: 12px; }
+  .locator { display: block; } .locator .map { width: 100%; height: auto; aspect-ratio: 92 / 30; }
+  .stats { grid-template-columns: repeat(2, 1fr); width: 100%; gap: 6px; margin-top: 8px; }
+  .stat { padding: 6px 8px; } .stat b { font-size: 20px; } .stat span { font-size: 10px; }
+  .overview { margin-top: 12px; aspect-ratio: var(--ar); height: auto; }
+  .profilebox { margin-top: 10px; } .profilebox svg { width: 100%; height: auto; }
+  aside, .sheet.wide aside { display: block; margin-top: 16px; }
+  aside h2 { font-size: 13px; margin-bottom: 8px; }
+  .pull { margin-bottom: 14px; scroll-margin-top: 10px; }
+  .pull .map { width: 100%; height: auto; aspect-ratio: var(--ar, 16 / 10); }
+  .photo img { height: auto; max-height: 70vh; }
+  .photo figcaption { font-size: 13px; padding: 6px 10px; }
+  .pull .txt { font-size: 15px; padding: 8px 10px 10px; }
+  .num { width: 24px; height: 24px; font-size: 13px; } .pull .where { font-size: 16px; } .pull .dist { font-size: 11px; }
+  .more { font-size: 14px; }
+  footer { display: block; font-size: 12px; margin-top: 10px; } .legend { flex-wrap: wrap; white-space: normal; gap: 10px; }
+  .legend span { white-space: normal; }
+  .credit { text-align: left; margin-top: 8px; }
+}
 .basemap { position: absolute; width: 0; height: 0; overflow: hidden; }
 '''
 

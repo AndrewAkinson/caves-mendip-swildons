@@ -6,4 +6,7 @@ Lavatory Pan, to the Water Chamber, and back up through Old Grotto and
 the Long Dry Way. The Wet Way carries the stream: it is the part of the
 entrance series that floods.
 """
+# Side passages shorter than this (metres) are not counted as decisions
+min_branch = 8
+
 waypoints = ["1.0@ZigZags", "11.12@WetWayOxbows", "13.18@WaterChamber", "6.2@OldGrottoToWaterChamber", "2.33@LongDryWay", "1.0@ZigZags"]

@@ -6,6 +6,9 @@ Follow the stream down from the bottom of the Old 40: Folded Strata, the
 Tratman's Temple to Sump 1. The route ends at the dive-line bolt; going
 further means diving the sump.
 """
+# Side passages shorter than this (metres) are not counted as decisions
+min_branch = 8
+
 waypoints = ["9.11@Old40Route", "21.0@20ftToBarnesLoop", "22.9@DblPotsDownstream", "24.0@TratmansToSump1", "24.33@TratmansToSump1"]
 
 # Also make a card for the same route backwards
@@ -15,3 +18,8 @@ way_out_subtitle = "Back up the streamway from Sump 1 to the bottom of the Old 4
 way_out_description = """
 From Sump 1 back up the streamway: through Tratman's Temple, past Barnes Loop, up Double Pots and the 20ft Pot to the bottom of the Old 40.
 """
+
+# The first junction has four ways off it: show more around it
+[[decision]]
+at = "17.0@Old40to20"
+width = 40
