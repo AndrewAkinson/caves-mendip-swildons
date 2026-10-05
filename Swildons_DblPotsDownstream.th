@@ -3,6 +3,8 @@ survey DblPotsDownstream
 
   #Double Pots downstream through Barnes Loop
 
+  input Swil1P_DblPotsDownstream.th2
+
   centreline
     copyright 2017 "Paul 'Footleg' Fretwell"
 

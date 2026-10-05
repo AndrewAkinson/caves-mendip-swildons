@@ -41,14 +41,20 @@ everything beyond it (St Paul's, Paradise Regained, Swildons 2 and
 more). Where the resurvey has replaced a Stanton section (the streamway
 from the Forty to Sump 1, `swildons1-c/d/e.th`), his legs are flagged
 `duplicate`: they still connect the rest of his survey but are not
-counted in the length. The **drawn plan** covers the Entrance Series, Rolling Thunder,
-and the streamway from the Old 40 down past Barnes Loop to the lip of
-the first of the Double Pots (station 21.25). Below the 20 ft pot,
+counted in the length.
+
+The **drawn plan** covers the whole resurvey: the Entrance Series,
+Rolling Thunder, and the streamway from the Old 40 down past Barnes
+Loop and Tratman's Temple to Sump 1. Below the 20 ft pot,
 `StreamwaySP1` in `Swil1P_20toBarnesLoop.th2` is Footleg's drawing as
-far as station 21.9; `StreamwaySP2` carries on from there and is the
-walls of his 2017 PocketTopo sketch converted as drawn, with no pools,
-formations or floor detail yet — it is the next scrap to tidy up in
-xTherion. The **Entrance Series elevation** is only partly drawn.
+far as station 21.9. From there to Sump 1 (`StreamwaySP2`, and the
+`Swil1P_DblPotsDownstream`, `Swil1P_BarnesLoopToTratmans` and
+`Swil1P_TratmansToSump1` drawings) the walls are his PocketTopo plan
+sketches converted as drawn: black lines, plus brown for upper-level
+edges. They have no water, formations, floor detail or labels yet, and
+are the next scraps to tidy up in xTherion. Each trip's PocketTopo
+backdrop (`PocketTopo/*_th_p.xvi`) is there to draw over. The
+**Entrance Series elevation** is only partly drawn.
 
 ## Building it yourself
 

@@ -3,6 +3,8 @@ survey BarnesLoopToTratmans
 
   #Barnes Loop to the climb up into Tratman's Temple
 
+  input Swil1P_BarnesLoopToTratmans.th2
+
   centreline
     copyright 2017 "Paul 'Footleg' Fretwell"
 

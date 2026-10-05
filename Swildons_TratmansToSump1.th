@@ -3,6 +3,8 @@ survey TratmansToSump1
 
   #Tratman's Temple to Sump 1. Each leg was shot three times each way; these are the means
 
+  input Swil1P_TratmansToSump1.th2
+
   centreline
     copyright 2019 "Paul 'Footleg' Fretwell"
 
