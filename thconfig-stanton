@@ -1,0 +1,42 @@
+encoding  utf-8
+# =====================================================================
+#  Swildons Hole -- resurvey plan with W. I. Stanton's survey, 1:500
+# =====================================================================
+#
+#  A planning sheet for continuing the resurvey: the drawn plan, plus
+#  Stanton's survey of everything beyond it (St Paul's, Paradise
+#  Regained, the Maypole Series, Double Trouble, Swildons 2) as
+#  centreline, with survey legs and station names throughout. Stanton's
+#  stations are where the resurvey can tie in.
+#
+#  A separate file because it is another plan map (Therion takes one
+#  selected map per projection per run). CI runs it with its own log.
+# ---------------------------------------------------------------------
+
+input gb_layout.thc
+
+source swildonsmaster.th
+
+select PlanWithStanton@SwildonsHole
+
+layout stanton-sheet
+  copy GB_Std
+
+  scale 1 500
+  base-scale 1 350
+
+  symbol-show line survey
+  debug station-names
+  survey-level 0
+
+  # Stanton's survey spreads south-west into Swildons 2, leaving the
+  # bottom right of the sheet empty for the title and legend.
+  map-header 62 3 sw
+  legend-columns 4
+  legend-width 26 cm
+
+  color map-fg altitude
+  copy LayoutColourSymbols
+endlayout
+
+export map -projection plan -layout stanton-sheet -o output/Swildons-plan-with-stanton.pdf

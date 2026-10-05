@@ -19,6 +19,8 @@ the latest sheets, rebuilt from this repository every time it changes.
 | [Entrance Series extended elevation](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-entrance-extended-elevation.pdf) | The Entrance Series unrolled along its passages. 1:200. |
 | [Entrance Series east–west elevation](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-entrance-elevation.pdf) | Footleg's projected elevation, only partly drawn. 1:200. |
 | [Plan, greyscale](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan-bw.pdf) | For a black-and-white printer. |
+| [Plan with centreline](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan-centreline.pdf) | The plan with survey legs and station names, for resurveying. 1:500. |
+| [Plan with Stanton's survey](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan-with-stanton.pdf) | The plan plus Stanton's survey beyond it as centreline, with station names, for planning where to resurvey next. 1:500. |
 
 The survey site also has the 3D model (Survex `.3d` for Aven, Therion
 `.lox` for Loch), Google Earth `.kml` files and the survey data as CSV
@@ -105,6 +107,27 @@ They are faithful to the sketches but not hand-finished. Each trip's
 sketch is in `PocketTopo/` as an `.xvi` backdrop for anyone who wants
 to refine the drawings in xTherion.
 
+## Picking up the resurvey
+
+The [plan with Stanton's survey](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan-with-stanton.pdf)
+shows where the resurvey stops and what Stanton surveyed beyond it,
+with station names for both. The resurvey reaches:
+
+- **Sump 1:** station 24.33, the bolt for the free-dive line. Beyond it
+  only Stanton's Swildons 2 survey exists (`swildons2-a` to `-e.th`,
+  starting from his station B1 at the entrance to the "P.G." passage,
+  which is about 11 m from 24.28 on the current layout).
+- **Tratman's Temple:** Stanton's St Paul's survey (`swildons1-f.th`)
+  starts at his station AL, "below Trats Grotto", about 3 m from 24.2.
+  Damascus, Paradise Regained, the Maypole Series and Double Trouble
+  (`swildons1-g` and `-j` to `-o.th`) hang off it.
+
+Stanton's survey is placed by his own measurements from the Forty, so
+near the resurvey it is a few metres out. When a new trip reaches one of
+his stations, equate it in `Swildons_Centreline.th` so the rest of his
+survey hangs off the new data, and flag the legs it replaces
+`duplicate`, as `swildons1-c/d/e.th` are.
+
 ## Working on the survey
 
 **`ProjectWorkflow.txt` explains how new survey trips are added.**
@@ -119,7 +142,7 @@ to refine the drawings in xTherion.
 | `PocketTopo/` | The original PocketTopo files and their exports. |
 | `WISLogbookTranscription/` | Scans and a transcription of Stanton's logbooks. |
 | `SwildonsHole.svx` | The data in Survex format. |
-| `thconfig`, `thconfig-entrance`, `gb_layout.thc` | Build configs and Footleg's British symbol set. |
+| `thconfig`, `thconfig-entrance`, `thconfig-stanton`, `gb_layout.thc` | Build configs and Footleg's British symbol set. |
 
 ### Building it yourself
 
@@ -134,10 +157,12 @@ therion() { docker run --rm -v "$PWD:/project" \
   ghcr.io/paperclipmonkey/therion:6.4.0 "$@"; }
 therion thconfig
 therion -l output/therion-entrance.log thconfig-entrance
+therion -l output/therion-stanton.log thconfig-stanton
 ```
 
-Or with Therion installed: `therion thconfig` and
-`therion thconfig-entrance`. The sheets land in `output/`. The older
+Or with Therion installed:
+`therion thconfig`, `therion thconfig-entrance` and
+`therion thconfig-stanton`. The sheets land in `output/`. The older
 `swildons_*.thconfig` files from the SVN project still work and write
 into the project root.
 

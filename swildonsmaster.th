@@ -20,5 +20,15 @@ survey SwildonsHole
     EntranceSeriesPlan
     Streamway1Plan
   endmap
+
+  #W. I. Stanton's survey as centreline, for planning the resurvey beyond Sump 1
+  map StantonCentreline -projection plan -title "W. I. Stanton's survey"
+    wstanton@Swildons
+  endmap
+
+  map PlanWithStanton -title "Swildons Hole - resurvey and W. I. Stanton's survey"
+    MasterPlan
+    StantonCentreline
+  endmap
 endsurvey
 

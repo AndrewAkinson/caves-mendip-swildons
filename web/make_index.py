@@ -32,6 +32,8 @@ SHEETS = [
     ("Swildons-entrance-extended-elevation.pdf", "Entrance Series extended elevation", "The Entrance Series unrolled along its passages. Scale 1:200."),
     ("Swildons-entrance-elevation.pdf", "Entrance Series east-west elevation", "Footleg's projected elevation; only partly drawn so far. Scale 1:200."),
     ("Swildons-plan-bw.pdf",            "Plan, greyscale",          "Same drawing, for a black-and-white printer."),
+    ("Swildons-plan-centreline.pdf",    "Plan with centreline",     "The plan with survey legs and station names, for resurveying. Scale 1:500."),
+    ("Swildons-plan-with-stanton.pdf",  "Plan with Stanton's survey", "The plan plus W. I. Stanton's survey beyond it as centreline, with station names, for planning the resurvey. Scale 1:500."),
 ]
 
 DATA = [

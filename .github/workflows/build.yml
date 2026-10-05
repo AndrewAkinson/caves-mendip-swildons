@@ -59,9 +59,10 @@ jobs:
       # --user maps the container's root output back to the runner user
       # so later steps can read and upload it.
       #
-      # Two configs: thconfig is the whole cave, thconfig-entrance the
-      # Entrance Series plan at a larger scale (Therion takes one map per
-      # projection per run). The second gets its own log so therion.log
+      # Three configs, because Therion takes one map per projection per
+      # run: thconfig is the whole cave, thconfig-entrance the Entrance
+      # Series at 1:200, thconfig-stanton the planning sheet with
+      # Stanton's survey. The others get their own logs so therion.log
       # stays the main build's, which web/make_index.py reads.
       - name: Build with Therion
         run: |
@@ -75,11 +76,12 @@ jobs:
           }
           therion thconfig
           therion -l output/therion-entrance.log thconfig-entrance
+          therion -l output/therion-stanton.log thconfig-stanton
 
       - name: Fail if Therion logged an error
         run: |
           status=0
-          for log in therion.log output/therion-entrance.log; do
+          for log in therion.log output/therion-entrance.log output/therion-stanton.log; do
             if grep -qE "^therion: error" "$log"; then
               echo "::error::Therion reported an error in $log"
               grep -nE "^therion: (error|warning)" "$log"
@@ -89,9 +91,9 @@ jobs:
           # Warnings are worth surfacing but not worth failing on. The
           # drawings currently give a handful of "scrap outline
           # intersects itself" warnings from MetaPost.
-          if grep -qiE "warning" therion.log output/therion-entrance.log; then
+          if grep -qiE "warning" therion.log output/therion-entrance.log output/therion-stanton.log; then
             echo "::group::Therion warnings"
-            grep -inE "warning" therion.log output/therion-entrance.log | sort -u
+            grep -inE "warning" therion.log output/therion-entrance.log output/therion-stanton.log | sort -u
             echo "::endgroup::"
           fi
           exit $status
