@@ -1,5 +1,5 @@
 encoding  utf-8
-input ../gb_layout.thc
+input gb_layout.thc
 
 source swildonsmaster.th
 

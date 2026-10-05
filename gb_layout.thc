@@ -1,0 +1,312 @@
+# British Symbol Set for Therion. Developed by Footleg, from a set of examples 
+# by Bruce Mutton taken from the Therion wiki.
+
+layout GB_Std
+
+    #type of used symbol sets SKBB/UIS/ASF/AUT/CCNP
+    #setting this over-rides the metacode symbol swap done above!
+    #symbol-set AUT
+
+  scale-bar 100 m  
+  grid-size 100 100 100 metres  # coordinate grid
+
+  #Adopt passage slope 'fat triangle arrows' in favour of default skinny arrows
+  #symbol-assign line gradient BCRA
+  #symbol-assign point gradient BCRA
+
+    #resolution of final map
+    scale 1 500
+    
+    #position of header
+    #map-header 20 20 e
+    
+    #transparency on
+    #opacity 70
+    
+    # names of persons which surveyed the cave will be added how much they surveyed
+    #statistics topo-length on
+    
+    # the language of legends in map
+    #language en_UK
+    
+    #show the legend
+    legend on
+      
+    #don't display survey centreline
+    #symbol-hide group cave-centreline
+	
+    #hide line survey symbol
+    #symbol-hide line survey
+
+    #hide passage height symbol
+    symbol-hide point passage-height
+
+	copy CustomisedSymbols
+	
+	copy WaterShading #Required for colour and b&w shading and colouuring of water fills and symbols
+	
+endlayout
+
+layout WaterShading
+  #Patterns similar to standard definition of pattern_water_UIS and pattern_sump_UIS
+  #Gives b&w shaded symbols with borders, unless custom colours are defined
+  #in which case colour backgrounds defined in LayoutColourSymbols are used
+  code metapost
+  beginpattern(pattern_water);
+      draw origin--10up withpen pensquare scaled (0.03u); % line thickness
+      patternxstep(.3u);                                 % spacing
+      patterntransform(identity rotated 45);
+  endpattern;
+  
+  beginpattern(pattern_sump);
+      draw origin--(0,.3u) withpen pensquare scaled (0.03u);
+      draw origin--(.3u,0) withpen pensquare scaled (0.03u);
+      patterntransform(identity rotated 45);	
+  endpattern;
+  
+  def p_water (expr pos,theta,sc,al)=
+  %Bruce Mutton 2010.06.20 for Therion 5.3.8
+      U:=(.425u,.3u);
+      T:=identity aligned al rotated theta scaled sc shifted pos;
+      pickup PenD;
+      p:=fullcircle xscaled (1.2u) yscaled (0.8u) randomized (0.1u) rotated uniformdeviate (-45);
+      if known colour_water_bg: thfill p withcolor colour_water_bg; else: thfill p withcolor white; fi; 
+      thfill p withpattern pattern_water; %%% withcolor black;  %but with failed attempt at black hatch
+      thdraw p;   %outline
+      enddef; 
+  
+  def a_water (expr Path) =
+  %Bruce Mutton 2010.06.20 for Therion 5.3.8
+    T:=identity;
+    thclean Path;
+    pickup PenD;
+    if known colour_water_bg: thfill Path withcolor colour_water_bg; else: thfill Path withcolor white; fi; 
+    thfill Path withpattern pattern_water;  
+    %%thdraw Path;  %outline, not needed as area drawn is defined by line border anyway
+     %and border can be made invisible with subtype invisible where water meets sump in elevation
+  enddef;
+  
+  def a_sump (expr Path) =
+  %Bruce Mutton 2010.06.20 for Therion 5.3.8
+    T:=identity;
+    thclean Path;
+    pickup PenD;
+    if known colour_sump_bg:  thfill Path withcolor colour_sump_bg; else: thfill Path withcolor 0.7white; fi;
+    thfill Path withpattern pattern_sump;  
+    %%thdraw Path;  %outline, not needed as area drawn is defined by line border anyway
+     %and border can be made invisible with subtype invisible where water meets sump in elevation
+  enddef;
+  endcode
+endlayout WaterShading
+
+layout LayoutColourSymbols
+  #Still experimental (Dec 2011) and as per the comments in the code below, many of the default 
+  #'symbol-colour' statements do not work as I would like.  The custom metapost 
+  #components work fine however.
+  
+  #affects colour symbol linework but not labels and not fills
+  	
+  	symbol-colour point station [54 7 60]	#purple[54 7 60] #seems to affect +s, flag symbols and station text
+  	
+  	#survey cave
+  	symbol-colour group cave-centreline [35 16 16] # brown [35 16 16] # red brown [50 0 0]
+  	symbol-colour point cave-station [35 16 16]  #ineffective?
+  	#symbol-colour point station-name [0 100 0]	
+  	
+  	#survey surface
+  	symbol-colour group surface-centreline [54 74 29] # green [54 74 29]
+  	symbol-colour point surface-station [54 74 29]  #ineffective?
+  	symbol-colour point flag:entrance [54 74 29]  #ineffective?
+  	
+  	#magenta
+  	symbol-colour group equipment  [80 0 40] # magenta [80 0 40]
+  	
+  	#dark blue
+  	# symbol-colour group water  [22 22 95] # this breaks custom water definitions
+  	symbol-colour point water-flow  [22 22 95]
+  	symbol-colour line water-flow  [22 22 95]	
+  	symbol-colour point water [22 22 95]	    # inconsistent?
+  	# symbol-colour area sump [22 22 95]	# this breaks custom water definitions
+  
+  	#light blue	
+  	# symbol-colour area water [86 100 100]	# this breaks custom water definitions
+  	
+  	#define colours for redefined water point & area
+  	code metapost  
+  	  %these colours affect fills, not the linework
+  		!color colour_water_bg; %! forces interpretation as metapost
+  		colour_water_bg := (0.86,1,1);      %light blue
+  		!color colour_sump_bg;  %! forces interpretation as metapost
+  		colour_sump_bg := (.22,.22,.95);    %dark blue
+  	
+      %these colours affect the linework	
+  		!color colour_rope;  %! forces interpretation as metapost
+  		colour_rope :=  (0.35,0.75,1.0);    %blue	
+  		
+  	  %this colour for entrance symbol (not point station flag entrance)
+  		!color colour_entrance;  %! forces interpretation as metapost
+  		colour_entrance :=  (0.54,0.74,0.29);  		
+    endcode
+	  
+    colour map-fg [97 86 38] # yellow brown
+    colour-legend on
+endlayout LayoutColourSymbols
+  
+layout CustomisedSymbols
+  code metapost
+	%Bruce Mutton 2010.06.20, after original author Georg Pacher
+	%for Therion 5.3.8
+	beginpattern(pattern_sand);
+		pickup PenC;
+		p:= origin -- (0.01u,0.01u);
+		for i=0.0u step 0.5u until 2.5u:  %AUT is step 0.2u 
+		  for j=0.0u step 0.5u until 2.5u:  %AUT is step 0.2u 
+			draw p rotated uniformdeviate(360) 
+			 shifted ((i,j) randomized 0.4u);  %%AUT is 0.09u
+		  endfor;
+		endfor;
+		if BaseScale<=2.5:
+			my_step:=2.6u;  %mystep controls tessilation pattern, must synchronise with i, j above, was 2.4u
+		else:
+			my_step:=2.8u;  %was 2.6u
+		fi;
+		patternstep(my_step,my_step);       
+	endpattern;
+
+	def a_sand (expr Path) =
+		T:=identity;
+		%thclean Path; %makes passage colour more intense under area, not good for sand
+		thfill Path withpattern pattern_sand ;
+	enddef;
+
+	beginpattern(pattern_pebbles);
+		pickup PenC;
+		path qq;
+		for i=0.0u step 0.6u until 5.1u:
+			for j=0.0u step 0.6u until 5.1u:
+			  qq := (superellipse((.05u,0),(0,.05u),(-.05u,0),(0,.-.05u),.75))
+				 randomized (u/45)
+				 scaled (uniformdeviate(1.2)+.55)
+				 rotated uniformdeviate(360) 
+				 shifted ((i,j) randomized 0.55u);
+			   draw qq;
+			endfor;
+		endfor;
+		patternstep(5.1u,5.1u);
+	endpattern;
+
+	def a_pebbles (expr p) =
+		T:=identity;
+		thfill p withpattern pattern_pebbles;
+	enddef;
+
+	beginpattern(pattern_mud);
+		pickup PenC;
+		p:=(.0u,.0u) -- (0.25u,.0u);
+		for i=0.0u step 0.6u until 5.4u:
+			for j=0.0u step 0.6u until 5.4u:
+				draw p shifted ((i,j) randomized 0.2u);
+				draw p shifted ((i+.3u,j+.3u) randomized 0.2u);
+			endfor;
+		endfor;
+		patternstep(5.4u,5.4u);
+	endpattern;
+
+	def a_clay (expr p) =
+		T:=identity;
+		thfill p withpattern pattern_mud;
+	enddef;
+
+	def p_slopearrow(expr pos,theta,sc,al)=
+		U:=(.15u,.75u);
+		T:=identity aligned al rotated theta scaled sc shifted pos;
+		thfill (-.15u,0)--(0,.75u)--(.15u,0)--cycle;
+	enddef;
+
+	def p_flowstone_GB (expr pos,theta,sc,al)=
+		U:=(.13u,.1u);
+		T:=identity aligned al rotated theta scaled sc shifted pos;
+		pickup PenC;
+		p := ((-.13u,.1u){dir 60}..{dir -60}(.13u,.1u));
+		thdraw p shifted (.25u,-.12u);
+		thdraw p shifted (-.25u,-.12u);
+		thdraw p shifted (0,.12u);
+	enddef;
+	
+
+  def s_scalebar (expr l, units, txt) =
+      begingroup
+        interim warningcheck:=0;
+        tmpl:=l / Scale * cm * units / 2;
+        tmpx:=l / Scale * cm * units / 5;
+        tmph:=15bp; % bar height
+      endgroup;
+      pickup PenC;
+      draw (-tmpl,0)--(tmpl,0)--(tmpl,-tmph)--(-tmpl,-tmph)--cycle;
+      p:=(0,0)--(tmpx,0)--(tmpx,-tmph)--(0,-tmph)--cycle;
+      for i:=-2.5 step 2 until 2:
+        fill p shifted (i * tmpx,0);
+      endfor;
+      begingroup
+        interim labeloffset:=3.5bp;
+        for i:=0 step (l/5) until (l-1):
+          tmpx:=tmpl * (i * 2 / l - 1);
+          label.top(thTEX(decimal (i)) scaled 2, (tmpx,0));
+        endfor;
+        label.top(thTEX(decimal (l) & "\thinspace" & txt) scaled 2,(tmpl,0));
+        label.bot(thTEX("Scale = 1 : " & decimal round(Scale*100)) scaled 4, (.6cm,-1.6cm)) transformed T;
+      endgroup;
+    enddef;  
+
+  def l_rockborder (expr p) =
+    if abs(llcorner p - urcorner p) > u:
+      l_rockborder_UIS(p);
+    fi;
+  enddef;
+  
+  def l_rockedge (expr p) =
+    if abs(llcorner p - urcorner p) > u:
+      l_rockedge_UIS(p);
+    fi;
+  enddef;
+  
+	let a_debris = a_debris_AUT;
+	let p_debris = p_debris_AUT;
+	let l_wall_debris = l_wall_debris_AUT;
+	let a_blocks = a_blocks_AUT;
+	let p_blocks = p_blocks_AUT;
+	let l_wall_blocks = l_wall_blocks_AUT;
+	let p_gradient = p_slopearrow;
+	let p_flowstone = p_flowstone_GB;
+	
+  endcode
+endlayout CustomisedSymbols
+
+layout Mat_4Vall
+
+    #resolution of final map
+    scale 1 500
+    
+    #position of header
+    map-header 20 20 e
+    
+    #color of final map.
+    color map-bg 85 # dle barvy [100 100 100]
+    
+    #color by altitude
+    color map-fg altitude
+    code metapost
+      let p_gradient = p_entrance;
+    endcode
+    
+    #type of used symbol sets SKBB/UIS/ASF/CCNP
+    #symbol-set UIS
+    
+    #to show the names of surveying points 
+    #debug station-names
+    
+    #setup of grid
+    grid bottom
+    grid-size 50 50 50 m
+
+endlayout
