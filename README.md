@@ -76,7 +76,7 @@ Footleg drew the plan of the Entrance Series and the streamway down to
 just below the 20 ft Pot himself, in xTherion. Everything else, the
 plan from there to Sump 1 and all the extended elevations and
 cross-sections, is converted from his PocketTopo sketches made
-underground:
+underground (the converter is in `tools/`):
 
 - **Plan:** black lines are walls (brown for upper-level edges), smoothed,
   with retraced strokes dropped. Lines inside the passage become thin
@@ -130,11 +130,15 @@ Stanton's survey is placed by his own measurements from the Forty, so
 near the resurvey it is a few metres out. When a new trip reaches one of
 his stations, equate it in `Swildons_Centreline.th` so the rest of his
 survey hangs off the new data, and flag the legs it replaces
-`duplicate`, as `swildons1-c/d/e.th` are.
+`duplicate`, as `swildons1-c/d/e.th` are. [tools/README.md](tools/README.md)
+has the details, and the workflow for getting a SexyTopo trip and its
+sketches into the survey.
 
 ## Working on the survey
 
-**`ProjectWorkflow.txt` explains how new survey trips are added.**
+**[`tools/README.md`](tools/README.md) explains how to add a new SexyTopo
+trip, drawings included.** `ProjectWorkflow.txt` has the original
+PocketTopo workflow.
 
 | Path | What it is |
 |---|---|
@@ -144,6 +148,7 @@ survey hangs off the new data, and flag the legs it replaces
 | `Swildons_MAP*.th`, `swildonsmaster.th` | The maps: which drawings make up each sheet. |
 | `swildons1-*.th`, `swildons2-*.th`, `Swildons_WIS*.th` | W. I. Stanton's survey. |
 | `PocketTopo/` | The original PocketTopo files and their exports. |
+| `tools/` | The sketch converter and helpers for adding new trips: see [tools/README.md](tools/README.md). |
 | `WISLogbookTranscription/` | Scans and a transcription of Stanton's logbooks. |
 | `SwildonsHole.svx` | The data in Survex format. |
 | `thconfig`, `thconfig-entrance`, `thconfig-centreline`, `thconfig-stanton`, `gb_layout.thc` | Build configs and Footleg's British symbol set. |
