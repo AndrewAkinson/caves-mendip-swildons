@@ -1,0 +1,16 @@
+title = "Entrance to the Old 40"
+subtitle = "Down the Wet Way and the Water Chamber to the top of the Old 40ft Pot"
+description = """
+The way down from the entrance to the streamway: through the Wet Way to
+the Water Chamber, then on down past Water Chamber Dig to the 8ft Drop
+and the Old 40ft Pot, where the Old 40 to Sump 1 route starts.
+"""
+waypoints = ["1.0@ZigZags", "11.12@WetWayOxbows", "13.18@WaterChamber", "9.11@Old40Route"]
+
+# Also make a card for the same route backwards
+way_out = true
+way_out_title = "The way out from the Old 40"
+way_out_subtitle = "Back up from the Old 40 to the entrance, by the Water Chamber and the Wet Way"
+way_out_description = """
+From the top of the Old 40ft Pot back up past the 8ft Drop and Water Chamber Dig to the Water Chamber, then up the Wet Way to the entrance.
+"""

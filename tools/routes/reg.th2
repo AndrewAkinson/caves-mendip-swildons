@@ -1,0 +1,13 @@
+encoding  utf-8
+# Registration marks for the route cards (tools/routes/basemap.py): a dot
+# in an unusual colour exactly on each of three stations far apart.
+# Therion pins the scrap to the stations, so the coordinates here only
+# need to be roughly right relative to each other (metres).
+scrap RouteReg -projection plan -scale [0 0 1 1 0 0 1 1 m]
+point 421.82 54.55 u:reg
+point 421.82 54.55 station -name 1.0@ZigZags.Swildons.SwildonsHole
+point 41.43 63.79 u:reg
+point 41.43 63.79 station -name 24.33@TratmansToSump1.Swildons.SwildonsHole
+point 323.58 118.17 u:reg
+point 323.58 118.17 station -name 25.12@RollingThunder.Swildons.SwildonsHole
+endscrap

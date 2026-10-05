@@ -1,0 +1,10 @@
+# Route card definition: see tools/routes/README.md
+title = "The Dry Ways round trip"
+subtitle = "Down the Long Dry Way to Old Grotto, back up the Short Dry Way"
+description = """
+A round trip of the dry upper series, away from the stream. From the
+entrance, through Zig Zags and down the Long Dry Way (the Pretty Way)
+past Boulder Chamber to Old Grotto, then back up by the Short Dry Way to
+rejoin the way in above Zig Zags.
+"""
+waypoints = ["1.0@ZigZags", "2.33@LongDryWay", "2.59@LongDryWay", "4.0@ShortDryWay", "2.5@LongDryWay", "1.0@ZigZags"]

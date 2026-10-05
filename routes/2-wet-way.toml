@@ -1,0 +1,9 @@
+title = "Wet Way and Water Chamber"
+subtitle = "Down the Wet Way to the Water Chamber, back by Old Grotto and the Long Dry Way"
+description = """
+Down the stream route through the Wet Way, past The Well and The
+Lavatory Pan, to the Water Chamber, and back up through Old Grotto and
+the Long Dry Way. The Wet Way carries the stream: it is the part of the
+entrance series that floods.
+"""
+waypoints = ["1.0@ZigZags", "11.12@WetWayOxbows", "13.18@WaterChamber", "6.2@OldGrottoToWaterChamber", "2.33@LongDryWay", "1.0@ZigZags"]

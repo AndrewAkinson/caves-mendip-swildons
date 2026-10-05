@@ -1,0 +1,17 @@
+title = "The streamway to Sump 1"
+subtitle = "From the Old 40 down the streamway, past the 20ft Pot and Double Pots, to Sump 1"
+description = """
+Follow the stream down from the bottom of the Old 40: Folded Strata, the
+20ft Pot, Double Pots, past the entrance to Barnes Loop and through
+Tratman's Temple to Sump 1. The route ends at the dive-line bolt; going
+further means diving the sump.
+"""
+waypoints = ["9.11@Old40Route", "21.0@20ftToBarnesLoop", "22.9@DblPotsDownstream", "24.0@TratmansToSump1", "24.33@TratmansToSump1"]
+
+# Also make a card for the same route backwards
+way_out = true
+way_out_title = "The way out from Sump 1"
+way_out_subtitle = "Back up the streamway from Sump 1 to the bottom of the Old 40"
+way_out_description = """
+From Sump 1 back up the streamway: through Tratman's Temple, past Barnes Loop, up Double Pots and the 20ft Pot to the bottom of the Old 40.
+"""
