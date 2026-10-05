@@ -26,7 +26,7 @@ from shapely.ops import unary_union
 from . import register
 from .features import classify, centroid
 from .symbols import split_symbols, symbols_th2
-from .walls import clean, bezier_lines, split_by_edge
+from .walls import clean, bezier_lines, bezier_closed, chaikin, split_by_edge
 
 WALLS = ('BLACK', 'BROWN', 'GRAY')
 
@@ -218,6 +218,78 @@ def gather_section(centre, lines, used, stations, near=1.2, reach=6.0):
     return picked
 
 
+def section_outline(strokes):
+    """One closed outline for a cross-section, from its wall strokes.
+
+    The strokes are thickened just enough to close the outline (up to
+    0.6 m, so a gap left where the passage carries on is bridged), the
+    inside filled, and the shape shrunk back by the same amount. That
+    puts the outline on the strokes, merges strokes drawn twice into one
+    line, and drops short flicks sticking out of it. Returns a smoothed
+    polygon, or None."""
+    from shapely import concave_hull
+    from shapely.geometry import MultiPoint
+    strokes = [s for s in strokes if len(s) > 1]
+    if not strokes:
+        return None
+    U = unary_union([LineString(s) for s in strokes])
+    out = None
+    for d in (0.1, 0.2, 0.35, 0.6):
+        g = U.buffer(d, join_style=1)
+        big = max(_polygons(g, 0.0) or [Polygon()], key=lambda p: p.area)
+        if big.is_empty:
+            continue
+        filled = Polygon(big.exterior)
+        if filled.area - g.area > 0.2 * filled.area:      # it encloses a passage
+            o = filled.buffer(-d, join_style=1)
+            ps = _polygons(o, 0.01)
+            if ps:
+                out = max(ps, key=lambda p: p.area)
+                break
+    if out is None:     # never closes: wrap the strokes
+        pts = MultiPoint([p for s in strokes for p in s])
+        out = concave_hull(pts, ratio=0.3)
+        if out.geom_type != 'Polygon' or out.area < 0.01:
+            return None
+    ring = list(out.simplify(0.025).exterior.coords)
+    if len(ring) >= 4:
+        ring = chaikin(ring, 1)
+    p = Polygon(ring).simplify(0.015)
+    return p if p.is_valid and not p.is_empty else out
+
+
+def section_th2(name, attrs, lines, centre, K, comment):
+    """A cross-section scrap. lines: [(colour, pts)] gathered for it.
+    Returns (th2 lines, width, height) or None if it has no walls."""
+    wl = [pp for c, pp in lines if c in WALLS and len(pp) > 1]
+    if not wl:
+        return None
+    poly = section_outline(wl)
+    if poly is None:
+        return None
+    xpx = lambda p: (K * (p[0] - centre[0]) + 1000, K * (p[1] - centre[1]) + 1000)
+    o = [f"scrap {name} -projection none{attrs}", "", comment, ""]
+    o += ["line wall -close on"] + bezier_closed(list(poly.exterior.coords), xpx) + ["endline", ""]
+    # marks inside: boulders, and ledges or other lines as borders
+    inner = []
+    edge = poly.exterior
+    for pp in wl:
+        ls = LineString(pp)
+        n = max(2, int(ls.length / 0.05))
+        smp = [ls.interpolate(i / (n - 1), normalized=True) for i in range(n)]
+        inside = sum(1 for q in smp if poly.contains(q) and edge.distance(q) > 0.12)
+        if inside >= 0.7 * len(smp):
+            inner.append(pp)
+    rest, boulders, arrows = split_symbols(inner)
+    o += symbols_th2([b for b in boulders if poly.contains(b.centroid)], [], xpx)
+    for pp in clean(rest, min_len=0.3):
+        o += ["line border -clip off"] + bezier_lines(pp, xpx) + ["endline", ""]
+    o += water_th2(lines, poly, xpx, name, flow=False)
+    o += ["endscrap", ""]
+    b = poly.bounds
+    return o, b[2] - b[0], b[3] - b[1]
+
+
 def section_scraps(sketch, opt, K):
     """Cross-section scraps for every connect line in the sketch.
     Returns (th2 lines, [(station, scrap name, centre, width, height)], used line indices)."""
@@ -228,26 +300,12 @@ def section_scraps(sketch, opt, K):
         idx = gather_section(centre, sketch.lines, used, list(pos.values()))
         used |= set(idx)
         mine = [sketch.lines[i] for i in idx]
-        walls = clean([pp for c, pp in mine if c in WALLS], min_len=0.1)
-        if not walls:
-            continue
-        pts = [p for w in walls for p in w]
-        W = max(p[0] for p in pts) - min(p[0] for p in pts)
-        H = max(p[1] for p in pts) - min(p[1] for p in pts)
         name = f"{opt.name}_xs_{n}".replace('.', '_')
-        xpx = lambda p, c=centre: (K * (p[0] - c[0]), K * (p[1] - c[1]))
-        o += [f"scrap {name} -projection none{opt.attrs(K)}", "",
-              f"# Cross-section at station {n}.", ""]
-        for w in walls:
-            o += ["line wall -outline none"] + bezier_lines(w, xpx) + ["endline", ""]
-        g = unary_union([LineString(w) for w in walls]).buffer(0.6, join_style=1).buffer(-0.55, join_style=1)
-        polys = _polygons(g, 0.05)
-        if polys:
-            ring = max(polys, key=lambda p: p.area)
-            o += ["line wall -subtype invisible -close on"] + \
-                 ["  %.2f %.2f" % xpx(p) for p in list(ring.exterior.coords)[:-1]] + ["endline", ""]
-            o += water_th2(mine, ring, xpx, name, flow=False)
-        o += ["endscrap", ""]
+        r = section_th2(name, opt.attrs(K), mine, centre, K, f"# Cross-section at station {n}.")
+        if r is None:
+            continue
+        o += r[0]
+        W, H = r[1], r[2]
         made.append((n, name, centre, W, H))
     return o, made, used
 

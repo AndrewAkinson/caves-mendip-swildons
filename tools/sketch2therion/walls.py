@@ -111,3 +111,19 @@ def split_by_edge(pp, ring, near=0.3, min_run=0.4):
     if len(merged)>1 and _len(merged[0][1])<min_run:
         merged[1][1]=merged[0][1]+merged[1][1][1:]; merged.pop(0)
     return [(f,r) for f,r in merged if len(r)>1]
+
+
+def bezier_closed(pp, px):
+    """th2 Bezier text for a smooth closed curve through the points
+    (Catmull-Rom, wrapping round), ending back at the start."""
+    P = [px(p) for p in pp]
+    if len(P) > 1 and math.dist(P[0], P[-1]) < 1e-6:
+        P = P[:-1]
+    n = len(P)
+    o = ["  %.2f %.2f" % P[0]]
+    for i in range(n):
+        p0, p1, p2, p3 = P[i - 1], P[i], P[(i + 1) % n], P[(i + 2) % n]
+        c1 = (p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6)
+        c2 = (p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6)
+        o.append("  %.2f %.2f %.2f %.2f %.2f %.2f" % (*c1, *c2, *p2))
+    return o
