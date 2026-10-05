@@ -53,7 +53,9 @@ far as station 21.9. From there to Sump 1 (`StreamwaySP2`, and the
 sketches. In the plan sketches, black lines are walls (brown for
 upper-level edges), smoothed, with retraced strokes dropped. Lines
 along the passage edge are drawn as wall and lines inside it as thin
-borders, as in his own drawings. Pools are the blue hatched areas,
+borders, as in his own drawings. His small sketched boulders are drawn
+as rock borders, and his slope triangles as gradient arrows pointing
+the way the triangle points. Pools are the blue hatched areas,
 flow arrows the blue squiggles, and flowstone (with the odd stalagmite
 or stalactite) the green marks. The small notes are his handwritten
 ones, and the passage names are placed from his station notes. Floor
