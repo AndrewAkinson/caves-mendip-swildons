@@ -26,7 +26,8 @@ PREVIEW_DIR = os.path.join(OUT, "previews")
 
 # (filename, title, blurb) -- order is the order they appear on the page.
 SHEETS = [
-    ("Swildons-plan.pdf",               "Plan",                     "Everything drawn so far, coloured by altitude. Scale 1:500."),
+    ("Swildons-plan.pdf",               "Plan",                     "Entrance to Sump 1, coloured by altitude, with cross-sections along the streamway. Scale 1:500."),
+    ("Swildons-streamway-elevation.pdf", "Streamway elevation",     "Extended elevation from the Old 40 to Sump 1, with Barnes Loop above the streamway. Scale 1:500."),
     ("Swildons-entrance-plan.pdf",      "Entrance Series",          "The Entrance Series down to Rolling Thunder. Scale 1:200."),
     ("Swildons-entrance-elevation.pdf", "Entrance Series elevation", "East-west elevation; only partly drawn so far. Scale 1:200."),
     ("Swildons-plan-bw.pdf",            "Plan, greyscale",          "Same drawing, for a black-and-white printer."),
