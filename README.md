@@ -50,15 +50,19 @@ Loop and Tratman's Temple to Sump 1. Below the 20 ft pot,
 far as station 21.9. From there to Sump 1 (`StreamwaySP2`, and the
 `Swil1P_DblPotsDownstream`, `Swil1P_BarnesLoopToTratmans` and
 `Swil1P_TratmansToSump1` drawings) everything comes from his PocketTopo
-plan sketches. Walls are the black lines, plus brown for upper-level
-edges. Pools are the blue hatched areas, flow arrows the blue
-squiggles, and flowstone (with the odd stalagmite or stalactite) the
-green marks. The small notes are his handwritten ones, and the passage
-names are placed from his station notes. Floor detail (pebbles, floor
-steps, climbs) was not in the sketches and is still to add in
-xTherion, along with any tidying of the converted lines. Each trip's
-PocketTopo backdrop (`PocketTopo/*_th_p.xvi`) is there to draw over.
-The **Entrance Series elevation** is only partly drawn.
+sketches. In the plan sketches, black lines are walls (brown for
+upper-level edges), smoothed, with retraced strokes dropped. Lines
+along the passage edge are drawn as wall and lines inside it as thin
+borders, as in his own drawings. Pools are the blue hatched areas,
+flow arrows the blue squiggles, and flowstone (with the odd stalagmite
+or stalactite) the green marks. The small notes are his handwritten
+ones, and the passage names are placed from his station notes. Floor
+steps, climbs (C1m, C1.5m, C2m) and gradient arrows come from the
+floor line of his extended-elevation sketches, checked against the
+floor heights from the downward splays. Floor sediment (pebbles, clay
+and so on) isn't recorded anywhere for this stretch, so it isn't drawn.
+Each trip's PocketTopo backdrop (`PocketTopo/*_th_p.xvi`) is there to
+draw over. The **Entrance Series elevation** is only partly drawn.
 
 ## Building it yourself
 
