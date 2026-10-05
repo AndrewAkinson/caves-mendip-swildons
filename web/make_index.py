@@ -13,6 +13,7 @@ artefacts. No third-party Python packages.
 """
 
 import html
+import glob
 import os
 import re
 import shutil
@@ -278,6 +279,32 @@ def main():
     </div>
   </div>""")
     doc.append("</div>")
+
+    # Route cards (tools/routes), if they were built
+    routes = sorted(glob.glob(os.path.join(OUT, "routes", "*.pdf")))
+    if routes:
+        doc.append("<h2>Route cards <small>(draft)</small></h2>\n"
+                   "<p>Routes through the cave with the way to go at each junction, worked out "
+                   "from the survey. Not yet checked underground.</p>\n<div class=\"grid\">")
+        for pdf in routes:
+            name = os.path.basename(pdf)
+            htm = pdf[:-4] + ".html"
+            title = name
+            if os.path.exists(htm):
+                m = re.search(r"<title>(.*?) ·", open(htm, encoding="utf-8").read(4000))
+                title = m.group(1) if m else name
+            png = os.path.join(PREVIEW_DIR, "route-" + name.replace(".pdf", ".png"))
+            has_png = render_preview(pdf, png)
+            thumb = (f'<a class="thumb" href="routes/{e(name)}"><img src="previews/{e(os.path.basename(png))}" '
+                     f'alt="{e(title)} preview" loading="lazy"></a>' if has_png else "")
+            doc.append(f"""  <div class="card">
+    {thumb}
+    <div class="body">
+      <h3><a href="routes/{e(name)}">{e(title)}</a></h3>
+      <div class="size">PDF &middot; {e(human(os.path.getsize(pdf)))}</div>
+    </div>
+  </div>""")
+        doc.append("</div>")
 
     if rows:
         doc.append("<h2>Models and data</h2>\n<table>")

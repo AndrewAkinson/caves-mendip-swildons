@@ -78,11 +78,13 @@ jobs:
           therion -l output/therion-entrance.log thconfig-entrance
           therion -l output/therion-centreline.log thconfig-centreline
           therion -l output/therion-stanton.log thconfig-stanton
+          # the background for the route cards, built in the next step
+          therion -l output/therion-routes.log tools/routes/thconfig-routes
 
       - name: Fail if Therion logged an error
         run: |
           status=0
-          for log in therion.log output/therion-entrance.log output/therion-centreline.log output/therion-stanton.log; do
+          for log in therion.log output/therion-entrance.log output/therion-centreline.log output/therion-stanton.log output/therion-routes.log; do
             if grep -qE "^therion: error" "$log"; then
               echo "::error::Therion reported an error in $log"
               grep -nE "^therion: (error|warning)" "$log"
@@ -98,6 +100,12 @@ jobs:
             echo "::endgroup::"
           fi
           exit $status
+
+      # Route cards (tools/routes): one A3 sheet per route in routes/*.toml,
+      # drawn over the plan just rendered and printed to PDF by Chrome,
+      # which the runner has. Plain Python, no packages needed.
+      - name: Build the route cards
+        run: CHROMIUM="$(command -v google-chrome || command -v chromium)" python3 -m tools.routes
 
       - name: Build the index page
         run: |

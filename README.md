@@ -23,6 +23,10 @@ the latest sheets, rebuilt from this repository every time it changes.
 | [Plan with centreline](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan-centreline.pdf) | The plan with survey legs and station names, for resurveying. 1:500. |
 | [Plan with Stanton's survey](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan-with-stanton.pdf) | The plan plus Stanton's survey beyond it as centreline, with station names, for planning where to resurvey next. 1:500. |
 
+**Route cards** (draft): one sheet per route through the cave, with
+the way to go at each junction, made automatically from the survey. See
+[tools/routes](tools/routes/README.md); the routes are in `routes/`.
+
 The survey site also has the 3D model (Survex `.3d` for Aven, Therion
 `.lox` for Loch), Google Earth `.kml` files and the survey data as CSV
 and SQL.
@@ -149,6 +153,7 @@ PocketTopo workflow.
 | `swildons1-*.th`, `swildons2-*.th`, `Swildons_WIS*.th` | W. I. Stanton's survey. |
 | `PocketTopo/` | The original PocketTopo files and their exports. |
 | `tools/` | The sketch converter and helpers for adding new trips: see [tools/README.md](tools/README.md). |
+| `routes/`, `tools/routes/` | Route card definitions, and the tool that makes them. |
 | `WISLogbookTranscription/` | Scans and a transcription of Stanton's logbooks. |
 | `SwildonsHole.svx` | The data in Survex format. |
 | `thconfig`, `thconfig-entrance`, `thconfig-centreline`, `thconfig-stanton`, `gb_layout.thc` | Build configs and Footleg's British symbol set. |

@@ -1,0 +1,44 @@
+encoding  utf-8
+# =====================================================================
+#  The background for the route cards (tools/routes)
+# =====================================================================
+#
+#  The drawn plan at 1:200, light grey, with no header or legend, as
+#  SVG. The cards are windows onto it, with the route drawn on top.
+#  Run from the top of the repository after the main build:
+#
+#    therion -l output/therion-routes.log tools/routes/thconfig-routes
+#    python3 -m tools.routes
+# ---------------------------------------------------------------------
+
+input ../../gb_layout.thc
+
+source ../../swildonsmaster.th
+source routes.th
+
+select RouteBase
+
+layout route-base
+  copy GB_Std
+
+  scale 1 200
+  base-scale 1 180
+
+  symbol-hide line survey
+  symbol-hide point section
+  symbol-hide line section
+
+  map-header 0 0 off
+  legend off
+  color map-fg [90]
+
+  # The registration mark: a 2 pt dot in a colour nothing else uses
+  code metapost
+    def p_u_reg(expr P,R,S,A) =
+      T:=identity shifted P;
+      fill (fullcircle scaled 2pt shifted P) withcolor (0.123,0.456,0.789);
+    enddef;
+    initsymbol("p_u_reg");
+endlayout
+
+export map -projection plan -layout route-base -fmt svg -o ../../output/routes-base.svg

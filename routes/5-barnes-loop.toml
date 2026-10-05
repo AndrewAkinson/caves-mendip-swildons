@@ -1,0 +1,8 @@
+title = "Barnes Loop"
+subtitle = "A circuit off the streamway below Double Pots"
+description = """
+Barnes Loop leaves the streamway below Double Pots and rejoins it
+further down. Go round the loop and come back up the streamway to where
+you left it.
+"""
+waypoints = ["22.9@DblPotsDownstream", "23.5@BarnesLoopToTratmans", "22.20@DblPotsDownstream", "22.9@DblPotsDownstream"]

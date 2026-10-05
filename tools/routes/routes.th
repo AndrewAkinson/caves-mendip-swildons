@@ -1,0 +1,13 @@
+encoding  utf-8
+# The plan as the background for the route cards: everything drawn, plus
+# the registration marks (reg.th2) that tie the render to the survey.
+input reg.th2
+
+map RouteRegMap -projection plan
+  RouteReg
+endmap
+
+map RouteBase -projection plan -title "Swildons Hole"
+  MasterPlan@SwildonsHole
+  RouteRegMap
+endmap
