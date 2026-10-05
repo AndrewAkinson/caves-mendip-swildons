@@ -85,6 +85,19 @@ centreline
   9.11 - 335.04 -87.89 1.734
   9.11 - 102.51 -8.31 0.616
   9.11 - 265.17 1.63 0.986
+    # Extended-elevation direction of each leg, as Footleg set it in PocketTopo
+    # (these only affect the extended elevation)
+    extend right 9.0 9.1
+    extend right 9.1 9.2
+    extend right 9.2 9.3
+    extend right 9.3 9.4
+    extend right 9.4 9.5
+    extend right 9.5 9.6
+    extend right 9.6 9.7
+    extend right 9.7 9.8
+    extend right 9.8 9.9
+    extend right 9.9 9.10
+    extend right 9.10 9.11
 endcentreline
 
 endsurvey

@@ -1,6 +1,6 @@
 encoding  utf-8
 # =====================================================================
-#  Swildons Hole -- Entrance Series plan, 1:200
+#  Swildons Hole -- Entrance Series plan and extended elevation, 1:200
 # =====================================================================
 #
 #  The second half of the CI build (see thconfig). It is a separate
@@ -14,7 +14,8 @@ input gb_layout.thc
 
 source swildonsmaster.th
 
-select EntranceSeriesPlan@SwildonsHole
+select EntranceSeriesPlanSections@SwildonsHole
+select EntranceSeriesExtended@SwildonsHole
 
 layout entrance-sheet
   copy GB_Std
@@ -28,5 +29,16 @@ layout entrance-sheet
   copy LayoutColourSymbols
 endlayout
 
+# The extended elevation is traced from Footleg's PocketTopo side views.
+# Where Therion's layout breaks a loop differently from a sketch, the
+# sketch is split, so passages can show gaps or overlaps at loop breaks.
+layout entrance-extended
+  copy entrance-sheet
+  map-header 0 0 nw
+  legend-columns 5
+  legend-width 30 cm
+endlayout
+
 export map -projection plan -layout entrance-sheet -o output/Swildons-entrance-plan.pdf
+export map -projection extended -layout entrance-extended -o output/Swildons-entrance-extended-elevation.pdf
 export map -projection plan -layout entrance-sheet -fmt svg -o output/Swildons-entrance-plan.svg

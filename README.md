@@ -15,8 +15,9 @@ the latest sheets, rebuilt from this repository every time it changes.
 |---|---|
 | [Plan](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan.pdf) | Entrance to Sump 1, coloured by altitude, with cross-sections along the streamway. 1:500. |
 | [Streamway elevation](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-streamway-elevation.pdf) | Extended elevation from the Old 40 to Sump 1, with Barnes Loop above the streamway. 1:500. |
-| [Entrance Series plan](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-entrance-plan.pdf) | The Entrance Series down to Rolling Thunder. 1:200. |
-| [Entrance Series elevation](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-entrance-elevation.pdf) | East–west elevation, only partly drawn. 1:200. |
+| [Entrance Series plan](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-entrance-plan.pdf) | The Entrance Series down to Rolling Thunder, with cross-sections. 1:200. |
+| [Entrance Series extended elevation](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-entrance-extended-elevation.pdf) | The Entrance Series unrolled along its passages. 1:200. |
+| [Entrance Series east–west elevation](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-entrance-elevation.pdf) | Footleg's projected elevation, only partly drawn. 1:200. |
 | [Plan, greyscale](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan-bw.pdf) | For a black-and-white printer. |
 
 The survey site also has the 3D model (Survex `.3d` for Aven, Therion
@@ -33,9 +34,12 @@ vertical range, fixed to the OS grid at the entrance by GPS.
 - **The resurvey, about 1.8 km:** the Entrance Series, Rolling Thunder,
   and the streamway from the Old 40 down past the 20 ft Pot, Double
   Pots, Barnes Loop and Tratman's Temple to the free-dive bolt at
-  Sump 1. All of it is drawn in plan. The streamway from the Old 40 to
-  Sump 1 also has an extended elevation and 39 cross-sections. The
-  Entrance Series elevation is only partly drawn.
+  Sump 1. All of it is drawn in plan and as an extended elevation
+  (the streamway on its own sheet, the Entrance Series on another),
+  with about 160 cross-sections: 39 along the streamway on the main
+  plan, and the rest on the 1:200 Entrance Series plan. Footleg's
+  projected east–west elevation of the Entrance Series is only partly
+  drawn.
 - **Stanton's survey, about 2.4 km:** everything beyond the resurvey,
   including St Paul's, Paradise Regained, the Maypole Series, Double
   Trouble and Swildons 2 (main streamway, Upper Mud Series, Black Hole
@@ -56,20 +60,20 @@ vertical range, fixed to the OS grid at the entrance by GPS.
 | 2016-01-16/17 | Wet Way oxbows; Butcombe oxbows | Footleg, Paul Dold, Ben Kent, Alistair Smith |
 | 2016-07-09/10 | Water Chamber, Oxbow Junction, Wet Way keyhole, Lower Oxbow, inlet off Old Grotto | Footleg, Thomas Starnes, Paul Wilman |
 | 2017-03-11 | Old 40 to the 20 ft Pot; Cistern Dig | Footleg, Josh White, Paul Wilman, Alistair Smith; Cave Ferret |
-| 2017-03-25/26 | 20 ft Pot to Double Pots | Footleg, Mike Waterworth, Maxine Bateman, Duncan Simey, Paul Carruthers and others\* |
+| 2017-03-25/26 | 20 ft Pot to Double Pots | Footleg, Michael Waterworth, Maxine Bateman, Duncan Simey, Paul Wilman, Paul Carruthers and Josh\* |
 | 2017-07-08 | Double Pots through Barnes Loop | Footleg, Sarah Bischoff, Josh Benton |
 | 2017-10-14 | Barnes Loop to Tratman's Temple | Footleg, Paul Taylor, Tim Kent |
 | 2019-01-05 | Tratman's Temple to Sump 1; Rolling Thunder | Footleg, Tim Kent, Alistair Smith |
 
-\* From the PocketTopo trip notes. This trip's team isn't in its Therion
-file yet, so it is missing from the credits on the sheets.
+\* Josh's surname isn't recorded in the trip notes.
 
 ## How the drawings were made
 
-Footleg drew the Entrance Series and the streamway down to just below
-the 20 ft Pot himself, in xTherion. From there to Sump 1, the plan,
-elevation and cross-sections are converted from his PocketTopo
-sketches made underground:
+Footleg drew the plan of the Entrance Series and the streamway down to
+just below the 20 ft Pot himself, in xTherion. Everything else, the
+plan from there to Sump 1 and all the extended elevations and
+cross-sections, is converted from his PocketTopo sketches made
+underground:
 
 - **Plan:** black lines are walls (brown for upper-level edges), smoothed,
   with retraced strokes dropped. Lines inside the passage become thin
@@ -81,9 +85,21 @@ sketches made underground:
   from the floor line of his side-view sketches, checked against floor
   heights from the survey's downward splays. Floor sediment isn't
   recorded for this stretch, so none is drawn.
-- **Elevation and cross-sections:** both come from the side-view
-  sketches. Barnes Loop is an oxbow, so the elevation keeps the
-  streamway continuous and draws the loop above it.
+- **Elevation and cross-sections:** both come from the PocketTopo
+  sketches, the elevations from the side views and the cross-sections
+  from wherever Footleg drew them (the plan sketch on the 2013 trips,
+  the side view later). Each leg's left/right direction from PocketTopo
+  is copied into the survey files so Therion unrolls the cave the way
+  he did. An unrolled elevation can't close a loop, so where Therion
+  breaks one differently from a sketch the sketch is split, and
+  passages can show a gap or an overlap there. Barnes Loop is drawn
+  above the streamway as an oxbow.
+- **Which sketch:** the 2013 Entrance to Water Chamber side view comes
+  from the original `.top` file, because the exported station list
+  doesn't line up with its sketch. Wet Way Oxbows uses the January 2016
+  sketch, which lines up better than the July 2016 one. The 2017 Dry
+  Way Stream sketch isn't used: its stations aren't in the Therion
+  survey.
 
 They are faithful to the sketches but not hand-finished. Each trip's
 sketch is in `PocketTopo/` as an `.xvi` backdrop for anyone who wants

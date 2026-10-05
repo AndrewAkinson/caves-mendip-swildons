@@ -112,6 +112,19 @@ survey OldGrottoToWaterChamber
     6.11  -  6.54  332.39  -2.75  
     6.11  -  3.223  124.37  87.58  
     6.11  -  1.022  81.55  -78.82  
+    # Extended-elevation direction of each leg, as Footleg set it in PocketTopo
+    # (these only affect the extended elevation)
+    extend right 6.0 6.1
+    extend right 6.1 6.2
+    extend right 6.2 6.3
+    extend right 6.3 6.4
+    extend right 6.4 6.5
+    extend right 6.5 6.6
+    extend right 6.6 6.7
+    extend right 6.7 6.8
+    extend right 6.8 6.9
+    extend right 6.9 6.10
+    extend right 6.10 6.11
   endcentreline
 
 endsurvey

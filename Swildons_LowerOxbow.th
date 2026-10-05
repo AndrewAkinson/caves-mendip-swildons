@@ -113,6 +113,29 @@ survey LowerOxbow
     16.19 - 101.36 40.65 0.930
     16.19 - 52.83 26.18 1.099
     16.19 16.20 93.73 80.02 0.532  #16.20=drill spot on ceiling at first junction into LowBow
+    # Extended-elevation direction of each leg, as Footleg set it in PocketTopo
+    # (these only affect the extended elevation)
+    extend right 12.27 16.0
+    extend right 16.0 16.1
+    extend right 16.1 16.2
+    extend right 16.2 16.3
+    extend right 16.3 16.4
+    extend right 16.4 16.5
+    extend right 16.5 16.6
+    extend right 16.6 16.7
+    extend right 16.7 16.8
+    extend right 16.8 16.9
+    extend right 16.9 16.10
+    extend right 16.10 16.11
+    extend right 16.11 16.12
+    extend right 16.12 16.13
+    extend right 16.13 16.14
+    extend right 16.14 16.15
+    extend right 16.15 16.16
+    extend right 16.14 16.17
+    extend right 16.17 16.18
+    extend right 16.18 16.19
+    extend right 16.19 16.20
   endcentreline
  
 endsurvey

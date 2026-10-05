@@ -1,0 +1,29 @@
+encoding  utf-8
+#Swildons Hole, Priddy, Mendip, Somerset, UK
+#Extended elevation of the Entrance Series, from Footleg's PocketTopo side-view sketches
+
+map EntranceSeriesExtended -projection extended -title "Swildons Hole - Entrance Series, extended elevation"
+  EntToWaterChamberEE1@Swildons
+  EntToWaterChamberEE2@Swildons
+  EntToWaterChamberEE3@Swildons
+  EntToWaterChamberEE4@Swildons
+  ShortDryWayEE1@Swildons
+  WaterRiftEE1@Swildons
+  WaterRiftEE2@Swildons
+  Old40RouteEE1@Swildons
+  KenneysDigEE1@Swildons
+  KenneysDigEE2@Swildons
+  ShowerbathAreaEE1@Swildons
+  WetWayOxbowsEE1@Swildons
+  WetWayOxbowsEE2@Swildons
+  WetWayOxbowsEE3@Swildons
+  ButcombeOxbowsEE1@Swildons
+  ButcombeOxbowsEE2@Swildons
+  OxbowJunctionEE1@Swildons
+  WaterChamberEE1@Swildons
+  WaterChamberEE2@Swildons
+  LowerOxbowEE1@Swildons
+  CisternDigEE1@Swildons
+  CisternDigEE2@Swildons
+  RollingThunderEE1@Swildons
+endmap

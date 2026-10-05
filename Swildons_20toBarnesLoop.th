@@ -5,7 +5,19 @@ survey 20ftToBarnesLoop
   input Swil1E_20toBarnesLoop.th2
 
 centreline
+  copyright 2017 "Paul 'Footleg' Fretwell"
   date 2017.03.25
+
+  # Team from the PocketTopo trip notes. 25 Mar: Mike Waterworth on instruments,
+  # Footleg sketching, Duncan Simey, Maxine Bateman, Josh and Paul Wilman on dog.
+  # 26 Mar: Maxine Bateman on instruments, Footleg sketching, Paul Carruthers and
+  # Duncan Simey on dog. Josh's surname isn't recorded.
+  team "Paul 'Footleg'/Fretwell" notes
+  team "Michael Waterworth" instruments
+  team "Maxine Bateman" instruments
+  team "Duncan Simey" dog
+  team "Paul Wilman" dog
+  team "Paul Carruthers" dog
   data normal from to compass clino tape
   extend right
   #17.24 21.0 0.00 0.00 0.000

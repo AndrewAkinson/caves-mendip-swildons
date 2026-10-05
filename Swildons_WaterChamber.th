@@ -183,6 +183,36 @@ survey WaterChamber
     13.27 - 229.10 51.65 3.473
     13.27 - 235.75 5.31 0.541
     13.27 - 141.05 -80.48 1.298
+    # Extended-elevation direction of each leg, as Footleg set it in PocketTopo
+    # (these only affect the extended elevation)
+    extend right 13.0 13.1
+    extend right 13.1 13.2
+    extend right 13.2 13.3
+    extend right 13.3 13.4
+    extend right 13.4 13.5
+    extend right 13.5 13.6
+    extend right 13.0 13.7
+    extend right 13.7 13.8
+    extend right 13.8 13.9
+    extend right 13.9 13.10
+    extend right 13.10 13.11
+    extend right 13.11 13.12
+    extend right 13.12 13.13
+    extend right 13.13 13.14
+    extend right 13.14 13.15
+    extend right 13.11 13.16
+    extend right 13.16 13.17
+    extend right 13.0 13.17
+    extend right 13.17 13.18
+    extend right 13.18 13.19
+    extend right 13.19 13.20
+    extend right 13.18 13.21
+    extend right 13.21 13.22
+    extend right 13.22 13.23
+    extend right 13.23 13.24
+    extend right 13.24 13.25
+    extend right 13.25 13.26
+    extend right 13.26 13.27
   endcentreline
 
 endsurvey

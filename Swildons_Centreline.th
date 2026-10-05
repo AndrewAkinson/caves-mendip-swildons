@@ -41,6 +41,21 @@ survey Swildons
   input Swildons_BarnesLoopToTratmans.th
   input Swildons_TratmansToSump1.th
 
+  #Entrance Series extended elevation and cross-sections, from the PocketTopo sketches
+  input Swil1E_ext_EntToWaterChamber.th2
+  input Swil1E_ext_ShortDryWay.th2
+  input Swil1E_ext_WaterRift.th2
+  input Swil1E_ext_Old40Route.th2
+  input Swil1E_ext_KenneysDig.th2
+  input Swil1E_ext_ShowerbathArea.th2
+  input Swil1E_ext_WetWayOxbows.th2
+  input Swil1E_ext_ButcombeOxbows.th2
+  input Swil1E_ext_OxbowJunction.th2
+  input Swil1E_ext_WaterChamber.th2
+  input Swil1E_ext_LowerOxbow.th2
+  input Swil1E_ext_CisternDig.th2
+  input Swil1E_ext_RollingThunder.th2
+
   centreline
     copyright 2019 "Paul 'Footleg' Fretwell"
     

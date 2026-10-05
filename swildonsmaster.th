@@ -13,6 +13,7 @@ survey SwildonsHole
   #import maps for elevation drawings
   input Swildons_MAP-elev_EntranceSeries.th
   input Swildons_MAP-elev_Streamway.th
+  input Swildons_MAP-ext_EntranceSeries.th
   
   #Master Map
   map MasterPlan -title "Swildons Hole"

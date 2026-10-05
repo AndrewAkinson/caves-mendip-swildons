@@ -520,6 +520,70 @@ survey LongDryWay
     #2.61  2.62  1.028  31.83  -42.99  
     #2.61  2.62  1.039  31.36  -42.58  
     2.61  2.62  1.04  31.65  -42.73  Calculated leg from 3 above
+    # Extended-elevation direction of each leg, as Footleg set it in PocketTopo
+    # (these only affect the extended elevation)
+    extend right 2.0 2.1
+    extend right 2.1 2.2
+    extend right 2.2 2.3
+    extend right 2.3 2.4
+    extend right 2.4 2.5
+    extend right 2.5 2.6
+    extend right 2.6 2.7
+    extend right 2.7 2.8
+    extend right 2.7 2.9
+    extend right 2.9 2.10
+    extend right 2.10 2.11
+    extend right 2.11 2.12
+    extend right 2.12 2.13
+    extend right 2.13 2.14
+    extend right 2.14 2.15
+    extend right 2.15 2.16
+    extend right 2.16 2.17
+    extend right 2.17 2.18
+    extend right 2.18 2.19
+    extend right 2.19 2.20
+    extend right 2.20 2.21
+    extend right 2.21 2.22
+    extend right 2.22 2.23
+    extend right 2.23 2.24
+    extend right 2.24 2.25
+    extend right 2.25 2.26
+    extend right 2.25 2.27
+    extend right 2.24 2.28
+    extend right 2.28 2.29
+    extend right 2.29 2.30
+    extend right 2.30 2.31
+    extend right 2.31 2.32
+    extend right 2.32 2.33
+    extend right 2.31 2.34
+    extend right 2.34 2.35
+    extend right 2.35 2.36
+    extend right 2.36 2.37
+    extend right 2.37 2.38
+    extend right 2.38 2.39
+    extend right 2.39 2.40
+    extend right 2.40 2.41
+    extend right 2.41 2.42
+    extend right 2.35 2.43
+    extend right 2.43 2.44
+    extend right 2.43 2.45
+    extend right 2.44 2.46
+    extend right 2.46 2.47
+    extend right 2.47 2.48
+    extend right 2.45 2.49
+    extend right 2.49 2.50
+    extend right 2.50 2.51
+    extend right 2.51 2.52
+    extend right 2.52 2.53
+    extend right 2.52 2.54
+    extend right 2.54 2.55
+    extend right 2.55 2.56
+    extend right 2.56 2.57
+    extend right 2.57 2.58
+    extend right 2.58 2.59
+    extend right 2.59 2.60
+    extend right 2.60 2.61
+    extend right 2.61 2.62
   endcentreline
 
 endsurvey

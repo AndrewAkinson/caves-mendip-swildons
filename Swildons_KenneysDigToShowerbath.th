@@ -112,6 +112,27 @@ survey KenneysDigToShowerbath
     10.18 - 37.45 24.32 0.260
     10.18 - 183.72 49.78 0.310
     10.14 10.20 295.14 51.23 3.879  #10.20=two tone calcite point tie in for long dry way survey
+    # Extended-elevation direction of each leg, as Footleg set it in PocketTopo
+    # (these only affect the extended elevation)
+    extend right 10.0 10.1
+    extend right 10.1 10.2
+    extend right 10.2 10.3
+    extend right 10.3 10.4
+    extend right 10.3 10.5
+    extend right 10.5 10.6
+    extend right 10.6 10.7
+    extend right 10.7 10.8
+    extend right 10.8 10.9
+    extend right 10.9 10.10
+    extend right 10.10 10.11
+    extend right 10.9 10.12
+    extend right 10.12 10.13
+    extend right 10.13 10.14
+    extend right 10.13 10.15
+    extend right 10.15 10.16
+    extend right 10.16 10.17
+    extend right 10.3 10.18
+    extend right 10.14 10.20
   endcentreline
 
 endsurvey

@@ -129,6 +129,24 @@ centreline
   8.16 - 3.97 83.91 1.360
   8.16 - 118.30 -86.28 0.910
   flags not duplicate
+    # Extended-elevation direction of each leg, as Footleg set it in PocketTopo
+    # (these only affect the extended elevation)
+    extend right 8.0 8.1
+    extend right 8.1 8.2
+    extend right 8.2 8.3
+    extend right 8.3 8.4
+    extend right 8.4 8.5
+    extend right 8.5 8.6
+    extend right 8.6 8.7
+    extend right 8.7 8.8
+    extend right 8.8 8.9
+    extend right 8.9 8.10
+    extend right 8.10 8.11
+    extend right 8.11 8.12
+    extend right 8.12 8.13
+    extend right 8.13 8.14
+    extend right 8.14 8.15
+    extend right 8.15 8.16
 endcentreline
 
 endsurvey

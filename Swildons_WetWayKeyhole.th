@@ -46,6 +46,14 @@ survey WetWayKeyhole
     14.6 - 274.40 80.41 1.956
     14.6 - 214.09 6.72 0.316
     14.6 - 170.05 -78.89 1.592
+    # Extended-elevation direction of each leg, as Footleg set it in PocketTopo
+    # (these only affect the extended elevation)
+    extend right 14.0 14.1
+    extend right 14.1 14.2
+    extend right 14.2 14.3
+    extend right 14.3 14.4
+    extend right 14.4 14.5
+    extend right 14.5 14.6
   endcentreline
 
 endsurvey

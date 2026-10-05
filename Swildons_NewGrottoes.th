@@ -89,6 +89,16 @@ survey NewGrottoes
     5.8  -  0.321  173.04  9.98  
     5.8  -  0.188  349.5  82.0  
     5.8  -  0.361  157.86  -75.31  
+    # Extended-elevation direction of each leg, as Footleg set it in PocketTopo
+    # (these only affect the extended elevation)
+    extend right 5.0 5.1
+    extend right 5.1 5.2
+    extend right 5.2 5.3
+    extend right 5.3 5.4
+    extend right 5.4 5.5
+    extend right 5.5 5.6
+    extend right 5.6 5.7
+    extend right 5.7 5.8
   endcentreline
 
 endsurvey

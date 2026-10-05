@@ -226,6 +226,53 @@ survey WetWayOxbows
     11.44 - 239.79 9.60 4.456
     11.44 - 97.70 88.67 3.206
     11.44 - 88.92 -78.32 1.309
+    # Extended-elevation direction of each leg, as Footleg set it in PocketTopo
+    # (these only affect the extended elevation)
+    extend right 11.0 11.1
+    extend right 11.1 11.2
+    extend right 11.2 11.3
+    extend right 11.3 11.4
+    extend right 11.4 11.5
+    extend right 11.5 11.6
+    extend right 11.6 11.7
+    extend right 11.7 11.8
+    extend right 11.8 11.9
+    extend right 11.6 11.10
+    extend right 11.10 11.11
+    extend right 11.11 11.12
+    extend right 11.12 11.13
+    extend right 11.13 11.14
+    extend right 11.14 11.15
+    extend right 11.15 11.16
+    extend right 11.16 11.17
+    extend right 11.17 11.18
+    extend right 11.18 11.19
+    extend right 11.19 11.20
+    extend right 11.20 11.21
+    extend right 11.21 11.22
+    extend right 11.22 11.23
+    extend right 11.23 11.24
+    extend right 11.24 11.25
+    extend right 11.25 11.26
+    extend right 11.26 11.27
+    extend right 11.27 11.28
+    extend right 11.28 11.29
+    extend right 11.29 11.0
+    extend right 11.16 11.30
+    extend right 11.30 11.31
+    extend right 11.31 11.32
+    extend right 11.32 11.33
+    extend right 11.33 11.34
+    extend right 11.34 11.35
+    extend right 11.35 11.36
+    extend right 11.36 11.37
+    extend right 11.37 11.38
+    extend right 11.38 11.39
+    extend right 11.39 11.40
+    extend right 11.40 11.41
+    extend right 11.41 11.42
+    extend right 11.42 11.43
+    extend right 11.43 11.44
   endcentreline
 
 endsurvey

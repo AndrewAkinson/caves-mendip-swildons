@@ -185,6 +185,39 @@ survey ButcombeOxbows
     12.29 - 252.50 -85.49 1.479
     12.29 12.30 137.85 7.93 0.906
     12.30 11.18 0.00 0.00 0.000
+    # Extended-elevation direction of each leg, as Footleg set it in PocketTopo
+    # (these only affect the extended elevation)
+    extend right 12.0 12.1
+    extend right 12.1 12.2
+    extend right 12.2 12.3
+    extend right 12.3 12.4
+    extend left 12.4 12.5
+    extend left 12.5 12.6
+    extend left 12.6 12.7
+    extend left 12.7 12.8
+    extend left 12.4 12.9
+    extend left 12.9 12.10
+    extend left 12.10 12.11
+    extend left 12.11 12.12
+    extend left 12.12 12.13
+    extend left 12.13 12.14
+    extend right 12.11 12.15
+    extend right 12.15 12.16
+    extend right 12.16 12.17
+    extend right 12.17 12.18
+    extend right 12.18 12.19
+    extend right 12.19 12.20
+    extend right 12.3 12.21
+    extend right 12.21 12.22
+    extend right 12.22 12.23
+    extend right 12.23 12.24
+    extend right 12.24 12.25
+    extend right 12.25 12.26
+    extend right 12.26 12.27
+    extend right 12.27 12.28
+    extend right 12.28 12.29
+    extend right 12.29 12.30
+    extend right 12.30 11.18
   endcentreline
 
 endsurvey
