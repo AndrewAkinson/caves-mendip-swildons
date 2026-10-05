@@ -303,11 +303,13 @@ def main(argv=None):
             print(f"{out}: {st['length']:.0f} m, {st['depth']:.0f} m deep" + (f", {pdf}" if pdf else ""))
             index.append((name, d, st, pdf))
     items = "".join(
-        f'<li><a href="{n}.{"pdf" if pdf else "html"}"><b>{R.esc(rd["title"])}</b></a><br>'
-        f'<span>{R.esc(rd.get("subtitle", ""))} · {st["length"]:.0f} m, {st["depth"]:.0f} m deep</span></li>'
+        f'<li><a href="{n}.html"><b>{R.esc(rd["title"])}</b></a><br>'
+        f'<span>{R.esc(rd.get("subtitle", ""))} · {st["length"]:.0f} m</span><br>'
+        f'<a href="{n}.html">On screen or phone</a>' + (f' · <a href="{n}.pdf">PDF to print, A3</a>' if pdf else '') + '</li>'
         for n, rd, st, pdf in index)
     open(os.path.join(OUT, 'index.html'), 'w').write(
         f'<!doctype html><meta charset="utf-8"><title>Swildons Hole route cards</title>'
+        f'<meta name="viewport" content="width=device-width, initial-scale=1">'
         f'<style>body{{font-family:Arial,sans-serif;max-width:46em;margin:2em auto;padding:0 1em;line-height:1.45}}'
         f'li{{margin:.8em 0}}span{{color:#555}}</style><h1>Swildons Hole route cards</h1>'
         f'<p>Routes through the cave, with the way to go at each junction. Drafts: worked out from the survey, '

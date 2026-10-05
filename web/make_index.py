@@ -285,23 +285,38 @@ def main():
     if routes:
         doc.append("<h2>Route cards <small>(draft)</small></h2>\n"
                    "<p>Routes through the cave with the way to go at each junction, worked out "
-                   "from the survey. Not yet checked underground.</p>\n<div class=\"grid\">")
+                   "from the survey. Not yet checked underground. Open a card on your phone (save the page "
+                   "to have it offline underground), or print the PDF at A3.</p>\n<div class=\"grid\">")
         for pdf in routes:
             name = os.path.basename(pdf)
-            htm = pdf[:-4] + ".html"
-            title = name
+            htm_name = name[:-4] + ".html"
+            htm = os.path.join(OUT, "routes", htm_name)
+            title, sub = name, ""
             if os.path.exists(htm):
-                m = re.search(r"<title>(.*?) ·", open(htm, encoding="utf-8").read(4000))
-                title = m.group(1) if m else name
+                head = open(htm, encoding="utf-8").read(6000)
+                m = re.search(r"<title>(.*?) ·", head)
+                title = html.unescape(m.group(1)) if m else name
+            # the subtitle is after the embedded drawing, further into the file
+            if os.path.exists(htm):
+                m = re.search(r'<div class="subtitle">(.*?)</div>', open(htm, encoding="utf-8").read())
+                sub = html.unescape(m.group(1)) if m else ""
+            # the HTML card is the main link: it reflows on a phone (and
+            # works offline once saved), and prints as the A3 sheet
+            main = f"routes/{htm_name}" if os.path.exists(htm) else f"routes/{name}"
             png = os.path.join(PREVIEW_DIR, "route-" + name.replace(".pdf", ".png"))
             has_png = render_preview(pdf, png)
-            thumb = (f'<a class="thumb" href="routes/{e(name)}"><img src="previews/{e(os.path.basename(png))}" '
+            thumb = (f'<a class="thumb" href="{e(main)}"><img src="previews/{e(os.path.basename(png))}" '
                      f'alt="{e(title)} preview" loading="lazy"></a>' if has_png else "")
+            links = []
+            if os.path.exists(htm):
+                links.append(f'<a href="routes/{e(htm_name)}">On screen or phone</a>')
+            links.append(f'<a href="routes/{e(name)}">PDF to print, A3</a> &middot; {e(human(os.path.getsize(pdf)))}')
             doc.append(f"""  <div class="card">
     {thumb}
     <div class="body">
-      <h3><a href="routes/{e(name)}">{e(title)}</a></h3>
-      <div class="size">PDF &middot; {e(human(os.path.getsize(pdf)))}</div>
+      <h3><a href="{e(main)}">{e(title)}</a></h3>
+      <p>{e(sub)}</p>
+      <div class="size">{" &middot; ".join(links)}</div>
     </div>
   </div>""")
         doc.append("</div>")
