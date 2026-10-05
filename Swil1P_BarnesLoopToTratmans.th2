@@ -7,7 +7,8 @@ encoding  utf-8
 scrap BarnesLoopSP1 -projection plan -author 2026.10.05 "Footleg" -copyright 2017 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 # Walls traced from the black (and brown, upper level) lines of Footleg's PocketTopo plan sketch;
-# the invisible outline around them gives the passage fill.
+# the invisible outline around them gives the passage fill. Water areas, water flow and
+# formations come from the sketch's blue and green marks, labels from its notes.
 
 line wall -outline none
   -94.45 -1201.69
@@ -5005,6 +5006,521 @@ line rock-border -close on
   1218.66 -103.19
   1218.07 -109.09
 endline
+
+line border -id BarnesLoopSP1-water1 -close on -clip off
+  65.94 -1058.31
+  49.57 -1057.74
+  39.17 -1054.07
+  32.35 -1049.16
+  39.21 -1035.30
+  41.66 -1021.51
+  88.12 -1009.59
+  101.89 -1011.40
+  105.11 -1013.63
+  109.87 -1023.72
+  109.84 -1033.18
+  107.07 -1037.59
+  86.44 -1049.86
+endline
+
+area water -clip off
+  BarnesLoopSP1-water1
+endarea
+
+line border -id BarnesLoopSP1-water2 -close on -clip off
+  396.12 -846.57
+  383.13 -844.13
+  375.38 -839.84
+  369.40 -832.99
+  365.21 -823.56
+  365.24 -815.87
+  368.61 -805.05
+  375.31 -795.88
+  387.40 -789.11
+  396.62 -789.12
+  410.58 -792.46
+  426.83 -803.06
+  431.32 -812.04
+  432.10 -818.13
+  428.03 -830.42
+  419.74 -838.91
+  404.01 -845.69
+endline
+
+area water -clip off
+  BarnesLoopSP1-water2
+endarea
+
+line border -id BarnesLoopSP1-water3 -close on -clip off
+  388.99 -766.18
+  364.08 -766.91
+  356.98 -762.39
+  348.72 -741.75
+  362.22 -675.31
+  371.23 -662.96
+  377.81 -657.19
+  392.72 -653.69
+  410.08 -659.57
+  418.44 -672.70
+  424.96 -690.92
+  427.94 -710.19
+  413.02 -748.64
+  403.26 -759.33
+endline
+
+area water -clip off
+  BarnesLoopSP1-water3
+endarea
+
+line border -id BarnesLoopSP1-water4 -close on -clip off
+  365.25 -592.98
+  350.42 -584.89
+  334.15 -571.84
+  325.46 -558.68
+  321.20 -541.31
+  313.77 -526.80
+  295.75 -506.41
+  286.93 -500.22
+  271.23 -476.40
+  260.38 -451.74
+  259.11 -444.26
+  259.94 -438.90
+  266.50 -431.73
+  272.44 -429.10
+  290.93 -426.71
+  310.83 -427.29
+  321.80 -437.68
+  378.50 -531.58
+  382.26 -540.38
+  388.02 -565.66
+  386.33 -579.15
+  377.73 -588.75
+endline
+
+area water -clip off
+  BarnesLoopSP1-water4
+endarea
+
+line border -id BarnesLoopSP1-water5 -close on -clip off
+  202.59 -428.27
+  187.66 -424.32
+  177.73 -408.11
+  149.39 -299.54
+  160.23 -275.76
+  182.66 -268.16
+  192.12 -268.25
+  205.03 -274.67
+  216.93 -296.11
+  248.11 -368.83
+  253.57 -394.78
+  244.89 -409.22
+  235.00 -419.66
+  224.34 -425.26
+endline
+
+area water -clip off
+  BarnesLoopSP1-water5
+endarea
+
+line border -id BarnesLoopSP1-water6 -close on -clip off
+  87.37 -206.72
+  76.98 -192.61
+  74.57 -174.84
+  74.60 -144.55
+  95.85 -125.22
+  100.47 -124.08
+  116.31 -133.12
+  128.41 -146.77
+  141.30 -163.75
+  143.04 -175.20
+  140.96 -180.13
+  128.23 -191.28
+  112.96 -200.95
+  105.24 -204.34
+endline
+
+area water -clip off
+  BarnesLoopSP1-water6
+endarea
+
+line border -id BarnesLoopSP1-water7 -close on -clip off
+  361.80 -113.81
+  330.07 -105.78
+  315.73 -99.39
+  294.96 -85.01
+  268.59 -53.09
+  248.91 -23.17
+  241.28 -7.20
+  255.10 43.38
+  278.89 62.39
+  286.56 64.91
+  297.80 64.92
+  312.90 61.54
+  321.98 55.63
+  352.76 22.12
+  372.66 10.72
+  399.16 5.29
+  421.86 -9.53
+  426.35 -14.96
+  431.25 -34.10
+  423.05 -62.56
+  388.78 -103.16
+  377.28 -110.52
+endline
+
+area water -clip off
+  BarnesLoopSP1-water7
+endarea
+
+line border -id BarnesLoopSP1-water8 -close on -clip off
+  523.54 -46.88
+  519.54 -45.77
+  511.36 -39.23
+  506.90 -29.51
+  533.46 0.62
+  554.75 6.64
+  571.69 -5.80
+  574.53 -9.92
+  575.31 -22.51
+  573.44 -27.92
+  565.94 -35.45
+  557.30 -40.54
+endline
+
+area water -clip off
+  BarnesLoopSP1-water8
+endarea
+
+line border -id BarnesLoopSP1-water9 -close on -clip off
+  641.36 -24.04
+  615.56 -18.97
+  603.93 -8.84
+  604.64 3.87
+  614.54 17.92
+  626.98 26.20
+  659.86 25.44
+  667.33 19.62
+  671.39 2.67
+  671.29 -4.67
+  666.16 -13.20
+  655.61 -20.56
+endline
+
+area water -clip off
+  BarnesLoopSP1-water9
+endarea
+
+line border -id BarnesLoopSP1-water10 -close on -clip off
+  902.34 -316.17
+  886.64 -312.86
+  882.53 -307.14
+  881.28 -297.94
+  882.72 -284.85
+  888.39 -275.56
+  896.57 -272.10
+  901.92 -272.12
+  911.03 -275.46
+  921.21 -292.74
+  918.46 -307.73
+  909.02 -314.74
+endline
+
+area water -clip off
+  BarnesLoopSP1-water10
+endarea
+
+line border -id BarnesLoopSP1-water11 -close on -clip off
+  1220.64 -64.01
+  1198.66 -59.22
+  1126.20 -37.21
+  1114.01 -23.61
+  1112.76 -12.44
+  1114.82 -2.54
+  1125.65 1.32
+  1135.06 0.14
+  1196.72 -15.85
+  1236.82 -35.57
+  1240.70 -41.79
+  1238.09 -56.52
+  1230.17 -61.45
+endline
+
+area water -clip off
+  BarnesLoopSP1-water11
+endarea
+
+line border -id BarnesLoopSP1-water12 -close on -clip off
+  1320.97 -97.48
+  1311.70 -95.07
+  1307.07 -82.80
+  1305.97 -64.19
+  1313.92 -58.15
+  1330.58 -61.74
+  1338.10 -84.46
+  1330.28 -94.13
+endline
+
+area water -clip off
+  BarnesLoopSP1-water12
+endarea
+
+line border -id BarnesLoopSP1-water13 -close on -clip off
+  1423.01 -1.80
+  1396.84 0.58
+  1392.45 2.95
+  1388.33 8.78
+  1386.58 15.95
+  1388.32 24.58
+  1394.43 34.79
+  1403.06 38.30
+  1441.03 46.99
+  1472.13 48.58
+  1481.37 45.54
+  1486.57 32.25
+  1480.32 26.17
+  1446.14 -0.80
+endline
+
+area water -clip off
+  BarnesLoopSP1-water13
+endarea
+
+line border -id BarnesLoopSP1-water14 -close on -clip off
+  1415.10 75.37
+  1399.97 77.75
+  1391.75 81.01
+  1386.75 87.58
+  1432.73 167.59
+  1455.05 176.88
+  1464.28 175.91
+  1464.52 133.06
+  1457.28 88.35
+  1448.89 76.99
+endline
+
+area water -clip off
+  BarnesLoopSP1-water14
+endarea
+
+line border -id BarnesLoopSP1-water15 -close on -clip off
+  1415.61 75.38
+  1396.58 76.24
+  1386.81 85.84
+  1380.34 101.22
+  1362.17 168.66
+  1362.61 176.21
+  1401.34 214.16
+  1414.49 217.09
+  1423.65 214.28
+  1429.87 205.10
+  1431.46 81.28
+  1428.60 78.63
+endline
+
+area water -clip off
+  BarnesLoopSP1-water15
+endarea
+
+line border -id BarnesLoopSP1-water16 -close on -clip off
+  1356.54 195.85
+  1348.12 203.39
+  1332.25 256.69
+  1338.85 282.32
+  1353.00 291.10
+  1367.53 282.02
+  1372.38 265.01
+  1377.91 227.86
+  1377.85 217.79
+  1372.80 205.28
+  1363.60 197.70
+endline
+
+area water -clip off
+  BarnesLoopSP1-water16
+endarea
+
+line border -id BarnesLoopSP1-water17 -close on -clip off
+  1310.37 478.79
+  1307.83 476.63
+  1271.18 493.09
+  1269.43 503.53
+  1281.39 523.89
+  1286.91 529.89
+  1292.19 527.63
+  1301.95 512.97
+endline
+
+area water -clip off
+  BarnesLoopSP1-water17
+endarea
+
+line border -id BarnesLoopSP1-water18 -close on -clip off
+  1144.66 625.95
+  1113.01 661.79
+  1098.63 694.80
+  1099.45 698.61
+  1102.47 701.04
+  1106.29 702.47
+  1126.54 696.52
+  1135.43 689.70
+  1145.89 678.02
+  1159.55 655.46
+  1162.16 647.01
+  1161.34 631.12
+  1157.90 626.65
+endline
+
+area water -clip off
+  BarnesLoopSP1-water18
+endarea
+
+point -107.94 -1155.80 water-flow -orientation 218.6
+
+point 266.45 -1004.87 water-flow -orientation 309.5
+
+point 363.39 -1046.69 water-flow -orientation 259.2
+
+point 451.40 -967.80 water-flow -orientation 148.2
+
+point 416.50 -893.26 water-flow -orientation 148.2
+
+point 164.37 -91.76 water-flow -orientation 254.1
+
+point 872.19 -191.84 water-flow -orientation 236.4
+
+point 919.36 -34.03 water-flow -orientation 236.4
+
+point -76.42 -1118.94 stalactite
+
+point 191.44 -201.14 flowstone -orientation 186.3
+
+point 160.75 -181.89 flowstone -orientation 186.3
+
+point 234.86 -164.03 flowstone -orientation 254.1
+
+point 200.55 -156.73 flowstone -orientation 254.1
+
+point 232.31 -133.37 flowstone -orientation 254.1
+
+point 263.04 -141.10 flowstone -orientation 254.1
+
+point 279.01 -107.46 flowstone -orientation 239.7
+
+point 244.19 -70.84 flowstone -orientation 254.1
+
+point 225.88 -187.97 stalactite
+
+point 620.63 107.60 flowstone -orientation 242.9
+
+point 599.54 78.14 flowstone -orientation 242.9
+
+point 572.88 124.37 flowstone -orientation 242.9
+
+point 525.75 112.95 flowstone -orientation 242.9
+
+point 527.91 161.57 flowstone -orientation 242.9
+
+point 487.84 142.26 flowstone -orientation 296.3
+
+point 480.42 189.33 flowstone -orientation 296.3
+
+point 447.99 149.17 flowstone -orientation 296.3
+
+point 865.34 -78.25 flowstone -orientation 299.7
+
+point 818.76 -65.13 flowstone -orientation 299.7
+
+point 800.75 -71.30 flowstone -orientation 299.7
+
+point 925.16 -65.99 flowstone -orientation 236.4
+
+point 1102.19 -35.21 flowstone -orientation 276.3
+
+point 1095.24 -11.48 flowstone -orientation 276.3
+
+point 1074.16 -31.60 flowstone -orientation 276.3
+
+point 1037.73 -10.08 flowstone -orientation 276.3
+
+point 1006.51 -36.83 flowstone -orientation 236.4
+
+point 988.86 -49.84 flowstone -orientation 236.4
+
+point 953.59 -70.81 stalactite
+
+point 1102.87 -69.07 flowstone -orientation 276.3
+
+point 1141.63 -63.92 flowstone -orientation 303.8
+
+point 1130.08 -65.29 flowstone -orientation 303.8
+
+point 1355.93 -72.26 flowstone -orientation 271.6
+
+point 1400.47 -30.37 flowstone -orientation 178.8
+
+point 1420.24 -61.26 flowstone -orientation 178.8
+
+point 1426.54 -15.20 flowstone -orientation 178.8
+
+point 1405.03 56.24 flowstone -orientation 189.7
+
+point 1431.95 183.15 flowstone -orientation 157.3
+
+point 1384.80 218.82 flowstone -orientation 157.3
+
+point 1337.36 290.94 flowstone -orientation 157.3
+
+point 1346.73 351.73 flowstone -orientation 157.3
+
+point 1323.67 334.02 flowstone -orientation 157.3
+
+point 1329.72 375.28 flowstone -orientation 157.3
+
+point 1301.14 385.20 flowstone -orientation 157.3
+
+point 1372.96 308.06 flowstone -orientation 157.3
+
+point 1295.08 414.39 flowstone -orientation 148.2
+
+point 1263.77 447.11 flowstone -orientation 148.2
+
+point 1284.99 471.86 flowstone -orientation 148.2
+
+point 1259.84 506.77 flowstone -orientation 148.2
+
+point 1225.92 536.88 flowstone -orientation 148.2
+
+point 1255.33 541.59 flowstone -orientation 148.2
+
+point 1203.57 576.77 flowstone -orientation 148.2
+
+point 1198.34 643.41 flowstone -orientation 132.1
+
+point 1163.30 706.83 flowstone -orientation 132.1
+
+point 1183.48 680.22 flowstone -orientation 132.1
+
+point 1209.95 668.96 flowstone -orientation 132.1
+
+point 1196.14 705.78 flowstone -orientation 132.1
+
+point 1180.16 729.49 flowstone -orientation 132.1
+
+point 1175.70 603.42 flowstone -orientation 132.1
+
+point 1135.63 752.40 stalagmite
+
+point 1082.51 822.60 flowstone -orientation 126.4
+
+point 1055.54 806.22 flowstone -orientation 126.4
+
+point 1049.84 837.95 flowstone -orientation 126.4
+
+point 1610.24 181.10 label -text "Barnes Loop" -scale l
+
+point 570.87 440.94 label -text "Dig" -scale s
+
+point -125.98 -1342.52 label -text "<centre>Tratman's<br>Temple" -scale l
 
 point 1000.00 1000.00 station -name 23.0
 

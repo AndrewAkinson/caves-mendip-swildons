@@ -7,7 +7,8 @@ encoding  utf-8
 scrap DblPotsSP1 -projection plan -author 2026.10.05 "Footleg" -copyright 2017 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 # Walls traced from the black (and brown, upper level) lines of Footleg's PocketTopo plan sketch;
-# the invisible outline around them gives the passage fill.
+# the invisible outline around them gives the passage fill. Water areas, water flow and
+# formations come from the sketch's blue and green marks, labels from its notes.
 
 line wall -outline none
   82.99 55.04
@@ -3009,6 +3010,135 @@ line rock-border -close on
   992.83 1028.66
   996.38 1029.84
 endline
+
+line border -id DblPotsSP1-water1 -close on -clip off
+  20.45 1132.80
+  12.52 1140.67
+  7.45 1151.46
+  8.02 1165.23
+  12.33 1174.03
+  25.64 1189.25
+  33.30 1194.99
+  52.22 1195.56
+  58.84 1189.60
+  63.30 1180.61
+  60.23 1166.56
+  47.77 1135.70
+  45.04 1133.40
+endline
+
+area water -clip off
+  DblPotsSP1-water1
+endarea
+
+line border -id DblPotsSP1-water2 -close on -clip off
+  348.72 999.68
+  325.05 1006.02
+  297.91 1027.51
+  265.70 1068.09
+  303.18 1119.35
+  325.67 1134.16
+  381.63 1090.29
+  397.14 1065.59
+  395.53 1053.77
+  386.02 1027.59
+  377.10 1015.29
+endline
+
+area water -clip off
+  DblPotsSP1-water2
+endarea
+
+line border -id DblPotsSP1-water3 -close on -clip off
+  446.37 969.81
+  438.94 973.12
+  433.70 979.56
+  416.34 1013.74
+  418.37 1022.48
+  427.00 1029.72
+  436.76 1029.67
+  477.99 1004.81
+  479.23 990.39
+  473.45 977.57
+  467.82 974.02
+endline
+
+area water -clip off
+  DblPotsSP1-water3
+endarea
+
+line border -id DblPotsSP1-water4 -close on -clip off
+  726.85 867.65
+  716.63 870.28
+  709.24 878.55
+  719.20 894.03
+  782.63 950.34
+  802.88 948.96
+  807.60 937.52
+  801.75 914.91
+  770.60 882.08
+  739.52 867.74
+endline
+
+area water -clip off
+  DblPotsSP1-water4
+endarea
+
+line border -id DblPotsSP1-water5 -close on -clip off
+  829.95 964.55
+  794.81 974.10
+  785.05 982.10
+  779.46 989.09
+  779.45 1021.18
+  785.81 1041.73
+  830.97 1083.39
+  842.11 1082.41
+  859.18 1069.66
+  868.39 1049.90
+  873.14 1024.94
+  873.54 1001.10
+  848.89 972.88
+endline
+
+area water -clip off
+  DblPotsSP1-water5
+endarea
+
+line border -id DblPotsSP1-water6 -close on -clip off
+  967.09 986.64
+  934.57 992.21
+  921.51 1008.28
+  917.38 1015.99
+  926.34 1030.28
+  932.68 1036.59
+  942.07 1041.62
+  959.37 1042.44
+  969.74 1041.58
+  979.49 1036.48
+  988.79 1019.85
+  990.43 1008.17
+  983.90 994.51
+endline
+
+area water -clip off
+  DblPotsSP1-water6
+endarea
+
+point 18.38 788.69 water-flow -orientation 181.1
+
+point -32.06 1060.39 water-flow -orientation 164.9
+
+point 648.21 897.34 water-flow -orientation 279.3
+
+point 26.18 84.33 flowstone -orientation 231.8
+
+point 8.61 36.76 flowstone -orientation 231.8
+
+point 463.54 1036.68 flowstone -orientation 307.2
+
+point 551.22 910.94 flowstone -orientation 279.3
+
+point 890.16 1130.47 label -text "Double Pots" -scale l
 
 point 1000.00 1000.00 station -name 22.0
 

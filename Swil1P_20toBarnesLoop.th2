@@ -88,6 +88,8 @@ point 2592.5229133858265 231.4996850393702 station -name 21.2
 
 point 2665.1529133858267 135.5096850393702 station -name 21.0
 
+point 2665.0 400.0 label -text "<centre>20ft<br>Pot" -scale l
+
 endscrap
 
 
@@ -3320,6 +3322,181 @@ line rock-border -close on
   585.63 1168.93
   584.44 1168.93
 endline
+
+line border -id StreamwaySP2-water1 -close on -clip off
+  247.53 1172.87
+  238.63 1175.38
+  231.03 1180.40
+  223.82 1191.18
+  228.49 1205.14
+  244.18 1211.43
+  371.36 1219.33
+  443.35 1205.10
+  451.15 1198.79
+  449.43 1191.35
+  445.09 1186.83
+  436.16 1183.93
+endline
+
+area water -clip off
+  StreamwaySP2-water1
+endarea
+
+line border -id StreamwaySP2-water2 -close on -clip off
+  895.94 861.57
+  883.94 863.55
+  872.44 870.50
+  864.21 886.67
+  857.09 954.90
+  859.96 962.79
+  869.99 968.88
+  886.29 966.51
+  945.09 907.73
+  949.56 900.06
+  949.08 894.22
+  946.09 890.22
+endline
+
+area water -clip off
+  StreamwaySP2-water2
+endarea
+
+line border -id StreamwaySP2-water3 -close on -clip off
+  1116.15 767.67
+  1099.70 769.89
+  1086.05 780.33
+  1066.27 798.98
+  1060.70 810.76
+  1061.67 816.69
+  1069.65 822.02
+  1075.88 821.33
+  1115.25 787.99
+  1123.61 774.20
+endline
+
+area water -clip off
+  StreamwaySP2-water3
+endarea
+
+line border -id StreamwaySP2-water4 -close on -clip off
+  1384.87 494.57
+  1373.22 498.50
+  1299.95 553.46
+  1256.71 590.19
+  1248.99 627.84
+  1257.51 628.91
+  1270.88 621.06
+  1358.40 560.16
+  1392.29 528.08
+  1396.97 518.31
+  1399.36 504.40
+  1392.65 496.10
+endline
+
+area water -clip off
+  StreamwaySP2-water4
+endarea
+
+line border -id StreamwaySP2-water5 -close on -clip off
+  1550.08 349.90
+  1533.85 368.12
+  1503.10 436.71
+  1503.95 439.19
+  1526.96 445.93
+  1568.27 433.39
+  1582.88 427.23
+  1620.09 398.89
+  1622.44 395.22
+  1618.84 382.18
+  1608.66 372.00
+  1585.88 358.85
+endline
+
+area water -clip off
+  StreamwaySP2-water5
+endarea
+
+line border -id StreamwaySP2-water6 -close on -clip off
+  1893.98 155.71
+  1870.14 158.85
+  1841.75 172.45
+  1797.21 197.40
+  1716.09 267.82
+  1713.18 275.08
+  1713.27 279.78
+  1715.88 283.85
+  1725.07 289.31
+  1731.49 290.03
+  1746.80 285.66
+  1824.08 234.09
+  1834.88 217.40
+  1848.68 204.07
+  1864.37 195.13
+  1897.38 185.17
+  1918.08 171.18
+  1917.76 168.61
+  1902.12 157.18
+endline
+
+area water -clip off
+  StreamwaySP2-water6
+endarea
+
+point 154.12 1224.52 water-flow -orientation 303.6
+
+point 541.29 1193.24 water-flow -orientation 299.6
+
+point 809.44 993.90 water-flow -orientation 330.6
+
+point 1037.20 840.66 water-flow -orientation 299.3
+
+point 975.88 874.58 water-flow -orientation 299.3
+
+point 1217.36 665.23 water-flow -orientation 320.4
+
+point 1487.26 419.23 water-flow -orientation 294.4
+
+point 912.21 940.65 flowstone -orientation 298.6
+
+point 132.39 1205.84 flowstone -orientation 303.6
+
+point 189.27 1242.75 flowstone -orientation 303.6
+
+point 157.37 1263.29 flowstone -orientation 303.6
+
+point 338.01 1154.72 flowstone -orientation 264.1
+
+point 310.63 1162.11 flowstone -orientation 264.1
+
+point 374.40 1146.23 flowstone -orientation 264.1
+
+point 624.66 1106.66 flowstone -orientation 299.6
+
+point 545.70 1150.35 flowstone -orientation 299.6
+
+point 660.22 1136.75 flowstone -orientation 299.6
+
+point 828.74 992.50 flowstone -orientation 330.6
+
+point 939.25 888.07 flowstone -orientation 298.6
+
+point 1260.50 684.43 flowstone -orientation 320.4
+
+point 1278.57 634.96 flowstone -orientation 320.4
+
+point 1309.44 599.80 flowstone -orientation 320.4
+
+point 1327.08 577.35 flowstone -orientation 317.5
+
+point 1718.41 306.18 flowstone -orientation 308.1
+
+point 1899.37 134.23 flowstone -orientation 267.5
+
+point 561.89 899.49 label -text "<centre>Calcite choked<br>at roof level" -scale s
+
+point 180.00 1025.47 label -text "Calcite choke" -scale s
+
+point 786.29 934.92 label -text "Dig" -scale s
 
 point 1965.90 165.31 station -name 21.9
 

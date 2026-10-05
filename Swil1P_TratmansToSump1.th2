@@ -7,7 +7,8 @@ encoding  utf-8
 scrap TratmansToSump1SP1 -projection plan -author 2026.10.05 "Footleg" -copyright 2019 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 # Walls traced from the black (and brown, upper level) lines of Footleg's PocketTopo plan sketch;
-# the invisible outline around them gives the passage fill.
+# the invisible outline around them gives the passage fill. Water areas, water flow and
+# formations come from the sketch's blue and green marks, labels from its notes.
 
 line wall -outline none
   -434.79 1081.20
@@ -7991,6 +7992,307 @@ line rock-border -close on
   993.55 1001.67
   995.91 1002.26
 endline
+
+line border -id TratmansToSump1SP1-water1 -close on -clip off
+  -3322.04 988.14
+  -3324.77 987.37
+  -3468.23 1071.73
+  -3468.96 1073.89
+  -3459.92 1095.85
+  -3423.41 1124.48
+  -3408.72 1133.43
+  -3377.32 1139.07
+  -3367.52 1138.25
+  -3360.33 1135.48
+  -3351.29 1126.42
+  -3316.65 1076.81
+  -3309.29 1062.08
+  -3306.07 1046.75
+  -3306.88 1035.14
+  -3310.11 1019.11
+endline
+
+area water -clip off
+  TratmansToSump1SP1-water1
+endarea
+
+line border -id TratmansToSump1SP1-water2 -close on -clip off
+  -3352.61 945.39
+  -3396.42 953.46
+  -3428.52 998.87
+  -3443.72 1011.81
+  -3452.30 1022.86
+  -3461.69 1041.92
+  -3408.56 1133.49
+  -3377.32 1139.07
+  -3360.50 1135.61
+  -3351.29 1126.42
+  -3316.65 1076.81
+  -3309.29 1062.08
+  -3306.07 1046.75
+  -3306.88 1035.14
+  -3324.18 965.36
+  -3337.29 949.47
+endline
+
+area water -clip off
+  TratmansToSump1SP1-water2
+endarea
+
+line border -id TratmansToSump1SP1-water3 -close on -clip off
+  -3018.46 1566.33
+  -3073.79 1585.04
+  -3092.02 1596.46
+  -3125.17 1625.76
+  -3153.24 1641.45
+  -3168.51 1653.16
+  -3181.31 1665.86
+  -3219.79 1723.58
+  -3219.38 1726.12
+  -3209.43 1733.72
+  -3197.69 1735.96
+  -3175.92 1727.17
+  -3160.50 1719.38
+  -3128.95 1697.91
+  -3096.73 1672.59
+  -3006.61 1597.81
+  -3003.32 1592.40
+  -3002.20 1580.58
+  -3010.50 1569.70
+endline
+
+area water -clip off
+  TratmansToSump1SP1-water3
+endarea
+
+line border -id TratmansToSump1SP1-water4 -close on -clip off
+  -1555.21 1125.49
+  -1574.40 1127.90
+  -1575.90 1130.21
+  -1556.71 1163.19
+  -1547.14 1177.52
+  -1543.44 1179.81
+  -1423.56 1179.03
+  -1359.40 1171.91
+  -1343.16 1165.43
+  -1336.27 1160.26
+  -1332.68 1152.32
+  -1331.06 1140.91
+  -1332.84 1134.44
+  -1338.56 1127.04
+  -1351.41 1115.74
+  -1382.62 1118.29
+  -1407.96 1123.44
+  -1440.98 1123.16
+  -1456.91 1126.14
+  -1488.32 1123.13
+endline
+
+area water -clip off
+  TratmansToSump1SP1-water4
+endarea
+
+line border -id TratmansToSump1SP1-water5 -close on -clip off
+  -563.42 1063.48
+  -576.82 1070.90
+  -617.08 1153.36
+  -619.49 1161.27
+  -617.17 1164.14
+  -612.04 1165.63
+  -538.81 1175.86
+  -523.74 1174.21
+  -514.51 1169.97
+  -506.66 1161.43
+  -531.96 1088.41
+  -547.32 1066.89
+  -553.42 1064.13
+endline
+
+area water -clip off
+  TratmansToSump1SP1-water5
+endarea
+
+line border -id TratmansToSump1SP1-water6 -close on -clip off
+  -241.62 979.03
+  -250.21 982.02
+  -346.55 1087.90
+  -346.76 1093.99
+  -342.64 1107.11
+  -329.28 1121.29
+  -315.52 1126.02
+  -260.24 1087.34
+  -246.32 1074.96
+  -225.70 1029.81
+  -224.76 1023.52
+  -228.75 994.72
+  -232.73 982.74
+  -234.58 979.99
+endline
+
+area water -clip off
+  TratmansToSump1SP1-water6
+endarea
+
+line border -id TratmansToSump1SP1-water7 -close on -clip off
+  344.30 732.02
+  226.63 798.38
+  209.33 810.90
+  186.32 832.21
+  183.12 838.48
+  183.15 844.17
+  185.92 850.94
+  194.36 856.24
+  202.99 857.41
+  310.06 797.68
+  359.36 765.60
+  376.44 742.58
+endline
+
+area water -clip off
+  TratmansToSump1SP1-water7
+endarea
+
+line border -id TratmansToSump1SP1-water8 -close on -clip off
+  402.65 695.39
+  373.50 715.82
+  373.16 718.70
+  384.84 723.47
+  409.55 728.40
+  419.70 703.48
+  411.54 697.93
+endline
+
+area water -clip off
+  TratmansToSump1SP1-water8
+endarea
+
+line border -id TratmansToSump1SP1-water9 -close on -clip off
+  826.77 757.21
+  822.90 758.15
+  794.68 779.30
+  757.97 846.19
+  756.68 858.49
+  758.89 862.71
+  766.49 868.39
+  885.51 922.83
+  887.44 919.64
+  878.59 797.98
+  875.54 788.65
+  870.87 781.92
+  848.78 765.78
+endline
+
+area water -clip off
+  TratmansToSump1SP1-water9
+endarea
+
+line border -id TratmansToSump1SP1-water10 -close on -clip off
+  826.77 757.21
+  822.90 758.15
+  794.58 779.46
+  757.87 846.39
+  756.62 858.31
+  762.76 866.51
+  812.02 880.17
+  878.37 799.04
+  875.47 788.47
+  870.71 781.78
+  848.61 765.68
+endline
+
+area water -clip off
+  TratmansToSump1SP1-water10
+endarea
+
+point -1920.25 1104.55 water-flow -orientation 289.8
+
+point -3057.01 1181.46 water-flow -orientation 148.7
+
+point -2994.51 1289.58 water-flow -orientation 239.9
+
+point -2916.30 1495.11 water-flow -orientation 128.1
+
+point -2782.49 1263.07 water-flow -orientation 278.1
+
+point -2633.34 1282.08 water-flow -orientation 278.1
+
+point -2480.26 1331.58 water-flow -orientation 278.1
+
+point -2240.10 1236.71 water-flow -orientation 285.1
+
+point -1575.74 1152.26 water-flow -orientation 275.3
+
+point -1587.49 1154.82 water-flow -orientation 275.3
+
+point -1225.81 1123.64 water-flow -orientation 269.8
+
+point -1105.86 1144.26 water-flow -orientation 288.2
+
+point -436.52 1142.90 water-flow -orientation 289.9
+
+point -185.73 924.95 water-flow -orientation 302.0
+
+point 371.70 732.18 water-flow -orientation 303.6
+
+point 820.25 563.51 water-flow -orientation 282.2
+
+point 1111.09 542.04 water-flow -orientation 152.5
+
+point 970.28 580.82 water-flow -orientation 270.6
+
+point 1003.02 636.64 water-flow -orientation 152.5
+
+point 901.87 746.69 water-flow -orientation 114.1
+
+point 1104.58 1094.85 water-flow -orientation 39.0
+
+point -407.88 1111.95 stalactite
+
+point -431.68 1072.30 flowstone -orientation 289.9
+
+point 241.56 844.67 flowstone -orientation 303.6
+
+point 188.38 864.79 flowstone -orientation 303.6
+
+point 211.70 928.40 flowstone -orientation 303.6
+
+point 196.24 894.12 flowstone -orientation 303.6
+
+point 154.83 940.28 flowstone -orientation 275.4
+
+point 129.10 910.68 flowstone -orientation 275.4
+
+point 100.97 950.82 flowstone -orientation 275.4
+
+point 55.05 920.03 flowstone -orientation 275.4
+
+point 30.84 947.77 flowstone -orientation 275.4
+
+point -27.51 929.03 flowstone -orientation 275.4
+
+point 391.45 761.77 flowstone -orientation 303.6
+
+point 410.09 777.36 flowstone -orientation 303.6
+
+point 343.24 796.91 flowstone -orientation 303.6
+
+point 345.20 830.14 flowstone -orientation 303.6
+
+point 305.44 828.09 flowstone -orientation 303.6
+
+point 303.71 862.18 flowstone -orientation 303.6
+
+point 262.39 864.35 flowstone -orientation 303.6
+
+point 250.22 899.43 flowstone -orientation 303.6
+
+point 932.52 928.35 flowstone -orientation 230.4
+
+point 1046.62 1057.94 flowstone -orientation 39.0
+
+point -3403.45 1215.59 label -text "Sump 1" -scale l
+
+point -3383.06 1290.76 label -text "<centre>Bolt for<br>dive line" -scale s
 
 point 1000.00 1000.00 station -name 24.0
 
