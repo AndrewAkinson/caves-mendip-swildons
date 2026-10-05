@@ -1,0 +1,17 @@
+# CI build (thconfig, thconfig-entrance)
+output/
+therion.log
+# OSTN15 grid-shift file, fetched by CI and by hand (see README)
+proj/
+
+# What the older SVN-era configs write into the project root
+/*.pdf
+/*.svg
+/*.kml
+/*.lox
+/*.3d
+/*.vrml
+/Swildons_Ent-elevEW.xvi
+
+*.xvi.bak
+.DS_Store

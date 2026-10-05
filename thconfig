@@ -1,0 +1,104 @@
+encoding  utf-8
+# =====================================================================
+#  Swildons Hole -- the CI build
+# =====================================================================
+#
+#  This is the file the GitHub Actions workflow runs. It builds the
+#  whole cave: the master plan, the Entrance Series elevation, the 3D
+#  models and the data exports, all into output/.
+#
+#  The Entrance Series plan at 1:200 is a second sheet of the same
+#  projection at a different scale, and Therion only takes one selected
+#  map per projection per run, so it has its own config next to this
+#  one: thconfig-entrance. CI runs both.
+#
+#  The older configs from the SVN project (swildons_*.thconfig and
+#  thconfig-swildons) still work and still write into the project root
+#  as they always did. This one does not replace them, it just gathers
+#  their exports in one place for the website.
+#
+#  Build locally with:   therion thconfig && therion thconfig-entrance
+#  (see README.md for the Docker one-liner and the OS grid file).
+# ---------------------------------------------------------------------
+
+input gb_layout.thc
+
+source swildonsmaster.th
+
+# One map per projection. The plan is everything drawn so far; the
+# elevation is the drawn Entrance Series elevation.
+select MasterPlan@SwildonsHole
+select EntranceSeriesElevEW@SwildonsHole
+
+
+# ---------------------------------------------------------------------
+#  Layouts -- the same settings as swildons_all.thconfig, colour by
+#  altitude on top of Footleg's British symbol set (gb_layout.thc).
+# ---------------------------------------------------------------------
+
+layout plan-sheet
+  copy GB_Std
+
+  scale 1 500
+  base-scale 1 350
+
+  symbol-hide line survey
+
+  color map-fg altitude
+  copy LayoutColourSymbols
+endlayout
+
+# Same drawing for a black-and-white printer: no altitude tint and no
+# colour symbols, passages filled light grey.
+layout plan-bw
+  copy GB_Std
+
+  scale 1 500
+  base-scale 1 350
+
+  symbol-hide line survey
+
+  color map-fg [85]
+endlayout
+
+layout elevation-sheet
+  copy GB_Std
+
+  scale 1 200
+  base-scale 1 180
+
+  symbol-hide line survey
+
+  color map-fg altitude
+  copy LayoutColourSymbols
+endlayout
+
+
+# ---------------------------------------------------------------------
+#  Sheets
+# ---------------------------------------------------------------------
+
+export map -projection plan            -layout plan-sheet      -o output/Swildons-plan.pdf
+export map -projection plan            -layout plan-bw         -o output/Swildons-plan-bw.pdf
+export map -projection [elevation 000] -layout elevation-sheet -o output/Swildons-entrance-elevation.pdf
+
+# Vector and GIS versions of the plan.
+export map -projection plan -layout plan-sheet -fmt svg -o output/Swildons-plan.svg
+export map -projection plan -fmt kml -o output/Swildons-plan.kml
+
+
+# ---------------------------------------------------------------------
+#  Models and data -- the whole centreline, not just the drawn part.
+# ---------------------------------------------------------------------
+
+export model -fmt loch   -o output/Swildons.lox
+export model -fmt survex -o output/Swildons.3d
+export model -fmt kml    -o output/Swildons-centreline.kml
+export model -fmt vrml   -o output/Swildons.vrml
+
+export continuation-list -fmt html -o output/Swildons-continuations.html
+export cave-list   -location on -o output/Swildons-caves.html
+export survey-list -o output/Swildons-surveys.html
+
+export database -fmt csv -o output/Swildons.csv
+export database -fmt sql -o output/Swildons.sql
