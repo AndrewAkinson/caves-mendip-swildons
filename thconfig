@@ -44,6 +44,12 @@ layout plan-sheet
 
   symbol-hide line survey
 
+  # The cave runs west to Sump 1, leaving room under the middle of the
+  # plan: the title, scale bar and legend start there, not down the right.
+  map-header 41 26 nw
+  legend-columns 4
+  legend-width 24 cm
+
   color map-fg altitude
   copy LayoutColourSymbols
 endlayout
@@ -57,6 +63,12 @@ layout plan-bw
   base-scale 1 350
 
   symbol-hide line survey
+
+  # The cave runs west to Sump 1, leaving room under the middle of the
+  # plan: the title, scale bar and legend start there, not down the right.
+  map-header 41 26 nw
+  legend-columns 4
+  legend-width 24 cm
 
   color map-fg [85]
 endlayout
