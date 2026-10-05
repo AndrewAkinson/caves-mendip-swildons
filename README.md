@@ -35,7 +35,13 @@ with its full history (SVN r4–r230, 2012–2026).
 
 The centreline is the whole cave as surveyed so far: about 4.2 km of
 legs, 121 m of vertical range, fixed to the OS grid at the entrance by
-GPS. The **drawn plan** covers the Entrance Series, Rolling Thunder,
+GPS. About 1.8 km of that is the resurvey, from the entrance down the
+streamway to Sump 1; the other 2.4 km is W. I. Stanton's survey of
+everything beyond it (St Paul's, Paradise Regained, Swildons 2 and
+more). Where the resurvey has replaced a Stanton section (the streamway
+from the Forty to Sump 1, `swildons1-c/d/e.th`), his legs are flagged
+`duplicate`: they still connect the rest of his survey but are not
+counted in the length. The **drawn plan** covers the Entrance Series, Rolling Thunder,
 and the streamway from the Old 40 down past Barnes Loop to the lip of
 the first of the Double Pots (station 21.25). Below the 20 ft pot,
 `StreamwaySP1` in `Swil1P_20toBarnesLoop.th2` is Footleg's drawing as

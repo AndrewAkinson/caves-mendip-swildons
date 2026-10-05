@@ -9,6 +9,9 @@ survey swil1d
 
 centreline
 cs OSGB:ST 
+#Resurveyed by Footleg's DblPotsDownstream and BarnesLoopToTratmans surveys, so these legs are kept
+#only to connect the rest of the Stanton survey and are not counted in the length.
+flags duplicate
 date 1952.04.02
 
 #in this survey some angles are in degrees:minutes, others decimal degrees
