@@ -36,11 +36,13 @@ with its full history (SVN r4–r230, 2012–2026).
 The centreline is the whole cave as surveyed so far: about 4.2 km of
 legs, 121 m of vertical range, fixed to the OS grid at the entrance by
 GPS. The **drawn plan** covers the Entrance Series, Rolling Thunder,
-and the streamway from the Old 40 down to the 20 ft pot. Below that the
-"20 to Barnes Loop" scrap (`StreamwaySP1` in
-`Swil1P_20toBarnesLoop.th2`) is drawn but not yet in any map, so it
-doesn't appear on the sheets. The **Entrance Series elevation** is only
-partly drawn.
+and the streamway from the Old 40 down past Barnes Loop to the lip of
+the first of the Double Pots (station 21.25). Below the 20 ft pot,
+`StreamwaySP1` in `Swil1P_20toBarnesLoop.th2` is Footleg's drawing as
+far as station 21.9; `StreamwaySP2` carries on from there and is the
+walls of his 2017 PocketTopo sketch converted as drawn, with no pools,
+formations or floor detail yet — it is the next scrap to tidy up in
+xTherion. The **Entrance Series elevation** is only partly drawn.
 
 ## Building it yourself
 
