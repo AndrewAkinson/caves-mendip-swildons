@@ -93,7 +93,7 @@ point 2665.0 400.0 label -text "<centre>20ft<br>Pot" -scale l
 endscrap
 
 
-scrap StreamwaySP2 -projection plan -author 2026.10.05 "Footleg" -copyright 2017 "Paul 'Footleg' Fretwell" -scale [-128.0 -128.0 2844.5354330708656 -128.0 0.0 0.0 75.50239999999998 0.0 m]
+scrap StreamwaySP2 -projection plan -author 2017.03.26 "Footleg" -copyright 2017 "Paul 'Footleg' Fretwell" -scale [-128.0 -128.0 2844.5354330708656 -128.0 0.0 0.0 75.50239999999998 0.0 m]
 
 line border -clip off
   494.88 1154.37

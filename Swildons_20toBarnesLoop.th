@@ -2,6 +2,7 @@ encoding  utf-8
 survey 20ftToBarnesLoop
 
   input Swil1P_20toBarnesLoop.th2
+  input Swil1E_20toBarnesLoop.th2
 
 centreline
   date 2017.03.25

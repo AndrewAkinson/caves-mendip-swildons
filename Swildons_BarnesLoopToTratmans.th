@@ -4,6 +4,7 @@ survey BarnesLoopToTratmans
   #Barnes Loop to the climb up into Tratman's Temple
 
   input Swil1P_BarnesLoopToTratmans.th2
+  input Swil1E_BarnesLoopToTratmans.th2
 
   centreline
     copyright 2017 "Paul 'Footleg' Fretwell"
@@ -186,6 +187,10 @@ survey BarnesLoopToTratmans
     23.33 - 118.48 0.84 1.019
     23.33 - 163.08 83.72 3.393
     23.33 - 40.10 -79.17 4.229
+
+    # Barnes Loop is an oxbow: in the extended elevation, keep the streamway
+    # continuous through 22.20=23.12 and draw the loop as a branch off 22.10.
+    extend ignore 23.11 23.12
   endcentreline
 
 endsurvey

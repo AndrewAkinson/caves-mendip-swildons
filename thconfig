@@ -26,9 +26,11 @@ input gb_layout.thc
 source swildonsmaster.th
 
 # One map per projection. The plan is everything drawn so far; the
-# elevation is the drawn Entrance Series elevation.
+# projected elevation is the drawn Entrance Series, and the extended
+# elevation is the streamway from the Old 40 to Sump 1.
 select MasterPlan@SwildonsHole
 select EntranceSeriesElevEW@SwildonsHole
+select StreamwayElevation@SwildonsHole
 
 
 # ---------------------------------------------------------------------
@@ -134,6 +136,26 @@ layout elevation-sheet
   copy LayoutColourSymbols
 endlayout
 
+# The streamway elevation is long and shallow (about 480 m unrolled,
+# 70 m deep), so it uses the plan's 1:500. It falls from left to right,
+# so the header goes in the empty space under the upstream end.
+layout streamway-elevation
+  copy GB_Std
+
+  scale 1 500
+  base-scale 1 350
+
+  symbol-hide line survey
+
+  map-header 0 72 nw
+  legend-columns 5
+  legend-width 30 cm
+  copy header-two-columns
+
+  color map-fg altitude
+  copy LayoutColourSymbols
+endlayout
+
 
 # ---------------------------------------------------------------------
 #  Sheets
@@ -142,6 +164,7 @@ endlayout
 export map -projection plan            -layout plan-sheet      -o output/Swildons-plan.pdf
 export map -projection plan            -layout plan-bw         -o output/Swildons-plan-bw.pdf
 export map -projection [elevation 000] -layout elevation-sheet -o output/Swildons-entrance-elevation.pdf
+export map -projection extended        -layout streamway-elevation -o output/Swildons-streamway-elevation.pdf
 
 # Vector and GIS versions of the plan.
 export map -projection plan -layout plan-sheet -fmt svg -o output/Swildons-plan.svg

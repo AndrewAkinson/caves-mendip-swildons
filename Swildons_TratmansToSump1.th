@@ -4,6 +4,7 @@ survey TratmansToSump1
   #Tratman's Temple to Sump 1. Each leg was shot three times each way; these are the means
 
   input Swil1P_TratmansToSump1.th2
+  input Swil1E_TratmansToSump1.th2
 
   centreline
     copyright 2019 "Paul 'Footleg' Fretwell"
@@ -284,6 +285,8 @@ survey TratmansToSump1
     24.42 - 82.02 22.94 6.693
     24.42 - 101.28 12.30 10.785
 
+    # The oxbow rejoins at 24.22; in the extended elevation it stays a branch.
+    extend ignore 24.37 24.38
     equate 24.38 24.22    #the oxbow series 24.34-24.38 rejoins the streamway at 24.22
   endcentreline
 
