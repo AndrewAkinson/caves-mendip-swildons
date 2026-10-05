@@ -36,7 +36,7 @@ survey Swildons
   input Swildons_CisternDig.th
   input Swildons_Old40to20.th
   input Swildons_RollingThunder.th
-  input Swildons_20ToBarnesLoop.th
+  input Swildons_20toBarnesLoop.th
 
   centreline
     copyright 2019 "Paul 'Footleg' Fretwell"
