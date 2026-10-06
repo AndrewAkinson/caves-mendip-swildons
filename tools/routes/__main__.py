@@ -115,8 +115,8 @@ def card(route_def, s, base, path):
     # ---- overview ---------------------------------------------------------------
     ov_w, ov_h = L['ov']
     view = R.fit_view(base, list(zip(xs, ys)), ov_w, ov_h, margin_m=12)
-    lane = 0.55
-    o = [R.route_layer(view, pts, 1.5 if not wide else 1.2, 10, lane)]
+    lane = 0.45
+    o = [R.route_layer(view, pts, 1.0 if not wide else 0.9, 10, lane)]
     for g in groups:
         o.append(f'<a href="#d{g["num"]}">' + R.badge(view, base.to_svg(g['xy']), g['num'], 2.4 if not wide else 2.1) + '</a>')
     start = base.to_svg(route.xy(0))
@@ -192,7 +192,9 @@ def card(route_def, s, base, path):
     pulls = []
     for g in shown:
         cv = R.View(base, g['xy'], g.get('width', 24 * pw / 72), pw, round(ph))
-        layer = [R.route_layer(cv, pts, 1.9, 7, lane)]
+        layer = [R.route_layer(cv, pts, 1.0, 7, lane)]
+        crosses = []          # (position, label) already drawn in this close-up
+        dirs = []             # (junction, bearing) of the ways already crossed
         lines = []
         for i, alts in g['passes']:
             node = route.nodes[i]
@@ -204,11 +206,29 @@ def card(route_def, s, base, path):
                 d = math.dist(a, q) or 1
                 t = min(3.5, d) / d
                 xp = base.to_svg((a[0] + (q[0] - a[0]) * t, a[1] + (q[1] - a[1]) * t))
-                layer.append(R.cross(cv, xp, f"to {lead}" if lead else None))
+                # one cross where two side passages start together, and each
+                # place named once per close-up
+                if any(math.dist(xp, c) < cv.k * 2.5 for c, _, _ in crosses) or \
+                        any(n0 == node and abs((b - b0 + 180) % 360 - 180) < 35 for n0, b0 in dirs):
+                    continue
+                dirs.append((node, b))
+                label, side = None, 'right'
+                if lead and not any(l == lead for _, l, _ in crosses):
+                    text = f"to {lead}"
+                    w, h = cv.k * len(text) * 1.25, cv.k * 3.2      # label size, roughly
+                    boxes = [b for _, _, b in crosses if b]
+                    for sd in ('right', 'left'):
+                        x0 = xp[0] + cv.k * 2 if sd == 'right' else xp[0] - cv.k * 2 - w
+                        box = (x0, xp[1] - h / 2, x0 + w, xp[1] + h / 2)
+                        if not any(box[0] < b[2] and b[0] < box[2] and box[1] < b[3] and b[1] < box[3] for b in boxes):
+                            label, side = text, sd
+                            break
+                crosses.append((xp, lead, box if label else None))
+                layer.append(R.cross(cv, xp, label, side))
             # the way to go: an arrowhead a few metres on
             ahead = [base.to_svg(route.point_at(route.chain[i] + d)[:2]) for d in (2.5, 4.0)]
             ahead = R.offset(ahead, cv.k * lane)
-            layer.append(R.arrowhead(cv, ahead, 1.9))
+            layer.append(R.arrowhead(cv, ahead, 1.3))
             if not g.get('info') and not g.get('directions'):
                 pass_label = ''
                 if len(g['passes']) > 1:

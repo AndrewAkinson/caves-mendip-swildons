@@ -146,17 +146,19 @@ def fit_view(base, pts_m, w_mm, h_mm, margin_m=10.0, min_width_m=30.0):
 
 # -- overlay pieces --------------------------------------------------------------
 
-def route_layer(view, pts_svg, width_mm=1.5, chevron_every=9.0, lane_mm=0.0):
+def route_layer(view, pts_svg, width_mm=1.0, chevron_every=9.0, lane_mm=0.0):
+    """The route: a slim, slightly see-through line with a faint white halo,
+    so the drawing underneath stays readable, and chevrons for the way."""
     k = view.k
     p = offset(pts_svg, k * lane_mm) if lane_mm else pts_svg
-    o = [f'<path d="{path_d(p)}" fill="none" stroke="#fff" stroke-opacity="0.92" stroke-width="{k * (width_mm + 1.1):.2f}" '
+    o = [f'<path d="{path_d(p)}" fill="none" stroke="#fff" stroke-opacity="0.6" stroke-width="{k * (width_mm + 0.6):.2f}" '
          f'stroke-linejoin="round" stroke-linecap="round"/>',
-         f'<path d="{path_d(p)}" fill="none" stroke="{ROUTE}" stroke-width="{k * width_mm:.2f}" '
+         f'<path d="{path_d(p)}" fill="none" stroke="{ROUTE}" stroke-opacity="0.85" stroke-width="{k * width_mm:.2f}" '
          f'stroke-linejoin="round" stroke-linecap="round"/>']
-    s = k * width_mm * 0.32
+    s = k * width_mm * 0.36
     for x, y, a in along(p, k * chevron_every, k * chevron_every / 2):
         o.append(f'<path d="M{-s:.2f} {-s * 1.1:.2f} L{s * 0.6:.2f} 0 L{-s:.2f} {s * 1.1:.2f}" fill="none" stroke="#fff" '
-                 f'stroke-width="{k * 0.32:.2f}" stroke-linecap="round" stroke-linejoin="round" '
+                 f'stroke-width="{k * width_mm * 0.2:.2f}" stroke-linecap="round" stroke-linejoin="round" '
                  f'transform="translate({x:.2f} {y:.2f}) rotate({a:.1f})"/>')
     return "".join(o)
 
@@ -190,14 +192,15 @@ def flag(view, p, kind):
             f'<g clip-path="url(#cf{abs(hash(p)) % 99999})">{sq}</g></g>')
 
 
-def cross(view, p, label=None):
+def cross(view, p, label=None, side='right'):
     k = view.k
     s = k * 1.3
     o = (f'<g transform="translate({p[0]:.2f} {p[1]:.2f})">'
          f'<path d="M{-s} {-s} L{s} {s} M{-s} {s} L{s} {-s}" stroke="#fff" stroke-width="{k * 1.5:.2f}" stroke-linecap="round"/>'
          f'<path d="M{-s} {-s} L{s} {s} M{-s} {s} L{s} {-s}" stroke="{STOP}" stroke-width="{k * 0.7:.2f}" stroke-linecap="round"/>')
     if label:
-        o += (f'<text x="{k * 2.2:.2f}" y="{k * 0.9:.2f}" font-size="{k * 2.3:.2f}" fill="{STOP}" '
+        o += (f'<text x="{k * (2.2 if side == "right" else -2.2):.2f}" y="{k * 0.9:.2f}" font-size="{k * 2.3:.2f}" fill="{STOP}" '
+              f'text-anchor="{"start" if side == "right" else "end"}" '
               f'stroke="#fbfaf7" stroke-width="{k * 0.6:.2f}" paint-order="stroke" font-weight="600">{esc(label)}</text>')
     return o + '</g>'
 
@@ -287,8 +290,8 @@ def profile_svg(route, decisions, places, w_mm, h_mm):
 
 LEGEND = f'''
 <div class="legend">
-  <span><svg width="14mm" height="5mm" viewBox="0 0 14 5"><path d="M1 2.5 L13 2.5" stroke="#fff" stroke-width="2.6"/>
-    <path d="M1 2.5 L13 2.5" stroke="{ROUTE}" stroke-width="1.5"/><path d="M6 1.6 L7.2 2.5 L6 3.4" fill="none" stroke="#fff" stroke-width="0.32"/></svg>
+  <span><svg width="14mm" height="5mm" viewBox="0 0 14 5"><path d="M1 2.5 L13 2.5" stroke="#fff" stroke-opacity="0.6" stroke-width="1.6"/>
+    <path d="M1 2.5 L13 2.5" stroke="{ROUTE}" stroke-opacity="0.85" stroke-width="1"/><path d="M6.3 2 L7 2.5 L6.3 3" fill="none" stroke="#fff" stroke-width="0.2"/></svg>
     The route: chevrons point the way; it keeps right where it passes twice</span>
   <span><svg width="6mm" height="6mm" viewBox="-3 -3 6 6"><circle r="2.4" fill="{BADGE}"/><text text-anchor="middle" dy="0.36em" font-size="2.7" fill="#fff" font-weight="700">3</text></svg>
     Decision, with a close-up</span>
