@@ -660,7 +660,7 @@ def close_outline(objs, K):
                 L = math.dist((x0, y0), (x1, y1)) or 1
                 along += d * abs(((b[0] - a[0]) * (x1 - x0) + (b[1] - a[1]) * (y1 - y0)) / (d * L))
                 tot += d
-        if tot and along / tot > 0.7:
+        if tot and along / tot > 0.5:
             presumed.append(o)
         else:
             opened.append(o)

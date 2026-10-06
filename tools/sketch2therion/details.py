@@ -4,9 +4,11 @@
   sketch strokes, or walls left inside the passage) are mostly the edge
   of a step down: a shelf, with the stream in the lowest part. Each open
   border over a metre long becomes a `line floor-step`, drawn so its
-  ticks (which Therion puts on the line's left) are on the lower side,
-  taken as the side the survey legs are on: the survey follows the
-  stream.
+  ticks (which Therion puts on the line's left) are on the lower side:
+  the side the water is on (flow arrows and pools, the stream being in
+  the lowest part), or failing that the side the survey is on. A step
+  that just doubles a longer one goes, steps are cut out of the pools,
+  and scribbles (short, very wiggly strokes) go.
 - Boulders (`line rock-border -close on`) are straightened into clean
   polygons, and the bigger ones get facet edges from a ridge point to a
   few of their corners instead of one line straight across.
@@ -50,33 +52,110 @@ def _side(pts, legs):
     return 1 if vote >= 0 else -1
 
 
+def _water(objs):
+    """Where the water is: (points of flow arrows, pool polygons)."""
+    flows = [Point(float(o.head.split()[1]), float(o.head.split()[2])) for o in objs
+             if o.kind == 'point' and ' water-flow' in o.head]
+    pools = []
+    for o in objs:
+        if o.kind == 'line' and o.head.startswith('line border') and '-id' in o.head and '-close on' in o.head:
+            g = Polygon([(s[-2], s[-1]) for s in o.segments()]).buffer(0)
+            if not g.is_empty:
+                pools.append(g)
+    return flows, pools
+
+
+def _water_side(pts, flows, pools, K):
+    """+1 if the water is mostly on the line's left, -1 on its right, 0 if
+    there is none within 2.5 m. Each stretch of the line looks at the
+    water nearest to it, so a curving step is judged where it is."""
+    things = list(flows) + [p.boundary for p in pools]
+    if not things:
+        return 0
+    vote = 0.0
+    for a, b in zip(pts, pts[1:]):
+        d = math.dist(a, b)
+        if d < 1e-9:
+            continue
+        m = Point((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
+        g = min(things, key=lambda t: t.distance(m))
+        dist = g.distance(m)
+        if dist > 2.5 * K or dist < 1e-6:
+            continue
+        q = g if g.geom_type == 'Point' else g.interpolate(g.project(m))
+        cross = (b[0] - a[0]) * (q.y - a[1]) - (b[1] - a[1]) * (q.x - a[0])
+        vote += d / (0.3 * K + dist) * (1 if cross > 0 else -1)
+    return 0 if vote == 0 else (1 if vote > 0 else -1)
+
+
 def floor_steps(objs, K, legs):
+    from shapely.ops import unary_union
+    from .tidy import reverse_segments
     walls = [LineString(bezier_points(o.segments())) for o in objs
              if o.kind == 'line' and o.head.startswith('line wall') and '-subtype invisible' not in o.head
              and len(o.segments()) > 1]
-    from shapely.ops import unary_union
     wall_all = unary_union(walls) if walls else None
+    flows, pools = _water(objs)
+    pool_all = unary_union(pools).buffer(0.1 * K) if pools else None
     n = 0
+
+    def interior(o):
+        return o.kind == 'line' and o.head.split()[:2] in (['line', 'border'], ['line', 'floor-step']) \
+            and '-close on' not in o.head and '-id' not in o.head
+
     for o in objs:
-        if o.kind == 'line' and o.head.split()[:2] == ['line', 'border'] and '-close on' not in o.head \
-                and '-id' not in o.head and wall_all is not None:
-            # a wall stroked twice: the second stroke runs alongside the wall
-            pts = bezier_points(o.segments())
-            if len(pts) > 1:
-                line = LineString(pts)
-                samples = [line.interpolate(i / 10, normalized=True) for i in range(11)]
-                if sum(wall_all.distance(q) < 0.5 * K for q in samples) >= 8:
-                    o.kind = 'drop'
-                    continue
-        if o.kind != 'line' or o.head.split()[:2] != ['line', 'border'] or '-close on' in o.head or '-id' in o.head:
+        if not interior(o):
             continue
         pts = bezier_points(o.segments())
-        if len(pts) < 2 or LineString(pts).length < MIN_STEP * K:
+        if len(pts) < 2:
             continue
-        if legs and _side(pts, legs) < 0:
-            from .tidy import reverse_segments
-            o.set_segments(reverse_segments(o.segments()))
+        line = LineString(pts)
+        # scribbles: short and very wiggly
+        chord = math.dist(pts[0], pts[-1])
+        if line.length < 2 * K and line.length > 2.5 * max(chord, 1e-6):
+            o.kind = 'drop'
+            continue
+        # a wall stroked twice: the second stroke runs alongside the wall
+        if wall_all is not None:
+            samples = [line.interpolate(i / 10, normalized=True) for i in range(11)]
+            if sum(wall_all.distance(q) < 0.5 * K for q in samples) >= 8:
+                o.kind = 'drop'
+                continue
+        # steps are the edge of the low part, not across the water
+        if pool_all is not None and line.intersects(pool_all):
+            rest = line.difference(pool_all)
+            parts = [g for g in getattr(rest, 'geoms', [rest]) if g.length >= MIN_STEP * K]
+            if not parts:
+                o.kind = 'drop'
+                continue
+            o.set_segments([[x, y] for x, y in max(parts, key=lambda g: g.length).coords])
+            line = max(parts, key=lambda g: g.length)
+            pts = list(line.coords)
+        if line.length < MIN_STEP * K:
+            continue
         o.head = 'line floor-step'
+    # a step that mostly doubles a longer one goes
+    steps = sorted([o for o in objs if o.kind == 'line' and o.head == 'line floor-step'],
+                   key=lambda o: -LineString(bezier_points(o.segments())).length)
+    kept = []
+    for o in steps:
+        line = LineString(bezier_points(o.segments()))
+        samples = [line.interpolate(i / 10, normalized=True) for i in range(11)]
+        if any(sum(k.distance(q) < 0.6 * K for q in samples) >= 8 for k in kept):
+            o.kind = 'drop'
+            continue
+        kept.append(line)
+    # the low side: the water's side, else the survey's
+    for o in objs:
+        if o.kind != 'line' or o.head != 'line floor-step':
+            continue
+        pts = bezier_points(o.segments())
+        side = _water_side(pts, flows, pools, K)
+        if side == 0 and legs:
+            side = _side(pts, legs)
+        # Therion draws the ticks on the line's left: the low side
+        if side < 0:
+            o.set_segments(reverse_segments(o.segments()))
         n += 1
     return n
 

@@ -32,8 +32,11 @@ them; keep to them when editing by hand too.
 - A line inside the passage is not a wall. In the streamway it's mostly
   the edge of a step down (a shelf, the stream in the low part): `line
   floor-step`, with the lower side on the line's LEFT (Therion draws the
-  ticks there). Otherwise `line border` (a ledge, the edge of another
-  level).
+  ticks there; checked on this survey's sheets). The low side is where
+  the water is (flow arrows, pools), not necessarily where the survey
+  line runs. One line per step (no doubled strokes), and steps don't
+  run through the water. Otherwise `line border` (a ledge, the edge of
+  another level).
 
 ## Symbols
 
