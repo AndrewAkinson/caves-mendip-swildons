@@ -1258,7 +1258,7 @@ point 1363.17 1056.06 flowstone
 
 point 1338.95 1050.11 flowstone
 
-point 1734.73 1195.39 label -text "Barnes Loop" -scale l
+point 1734.73 1195.39 label -text "Barnes Loop" -scale xl
 
 point 1000.00 1000.00 station -name 23.0
 

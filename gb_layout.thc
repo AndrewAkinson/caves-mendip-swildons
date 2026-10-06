@@ -33,7 +33,7 @@ layout GB_Std
     legend on
 
     # the licence, printed in the map header beside the copyright
-    map-comment "Licensed under the GNU General Public License v3"
+    map-comment "Licensed under the GNU General Public License v3 or later (GPL-3.0-or-later)"
       
     #don't display survey centreline
     #symbol-hide group cave-centreline
@@ -73,8 +73,8 @@ layout WaterShading
       T:=identity aligned al rotated theta scaled sc shifted pos;
       pickup PenD;
       p:=fullcircle xscaled (1.2u) yscaled (0.8u) randomized (0.1u) rotated uniformdeviate (-45);
-      if known colour_water_bg: thfill p withcolor colour_water_bg; else: thfill p withcolor white; fi; 
-      thfill p withpattern pattern_water; %%% withcolor black;  %but with failed attempt at black hatch
+      % solid colour where a colour is set, else hatched (black and white)
+      if known colour_water_bg: thfill p withcolor colour_water_bg; else: thfill p withcolor white; thfill p withpattern pattern_water; fi;
       thdraw p;   %outline
       enddef; 
   
@@ -83,8 +83,8 @@ layout WaterShading
     T:=identity;
     thclean Path;
     pickup PenD;
-    if known colour_water_bg: thfill Path withcolor colour_water_bg; else: thfill Path withcolor white; fi; 
-    thfill Path withpattern pattern_water;  
+    % solid colour where a colour is set, else hatched (black and white)
+    if known colour_water_bg: thfill Path withcolor colour_water_bg; else: thfill Path withcolor white; thfill Path withpattern pattern_water; fi;
     %%thdraw Path;  %outline, not needed as area drawn is defined by line border anyway
      %and border can be made invisible with subtype invisible where water meets sump in elevation
   enddef;
@@ -94,8 +94,7 @@ layout WaterShading
     T:=identity;
     thclean Path;
     pickup PenD;
-    if known colour_sump_bg:  thfill Path withcolor colour_sump_bg; else: thfill Path withcolor 0.7white; fi;
-    thfill Path withpattern pattern_sump;  
+    if known colour_sump_bg:  thfill Path withcolor colour_sump_bg; else: thfill Path withcolor 0.7white; thfill Path withpattern pattern_sump; fi;
     %%thdraw Path;  %outline, not needed as area drawn is defined by line border anyway
      %and border can be made invisible with subtype invisible where water meets sump in elevation
   enddef;
@@ -124,11 +123,12 @@ layout LayoutColourSymbols
   	#magenta
   	symbol-colour group equipment  [80 0 40] # magenta [80 0 40]
   	
-  	#dark blue
+  	# water is solid blue, sump a darker solid blue, and water flow
+  	# the same blue as the water (colour_water_bg below)
   	# symbol-colour group water  [22 22 95] # this breaks custom water definitions
-  	symbol-colour point water-flow  [22 22 95]
-  	symbol-colour line water-flow  [22 22 95]	
-  	symbol-colour point water [22 22 95]	    # inconsistent?
+  	symbol-colour point water-flow  [45 65 100]
+  	symbol-colour line water-flow  [45 65 100]
+  	symbol-colour point water [45 65 100]
   	# symbol-colour area sump [22 22 95]	# this breaks custom water definitions
   
   	#light blue	
@@ -138,9 +138,9 @@ layout LayoutColourSymbols
   	code metapost  
   	  %these colours affect fills, not the linework
   		!color colour_water_bg; %! forces interpretation as metapost
-  		colour_water_bg := (0.86,1,1);      %light blue
+  		colour_water_bg := (0.45,0.65,1);   %solid blue
   		!color colour_sump_bg;  %! forces interpretation as metapost
-  		colour_sump_bg := (.22,.22,.95);    %dark blue
+  		colour_sump_bg := (.15,.25,.75);    %darker solid blue
   	
       %these colours affect the linework	
   		!color colour_rope;  %! forces interpretation as metapost

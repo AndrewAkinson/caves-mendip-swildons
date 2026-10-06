@@ -49,7 +49,7 @@ line border -id l52-3146-815 -close off -visibility off
   3018.5 849.0
 endline
 
-line ceiling-step -reverse on
+line overhang -reverse on
   3013.0 828.0
   2995.0 807.0 2984.5 797.0 2965.0 789.0
   2945.5 781.0 2936.0 779.5 2928.5 781.0
@@ -179,7 +179,7 @@ line floor-step -reverse on -outline out -clip off
   smooth off
 endline
 
-point 3279.0 409.75 label -text "(C4)" -scale m
+point 3279.0 409.75 label -text "(C4)" -scale s
 
 line arrow
   3243.0 501.5
@@ -832,7 +832,7 @@ endscrap
 
 scrap LongDryWaySP1 -projection plan -station-names "" @LongDryWay -author 2016.01.18 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0.0 -0.0 393.7 393.7 0.0 0.0 10 10 m]
 
-point 2630.0 1760.0 label -text "Long Dry Way<br>(Pretty Way)" -scale l
+point 2630.0 1760.0 label -text "Long Dry Way<br>(Pretty Way)" -scale xl
 
 line wall
   2574.0 1371.5
@@ -1076,7 +1076,7 @@ line border -id l236-2875-1870 -subtype invisible
   smooth off
 endline
 
-line ceiling-step -id l234-2763-1978 -reverse on
+line overhang -id l234-2763-1978 -reverse on
   2746.5 2002.0
   2756.0 1995.25 2761.5 1996.25 2764.25 1968.75
   2767.0 1941.25 2774.0 1933.0 2786.25 1925.0
@@ -1099,7 +1099,7 @@ point 2674.75 1979.25 pillar
 
 point 2612.75 2000.0 pillar
 
-line ceiling-step
+line overhang
   2602.5 1888.5
   2605.75 1900.25 2605.25 1905.25 2605.25 1922.0
   2605.25 1938.75 2605.5 1952.0 2613.25 1974.25
@@ -1235,13 +1235,13 @@ endscrap
 
 scrap LongDryWaySP3 -projection plan -station-names "" @LongDryWay -author 2016.03.17 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
-line ceiling-step -reverse on
+line overhang -reverse on
   3086.25 1649.5
   3073.0 1650.0 3066.75 1640.25 3079.5 1637.25
   smooth off
 endline
 
-line ceiling-step -outline out
+line overhang -outline out
   2989.0 1647.0
   2984.5 1648.0 2978.0 1656.5 2987.5 1658.0
   2997.0 1659.5 3001.75 1656.75 3015.25 1656.5
@@ -1252,7 +1252,7 @@ line ceiling-step -outline out
   smooth off
 endline
 
-line ceiling-step
+line overhang
   3133.0 1642.0
   3139.5 1640.5 3139.0 1632.75 3129.0 1631.5
   3119.0 1630.25 3109.5 1632.0 3100.5 1634.0
@@ -1674,7 +1674,7 @@ endscrap
 
 scrap DryWayStreamSP2 -projection plan -station-names "" @LongDryWay -author 2016.05.04 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
-point 2078.0 2156.0 label -text "<centre>Long Dry Way<br>(Pretty Way)" -scale l
+point 2078.0 2156.0 label -text "<centre>Long Dry Way<br>(Pretty Way)" -scale xl
 
 point 2504.0 2008.5 water-flow -orientation 322.8
 
@@ -1831,7 +1831,7 @@ line border -id l415-3561-2276 -close on -subtype invisible
   3378.75 2247.75 3564.5 2289.5 3567.75 2272.25
 endline
 
-line ceiling-step -reverse on
+line overhang -reverse on
   3240.0 2108.75
   3270.25 2116.5 3298.0 2122.25 3316.75 2127.25
   3335.5 2132.25 3350.25 2138.0 3362.5 2144.75
@@ -1945,7 +1945,7 @@ line floor-step -outline out
   smooth off
 endline
 
-line ceiling-step -reverse on -clip off
+line overhang -reverse on -clip off
   3284.5 1869.0
   3282.5 1866.0 3284.0 1862.5 3285.5 1858.5
   3287.0 1854.5 3290.13 1849.69 3293.19188977 1850.594173229
@@ -2030,7 +2030,7 @@ point 3267.2018897700004 2045.944173229 station -name 5.3
 
 point 3301.06188977 1892.954173229 station -name 5.2
 
-point 3482.0 2328.0 label -text "New Grottoes" -scale l
+point 3482.0 2328.0 label -text "New Grottoes" -scale xl
 
 endscrap
 
@@ -2040,7 +2040,7 @@ scrap BoulderChamberSP1 -projection plan -station-names "" @LongDryWay -author 2
 
 point 2668.0 2300.0 label -text "Boulder Chamber" -scale l
 
-line ceiling-step -clip off
+line overhang -clip off
   2438.0 2199.5
   2415.5 2207.0 2402.25 2212.25 2386.0 2216.5
   smooth off

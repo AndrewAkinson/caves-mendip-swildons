@@ -398,7 +398,7 @@ line border
   smooth off
 endline
 
-point 1497.0 101.0 label -text "Wet Way" -scale l
+point 1497.0 101.0 label -text "Wet Way" -scale xl
 
 line wall -reverse on
   1610.75 169.25
@@ -620,7 +620,7 @@ area water
   l149-86-282
 endarea
 
-point 325.5 124.0 label -scale l -text "Water Chamber Dig"
+point 325.5 124.0 label -scale m -text "Water Chamber Dig"
 
 line border -id l150-53-330 -reverse on
   20.5 292.75
@@ -691,7 +691,7 @@ endscrap
 
 scrap WaterChamberSP2 -projection plan -author 2016.07.27 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
-point 748.75 727.5 label -orientation 51.6 -scale l -text "Hensler's Dig"
+point 748.75 727.5 label -orientation 51.6 -scale m -text "Hensler's Dig"
 
 line floor-step -id l128-604-855
   607.75 848.5
@@ -908,7 +908,7 @@ line arrow
   1851.0 249.0
 endline
 
-point 1853.0 165.5 label -text "The Lavatory Pan" -scale m
+point 1853.0 165.5 label -text "The Lavatory Pan" -scale s
 
 line wall
   1610.75 169.25

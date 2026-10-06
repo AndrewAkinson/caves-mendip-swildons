@@ -139,7 +139,7 @@ line floor-step -outline out -clip off
   smooth off
 endline
 
-point 2001.5 378.0 label -orientation 44.8 -text "Upper Oxbow" -scale l
+point 2001.5 378.0 label -orientation 44.8 -text "Upper Oxbow" -scale m
 
 line wall
   1944.5 363.0
@@ -323,14 +323,14 @@ line border -id l124-1417-761
   smooth off
 endline
 
-line ceiling-step -id l123-1385-802
+line overhang -id l123-1385-802
   1365.25 830.25
   1371.75 819.25 1373.25 817.0 1378.5 809.0
   1382.76 802.51 1386.75 800.25 1392.75 791.25
   smooth off
 endline
 
-line ceiling-step
+line overhang
   1422.0 738.0
   1433.25 715.5 1449.75 683.0 1460.5 668.25
   1471.25 653.5 1486.0 641.25 1514.25 589.0
@@ -423,7 +423,7 @@ line border -outline out -subtype invisible
   smooth off
 endline
 
-line ceiling-step -clip off
+line overhang -clip off
   1248.75 1062.25
   1255.5 1051.0 1255.5 1046.75 1261.25 1042.25
   1267.0 1037.75 1283.0 1029.25 1293.75 1022.0
@@ -720,7 +720,7 @@ endline
 
 point 1993.5 598.5 label -text "C3" -scale s
 
-point 1831.0 612.5 label -text "Wet Way" -scale l
+point 1831.0 612.5 label -text "Wet Way" -scale xl
 
 line border -id l70-2260-935 -reverse on -subtype invisible
   2227.0 864.0
@@ -998,7 +998,7 @@ line arrow
   1688.0 748.5
 endline
 
-point 1682.5 840.5 label -text "The Well" -scale m
+point 1682.5 840.5 label -text "The Well" -scale s
 
 line wall
   1690.75 739.0

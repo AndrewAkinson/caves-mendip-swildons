@@ -553,7 +553,7 @@ endscrap
 
 scrap Old40to20SP1 -projection plan -author 2017.10.25 "Footleg" -copyright 2017 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
-point 2279.0 1172.0 label -text "<centre>8ft<br>Drop" -scale m
+point 2279.0 1172.0 label -text "<centre>8ft<br>Drop" -scale s
 
 line arrow -reverse on
   2234.5 1276.5
@@ -564,7 +564,7 @@ point 2122.0 1391.0 label -text "<centre>Old 40ft<br>Pot" -scale l
 
 point 2278.5 1129.5 label -text "(C1.5)" -scale s
 
-point 2371.0 154.0 label -text "<centre>Folded<br>Strata" -scale m
+point 2371.0 154.0 label -text "<centre>Folded<br>Strata" -scale s
 
 area pebbles
   l37-2154-177
@@ -669,7 +669,7 @@ point 2172.0 117.0 flowstone -orientation 245.4
 
 point 2136.0 661.0 flowstone -orientation 133.9
 
-line ceiling-step
+line overhang
   2172.0 65.0
   2180.5 73.0 2191.5 75.5 2204.5 72.5
   2217.5 69.5 2220.0 71.0 2222.5 63.0
@@ -706,7 +706,7 @@ line rock-border -close on
   1914.0 142.0
 endline
 
-line ceiling-step -reverse on -outline out
+line overhang -reverse on -outline out
   2172.0 65.0
   2171.5 52.0 2180.5 42.0 2189.5 41.0
   2198.5 40.0 2213.5 40.5 2217.0 46.0

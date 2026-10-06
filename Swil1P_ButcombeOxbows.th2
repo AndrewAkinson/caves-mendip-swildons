@@ -536,7 +536,7 @@ point 769.0 187.75 flowstone -orientation 214.2
 
 point 784.5 190.0 flowstone -orientation 193.9
 
-line ceiling-step -reverse on
+line overhang -reverse on
   767.75 200.0
   758.0 194.75 753.25 192.75 751.25 189.25
   749.25 185.75 750.0 178.75 746.0 173.75

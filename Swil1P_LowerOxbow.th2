@@ -182,7 +182,7 @@ line border
   smooth off
 endline
 
-point 761.0 311.0 label -orientation 33.2 -text "Lower Oxbow" -scale l
+point 761.0 311.0 label -orientation 33.2 -text "Lower Oxbow" -scale m
 
 line wall
   898.25 134.25

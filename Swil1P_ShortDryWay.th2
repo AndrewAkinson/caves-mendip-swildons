@@ -331,7 +331,7 @@ line border
   smooth off
 endline
 
-point 542.5 699.5 label -orientation 17.9 -scale l -text "Short Dry Way"
+point 542.5 699.5 label -orientation 17.9 -scale xl -text "Short Dry Way"
 
 line wall
   600.0 740.75

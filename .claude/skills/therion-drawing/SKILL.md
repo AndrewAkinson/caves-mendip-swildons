@@ -10,7 +10,6 @@ These come from a Therion expert's review of the converted drawings
 `details`, `sections`) follows them; keep to them when editing by hand
 too.
 
-- The sheets print the licence from `map-comment` in `gb_layout.thc`.
 
 ## Walls and the outline
 
@@ -31,13 +30,13 @@ too.
 - The outline must not cross itself, and no wall may loop back on
   itself. Otherwise Therion warns "invalid scrap outline" (no 3D model
   for the scrap) or MetaPost "scrap outline intersects itself".
-- A line inside the passage is not a wall. In the streamway it's mostly
-  the edge of a step down (a shelf, the stream in the low part): `line
-  floor-step`, with the low side on the line's LEFT (Therion draws the
-  ticks there). The low side is where the water is (flow arrows,
-  pools), not necessarily where the survey line runs. One line per
-  step, and steps don't run through the water. Otherwise `line border`
-  (a ledge, the edge of another level).
+- A line inside the passage is not a wall: a `line border` (a ledge,
+  the edge of another level) or a step (see Symbols: lines). In the
+  streamway it's mostly the edge of a step down (a shelf, the stream in
+  the low part): `line floor-step`, with the low side on the line's
+  LEFT (Therion draws the ticks there). The low side is where the water
+  is (flow arrows, pools), not necessarily where the survey line runs.
+  One line per step, and steps don't run through the water.
 
 ## Symbols: general
 
@@ -60,17 +59,28 @@ too.
 
 ## Symbols: lines
 
-- Rocks and boulders (`line rock-border`) are closed (`-close on`).
+- Draw lines with as few points as follow the shape, smooth in both
+  directions.
+- Rocks and boulders (`line rock-border`) are closed (`-close on`) and
+  not smoothed: straight segments.
+- A closed line (`-close on`) ends on its first point. If it doesn't,
+  xtherion adds the point itself on loading and is left in a bad state:
+  selecting a line then fails ("no such element in array").
 - They are drawn in file order and clip each other.
 - Large boulders get `line rock-edge` lines inside them to look like 3D
   rocks.
 - Boulders at the edge of a passage are best drawn going over the wall
   (the outline clips them).
+- Steps by height: significant boundaries and steps under 20 cm are
+  `line border`; 20 cm to 2 m and easily climbed, `line floor-step`;
+  harder climbs and anything over 2 m, `line pit` (a pitch edge).
+- Use `line overhang`, not `ceiling-step`. Both draw their ticks on the
+  line's left, so swapping the type keeps the side.
 
 ## Symbols: areas
 
 - Water: `line border -subtype invisible -id X -close on` and an `area
-  water` naming X, with no other border.
+  water` naming X. No other border is added to water.
 - Water against an outer wall: draw its border outside the wall, so the
   wall is its edge.
 - Areas can overlap to show a transition, or pebbles in water.
@@ -99,6 +109,22 @@ Use the splay shots, not a guess: in elevation the steep splays give
 the roof and floor at each station, in plan the splay ends give the
 walls (`python3 -m tools.sketch2therion roofs`, see `tools/README.md`).
 
+## .thconfig layouts
+
+These are set in `gb_layout.thc`:
+
+- Water is solid blue and sump a darker solid blue (hatched only in the
+  black-and-white layout).
+- Water flow is the same colour as the water.
+- The title carries the licence: GPL v3 or later (`map-comment`).
+- Labels use 4 text sizes, in descending order (`-scale`):
+  - `xl`: area names (Long Dry Way, Short Dry Way, Wet Way, Barnes Loop,
+    New Grottoes);
+  - `l`: main passages and chambers (Double Pots, Tratman's Temple,
+    Sump 1, Water Chamber);
+  - `m`: minor passages (Upper Oxbow, Rolling Thunder, the digs);
+  - `s`: features (`C2`, Dig, The Well, Folded Strata).
+
 ## Checking
 
 Build with the `swildons*.thconfig` files (see `README.md`), then:
@@ -107,6 +133,8 @@ Build with the `swildons*.thconfig` files (see `README.md`), then:
   there should be none.
 - `grep "intersects itself" output/*.log | sort -u`: only scraps you
   didn't touch.
+- Open edited files in xtherion and select a few lines: it should not
+  report errors.
 - Render and look. poppler (pdftoppm, Evince, Okular) can show white
   holes in Therion's smooth altitude shading that aren't in the PDF;
   check with another renderer (MuPDF) before chasing them.

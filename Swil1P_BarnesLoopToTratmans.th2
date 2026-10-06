@@ -3090,7 +3090,7 @@ point 1055.54 806.22 flowstone -orientation 126.4
 
 point 1049.84 837.95 flowstone -orientation 126.4
 
-point 1688.98 181.10 label -text "Barnes Loop" -scale l
+point 1688.98 181.10 label -text "Barnes Loop" -scale xl
 
 point 570.87 440.94 label -text "Dig" -scale s
 
