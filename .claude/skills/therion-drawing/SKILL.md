@@ -6,30 +6,45 @@ description: Conventions for drawing or editing Therion scraps (.th2) in this su
 # Drawing Therion scraps in this survey
 
 These come from a Therion expert's review of the converted drawings.
-`tools/sketch2therion` (convert, `tidy`, `sections`) already follows
+`tools/sketch2therion` (convert, `tidy`, `roofs`, `details`, `sections`) follows
 them; keep to them when editing by hand too.
 
 ## Walls and the outline
 
 - Walls are the scrap's outline. Draw each `line wall` with the passage
   on its LEFT (Footleg's drawings do; `-reverse on` flips a line).
-- Close the gaps between walls with `line wall -subtype invisible`,
-  starting and ending exactly on the wall ends, so the fill follows the
-  walls. Don't fill from a separate closed invisible line with the
-  walls set `-outline none`: that hides walls drawn the wrong way and
-  the fill spills past the walls.
-- The outline must not cross itself, and no wall may loop back on
-  itself. Otherwise Therion warns "invalid scrap outline" (no 3D model
-  for the scrap) or MetaPost "scrap outline intersects itself".
-- A line inside the passage (a ledge, the edge of another level) is a
-  `line border`, not a wall.
+- Don't close the outline with invisible walls, and don't fill from a
+  separate closed invisible line with the walls set `-outline none`
+  (that hides walls drawn the wrong way, and the fill doesn't follow
+  the walls). Therion closes the outline itself: it joins each outline
+  line's end to the nearest free end of another with a straight line
+  (`thscrap::get_outline`). So:
+  - a gap where the wall runs along the passage but wasn't drawn is a
+    `line wall -subtype presumed` (dashed);
+  - a gap across the passage (an open end, a junction, where the
+    drawing stops) is left open;
+  - where walls meet, end one exactly where the next starts.
+  Check that nearest-end joining gives one outline that doesn't cross
+  itself (`therion_chain` in `tools/sketch2therion/tidy.py`).
+- No wall may loop back on itself or the outline cross itself.
+  Otherwise Therion warns "invalid scrap outline" (no 3D model for the
+  scrap) or MetaPost "scrap outline intersects itself".
+- A line inside the passage is not a wall. In the streamway it's mostly
+  the edge of a step down (a shelf, the stream in the low part): `line
+  floor-step`, with the lower side on the line's LEFT (Therion draws the
+  ticks there). Otherwise `line border` (a ledge, the edge of another
+  level).
 
 ## Symbols
 
-- Never use `-clip off`. Large boulders (`line rock-border -close on`)
-  get a `line rock-edge` inside them.
-- Water: `line border -subtype invisible -id X -close on` inside the
-  walls, then `area water` naming X.
+- Never use `-clip off`. Boulders (`line rock-border -close on`) are
+  clean polygons; large ones get a few `line rock-edge` facet lines from
+  a ridge point towards their corners, not one line straight across.
+- Water: one `line border -subtype invisible -id X -close on` and an
+  `area water` naming X. Where the water lies against a wall the border
+  runs a little way out under the wall, so the wall is the water's only
+  edge (Therion clips areas to the outline). Never a second line just
+  inside the wall.
 - Fill, water, formations and slope arrows stay inside the walls.
 - Slope arrows (`point gradient`) never cross a floor step or pitch.
 - Climbs and pitches are labelled `C2`, `P5`: no units, placed
@@ -50,6 +65,12 @@ them; keep to them when editing by hand too.
   upper level of the Entrance Series.
   `python3 -m tools.sketch2therion sections` fixes both (see
   `tools/README.md`).
+
+## Fill where nothing was drawn
+
+Use the splay shots, not a guess: in elevation the steep splays give
+the roof and floor at each station, in plan the splay ends give the
+walls (`python3 -m tools.sketch2therion roofs`, see `tools/README.md`).
 
 ## Checking
 

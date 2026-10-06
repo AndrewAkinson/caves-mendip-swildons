@@ -11,7 +11,7 @@ line wall
   1104.67 867.57
   1132.05 874.55 1206.68 893.83 1226.53 898.93
 endline
-line wall -subtype invisible
+line wall -subtype presumed
   1226.53 898.93
   1224.61 860.54
 endline
@@ -24,22 +24,11 @@ line wall
   1225.82 860.50
   1231.68 860.32
 endline
-line wall -subtype invisible
-  1231.68 860.32
-  1232.17 864.72
-endline
 line wall
   1232.17 864.72
   1233.51 864.10 1236.66 862.01 1239.85 861.03
   1243.04 860.04 1243.17 859.45 1251.40 858.81
   1259.64 858.17 1282.96 857.46 1289.33 857.13
-endline
-line wall -subtype invisible
-  1289.33 857.13
-  1274.39 839.48
-  1289.01 821.15
-  1289.97 815.86
-  1295.42 816.85
 endline
 line wall
   1295.42 816.85
@@ -53,19 +42,11 @@ line wall
   1332.10 791.94
   1332.40 791.87 1332.70 791.87 1333.02 791.95
 endline
-line wall -subtype invisible
-  1333.02 791.95
-  1333.00 797.19
-endline
 line wall
   1333.00 797.19
   1333.86 796.73 1335.81 795.18 1337.73 794.52
   1339.66 793.85 1339.67 793.41 1344.64 793.19
   1349.60 792.97 1363.71 793.19 1367.58 793.15
-endline
-line wall -subtype invisible
-  1367.58 793.15
-  1365.35 790.13
 endline
 line wall
   1365.35 790.13
@@ -79,14 +60,6 @@ line wall
   1500.92 754.10 1491.43 756.10 1518.04 753.27
   1544.66 750.45 1631.78 739.79 1654.59 737.03
 endline
-line wall -subtype invisible
-  1654.59 737.03
-  1637.23 720.65
-  1645.40 710.33
-  1653.55 692.32
-  1653.88 678.21
-  1659.10 678.33
-endline
 line wall
   1659.10 678.33
   1659.63 675.87 1661.07 667.43 1662.28 663.97
@@ -95,14 +68,6 @@ line wall
   1700.74 661.21 1702.16 659.01 1708.45 658.91
   1714.75 658.81 1723.42 660.46 1731.48 660.39
   1739.55 660.31 1752.61 658.79 1756.89 658.42
-endline
-line wall -subtype invisible
-  1756.89 658.42
-  1750.96 654.94
-  1752.12 651.15
-  1749.10 646.51
-  1752.26 642.29
-  1760.50 642.29
 endline
 line wall
   1760.50 642.29
@@ -114,10 +79,6 @@ line wall
   1882.57 615.06 1882.83 615.56 1884.06 612.19
   1885.28 608.81 1886.35 599.80 1888.68 595.94
   1889.36 594.81 1888.44 593.81 1887.97 592.15
-endline
-line wall -subtype invisible
-  1887.97 592.15
-  1887.07 589.91
 endline
 line wall
   1887.07 589.91
@@ -142,18 +103,11 @@ line wall
   2512.50 573.28 2529.87 569.99 2542.32 569.76
   2554.77 569.54 2568.90 571.73 2574.45 572.31
 endline
-line wall -subtype invisible
-  2574.45 572.31
-  2576.05 573.16
-  2562.74 597.96
-  2559.39 615.82
-  2552.97 614.57
-endline
 line wall
   2552.97 614.57
   2550.55 614.49 2543.59 614.10 2537.77 614.85
 endline
-line wall -subtype invisible
+line wall -subtype presumed
   2537.77 614.85
   2558.84 618.76
   2555.33 647.79
@@ -171,12 +125,6 @@ line wall
   2555.50 697.69
   2548.36 697.61
   2542.99 697.56
-endline
-line wall -subtype invisible
-  2542.99 697.56
-  2542.99 673.11
-  2534.96 672.63
-  2532.54 697.77
 endline
 line wall
   2532.54 697.77
@@ -220,10 +168,6 @@ line wall
   2364.44 713.99
   2363.92 714.94
 endline
-line wall -subtype invisible
-  2363.92 714.94
-  2363.65 714.98
-endline
 line wall
   2363.65 714.98
   2362.54 714.44
@@ -241,37 +185,21 @@ line wall
   2285.38 717.69
   2282.15 719.11
 endline
-line wall -subtype invisible
-  2282.15 719.11
-  2281.53 719.36
-endline
 line wall
   2281.53 719.36
   2279.85 718.71
   2274.72 719.89
   2274.62 720.71
 endline
-line wall -subtype invisible
-  2274.62 720.71
-  2271.59 721.45
-endline
 line wall
   2271.59 721.45
   2269.85 721.17
   2266.65 722.78
 endline
-line wall -subtype invisible
-  2266.65 722.78
-  2262.86 723.69
-endline
 line wall
   2262.86 723.69
   2260.41 723.75
   2257.29 725.43
-endline
-line wall -subtype invisible
-  2257.29 725.43
-  2256.89 725.54
 endline
 line wall
   2256.89 725.54
@@ -289,10 +217,6 @@ line wall
   2201.34 732.16
   2201.07 733.08
 endline
-line wall -subtype invisible
-  2201.07 733.08
-  2198.80 733.47
-endline
 line wall
   2198.80 733.47
   2197.52 732.99
@@ -300,69 +224,41 @@ line wall
   2193.73 734.06
   2193.64 734.94
 endline
-line wall -subtype invisible
-  2193.64 734.94
-  2190.90 735.83
-endline
 line wall
   2190.90 735.83
   2187.82 735.79
   2185.74 737.29
-endline
-line wall -subtype invisible
-  2185.74 737.29
-  2182.13 738.35
 endline
 line wall
   2182.13 738.35
   2179.57 738.34
   2177.87 739.78
 endline
-line wall -subtype invisible
-  2177.87 739.78
-  2174.02 741.00
-endline
 line wall
   2174.02 741.00
   2170.00 741.49
   2169.76 742.42
-endline
-line wall -subtype invisible
-  2169.76 742.42
-  2165.78 743.59
 endline
 line wall
   2165.78 743.59
   2164.64 743.22
   2161.52 745.01
 endline
-line wall -subtype invisible
-  2161.52 745.01
-  2158.44 745.97
-endline
 line wall
   2158.44 745.97
   2153.28 747.43
-endline
-line wall -subtype invisible
-  2153.28 747.43
-  2150.13 748.20
 endline
 line wall
   2150.13 748.20
   2145.82 748.65
   2145.14 749.56
 endline
-line wall -subtype invisible
-  2145.14 749.56
-  2143.91 750.24
-endline
 line wall
   2143.91 750.24
   2138.39 750.50
   2131.93 751.96
 endline
-line wall -subtype invisible
+line wall -subtype presumed
   2131.93 751.96
   2131.39 748.05
   2067.02 725.63
@@ -379,7 +275,7 @@ line wall
   1905.70 817.43
   1904.75 817.62
 endline
-line wall -subtype invisible
+line wall -subtype presumed
   1904.75 817.62
   1893.96 823.36
   1882.66 832.95
@@ -391,7 +287,7 @@ line wall
   1867.96 838.78
   1867.64 839.81
 endline
-line wall -subtype invisible
+line wall -subtype presumed
   1867.64 839.81
   1853.91 845.76
   1810.10 874.08
@@ -401,10 +297,6 @@ line wall
   1790.29 882.28
   1789.98 881.62
   1787.80 883.39
-endline
-line wall -subtype invisible
-  1787.80 883.39
-  1785.70 884.90
 endline
 line wall
   1785.70 884.90
@@ -421,18 +313,10 @@ line wall
   1762.45 884.60
   1761.92 885.57
 endline
-line wall -subtype invisible
-  1761.92 885.57
-  1761.47 885.71
-endline
 line wall
   1761.47 885.71
   1757.82 885.53
   1754.30 887.07
-endline
-line wall -subtype invisible
-  1754.30 887.07
-  1753.37 887.53
 endline
 line wall
   1753.37 887.53
@@ -440,27 +324,15 @@ line wall
   1747.01 887.96
   1746.24 888.89
 endline
-line wall -subtype invisible
-  1746.24 888.89
-  1745.28 889.37
-endline
 line wall
   1745.28 889.37
   1741.02 889.32
   1738.02 890.73
 endline
-line wall -subtype invisible
-  1738.02 890.73
-  1737.18 891.12
-endline
 line wall
   1737.18 891.12
   1734.73 890.70
   1729.62 892.52
-endline
-line wall -subtype invisible
-  1729.62 892.52
-  1729.09 892.71
 endline
 line wall
   1729.09 892.71
@@ -478,10 +350,6 @@ line wall
   1655.81 902.56
   1655.24 902.39
   1654.86 902.13
-endline
-line wall -subtype invisible
-  1654.86 902.13
-  1649.05 899.26
 endline
 line wall
   1649.05 899.26
@@ -505,29 +373,17 @@ line wall
   1541.63 904.16
   1536.93 905.83
 endline
-line wall -subtype invisible
-  1536.93 905.83
-  1536.53 905.94
-endline
 line wall
   1536.53 905.94
   1535.76 905.17
   1530.61 906.24
   1529.33 907.38
 endline
-line wall -subtype invisible
-  1529.33 907.38
-  1528.54 907.75
-endline
 line wall
   1528.54 907.75
   1525.89 907.33
   1521.31 908.37
   1521.17 909.15
-endline
-line wall -subtype invisible
-  1521.17 909.15
-  1520.56 909.38
 endline
 line wall
   1520.56 909.38
@@ -540,10 +396,6 @@ line wall
   1473.14 910.60
   1464.80 910.32
   1459.11 910.11
-endline
-line wall -subtype invisible
-  1459.11 910.11
-  1459.05 904.86
 endline
 line wall
   1459.05 904.86
@@ -562,9 +414,6 @@ endline
 line wall
   1279.44 951.24
   1276.64 951.29
-  1272.81 952.32
-endline
-line wall -subtype invisible
   1272.81 952.32
   1265.41 939.61
 endline
@@ -585,35 +434,19 @@ line wall
   1256.39 997.71 1254.88 999.78 1253.54 999.59
   1252.20 999.39 1250.16 995.28 1249.42 994.39
 endline
-line wall -subtype invisible
-  1249.42 994.39
-  1249.48 999.74
-  1193.60 1000.21
-  1193.54 958.58
-  1190.45 951.96
-  1192.34 949.95
-endline
 line wall
   1192.34 949.95
   1188.86 949.80 1182.71 949.59 1175.20 949.27
-endline
-line wall -subtype invisible
-  1175.20 949.27
-  1175.26 941.42
 endline
 line wall
   1175.26 941.42
   1167.66 941.98 1137.57 944.25 1129.96 944.81
 endline
-line wall -subtype invisible
-  1129.96 944.81
-  1129.64 947.77
-endline
 line wall
   1129.64 947.77
   1123.67 947.65 1118.92 947.49 1116.03 947.45
 endline
-line wall -subtype invisible
+line wall -subtype presumed
   1116.03 947.45
   1125.42 961.93
   1115.83 969.93
@@ -644,15 +477,6 @@ endline
 line wall
   1025.82 985.56
   1021.68 988.34 1005.44 999.46 1001.34 1002.25
-endline
-line wall -subtype invisible
-  1001.34 1002.25
-  1005.16 1003.70
-  1004.71 1039.36
-  995.29 1039.36
-  995.28 1001.03
-  986.49 994.89
-  987.24 992.81
 endline
 line wall
   987.24 992.81

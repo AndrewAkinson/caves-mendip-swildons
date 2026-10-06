@@ -129,10 +129,12 @@ write notes in red or orange or they will be read as walls.
    Each command prints the scraps it made, and the map they go in.
    The drawing follows Therion's conventions (see `tidy.py`):
    - the walls are the scrap's outline, drawn with the passage on their
-     left, joined by invisible walls where there's no wall, so the fill
-     stops at the walls
-   - water has an invisible border and stays inside the walls, and
-     nothing uses `-clip off`
+     left, so the fill stops at the walls
+   - a gap where the wall wasn't sketched along the passage is a
+     presumed wall; a gap across the passage is left for Therion to
+     close
+   - water has one invisible border, which runs out under the walls it
+     lies against so the wall is its edge, and nothing uses `-clip off`
    - big boulders get rock edges, slope arrows are kept off steps and
      pitches, climbs are labelled C2 and pitches P5 (no units), and
      labels go outside the passage
@@ -171,6 +173,20 @@ write notes in red or orange or they will be read as walls.
    each station measured. Fill well beyond them, from a sketch line
    that belonged to another passage, is cut back. Drawn walls near the
    splay roof or floor still win.
+
+   Plan scraps get the same from the splays (the hull of each leg's
+   stations and splay ends): `roofs` on the plan file does both. Then:
+
+   ```bash
+   python3 -m tools.sketch2therion details Swil1P_Sump1ToSwildons2.th2
+   ```
+
+   This turns lines inside the passage into floor steps, with the
+   ticks on the survey's side (the stream is usually in the low part).
+   It drops strokes that just double a wall, and draws gaps in the
+   walls along the passage as presumed (dashed) walls. It also redraws
+   boulders as clean blocks with facet edges. Check the steps:
+   where the survey isn't on the low side, flip the line in xTherion.
 
    `python3 -m tools.sketch2therion tidy FILE.th2 ...` does the same to
    drawings converted before, and reports how much of each scrap's
@@ -256,5 +272,6 @@ the way the sketch was drawn, so convert from that instead.
 | `floor.py` | Reads the floor off the side view for steps, climbs and gradients. |
 | `convert.py` | Builds the scraps: the passage fill and walls-or-borders, then the scraps for the cross-sections and where they go. |
 | `sections.py`, `sections.thconfig` | Point the cross-section lines the way each section looks, and move section drawings clear of the passages and each other. |
-| `roofs.py` | Extended-elevation fill from the splays where no roof or floor was sketched. |
-| `tidy.py` | Redraws converted scraps the conventional Therion way: walls as the outline (passage on their left), water inside invisible borders, labels outside the passage. |
+| `roofs.py` | Fill from the splays where the sketch has no wall: roof and floor in elevation, the passage sides in plan. |
+| `details.py` | Floor steps, presumed walls and cleaner boulders in plan. |
+| `tidy.py` | Redraws converted scraps the conventional Therion way: walls as the outline (passage on their left), presumed walls where none was sketched, water out to the walls, labels outside the passage. |

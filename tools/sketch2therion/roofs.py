@@ -34,6 +34,7 @@ from .tidy import Obj, bezier_points, parse_scrap, scale_of
 SQL = 'output/Swildons.sql'
 STEEP = 40          # a splay at least this steep (degrees) measures the roof or floor
 NEAR = 1.5         # m: a drawn wall this far beyond the splay roof/floor still counts
+NEAR_PLAN = 0.4     # m: in plan the splay ends are the walls
 DEFAULT = 1.0       # m: roof/floor where nothing tells us
 REACH = 5.0         # m: how far to look for a drawn wall when the splays don't say
 
@@ -46,10 +47,14 @@ class Splays:
         db.executescript(open(path, encoding='utf-8', errors='replace').read())
         surveys = {i: n for i, n in db.execute('select ID, NAME from SURVEY')}
         st = {}
-        for i, name, sv, z in db.execute('select ID, NAME, SURVEY_ID, Z from STATION'):
+        xyz = {}
+        for i, name, sv, x, y, z in db.execute('select ID, NAME, SURVEY_ID, X, Y, Z from STATION'):
             st[i] = (f'{name}@{surveys.get(sv, "")}', z)
+            xyz[i] = (x, y, z)
+        self.ends = defaultdict(list)        # station -> [(dx, dy) of each splay end, in plan]
         spl = {s for s, f in db.execute('select SHOT_ID, FLAG from SHOT_FLAG') if f == 'spl'}
         self.up, self.down = {}, {}
+        self.pos = {st[i][0]: xyz[i][:2] for i in st}
         self.legs = defaultdict(set)
         for sid, a, b, grad in db.execute('select ID, FROM_ID, TO_ID, GRADIENT from SHOT'):
             if a not in st or b not in st:
@@ -59,6 +64,8 @@ class Splays:
                 # the named end is the station
                 if na.startswith(('-@', '.@')):
                     na, za, zb, grad = nb, zb, za, -grad
+                    a, b = b, a
+                self.ends[na].append((xyz[b][0] - xyz[a][0], xyz[b][1] - xyz[a][1]))
                 dz = zb - za
                 if grad >= STEEP:
                     self.up[na] = max(self.up.get(na, 0.0), dz)
@@ -210,6 +217,120 @@ def redo_file(path, splays, map_scale=200):
         if '-projection extended' not in header:
             continue
         new = redo_scrap(header, body, splays, survey, map_scale)
+        if new is None:
+            continue
+        out.append(t[pos:m.start(3)] + new.rstrip('\n') + '\n')
+        pos = m.end(3)
+        done.append(name)
+    out.append(t[pos:])
+    t = ''.join(out)
+    if b'\r\n' in raw:
+        t = t.replace('\n', '\r\n')
+    open(path, 'wb').write(t.encode('utf-8'))
+    return done
+
+
+# -- plan ---------------------------------------------------------------------------
+
+def plan_redo_scrap(header, body, splays, survey, map_scale=500):
+    """The same for a plan scrap: the passage along each leg is the hull of
+    its two stations and their splay ends. Fill well outside that is cut
+    where it is a guess (mostly bounded by invisible outline, not walls),
+    and the hull fills in where the fill falls short of it across
+    invisible outline."""
+    from shapely.geometry import MultiPoint, Point
+    from shapely.ops import polygonize
+    from ..routes.survey import _fit
+    K = scale_of(header)
+    objs = parse_scrap(body)
+    if not any(o.kind == 'line' and o.head.startswith('line wall') and '-subtype invisible' in o.head for o in objs):
+        return None
+    stations = {}
+    for o in objs:
+        m = re.match(r'point (\S+) (\S+) station\b.*-name (\S+)', o.head) if o.kind == 'point' else None
+        if m:
+            n = m.group(3)
+            stations[n if '@' in n else f'{n}@{survey}'] = (float(m.group(1)), float(m.group(2)))
+    pairs = [(xy, splays.pos[n]) for n, xy in stations.items() if n in splays.pos]
+    if len(pairs) < 2:
+        return None
+    to_scrap = _fit([(b, a) for a, b in pairs])
+    hulls = []
+    for a in stations:
+        for b in splays.legs.get(a, ()):
+            if b not in stations or a > b:
+                continue
+            pts = [stations[a], stations[b]]
+            for n in (a, b):
+                g = splays.pos.get(n)
+                if g is None:
+                    continue
+                for dx, dy in splays.ends.get(n, ()):
+                    pts.append(to_scrap((g[0] + dx, g[1] + dy)))
+            h = MultiPoint(pts).convex_hull
+            if h.geom_type == 'Polygon':
+                hulls.append(h)
+    if not hulls:
+        return None
+    band = unary_union(hulls).buffer(0.2 * K, join_style=1).buffer(-0.2 * K, join_style=1)
+    outline = [LineString(bezier_points(o.segments())) for o in objs
+               if o.kind == 'line' and o.head.startswith('line wall') and '-outline none' not in o.head
+               and len(o.segments()) > 1]
+    faces = list(polygonize(unary_union(outline)))
+    if not faces:
+        return None
+    old_poly = max(faces, key=lambda f: f.area)
+    walls = unary_union([LineString(bezier_points(o.segments())) for o in objs
+                         if o.kind == 'line' and o.head.startswith('line wall') and '-subtype invisible' not in o.head
+                         and len(o.segments()) > 1]).buffer(0.05 * K)
+
+    def walled(piece, other):
+        """How much of what `piece` shares with `other` is drawn wall."""
+        shared = piece.boundary.intersection(other.boundary.buffer(0.02 * K))
+        return shared.intersection(walls).length / shared.length if shared.length else 1.0
+
+    F = old_poly
+    extra = old_poly.difference(band.buffer(NEAR_PLAN * K, join_style=1)).buffer(0)
+    for c in getattr(extra, 'geoms', [extra]):
+        if c.is_empty or c.area < (0.2 * K) ** 2:
+            continue
+        rest = F.difference(c).buffer(0)
+        if walled(c, rest) < 0.3 and c.boundary.intersection(walls).length < 0.3 * c.boundary.length:
+            F = rest
+    if F.geom_type != 'Polygon':
+        F = max(F.geoms, key=lambda g: g.area)
+    more = band.difference(F).buffer(0)
+    for c in getattr(more, 'geoms', [more]):
+        if c.is_empty or c.area < (0.2 * K) ** 2:
+            continue
+        if c.distance(F) < 0.02 * K and walled(c, F) < 0.3:
+            F = unary_union([F, c]).buffer(0)
+    if F.geom_type != 'Polygon':
+        F = max(F.geoms, key=lambda g: g.area)
+    rest = []
+    for o in objs:
+        if o.kind == 'line' and o.head.startswith('line wall'):
+            if '-subtype invisible' in o.head:
+                continue
+            if '-outline none' not in o.head:
+                o.head = 'line wall -outline none'
+        rest.append(o)
+    ring_obj = Obj('line', 'line wall -subtype invisible -close on', [])
+    ring_obj.set_segments([[x, y] for x, y in list(F.exterior.coords)[:-1]])
+    rest = rest[:1] + [ring_obj] + rest[1:]
+    return tidy.tidy_scrap(header, '\n'.join(o.text() for o in rest), map_scale, False)
+
+
+def plan_redo_file(path, splays, only=None, map_scale=500):
+    raw = open(path, 'rb').read()
+    t = raw.decode('utf-8').replace('\r\n', '\n')
+    survey = _survey_of(path)
+    out, pos, done = [], 0, []
+    for m in re.finditer(r'^(scrap (\S+)[^\n]*)\n(.*?)^endscrap', t, re.S | re.M):
+        header, name, body = m.group(1), m.group(2), m.group(3)
+        if '-projection plan' not in header or (only and name not in only):
+            continue
+        new = plan_redo_scrap(header, body, splays, survey, map_scale)
         if new is None:
             continue
         out.append(t[pos:m.start(3)] + new.rstrip('\n') + '\n')

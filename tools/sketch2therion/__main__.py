@@ -12,6 +12,8 @@
               the passage, ... (see tidy.py)
   roofs       redraw converted extended elevations' fill from the splay
               shots where no roof or floor was sketched (after a build)
+  details     plan details: interior lines -> floor steps, cleaner
+              boulders (after a build)
   sections    point the cross-section markers the way each section looks,
               and move section drawings off passages and each other
 
@@ -137,8 +139,17 @@ def cmd_roofs(a):
     from . import roofs
     splays = roofs.Splays()
     for f in a.files:
-        done = roofs.redo_file(f, splays, a.map_scale)
+        done = roofs.redo_file(f, splays, a.map_scale)        # elevation scraps
+        done += roofs.plan_redo_file(f, splays, a.scrap, a.map_scale)
         print(f"  {f}: {', '.join(done) or 'nothing to redo'}")
+
+
+def cmd_details(a):
+    from . import details, roofs
+    splays = roofs.Splays()
+    for f in a.files:
+        for name, steps, blocks in details.redo_file(f, splays, a.scrap):
+            print(f"  {name}: {steps} floor steps, {blocks} boulders")
 
 
 def cmd_sections(a):
@@ -243,7 +254,13 @@ def main(argv=None):
     q = sub.add_parser('roofs', help="elevation fill from the splays where no roof or floor was sketched")
     q.add_argument('files', nargs='+')
     q.add_argument('--map-scale', type=int, default=500)
+    q.add_argument('--scrap', nargs='+', help='only these plan scraps (default: every plan scrap with invisible walls)')
     q.set_defaults(func=cmd_roofs)
+
+    q = sub.add_parser('details', help='floor steps, presumed walls and boulders in plan scraps')
+    q.add_argument('files', nargs='+')
+    q.add_argument('--scrap', nargs='+', help='only these scraps (default: every plan scrap)')
+    q.set_defaults(func=cmd_details)
 
     q = sub.add_parser('sections', help='turn cross-section markers and move sections clear')
     q.set_defaults(func=cmd_sections)

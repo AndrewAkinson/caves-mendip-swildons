@@ -6,11 +6,15 @@ closed line. That works, but it is not how Therion drawings are made, and
 it shows: the fill doesn't follow the walls exactly, and wall direction is
 never checked. This module rewrites such scraps the conventional way:
 
-- walls are outline walls, drawn with the passage on their LEFT, and the
-  gaps between them are closed with invisible walls that start and end
-  exactly on the wall ends, so the fill follows the walls
-- nothing is drawn with `-clip off`; water has an invisible border and is
-  trimmed to the walls; marks outside the walls are dropped
+- walls are outline walls, drawn with the passage on their LEFT, so the
+  fill follows the walls. A gap where the wall runs along the passage
+  but wasn't sketched is a presumed wall; a gap across the passage (an
+  open end, a junction, where the drawing stops) is left open, and
+  Therion closes it, joining each wall's end to the nearest free end
+- nothing is drawn with `-clip off`; water has one invisible border,
+  which runs out under the walls it lies against so that the wall is its
+  edge (Therion clips it to the outline); marks outside the walls are
+  dropped
 - big boulders get rock edges
 - slope arrows are kept off floor steps and pitches
 - climbs are labelled C2, pitches P5 (no units), and labels are moved
@@ -304,8 +308,8 @@ def rebuild_outline(objs, ring_obj, K, name=''):
     station in it) is cut away, and the thin lens where a wall runs just
     outside the fill line is taken in, so that the fill reaches the walls
     exactly. Going round it anticlockwise, every stretch along a wall
-    becomes that part of the wall, drawn with the passage on its left, and
-    the rest becomes invisible wall. Walls that end up inside the passage
+    becomes that part of the wall, drawn with the passage on its left;
+    close_outline() then deals with the gaps between them. Walls that end up inside the passage
     are the edges of other things (a ledge, another level): borders.
     Returns (objs, outline polygon)."""
     rp = Polygon(bezier_points(ring_obj.segments())).buffer(0)
@@ -560,8 +564,148 @@ def rebuild_outline(objs, ring_obj, K, name=''):
             res += replace[id(o)]
         else:
             res.append(o)
+    close_outline(res, K)
+    res = [o for o in res if o.kind != 'drop']
     REPORT.append((name, kept_len, REPORT_ROW[2]))
     return res, F
+
+
+def water_to_walls(pool, objs, K):
+    """A pool out to the walls it lies against, and a little past them:
+    Therion clips the area to the scrap outline, so the wall is the
+    water's edge and there is no second line just inside it."""
+    walls = [LineString(bezier_points(o.segments())) for o in objs
+             if o.kind == 'line' and o.head.startswith('line wall') and '-outline none' not in o.head
+             and len(o.segments()) > 1]
+    if not walls:
+        return pool
+    reach = pool.buffer(0.35 * K, join_style=1).intersection(unary_union(walls).buffer(0.3 * K))
+    g = unary_union([pool, reach]).buffer(0.05 * K, join_style=1).buffer(-0.05 * K, join_style=1)
+    if g.geom_type != 'Polygon':
+        g = max(g.geoms, key=lambda q: q.area)
+    return g.simplify(0.02 * K)
+
+
+# -- closing the outline the way Therion does --------------------------------------
+
+def _station_legs(objs):
+    """Survey legs between the scrap's stations, guessed from their names:
+    24.31 to 24.32 and so on (PocketTopo and SexyTopo number along the survey)."""
+    st = {}
+    for o in objs:
+        m = re.match(r'point (\S+) (\S+) station\b.*-name (\S+)', o.head) if o.kind == 'point' else None
+        if m:
+            st[m.group(3).split('@')[0]] = (float(m.group(1)), float(m.group(2)))
+    legs = []
+    for n, p in st.items():
+        a, _, b = n.rpartition('.')
+        if a and b.isdigit():
+            q = st.get(f'{a}.{int(b) + 1}')
+            if q:
+                legs.append(LineString([p, q]))
+    return legs
+
+
+def therion_chain(lines):
+    """Join outline lines into closed outlines as Therion does
+    (thscrap::get_outline): from the end of a line to the nearest free end
+    of another, unless the start of the chain is nearer. [[points]]"""
+    left = [list(l) for l in lines if len(l) > 1]
+    out = []
+    while left:
+        cur = left.pop(0)
+        ring = list(cur)
+        while left:
+            last = ring[-1]
+            best, mind, rev = None, math.dist(last, ring[0]), False
+            for i, l in enumerate(left):
+                for r, end in ((False, l[0]), (True, l[-1])):
+                    d = math.dist(last, end)
+                    if d <= mind:
+                        best, mind, rev = i, d, r
+            if best is None:
+                break
+            l = left.pop(best)
+            ring += (l[::-1] if rev else l)
+        out.append(ring)
+    return out
+
+
+def close_outline(objs, K):
+    """Replace the invisible walls closing the outline: along the side of
+    the passage they become presumed walls (the wall is there, it just
+    wasn't drawn), across it (an open end, a junction, where the drawing
+    stops) they go, and Therion closes the gap with a straight line.
+    Kept invisible only where Therion's joining would go wrong without
+    them. Returns (presumed, left open, kept invisible)."""
+    legs = _station_legs(objs)
+    all_legs = unary_union(legs) if legs else None
+    gaps = [o for o in objs if o.kind == 'line' and o.head.startswith('line wall')
+            and '-subtype invisible' in o.head and '-close on' not in o.head]
+    if not gaps:
+        return 0, 0, 0
+    presumed, opened = [], []
+    for o in gaps:
+        pts = bezier_points(o.segments())
+        line = LineString(pts)
+        along = tot = 0.0
+        if all_legs is not None and not line.intersects(all_legs) and line.length >= 0.5 * K:
+            for a, b in zip(pts, pts[1:]):
+                d = math.dist(a, b)
+                if d < 1e-9:
+                    continue
+                m = Point((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
+                leg = min(legs, key=lambda l: l.distance(m))
+                (x0, y0), (x1, y1) = leg.coords[0], leg.coords[-1]
+                L = math.dist((x0, y0), (x1, y1)) or 1
+                along += d * abs(((b[0] - a[0]) * (x1 - x0) + (b[1] - a[1]) * (y1 - y0)) / (d * L))
+                tot += d
+        if tot and along / tot > 0.7:
+            presumed.append(o)
+        else:
+            opened.append(o)
+
+    def outline_ok(skip):
+        lines = [bezier_points(o.segments(), 20) for o in objs
+                 if o.kind == 'line' and o.head.startswith('line wall') and '-outline none' not in o.head
+                 and '-close on' not in o.head and o not in skip and len(o.segments()) > 1]
+        rings = therion_chain(lines)
+        if len(rings) != 1:
+            return False
+        p = Polygon(rings[0])
+        return p.is_valid
+    for o in presumed:
+        o.head = 'line wall -subtype presumed'
+    # leave each gap open where Therion's own joining then still makes
+    # one clean outline; otherwise it has to stay
+    skip, kept = set(), []
+    for o in sorted(opened, key=lambda o: -LineString(bezier_points(o.segments())).length):
+        skip.add(o)
+        if not outline_ok(skip):
+            skip.discard(o)
+            kept.append(o)
+    for o in skip:
+        o.kind = 'drop'
+    # the rest: a short one joins the walls either side (the wall it
+    # carries on from is extended across it), a longer one is presumed wall
+    walls = [w for w in objs if w.kind == 'line' and w.head.startswith('line wall') and w not in kept
+             and '-subtype invisible' not in w.head and '-outline none' not in w.head and len(w.segments()) > 1]
+    for o in kept:
+        segs = o.segments()
+        pts = [tuple(sg[-2:]) for sg in segs]
+        if LineString(bezier_points(segs)).length < 0.5 * K:
+            w = next((w for w in walls if math.dist(tuple(w.segments()[-1][-2:]), pts[0]) < 0.01), None)
+            if w is not None:
+                w.set_segments(w.segments() + [[x, y] for x, y in pts[1:]])
+                o.kind = 'drop'
+                continue
+            w = next((w for w in walls if math.dist(tuple(w.segments()[0][-2:]), pts[-1]) < 0.01), None)
+            if w is not None:
+                w.set_segments([[x, y] for x, y in pts[:-1]] + [[w.segments()[0][-2], w.segments()[0][-1]]] + w.segments()[1:])
+                o.kind = 'drop'
+                continue
+        o.head = 'line wall -subtype presumed'
+    return len(presumed), len(skip), len(kept)
 
 
 # -- the tidy itself -----------------------------------------------------------------
@@ -603,7 +747,7 @@ def tidy_scrap(header, body, map_scale=500, elevation=False):
                 pts = bezier_points(cw.segments())
             outline_poly = Polygon(pts).buffer(0)
 
-    # 2. no -clip off; water with an invisible border, trimmed to the walls
+    # 2. no -clip off; water with an invisible border, out to the walls it lies against
     drop_ids = set()
     for o in objs:
         if o.kind in ('line', 'area'):
@@ -613,15 +757,14 @@ def tidy_scrap(header, body, map_scale=500, elevation=False):
                 o.head = o.head.replace('line border', 'line border -subtype invisible', 1)
             if outline_poly is not None and not outline_poly.is_empty:
                 pool = Polygon([(s[-2], s[-1]) for s in o.segments()]).buffer(0)
-                inner = outline_poly.buffer(-0.05 * K)
-                pool = pool.intersection(inner)
+                pool = pool.intersection(outline_poly.buffer(0.3 * K))
                 if pool.geom_type == 'MultiPolygon':
                     pool = max(pool.geoms, key=lambda g: g.area)
                 if pool.is_empty or pool.geom_type != 'Polygon' or pool.area < (0.15 * K) ** 2:
                     drop_ids.add(re.search(r'-id (\S+)', o.head).group(1))
                     o.kind = 'drop'
                 else:
-                    o.set_segments([[x, y] for x, y in list(pool.simplify(0.02 * K).exterior.coords)[:-1]])
+                    o.set_segments([[x, y] for x, y in list(water_to_walls(pool, objs, K).exterior.coords)[:-1]])
     for o in objs:
         if o.kind == 'area' and any(r.strip() in drop_ids for r in o.rows):
             o.kind = 'drop'
