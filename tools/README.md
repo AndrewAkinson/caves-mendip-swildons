@@ -297,5 +297,6 @@ the way the sketch was drawn, so convert from that instead.
 | `sections.py`, `sections.thconfig` | Point the cross-section lines the way each section looks, and move section drawings clear of the passages and each other. |
 | `roofs.py` | Fill from the splays where the sketch has no wall: roof and floor in elevation, the passage sides in plan. |
 | `details.py` | Floor steps, presumed walls and cleaner boulders in plan. |
+| `review.py` | Reviewing a drawing with someone who knows the cave: sketch-beside-drawing pictures, outline gaps the sketch has walls along, outline checks as Therion and MetaPost see them. |
 | `smooth.py` | Joins converted walls into one line per wall and refits them with fewer, smooth points, checking the outline still works for Therion and MetaPost. |
 | `tidy.py` | Redraws converted scraps the conventional Therion way: walls as the outline (passage on their left), presumed walls where none was sketched, water out to the walls, labels outside the passage. |

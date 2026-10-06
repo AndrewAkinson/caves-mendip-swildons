@@ -16,6 +16,8 @@
               boulders (after a build)
   smooth      refit converted walls with fewer, smooth points (last, after
               roofs and details)
+  review      check a drawing against the sketch with someone who knows the
+              cave: split-screen pictures, outline gaps, outline checks
   sections    point the cross-section markers the way each section looks,
               and move section drawings off passages and each other
 
@@ -213,6 +215,10 @@ def cmd_extend(a):
 
 
 def main(argv=None):
+    args = sys.argv[1:] if argv is None else argv
+    if args[:1] == ['review']:                 # its own sub-commands
+        from . import review
+        return review.main(args[1:])
     p = argparse.ArgumentParser(prog='python3 -m tools.sketch2therion', description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest='cmd', required=True)

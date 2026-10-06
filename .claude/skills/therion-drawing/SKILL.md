@@ -167,3 +167,73 @@ Build with the `swildons*.thconfig` files (see `README.md`), then:
   check with another renderer (MuPDF) before chasing them.
 - In PDFs, overlapping rocks fade rather than clip: a known bug, don't
   try to fix it.
+
+## Reviewing a drawing with someone who knows the cave
+
+The converted drawings follow the sketches closely but misread them in
+predictable ways, and only someone who has been there can settle some
+of it. What worked, in order:
+
+1. Agree the scope first (plan before elevation: the elevation is a
+   bigger job) and work through it a few spots at a time.
+2. Find the spots yourself before asking: `review gaps` (straight
+   closing lines where the sketch has a wall), merged pools, steps that
+   should be walls, lines in brown or green that weren't drawn. Fix
+   what the sketch makes certain; ask about the rest.
+3. Ask with pictures, never with words alone: `review show` puts the
+   original sketch (its colours, legs and station names) beside the
+   drawing with station names (`review build` first). One picture per
+   question, numbered, 3 to 7 per batch, each naming the stations and
+   giving the default you'd take, so the answer can be a word.
+4. After fixing, show sketch | before | after (`review show --before`,
+   with the old `output/review-plan.pdf` copied aside before editing),
+   build every config, and compare the "intersects itself" list with
+   the last build: no new warnings.
+5. Commit and push each round; main moves (other work), so fetch and
+   rebase rather than force.
+6. Write each answer down here, as a rule for the next drawing.
+
+`python3 -m tools.sketch2therion review --help` (tools/sketch2therion/
+review.py). `review check FILE.th2` gives each scrap's outline as
+Therion joins it: valid, and MetaPost's turning number (0 = "intersects
+itself").
+
+### How these sketches read (answers from the review)
+
+- Black is wall, including bays and alcoves where the wall bends in and
+  out; a black line inside the passage is a step only where it is the
+  edge of a shelf. Don't let Therion close a bend with a straight line.
+- Brown outlines are other passages at another level or grottoes off
+  the passage: each its own scrap, meeting the main passage along one
+  shared wall (the same points), not overlapping it.
+- Green: in the 2017 sketches, a shelf (draw its edge as a floor step,
+  low side to the water); in the 2019 one, arcs across the passage are
+  gour pools on flowstone (`line rimstone-dam`), and green "c" marks
+  are flowstone.
+- A dashed black circle, or orange ticks round a station, is an aven
+  (`line chimney`, unclipped where it is wider than the passage); the
+  surveyors drew the ticks on the wrong side, so don't copy them.
+- Blue hatching: keep separate pools separate and round, as sketched;
+  one hatched patch is one pool.
+- Thin triangles are slope arrows (`point gradient`, wide end to tip),
+  not boulders.
+- A pinch between two pools is a real narrowing of the walls.
+- A passage dropping under another (a rift below the main passage): its
+  edge under the main passage is a floor step, the main passage's edge
+  over it an overhang; walls only on the outer edges. Draw the nose of
+  rock between passages.
+- Water is always blue and nothing else is (the altitude colours avoid
+  blue).
+
+### Pitfalls met while fixing
+
+- Walls must meet at exactly the same point; 0.3 units apart makes a
+  backwards step that crosses the outline.
+- Where two walls meet heading roughly west MetaPost can miscount the
+  outline's turns; make them one line (`review check` shows it).
+- A curve fitted through a narrow tip can fold over itself; draw tips
+  through the sketch's corner points with a sharp corner.
+- Before taking `-outline out` off a line, check `join` statements in
+  the map files: a scrap joined to another needs that edge.
+- New lines must match their neighbours' options (`-outline out`) or
+  they won't be merged.
