@@ -12,6 +12,8 @@ survey. Each has:
   red cross on each way not to take (with where it leads), and the
   directions in words: "Turn left, down about 3 m, towards Boulder
   Chamber. Not the way on the right (to Zig Zags)."
+- **Kit and tackle** from the route file, with the steep drops and
+  climbs on the survey, so you can see what the tackle is for.
 - **A height profile** along the route, with the decisions and the
   places passed.
 - **The title and description, the numbers** (distance, depth, total
@@ -33,6 +35,12 @@ A round trip of the dry upper series, ...
 # passages you mean.
 waypoints = ["1.0@ZigZags", "2.33@LongDryWay", "2.59@LongDryWay",
              "4.0@ShortDryWay", "2.5@LongDryWay", "1.0@ZigZags"]
+
+# Kit and tackle, shown in a box on the card. The card also lists the
+# steep drops and climbs it finds on the survey (2 m or more), and says
+# "not listed yet" for tackle when there are drops but no tackle list.
+tackle = ["..."]
+kit = ["..."]
 
 # Optional:
 avoid = ["11.13@WetWayOxbows"]   # stations the route must not use

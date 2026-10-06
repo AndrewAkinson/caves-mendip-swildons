@@ -1,24 +1,18 @@
 # The surface map (tools/surface): python3 -m tools.surface
 title = "Getting to Swildons Hole"
-subtitle = "Where to park, the walk to the entrance, and what's under the fields"
+subtitle = "Where to park and the walk to the entrance"
 description = """
 Swildons Hole is near Priddy on Mendip. This map shows the places to
-park, the walks from them to the entrance, and the cave itself beneath
-the fields, with the routes from the route cards.
+park and the walks from them to the entrance.
 """
 
 # The walks and parking: a GeoJSON file next to this one (see
-# tools/surface/__main__.py for what it can contain).
+# tools/surface/README.md for what it can contain).
 geojson = "surface.geojson"
 
-# Access arrangements for the cave: who to ask, any fee, where to change.
-# Fill this in; it's shown in its own box when it isn't empty.
-access = ""
+# The entrance's OS grid reference, from the survey's GPS fix
+grid_ref = "ST 53122 51305"
 
-before_you_go = [
-  "Tell someone where you're going, which route, and when you'll be out. Fill in the slip below and leave it with them.",
-  "Check the weather. Swildons takes a stream and floods after heavy rain: don't go in if it's raining hard or forecast to.",
-  "On your first trips go with someone who knows the cave, and go as a group of at least three.",
-  "Everyone needs a helmet, a good head torch and a spare light.",
-  "In an emergency call 999, ask for the police, then cave rescue.",
-]
+# Access arrangements: who to ask, any fee, where to change. Shown in its
+# own box when it isn't empty.
+access = ""

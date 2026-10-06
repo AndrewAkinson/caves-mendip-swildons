@@ -288,13 +288,13 @@ def main():
         has_png = os.path.exists(spdf) and render_preview(spdf, png)
         thumb = (f'<a class="thumb" href="surface/index.html"><img src="previews/surface.png" '
                  f'alt="Surface map preview" loading="lazy"></a>' if has_png else "")
-        pdf_link = (f' &middot; <a href="surface/index.pdf">PDF to print, A3</a>' if os.path.exists(spdf) else "")
+        pdf_link = (f' &middot; <a href="surface/index.pdf">PDF to print, A4</a>' if os.path.exists(spdf) else "")
         doc.append(f"""<h2>Getting there</h2>\n<div class="grid">
   <div class="card">
     {thumb}
     <div class="body">
       <h3><a href="surface/index.html">Getting to Swildons Hole</a></h3>
-      <p>Where to park, the walk to the entrance, and the cave under the fields. On a phone it can show where you are.</p>
+      <p>Where to park and the walk to the entrance, for visitors new to the area.</p>
       <div class="size"><a href="surface/index.html">On screen or phone</a>{pdf_link}</div>
     </div>
   </div>

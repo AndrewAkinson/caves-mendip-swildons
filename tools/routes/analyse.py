@@ -202,6 +202,36 @@ class Route:
             text += " Not " + (", ".join(bits[:-1]) + " or " + bits[-1] if len(bits) > 1 else bits[0]) + "."
         return text
 
+    def drops(self, min_dz=2.0, steep=1.2):
+        """Steep pitches and climbs along the route: legs rising or falling at
+        least `steep` times their horizontal length, joined while they go the
+        same way, kept if they add up to min_dz metres or more.
+        [(distance along, height change, place)]"""
+        runs = []
+        cur = None
+        for i, (a, b) in enumerate(zip(self.nodes, self.nodes[1:])):
+            pa, pb = self.s.pos[a], self.s.pos[b]
+            dz = pb[2] - pa[2]
+            h = math.dist(pa[:2], pb[:2])
+            if abs(dz) >= 1.0 and abs(dz) >= steep * h:
+                if cur and cur['end'] == i and (dz > 0) == (cur['dz'] > 0):
+                    cur['dz'] += dz
+                    cur['end'] = i + 1
+                else:
+                    cur = {'start': i, 'end': i + 1, 'dz': dz}
+                    runs.append(cur)
+        out = []
+        for r in runs:
+            if abs(r['dz']) < min_dz:
+                continue
+            k = self.nodes[r['start']]
+            place = self.s.place_name(k, 12)
+            if not place:
+                near = self.s.place_name(k, 40)
+                place = f"near {near}" if near else None
+            out.append((self.chain[r['start']], r['dz'], place))
+        return out
+
     def profile(self, step=1.0):
         """[(distance, altitude)] along the route."""
         n = max(2, int(self.length / step))

@@ -23,9 +23,8 @@ the latest sheets, rebuilt from this repository every time it changes.
 | [Plan with centreline](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan-centreline.pdf) | The plan with survey legs and station names, for resurveying. 1:500. |
 | [Plan with Stanton's survey](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan-with-stanton.pdf) | The plan plus Stanton's survey beyond it as centreline, with station names, for planning where to resurvey next. 1:500. |
 
-**Getting there**: a map of the parking, the walks to the entrance and
-the cave under the fields, which can show where you are on a phone. See
-[tools/surface](tools/surface/README.md).
+**Getting there**: for visitors new to the area, a map of where to park
+and the walks to the entrance. See [tools/surface](tools/surface/README.md).
 
 **Route cards** (draft): one sheet per route through the cave, with
 the way to go at each junction, made automatically from the survey. See

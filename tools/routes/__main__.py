@@ -143,6 +143,27 @@ def card(route_def, s, base, path):
                   f'stroke-width="{lv.k * 0.35:.2f}" stroke-dasharray="{lv.k * 1.2:.2f} {lv.k * 0.8:.2f}"/>', 'locator'))
     locator = f'<div class="locator">{loc}<span>Where in the cave</span></div>'
 
+    # ---- kit and tackle: from the route file, and the steep bits from the survey ----
+    tackle = route_def.get('tackle', [])
+    kit = route_def.get('kit', [])
+    drops = route.drops()
+    kit_html = ''
+    if tackle or kit or drops:
+        rows_ = []
+        if tackle or drops:
+            rows_.append('<div><b>Tackle</b> ' + (R.esc('; '.join(tackle)) if tackle else
+                         '<span class="todo">not listed yet: ask someone who knows the route</span>') + '</div>')
+        if kit:
+            rows_.append('<div><b>Kit</b> ' + R.esc('; '.join(kit)) + '</div>')
+        if drops:
+            words = [f"{p[0].upper() + p[1:] if p else 'A pitch'}, about {abs(dz):.0f} m {'down' if dz < 0 else 'up'} "
+                     f"({d:.0f} m along)" for d, dz, p in drops]
+            rows_.append('<div><b>Steep on the survey</b> ' + R.esc('; '.join(words)) + '</div>')
+        kit_html = '<div class="kit"><h2>Kit and tackle</h2>' + ''.join(rows_) + '</div>'
+    kit_mm = 0 if not kit_html else 8 + 3.6 * sum(
+        math.ceil(len(t) / (L['chars'] * (2.1 if not wide else 6.2))) for t in ['; '.join(tackle) or 'x' * 60, '; '.join(kit), ' ' * (len(drops) * 45)] if t)
+    L['area'] -= kit_mm
+
     # ---- close-ups ----------------------------------------------------------------
     shown = groups[:L['maxn']]
     for g in shown:
@@ -240,7 +261,7 @@ def card(route_def, s, base, path):
   <div class="via">Via {R.esc(" → ".join(via))}{" and back" if st["loop"] else ""}</div>
 </div><div class="side">{locator}<div class="stats">{"".join(f'<div class="stat"><b>{a}</b><span>{b}</span></div>' for a, b in stats)}</div></div></header>
 {overview}
-<aside><h2>At each decision</h2>{"".join(pulls)}{more}</aside>
+<aside>{kit_html}<h2>At each decision</h2>{"".join(pulls)}{more}</aside>
 <div class="profilebox">{prof}</div>
 <footer>{R.LEGEND}<div class="credit"><span class="draft">Draft:</span> directions are worked out automatically from the survey, not checked underground.
 Survey: the Swildons resurvey (Paul 'Footleg' Fretwell and team, 2012–2019) and W. I. Stanton. Made {date}.</div></footer>

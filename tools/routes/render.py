@@ -387,6 +387,12 @@ footer { grid-column: 1 / 3; display: grid; grid-template-columns: auto 1fr; ali
   .legend span { white-space: normal; }
   .credit { text-align: left; margin-top: 8px; }
 }
+.kit { grid-column: 1 / -1; background: #fff; border: 0.3mm solid #e2ded5; border-left: 1.2mm solid #9c2f12;
+       border-radius: 2mm; padding: 1.8mm 2.6mm 2mm; font-size: 2.75mm; line-height: 1.35; }
+.kit h2 { margin: 0 0 0.8mm; }
+.kit b { color: #1d2430; margin-right: 1mm; }
+.kit .todo { color: #9c2f12; font-style: italic; }
+@media screen and (max-width: 1100px) { .kit { font-size: 15px; padding: 10px 12px; margin-bottom: 14px; } }
 .basemap { position: absolute; width: 0; height: 0; overflow: hidden; }
 '''
 

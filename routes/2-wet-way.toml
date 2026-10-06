@@ -9,4 +9,9 @@ entrance series that floods.
 # Side passages shorter than this (metres) are not counted as decisions
 min_branch = 8
 
+# Kit and tackle for the trip, shown on the card with the steep drops and
+# climbs the survey shows. For example: tackle = ["ladder and lifeline for the pitch"]
+tackle = []
+kit = []
+
 waypoints = ["1.0@ZigZags", "11.12@WetWayOxbows", "13.18@WaterChamber", "6.2@OldGrottoToWaterChamber", "2.33@LongDryWay", "1.0@ZigZags"]

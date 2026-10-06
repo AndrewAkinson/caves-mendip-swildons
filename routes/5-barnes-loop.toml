@@ -5,4 +5,9 @@ Barnes Loop leaves the streamway below Double Pots and rejoins it
 further down. Go round the loop and come back up the streamway to where
 you left it.
 """
+# Kit and tackle for the trip, shown on the card with the steep drops and
+# climbs the survey shows. For example: tackle = ["ladder and lifeline for the pitch"]
+tackle = []
+kit = []
+
 waypoints = ["22.9@DblPotsDownstream", "23.5@BarnesLoopToTratmans", "22.20@DblPotsDownstream", "22.9@DblPotsDownstream"]

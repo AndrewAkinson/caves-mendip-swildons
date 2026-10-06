@@ -5,6 +5,11 @@ The way down from the entrance to the streamway: through the Wet Way to
 the Water Chamber, then on down past Water Chamber Dig to the 8ft Drop
 and the Old 40ft Pot, where the Old 40 to Sump 1 route starts.
 """
+# Kit and tackle for the trip, shown on the card with the steep drops and
+# climbs the survey shows. For example: tackle = ["ladder and lifeline for the pitch"]
+tackle = []
+kit = []
+
 waypoints = ["1.0@ZigZags", "11.12@WetWayOxbows", "13.18@WaterChamber", "9.11@Old40Route"]
 
 # Also make a card for the same route backwards

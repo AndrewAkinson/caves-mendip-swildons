@@ -7,4 +7,9 @@ entrance, through Zig Zags and down the Long Dry Way (the Pretty Way)
 past Boulder Chamber to Old Grotto, then back up by the Short Dry Way to
 rejoin the way in above Zig Zags.
 """
+# Kit and tackle for the trip, shown on the card with the steep drops and
+# climbs the survey shows. For example: tackle = ["ladder and lifeline for the pitch"]
+tackle = []
+kit = []
+
 waypoints = ["1.0@ZigZags", "2.33@LongDryWay", "2.59@LongDryWay", "4.0@ShortDryWay", "2.5@LongDryWay", "1.0@ZigZags"]
