@@ -2075,18 +2075,18 @@ scrap WetWayOxbowsXS -projection plan -author 2016.01.16 "Footleg" -copyright 20
 
 # Where each cross-section is cut (line section) and drawn (point section).
 
-line section
-  1019.67 999.27
+line section -direction both
   980.33 1000.73
+  1019.67 999.27
 endline
 
-point 841.47 1005.91 section -scrap xs_WetWayOxbows_11_43
+point 1277.47 899.01 section -scrap xs_WetWayOxbows_11_43
 
-point 956.72 1001.61 label -text "11.43" -scale xs
+point 1392.72 894.71 label -text "11.43" -scale xs
 
 point 841.47 1126.48 label -text "11.43" -scale xs
 
-line section
+line section -direction both
   1345.30 1006.61
   1325.56 1094.96
 endline
@@ -2097,7 +2097,7 @@ point 1320.41 1118.02 label -text "11.41" -scale xs
 
 point 1259.61 1546.88 label -text "11.41" -scale xs
 
-line section
+line section -direction both
   1778.60 1246.51
   1739.51 1251.13
 endline
@@ -2108,14 +2108,14 @@ point 1716.05 1253.91 label -text "11.35" -scale xs
 
 point 2073.19 1252.47 label -text "11.35" -scale xs
 
-line section
+line section -direction both
   1924.63 990.87
   1984.82 1024.88
 endline
 
 point 1817.64 930.41 section -scrap xs_WetWayOxbows_11_31
 
-line section
+line section -direction both
   3031.79 443.27
   3069.78 453.58
 endline
@@ -2126,7 +2126,7 @@ point 3092.58 459.78 label -text "11.27" -scale xs
 
 point 3139.04 534.89 label -text "11.27" -scale xs
 
-line section
+line section -direction both
   3078.28 260.06
   3116.20 270.65
 endline
@@ -2137,7 +2137,7 @@ point 3138.96 277.00 label -text "11.26" -scale xs
 
 point 3171.05 335.02 label -text "11.26" -scale xs
 
-line section
+line section -direction both
   2928.46 359.79
   3040.04 121.31
 endline
@@ -2148,18 +2148,18 @@ point 3050.06 99.92 label -text "11.24" -scale xs
 
 point 3235.10 -232.53 label -text "11.24" -scale xs
 
-line section
+line section -direction both
   2695.09 327.05
   2729.32 307.59
 endline
 
-point 2789.52 273.36 section -scrap xs_WetWayOxbows_11_22
+point 2712.21 415.75 section -scrap xs_WetWayOxbows_11_22
 
-point 2749.85 295.92 label -text "11.22" -scale xs
+point 2672.54 438.31 label -text "11.22" -scale xs
 
 point 2789.52 329.57 label -text "11.22" -scale xs
 
-line section
+line section -direction both
   2375.89 580.84
   2361.12 544.35
 endline
@@ -2170,7 +2170,7 @@ point 2352.25 522.46 label -text "11.20" -scale xs
 
 point 2328.94 542.75 label -text "11.20" -scale xs
 
-line section
+line section -direction both
   2209.19 614.45
   2204.98 575.31
 endline
@@ -2181,25 +2181,25 @@ point 2202.46 551.82 label -text "11.19" -scale xs
 
 point 2256.72 1140.06 label -text "11.19" -scale xs
 
-line section
+line section -direction both
   2110.82 616.12
   2112.80 576.80
 endline
 
-point 2117.79 478.05 section -scrap xs_WetWayOxbows_11_18
+point 1993.70 596.46 section -scrap xs_WetWayOxbows_11_18
 
-point 2113.99 553.20 label -text "11.18" -scale xs
+point 1989.90 671.61 label -text "11.18" -scale xs
 
 point 2117.79 562.21 label -text "11.18" -scale xs
 
-line section
-  1989.55 810.83
+line section -direction both
   2029.35 826.97
+  1989.55 810.83
 endline
 
 point 1859.14 757.95 section -scrap xs_WetWayOxbows_11_16
 
-line section
+line section -direction both
   2078.28 838.50
   2068.18 910.32
 endline
@@ -2210,60 +2210,60 @@ point 2064.89 933.72 label -text "11.15" -scale xs
 
 point 1988.48 1520.14 label -text "11.15" -scale xs
 
-line section
-  2425.56 870.97
+line section -direction both
   2243.73 831.39
+  2425.56 870.97
 endline
 
-point 2137.64 808.30 section -scrap xs_WetWayOxbows_11_12
+point 2436.93 910.24 section -scrap xs_WetWayOxbows_11_12
 
-point 2220.65 826.37 label -text "11.12" -scale xs
+point 2571.47 1517.96 label -text "11.12" -scale xs
 
 point 2137.64 909.00 label -text "11.12" -scale xs
 
-line section
+line section -direction both
   2415.21 741.64
   2461.95 800.09
 endline
 
-point 2534.34 890.60 section -scrap xs_WetWayOxbows_11_10
+point 2492.44 622.88 section -scrap xs_WetWayOxbows_11_10
 
 point 2476.71 818.53 label -text "11.10" -scale xs
 
 point 2534.34 998.62 label -text "11.10" -scale xs
 
-line section
-  2587.77 666.96
+line section -direction both
   2554.75 768.47
+  2587.77 666.96
 endline
 
-point 2519.73 876.10 section -scrap xs_WetWayOxbows_11_6
+point 2571.26 1465.75 section -scrap xs_WetWayOxbows_11_6
 
 point 2547.44 790.93 label -text "11.6" -scale xs
 
 point 2519.73 981.40 label -text "11.6" -scale xs
 
-line section
-  2502.14 897.00
+line section -direction both
   2541.17 902.21
+  2502.14 897.00
 endline
 
-point 2689.45 922.04 section -scrap xs_WetWayOxbows_11_8
+point 2280.38 697.15 section -scrap xs_WetWayOxbows_11_8
 
-point 2564.58 905.34 label -text "11.8" -scale xs
+point 2522.68 637.62 label -text "11.8" -scale xs
 
 point 2689.45 1009.00 label -text "11.8" -scale xs
 
-line section
+line section -direction both
   2751.02 740.38
   2723.00 795.05
 endline
 
-point 2688.94 861.51 section -scrap xs_WetWayOxbows_11_3
+point 2796.07 665.43 section -scrap xs_WetWayOxbows_11_3
 
-point 2712.23 816.07 label -text "11.3" -scale xs
+point 2819.36 619.99 label -text "11.3" -scale xs
 
-point 2688.94 928.32 label -text "11.3" -scale xs
+point 2279.87 703.43 label -text "11.3" -scale xs
 
 point 1000.00 1000.00 station -name 11.43@WetWayOxbows
 

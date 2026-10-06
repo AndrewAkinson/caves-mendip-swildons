@@ -3788,72 +3788,72 @@ scrap TratmansToSump1XS -projection plan -author 2019.01.05 "Footleg" -copyright
 # Where the cross-sections are cut (line section, across the passage at the
 # station, as wide as the splays) and where each is drawn (point section).
 
-line section
-  -747.85 1092.59
+line section -direction both
   -711.37 1257.95
+  -747.85 1092.59
 endline
 
 point -686.39 1371.21 section -scrap xs24_42
 
-line section
-  -1365.47 1152.91
+line section -direction both
   -1426.97 1354.25
+  -1365.47 1152.91
 endline
 
 point -1470.56 1496.95 section -scrap xs24_40
 
-line section
-  -3204.66 1198.24
+line section -direction both
   -2842.06 1044.88
+  -3204.66 1198.24
 endline
 
 point -2692.98 981.84 section -scrap xs24_31
 
-line section
-  -1861.50 1343.72
+line section -direction both
   -1959.69 1049.31
+  -1861.50 1343.72
 endline
 
-point -1809.26 1500.35 section -scrap xs24_23
+point -2014.07 920.05 section -scrap xs24_23
 
-line section
-  -2356.15 1449.35
+line section -direction both
   -2338.22 1193.13
+  -2356.15 1449.35
 endline
 
 point -2367.68 1614.02 section -scrap xs24_25
 
-line section
+line section -direction both
   -2829.78 1530.34
   -2893.84 1258.08
 endline
 
 point -2783.57 1726.79 section -scrap xs24_26
 
-line section
-  -727.55 1179.85
+line section -direction both
   -662.94 791.48
+  -727.55 1179.85
 endline
 
 point -624.38 559.70 section -scrap xs24_18
 
-line section
-  217.38 948.98
+line section -direction both
   151.64 763.28
+  217.38 948.98
 endline
 
 point 271.39 1101.55 section -scrap xs24_12
 
-line section
-  852.90 587.93
+line section -direction both
   857.19 496.75
+  852.90 587.93
 endline
 
 point 867.55 277.16 section -scrap xs24_8
 
-line section
-  945.42 614.90
+line section -direction both
   1045.40 720.96
+  945.42 614.90
 endline
 
 point 618.24 267.82 section -scrap xs24_5

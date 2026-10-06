@@ -721,35 +721,35 @@ scrap RollingThunderXS -projection plan -author 2019.01.05 "Footleg" -copyright 
 
 # Where each cross-section is cut (line section) and drawn (point section).
 
-line section
+line section -direction both
   975.24 997.03
   1024.76 1002.97
 endline
 
 point 1143.14 1017.16 section -scrap xs_RollingThunder_25_12
 
-line section
+line section -direction both
   992.13 647.88
   1031.49 647.39
 endline
 
 point 1155.38 645.85 section -scrap xs_RollingThunder_25_8
 
-line section
+line section -direction both
   996.08 730.29
   1035.42 728.76
 endline
 
 point 871.70 735.12 section -scrap xs_RollingThunder_25_9
 
-line section
+line section -direction both
   1035.65 308.87
   1074.58 314.75
 endline
 
 point 1349.61 356.35 section -scrap xs_RollingThunder_25_4
 
-line section
+line section -direction both
   1020.13 144.50
   1066.49 142.11
 endline

@@ -2606,49 +2606,49 @@ scrap 20ftToBarnesLoopXS -projection plan -author 2017.03.26 "Footleg" -copyrigh
 # Where the cross-sections are cut (line section, across the passage at the
 # station, as wide as the splays) and where each is drawn (point section).
 
-line section
-  814.25 1128.05
+line section -direction both
   731.57 1006.18
+  814.25 1128.05
 endline
 
 point 616.87 837.13 section -scrap xs21_4
 
-line section
-  606.24 1138.61
+line section -direction both
   627.20 994.20
+  606.24 1138.61
 endline
 
 point 580.67 1314.72 section -scrap xs21_6
 
-line section
-  338.36 1074.61
+line section -direction both
   356.65 1025.84
+  338.36 1074.61
 endline
 
 point 411.35 879.96 section -scrap xs21_8
 
-line section
-  -205.91 1352.49
+line section -direction both
   -262.10 1274.95
+  -205.91 1352.49
 endline
 
 point -420.43 1056.47 section -scrap xs21_16
 
-line section
-  -486.30 1660.62
+line section -direction both
   -532.39 1605.33
+  -486.30 1660.62
 endline
 
 point -712.92 1388.77 section -scrap xs21_18
 
-line section
-  -833.72 1987.59
+line section -direction both
   -948.68 1873.01
+  -833.72 1987.59
 endline
 
 point -700.86 2120.01 section -scrap xs21_21
 
-line section
+line section -direction both
   -1170.35 2150.45
   -1157.33 2020.16
 endline

@@ -304,14 +304,14 @@ scrap WetWayKeyholeXS -projection plan -author 2016.07.09 "Footleg" -copyright 2
 
 # Where each cross-section is cut (line section) and drawn (point section).
 
-line section
+line section -direction both
   1012.75 1015.00
   987.25 985.00
 endline
 
-point 923.24 909.66 section -scrap xs_WetWayKeyhole_14_2
+point 1063.27 1075.40 section -scrap xs_WetWayKeyhole_14_2
 
-point 971.96 967.00 label -text "14.2" -scale xs
+point 1111.99 1132.74 label -text "14.2" -scale xs
 
 point 923.24 1000.65 label -text "14.2" -scale xs
 

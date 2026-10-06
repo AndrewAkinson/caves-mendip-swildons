@@ -1258,21 +1258,21 @@ scrap LowerOxbowXS -projection plan -author 2016.07.10 "Footleg" -copyright 2016
 
 # Where each cross-section is cut (line section) and drawn (point section).
 
-line section
+line section -direction both
   1028.54 1010.86
   971.46 989.14
 endline
 
 point 862.16 947.55 section -scrap xs_LowerOxbow_16_18
 
-line section
+line section -direction both
   836.06 1312.11
   939.53 1409.14
 endline
 
 point 731.13 1213.70 section -scrap xs_LowerOxbow_16_15
 
-line section
+line section -direction both
   1057.12 1159.06
   1083.03 1211.81
 endline
@@ -1283,7 +1283,7 @@ point 1093.45 1233.01 label -text "16.13" -scale xs
 
 point 1171.15 1442.63 label -text "16.13" -scale xs
 
-line section
+line section -direction both
   1153.24 1109.48
   1173.53 1162.96
 endline
@@ -1294,14 +1294,14 @@ point 1181.91 1185.04 label -text "16.12" -scale xs
 
 point 1004.70 774.50 label -text "16.12" -scale xs
 
-line section
+line section -direction both
   1294.06 1083.66
   1309.88 1121.06
 endline
 
 point 1243.60 964.36 section -scrap xs_LowerOxbow_16_11
 
-line section
+line section -direction both
   1414.06 960.67
   1444.21 993.66
 endline
@@ -1312,14 +1312,14 @@ point 1460.14 1011.10 label -text "16.9" -scale xs
 
 point 1580.69 1199.66 label -text "16.9" -scale xs
 
-line section
+line section -direction both
   1505.15 915.92
   1514.53 954.16
 endline
 
 point 1473.17 785.50 section -scrap xs_LowerOxbow_16_8
 
-line section
+line section -direction both
   1608.92 901.60
   1610.77 940.92
 endline
@@ -1330,7 +1330,7 @@ point 1611.88 964.52 label -text "16.6" -scale xs
 
 point 1599.65 756.14 label -text "16.6" -scale xs
 
-line section
+line section -direction both
   1653.15 899.65
   1669.68 954.68
 endline
@@ -1341,7 +1341,7 @@ point 1676.48 977.30 label -text "16.5" -scale xs
 
 point 1526.28 525.12 label -text "16.5" -scale xs
 
-line section
+line section -direction both
   1851.54 834.32
   1833.50 897.96
 endline

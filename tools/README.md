@@ -163,7 +163,22 @@ write notes in red or orange or they will be read as walls.
    drawings converted before, and reports how much of each scrap's
    walls ended up on its outline.
 
-6. **Build and tidy.** Build the sheets and look at them. Each `.th2`
+6. **Place the cross-sections.** After a build:
+
+   ```bash
+   therion -l output/therion-sections.log tools/sketch2therion/sections.thconfig
+   python3 -m tools.sketch2therion sections
+   ```
+
+   This gives every cross-section line arrows (`-direction both`) that
+   point the way the section is seen: along the survey, from its
+   station towards the next one. It also moves any section drawing
+   that overlaps a passage or another section, from any survey on the
+   same sheet, to the nearest clear spot, preferring one in line with
+   the cut. Its label moves with it. A new sheet, or a map drawn
+   displaced, needs adding to `SHEETS` in `sections.py`.
+
+7. **Build and tidy.** Build the sheets and look at them. Each `.th2`
    has its sketch linked as a backdrop, so you can open it in xTherion
    and fix what the conversion got wrong. Check especially:
    - **Water-flow and flowstone arrows:** they point the way the
@@ -227,4 +242,5 @@ the way the sketch was drawn, so convert from that instead.
 | `symbols.py`, `features.py` | Find boulders, slope arrows, pools, water flow and formations. |
 | `floor.py` | Reads the floor off the side view for steps, climbs and gradients. |
 | `convert.py` | Builds the scraps: the passage fill and walls-or-borders, then the scraps for the cross-sections and where they go. |
+| `sections.py`, `sections.thconfig` | Point the cross-section lines the way each section looks, and move section drawings clear of the passages and each other. |
 | `tidy.py` | Redraws converted scraps the conventional Therion way: walls as the outline (passage on their left), water inside invisible borders, labels outside the passage. |

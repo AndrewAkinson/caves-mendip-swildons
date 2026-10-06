@@ -1372,21 +1372,21 @@ scrap ShortDryWayXS -projection plan -author 2013.02.24 "Footleg" -copyright 201
 
 # Where each cross-section is cut (line section) and drawn (point section).
 
-line section
+line section -direction both
   985.71 980.32
   1014.29 1019.68
 endline
 
 point 1119.95 1165.19 section -scrap xs_ShortDryWay_3_13
 
-line section
+line section -direction both
   1253.47 845.16
   1321.33 972.95
 endline
 
 point 1159.72 668.60 section -scrap xs_ShortDryWay_3_11
 
-line section
+line section -direction both
   1646.72 628.93
   1695.79 722.25
 endline
@@ -1397,25 +1397,25 @@ point 1706.79 743.16 label -text "3.8" -scale xs
 
 point 1437.19 310.18 label -text "3.8" -scale xs
 
-line section
+line section -direction both
   1785.94 378.19
   1899.10 517.08
 endline
 
-point 2006.16 648.48 section -scrap xs_ShortDryWay_3_6
+point 1512.96 389.52 section -scrap xs_ShortDryWay_3_6
 
 point 1914.02 535.39 label -text "3.6" -scale xs
 
 point 2006.16 784.85 label -text "3.6" -scale xs
 
-line section
+line section -direction both
   1998.00 291.62
   2043.73 555.63
 endline
 
 point 2064.35 674.69 section -scrap xs_ShortDryWay_3_5
 
-point 2047.76 578.90 label -text "3.5" -scale xs
+point 1554.56 319.94 label -text "3.5" -scale xs
 
 point 2064.35 787.66 label -text "3.5" -scale xs
 

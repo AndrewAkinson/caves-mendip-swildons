@@ -1266,7 +1266,7 @@ scrap ButcombeOxbowsXS -projection plan -author 2016.01.17 "Footleg" -copyright 
 
 # Where each cross-section is cut (line section) and drawn (point section).
 
-line section
+line section -direction both
   1002.87 980.52
   997.13 1019.48
 endline
@@ -1277,38 +1277,38 @@ point 993.70 1042.85 label -text "12.28" -scale xs
 
 point 1087.04 466.02 label -text "12.28" -scale xs
 
-line section
+line section -direction both
   1290.24 826.73
   1303.46 863.82
 endline
 
-point 1249.62 712.82 section -scrap xs_ButcombeOxbows_12_24
+point 1323.78 919.27 section -scrap xs_ButcombeOxbows_12_24
 
-line section
+line section -direction both
   1448.35 823.40
   1411.49 837.23
 endline
 
-point 1343.11 862.88 section -scrap xs_ButcombeOxbows_12_23
+point 1416.25 907.86 section -scrap xs_ButcombeOxbows_12_23
 
-point 1389.37 845.52 label -text "12.23" -scale xs
+point 1462.51 890.50 label -text "12.23" -scale xs
 
 point 1343.11 914.16 label -text "12.23" -scale xs
 
-line section
+line section -direction both
   1490.53 770.64
   1520.50 745.11
 endline
 
-point 1562.57 709.28 section -scrap xs_ButcombeOxbows_12_22
+point 1602.44 774.97 section -scrap xs_ButcombeOxbows_12_22
 
-point 1538.48 729.79 label -text "12.22" -scale xs
+point 1578.35 795.48 label -text "12.22" -scale xs
 
 point 1562.57 756.66 label -text "12.22" -scale xs
 
-line section
-  1404.66 345.86
+line section -direction both
   1386.68 310.84
+  1404.66 345.86
 endline
 
 point 1266.70 77.26 section -scrap xs_ButcombeOxbows_12_19
@@ -1317,9 +1317,9 @@ point 1375.88 289.82 label -text "12.19" -scale xs
 
 point 1266.70 137.55 label -text "12.19" -scale xs
 
-line section
-  1479.76 346.39
+line section -direction both
   1441.50 337.07
+  1479.76 346.39
 endline
 
 point 1157.51 267.90 section -scrap xs_ButcombeOxbows_12_17
@@ -1328,9 +1328,9 @@ point 1418.55 331.48 label -text "12.17" -scale xs
 
 point 1157.51 316.11 label -text "12.17" -scale xs
 
-line section
-  1815.65 389.35
+line section -direction both
   1776.47 385.45
+  1815.65 389.35
 endline
 
 point 2106.23 418.28 section -scrap xs_ButcombeOxbows_12_12
@@ -1339,7 +1339,7 @@ point 1752.97 383.11 label -text "12.12" -scale xs
 
 point 2106.23 463.87 label -text "12.12" -scale xs
 
-line section
+line section -direction both
   1695.61 486.22
   1656.36 489.37
 endline
@@ -1350,7 +1350,7 @@ point 1632.82 491.26 label -text "12.10" -scale xs
 
 point 2263.70 488.78 label -text "12.10" -scale xs
 
-line section
+line section -direction both
   1907.12 553.09
   1946.42 550.85
 endline
@@ -1361,14 +1361,14 @@ point 1970.01 549.51 label -text "12.6" -scale xs
 
 point 2155.47 602.68 label -text "12.6" -scale xs
 
-line section
+line section -direction both
   1736.41 760.19
   1754.92 794.93
 endline
 
-point 1781.22 844.30 section -scrap xs_ButcombeOxbows_12_1
+point 1668.12 791.23 section -scrap xs_ButcombeOxbows_12_1
 
-point 1766.03 815.78 label -text "12.1" -scale xs
+point 1652.93 762.71 label -text "12.1" -scale xs
 
 point 1781.22 880.84 label -text "12.1" -scale xs
 

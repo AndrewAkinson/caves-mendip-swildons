@@ -1912,7 +1912,7 @@ scrap KenneysDigXS -projection plan -author 2013.06.30 "Footleg" -copyright 2013
 
 # Where each cross-section is cut (line section) and drawn (point section).
 
-line section
+line section -direction both
   947.64 942.83
   1052.36 1057.17
 endline
@@ -1923,40 +1923,40 @@ point 1068.31 1074.59 label -text "10.17" -scale xs
 
 point 1126.61 1240.31 label -text "10.17" -scale xs
 
-line section
+line section -direction both
   200.91 964.91
   164.45 994.93
 endline
 
-point 105.48 1043.48 section -scrap xs_KenneysDigToShowerbath_10_5
+point 169.01 902.38 section -scrap xs_KenneysDigToShowerbath_10_5
 
 point 146.21 1009.95 label -text "10.5" -scale xs
 
 point 105.48 1096.41 label -text "10.5" -scale xs
 
-line section
-  -100.37 1002.91
+line section -direction both
   -61.05 1004.97
+  -100.37 1002.91
 endline
 
 point -398.73 987.30 section -scrap xs_KenneysDigToShowerbath_10_4
 
-point -37.46 1006.20 label -text "10.4" -scale xs
+point -247.87 991.73 label -text "10.4" -scale xs
 
 point -398.73 1041.97 label -text "10.4" -scale xs
 
-line section
-  226.21 1037.05
+line section -direction both
   154.10 1012.56
+  226.21 1037.05
 endline
 
-point 51.62 977.75 section -scrap xs_KenneysDigToShowerbath_10_3
+point -158.79 963.28 section -scrap xs_KenneysDigToShowerbath_10_3
 
-point 131.74 1004.96 label -text "10.3" -scale xs
+point 195.27 863.86 label -text "10.3" -scale xs
 
 point 51.62 1078.10 label -text "10.3" -scale xs
 
-line section
+line section -direction both
   163.95 1121.21
   141.56 1153.59
 endline
@@ -1967,7 +1967,7 @@ point 128.13 1173.03 label -text "10.2" -scale xs
 
 point 98.30 1284.40 label -text "10.2" -scale xs
 
-line section
+line section -direction both
   198.43 1152.49
   161.42 1173.50
 endline
@@ -1978,29 +1978,29 @@ point 140.87 1185.16 label -text "10.1" -scale xs
 
 point -354.42 1539.79 label -text "10.1" -scale xs
 
-line section
+line section -direction both
   659.43 822.06
   635.85 790.54
 endline
 
-point 549.90 675.61 section -scrap xs_KenneysDigToShowerbath_10_15
+point 735.16 1046.77 section -scrap xs_KenneysDigToShowerbath_10_15
 
 point 621.70 771.62 label -text "10.15" -scale xs
 
 point 549.90 797.10 label -text "10.15" -scale xs
 
-line section
-  499.51 641.41
+line section -direction both
   465.06 622.37
+  499.51 641.41
 endline
 
-point 328.99 547.16 section -scrap xs_KenneysDigToShowerbath_10_12
+point 413.39 512.56 section -scrap xs_KenneysDigToShowerbath_10_12
 
 point 444.38 610.94 label -text "10.12" -scale xs
 
-point 328.99 609.71 label -text "10.12" -scale xs
+point 413.39 575.11 label -text "10.12" -scale xs
 
-line section
+line section -direction both
   201.36 744.40
   138.01 543.79
 endline
@@ -2011,14 +2011,14 @@ point 130.90 521.26 label -text "10.9" -scale xs
 
 point 89.66 543.37 label -text "10.9" -scale xs
 
-line section
+line section -direction both
   81.06 817.82
   33.11 805.02
 endline
 
-point -82.88 774.06 section -scrap xs_KenneysDigToShowerbath_10_7
+point -145.37 570.15 section -scrap xs_KenneysDigToShowerbath_10_7
 
-point 10.29 798.93 label -text "10.7" -scale xs
+point -52.20 595.02 label -text "10.7" -scale xs
 
 point -82.88 886.24 label -text "10.7" -scale xs
 

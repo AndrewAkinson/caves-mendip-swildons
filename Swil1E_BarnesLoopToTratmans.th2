@@ -2643,44 +2643,44 @@ scrap BarnesLoopToTratmansXS -projection plan -author 2017.10.14 "Footleg" -copy
 # Where the cross-sections are cut (line section, across the passage at the
 # station, as wide as the splays) and where each is drawn (point section).
 
-line section
-  253.25 -832.99
+line section -direction both
   211.14 -1117.16
+  253.25 -832.99
 endline
 
 point 168.80 -1402.87 section -scrap xs23_30
 
-line section
-  308.92 -860.27
+line section -direction both
   445.48 -824.73
+  308.92 -860.27
 endline
 
 point 683.49 -762.77 section -scrap xs23_27
 
-line section
-  178.06 -391.66
+line section -direction both
   263.88 -312.04
+  178.06 -391.66
 endline
 
 point 6.41 -550.92 section -scrap xs23_25
 
-line section
-  664.70 288.62
+line section -direction both
   624.06 252.11
+  664.70 288.62
 endline
 
-point 520.14 158.77 section -scrap xs23_17
+point 720.62 332.60 section -scrap xs23_17
 
-line section
-  997.89 78.44
+line section -direction both
   1033.38 -67.47
+  997.89 78.44
 endline
 
-point 1064.45 -195.22 section -scrap xs23_11
+point 919.53 177.26 section -scrap xs23_11
 
-line section
-  1367.65 -34.40
+line section -direction both
   1452.98 -120.35
+  1367.65 -34.40
 endline
 
 point 1627.15 -295.80 section -scrap xs23_8

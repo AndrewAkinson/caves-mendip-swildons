@@ -10,6 +10,8 @@
               conversions above already do this): walls as the outline with
               the passage on their left, no -clip off, C/P labels outside
               the passage, ... (see tidy.py)
+  sections    point the cross-section markers the way each section looks,
+              and move section drawings off passages and each other
 
 Sketches can be SexyTopo or PocketTopo .xvi files, PocketTopo .top files or
 PocketTopo Therion exports (_th.txt). Run from the top of the repository,
@@ -129,6 +131,11 @@ def cmd_tidy(a):
         print(f"  {name}: {100 * kept / max(total, 1):.0f}% of the walls on the outline{note}")
 
 
+def cmd_sections(a):
+    from . import sections
+    sections.run()
+
+
 def cmd_xvi(a):
     sk = load(a.sketch, a.view)
     xvi.write(sk, a.output)
@@ -222,6 +229,9 @@ def main(argv=None):
     q.add_argument('--map-scale', type=int, default=500,
                    help='scale of the sheet the drawing is printed at, for sizing labels and arrows (default 500)')
     q.set_defaults(func=cmd_tidy)
+
+    q = sub.add_parser('sections', help='turn cross-section markers and move sections clear')
+    q.set_defaults(func=cmd_sections)
 
     q = sub.add_parser('xvi', help='PocketTopo .top or _th.txt -> XVI')
     q.add_argument('sketch')

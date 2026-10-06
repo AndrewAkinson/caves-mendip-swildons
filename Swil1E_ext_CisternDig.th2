@@ -412,7 +412,7 @@ scrap CisternDigXS -projection plan -author 2017.03.11 "Footleg" -copyright 2017
 
 # Where each cross-section is cut (line section) and drawn (point section).
 
-line section
+line section -direction both
   1018.61 1006.40
   981.39 993.60
 endline
@@ -423,14 +423,14 @@ point 959.05 985.91 label -text "18.3" -scale xs
 
 point 1606.64 1310.82 label -text "18.3" -scale xs
 
-line section
+line section -direction both
   1023.13 890.50
   984.75 899.27
 endline
 
-point 865.86 926.44 section -scrap xs_CisternDig_18_5
+point 1100.87 877.80 section -scrap xs_CisternDig_18_5
 
-point 961.72 904.53 label -text "18.5" -scale xs
+point 1196.73 855.89 label -text "18.5" -scale xs
 
 point 865.86 1040.52 label -text "18.5" -scale xs
 

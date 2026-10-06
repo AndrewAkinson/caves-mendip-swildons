@@ -741,9 +741,9 @@ scrap OxbowJunctionXS -projection plan -author 2016.07.09 "Footleg" -copyright 2
 
 # Where each cross-section is cut (line section) and drawn (point section).
 
-line section
-  997.39 980.49
+line section -direction both
   1002.61 1019.51
+  997.39 980.49
 endline
 
 point 943.21 574.72 section -scrap xs_OxbowJunction_15_26
@@ -752,7 +752,7 @@ point 1005.73 1042.93 label -text "15.26" -scale xs
 
 point 943.21 612.17 label -text "15.26" -scale xs
 
-line section
+line section -direction both
   1038.00 1019.17
   977.75 1111.54
 endline
@@ -763,7 +763,7 @@ point 964.85 1131.32 label -text "15.25" -scale xs
 
 point 873.48 1315.09 label -text "15.25" -scale xs
 
-line section
+line section -direction both
   1070.66 1025.35
   1071.86 1066.78
 endline
@@ -774,7 +774,7 @@ point 1072.54 1090.39 label -text "15.24" -scale xs
 
 point 1054.09 505.90 label -text "15.24" -scale xs
 
-line section
+line section -direction both
   1134.46 972.44
   1075.77 979.53
 endline
@@ -785,14 +785,14 @@ point 1052.32 982.37 label -text "15.8" -scale xs
 
 point 623.61 1127.47 label -text "15.8" -scale xs
 
-line section
+line section -direction both
   1044.16 1172.43
   1080.25 1156.71
 endline
 
-point 1134.20 1133.21 section -scrap xs_OxbowJunction_15_3
+point 959.91 1223.62 section -scrap xs_OxbowJunction_15_3
 
-point 1101.91 1147.27 label -text "15.3" -scale xs
+point 927.62 1237.68 label -text "15.3" -scale xs
 
 point 1134.20 1184.18 label -text "15.3" -scale xs
 

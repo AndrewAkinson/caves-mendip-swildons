@@ -1856,14 +1856,14 @@ scrap WaterRiftXS -projection plan -author 2013.06.29 "Footleg" -copyright 2013 
 
 # Where each cross-section is cut (line section) and drawn (point section).
 
-line section
+line section -direction both
   1032.78 1000.45
   967.22 999.55
 endline
 
 point 1153.72 1002.10 section -scrap xs_WaterRift_8_13
 
-line section
+line section -direction both
   1064.62 831.75
   944.83 822.59
 endline
@@ -1874,7 +1874,7 @@ point 921.28 820.78 label -text "8.14" -scale xs
 
 point 665.72 935.49 label -text "8.14" -scale xs
 
-line section
+line section -direction both
   1411.30 907.01
   1443.82 929.21
 endline
@@ -1885,7 +1885,7 @@ point 1463.33 942.52 label -text "8.6" -scale xs
 
 point 1552.15 1126.42 label -text "8.6" -scale xs
 
-line section
+line section -direction both
   1649.54 679.51
   1692.19 801.60
 endline

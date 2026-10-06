@@ -1,0 +1,391 @@
+"""Cross-section markers: which way they look, and where they're drawn.
+
+Each converted survey has a plan scrap (its name ends XS) holding, for
+every cross-section, a `line section` across the passage at the station
+and a `point section` where Therion draws the section itself. This
+
+- turns every `line section` so its arrows (`-direction both`) point the
+  way the section is seen: looking along the survey, from the station
+  towards the next one. Therion puts the arrows on the left of the line.
+- moves any section drawing that overlaps a passage or another section to
+  the nearest clear spot, preferring one in line with the cut. All the
+  surveys on a sheet are placed together, so sections from different
+  surveys don't land on each other either.
+
+Passages come from Therion's KML of the plan maps, put into survey
+coordinates by fitting it to the centreline. Run from the top of the
+repository after the main build:
+
+    therion -l output/therion-sections.log tools/sketch2therion/sections.thconfig
+    python3 -m tools.sketch2therion sections
+"""
+import glob
+import math
+import re
+from xml.etree import ElementTree
+
+from shapely.affinity import translate
+from shapely.geometry import LineString, MultiPoint, Point, Polygon
+from shapely.ops import unary_union
+from shapely.prepared import prep
+
+from ..routes.survey import Survey, _fit
+from .tidy import bezier_points, parse_scrap, scale_of
+
+PASSAGES_KML = 'output/sections-passages.kml'
+CENTRELINE_KML = 'output/Swildons-centreline.kml'
+
+# The sheets the cross-sections are drawn on: which surveys' sections
+# (by th2 file), and which plan maps (by KML title) they must keep off,
+# each with the offset it is drawn at on that sheet (metres east, north).
+ENTRANCE_TOP_SHIFT = (35.0, 0.0)        # EntranceSeriesTopLevel [35 0 m] in Swildons_MAP_EntranceSeries.th
+SHEETS = {
+    'entrance': {'files': 'Swil1E_ext_*.th2',
+                 'maps': {'Swildons Hole - Entrance Series': (0.0, 0.0),
+                          'Upper level: the entrances and Zig Zags': ENTRANCE_TOP_SHIFT}},
+    'master': {'files': 'Swil1E_[!e]*.th2',
+               'maps': {'Swildons Hole - Entrance Series': (0.0, 0.0),
+                        'Upper level: the entrances and Zig Zags': (0.0, 0.0),
+                        'Swildons 1 - Streamway': (0.0, 0.0)}},
+}
+MARGIN = 0.4        # metres kept clear round passages and sections
+REACH = 30.0        # how far from its station a section may go (m)
+
+KML = '{http://earth.google.com/kml/2.0}'
+
+
+# -- the passages, in survey coordinates ------------------------------------------
+
+def _kml_polygons(path):
+    """{placemark name: [[(lon, lat), ...] outer rings]}"""
+    root = ElementTree.parse(path).getroot()
+    out = {}
+    for pm in root.iter(KML + 'Placemark'):
+        name = (pm.findtext(KML + 'name') or '').strip()
+        rings = []
+        for poly in pm.iter(KML + 'Polygon'):
+            c = poly.find(f'{KML}outerBoundaryIs/{KML}LinearRing/{KML}coordinates')
+            if c is not None:
+                rings.append([tuple(map(float, v.split(',')[:2])) for v in c.text.split()])
+        if rings:
+            out[name] = rings
+    return out
+
+
+def _affine(pairs):
+    """Least-squares affine map from pairs [((x, y), (u, v))]."""
+    n = len(pairs)
+    mx = sum(p[0][0] for p in pairs) / n
+    my = sum(p[0][1] for p in pairs) / n
+    mu = sum(p[1][0] for p in pairs) / n
+    mv = sum(p[1][1] for p in pairs) / n
+    sxx = sum((p[0][0] - mx) ** 2 for p in pairs)
+    syy = sum((p[0][1] - my) ** 2 for p in pairs)
+    sxy = sum((p[0][0] - mx) * (p[0][1] - my) for p in pairs)
+    det = sxx * syy - sxy * sxy
+
+    def solve(k, m):
+        sx = sum((p[0][0] - mx) * (p[1][k] - m) for p in pairs)
+        sy = sum((p[0][1] - my) * (p[1][k] - m) for p in pairs)
+        return (sx * syy - sy * sxy) / det, (sy * sxx - sx * sxy) / det
+    a, b = solve(0, mu)
+    c, d = solve(1, mv)
+    return lambda p: (mu + a * (p[0] - mx) + b * (p[1] - my), mv + c * (p[0] - mx) + d * (p[1] - my))
+
+
+def lonlat_to_survey(survey):
+    """A map from KML lon/lat to the survey's grid, fitted to the centreline
+    (every leg in Therion's centreline KML ends on a station)."""
+    pts = []
+    root = ElementTree.parse(CENTRELINE_KML).getroot()
+    for c in root.iter(KML + 'coordinates'):
+        for v in c.text.split():
+            lon, lat, z = map(float, v.split(','))
+            pts.append((lon, lat, z))
+    stations = list(survey.pos.values())
+    # rough: metres east and north of the entrance (the KML's one point)
+    root_pt = next(root.iter(KML + 'Point')).findtext(KML + 'coordinates').split(',')
+    lon0, lat0, z0 = map(float, root_pt)
+    ent = min(stations, key=lambda q: abs(q[2] - z0) + (0 if survey.lookup.get('Ent@Swildons') is None
+                                                         else math.dist(q, survey.pos[survey.lookup['Ent@Swildons']])))
+    kx, ky = 111320 * math.cos(math.radians(lat0)), 111250
+    pairs = []
+    for lon, lat, z in pts:
+        guess = (ent[0] + (lon - lon0) * kx, ent[1] + (lat - lat0) * ky)
+        best = min(stations, key=lambda q: math.dist(guess, q[:2]) + 3 * abs(q[2] - z))
+        if math.dist(guess, best[:2]) < 15 and abs(best[2] - z) < 0.05:
+            pairs.append(((lon, lat), best[:2]))
+    f = _affine(pairs)
+    # refine once with the fitted map
+    pairs2 = []
+    for lon, lat, z in pts:
+        g = f((lon, lat))
+        best = min(stations, key=lambda s: math.dist(g, s[:2]) + 3 * abs(s[2] - z))
+        if math.dist(g, best[:2]) < 0.5 and abs(best[2] - z) < 0.05:
+            pairs2.append(((lon, lat), best[:2]))
+    f = _affine(pairs2)
+    err = sum(math.dist(f(a), b) for a, b in pairs2) / len(pairs2)
+    return f, err, len(pairs2)
+
+
+# -- the cross-section scraps -------------------------------------------------------
+
+def _scraps(text):
+    for m in re.finditer(r'^(scrap (\S+)[^\n]*)\n(.*?)^endscrap', text, re.S | re.M):
+        yield m
+
+
+def _survey_of(th2):
+    """The survey a th2 file is input in, from the .th files."""
+    for th in glob.glob('*.th'):
+        t = open(th, encoding='utf-8', errors='replace').read()
+        i = t.find('input ' + th2)
+        if i < 0:
+            continue
+        found = re.findall(r'^\s*survey (\S+)', t[:i], re.M)
+        if found:
+            return found[-1]
+    return None
+
+
+def _station_of(xs_name, survey):
+    """'xs22_12' -> '22.12@survey'; 'xs_LongDryWay_2_31' -> '2.31@LongDryWay'."""
+    m = re.fullmatch(r'xs_(\w+?)_(\d+)_(\d+)', xs_name)
+    if m:
+        return f'{m.group(2)}.{m.group(3)}@{m.group(1)}'
+    m = re.fullmatch(r'xs(\d+)_(\d+)', xs_name)
+    if m:
+        return f'{m.group(1)}.{m.group(2)}@{survey}'
+    return None
+
+
+def _neighbour(s, name):
+    """The next station along (or, at the end, the one before), and +1/-1."""
+    base, at = name.split('@')
+    a, b = base.rsplit('.', 1)
+    for d in (1, -1):
+        n = f'{a}.{int(b) + d}@{at}'
+        if n in s.lookup:
+            return n, d
+    return None, 0
+
+
+def _footprint(body, K):
+    """A section drawing's outline relative to the middle of its extent,
+    in metres (Therion draws it centred on the point section)."""
+    pts = []
+    for o in parse_scrap(body):
+        if o.kind == 'line':
+            pts += bezier_points(o.segments())
+        elif o.kind == 'point':
+            v = o.head.split()
+            try:
+                pts.append((float(v[1]), float(v[2])))
+            except ValueError:
+                pass
+    if len(pts) < 3:
+        return None
+    xs, ys = [p[0] for p in pts], [p[1] for p in pts]
+    cx, cy = (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2
+    return MultiPoint([((x - cx) / K, (y - cy) / K) for x, y in pts]).convex_hull
+
+
+class Section:
+    pass
+
+
+FILES = {}     # path -> (text, {scrap name: parsed objects}) for writing back
+
+
+def collect(survey, sheet):
+    """The cross-sections on a sheet, each with what's needed to place it."""
+    secs = []
+    for path in sorted(glob.glob(SHEETS[sheet]['files'])):
+        text = open(path, 'rb').read().decode('utf-8').replace('\r\n', '\n')
+        FILES[path] = (text, {})
+        bodies = {m.group(2): (m.group(1), m.group(3)) for m in _scraps(text)}
+        sv = _survey_of(path)
+        for m in _scraps(text):
+            name = m.group(2)
+            if not (name.endswith('XS') or name.endswith('XSTop')):
+                continue
+            shift = ENTRANCE_TOP_SHIFT if (sheet == 'entrance' and name.endswith('XSTop')) else (0.0, 0.0)
+            K = scale_of(m.group(1))
+            objs = parse_scrap(m.group(3))
+            FILES[path][1][name] = objs
+            labels = [o for o in objs if o.kind == 'point' and ' label ' in o.head]
+            pairs = []
+            for o in objs:
+                if o.kind == 'point' and re.match(r'point \S+ \S+ station\b', o.head):
+                    st = re.search(r'-name (\S+)', o.head).group(1)
+                    full = st if '@' in st else f'{st}@{sv}'
+                    if full in survey.lookup:
+                        v = o.head.split()
+                        pairs.append(((float(v[1]), float(v[2])), survey.pos[survey.lookup[full]][:2]))
+            if not pairs:
+                print(f'  {path} {name}: no survey stations found, skipped')
+                continue
+            if len(pairs) == 1:
+                # one station: the scrap is drawn to its -scale, north up
+                (x0, y0), (e0, n0) = pairs[0]
+                to_grid = lambda p, x0=x0, y0=y0, e0=e0, n0=n0, K=K: (e0 + (p[0] - x0) / K, n0 + (p[1] - y0) / K)
+                to_scrap = lambda p, x0=x0, y0=y0, e0=e0, n0=n0, K=K: (x0 + (p[0] - e0) * K, y0 + (p[1] - n0) * K)
+            else:
+                to_grid = _fit(pairs)
+                to_scrap = _fit([(b, a) for a, b in pairs])
+            line = None
+            for o in objs:
+                if o.kind == 'line' and o.head.startswith('line section'):
+                    line = o
+                elif o.kind == 'point' and ' section ' in o.head + ' ' and line is not None:
+                    xs = re.search(r'-scrap (\S+)', o.head).group(1)
+                    sec = Section()
+                    sec.path, sec.scrap, sec.xs, sec.line, sec.point = path, name, xs, line, o
+                    sec.shift, sec.to_grid, sec.to_scrap, sec.K = shift, to_grid, to_scrap, K
+                    sec.station = _station_of(xs, sv)
+                    sec.labels = labels
+                    hb = bodies.get(xs)
+                    sec.shape = _footprint(hb[1], scale_of(hb[0])) if hb else None
+                    v = o.head.split()
+                    sec.at = (float(v[1]), float(v[2]))
+                    ends = [tuple(s[-2:]) for s in line.segments()]
+                    sec.cut = [sec.grid(p) for p in (ends[0], ends[-1])]
+                    secs.append(sec)
+                    line = None
+    return secs
+
+
+def _grid(self, p):
+    x, y = self.to_grid(p)
+    return (x + self.shift[0], y + self.shift[1])
+
+
+def _scrap(self, p):
+    return self.to_scrap((p[0] - self.shift[0], p[1] - self.shift[1]))
+
+
+Section.grid = _grid
+Section.scrap_xy = _scrap
+
+
+# -- doing it ---------------------------------------------------------------------
+
+def orient(survey, sec):
+    """Turn the section line so its arrows (on its left) look along the survey."""
+    if not sec.station or sec.station not in survey.lookup:
+        return False
+    nxt, d = _neighbour(survey, sec.station)
+    if not nxt:
+        return False
+    a = survey.pos[survey.lookup[sec.station]]
+    b = survey.pos[survey.lookup[nxt]]
+    fx, fy = (b[0] - a[0]) * d, (b[1] - a[1]) * d
+    (x0, y0), (x1, y1) = sec.cut
+    left = (-(y1 - y0), x1 - x0)
+    head = sec.line.head
+    if '-direction' not in head:
+        head += ' -direction both'
+    changed = head != sec.line.head
+    sec.line.head = head
+    if left[0] * fx + left[1] * fy < 0:
+        rows = [r for r in sec.line.rows if r.strip()]
+        sec.line.rows = rows[::-1]          # straight two-point lines: just swap the ends
+        sec.cut = sec.cut[::-1]
+        changed = True
+    return changed
+
+
+def place(secs, obstacles):
+    """Move section drawings off the passages and each other. Returns how many moved."""
+    obst = prep(obstacles)
+    fixed, todo = [], []
+    for s in secs:
+        if s.shape is None:
+            continue
+        c = s.grid(s.at)
+        s.fp = translate(s.shape, c[0], c[1]).buffer(MARGIN)
+    for s in secs:
+        if s.shape is None:
+            continue
+        clash = obst.intersects(s.fp) or any(s.fp.intersects(t.fp) for t in secs
+                                              if t is not s and t.shape is not None and t not in todo)
+        (todo if clash else fixed).append(s)
+    placed = [s.fp for s in fixed]
+    moved = 0
+    for s in todo:
+        (x0, y0), (x1, y1) = s.cut
+        mx, my = (x0 + x1) / 2, (y0 + y1) / 2
+        axis = math.atan2(y1 - y0, x1 - x0)
+        cands = []
+        for r10 in range(10, int(REACH * 10) + 1, 5):
+            r = r10 / 10
+            for k in range(36):
+                ang = k * math.pi / 18
+                off = abs(math.sin(ang - axis))        # 0 in line with the cut
+                cands.append((r * (1 + 0.8 * off), mx + r * math.cos(ang), my + r * math.sin(ang)))
+        cands.sort()
+        here = prep(unary_union(placed)) if placed else None
+        for _, cx, cy in cands:
+            fp = translate(s.shape, cx, cy).buffer(MARGIN)
+            if obst.intersects(fp) or (here and here.intersects(fp)):
+                continue
+            new = s.scrap_xy((cx, cy))
+            dx, dy = new[0] - s.at[0], new[1] - s.at[1]
+            s.point.head = re.sub(r'^point [-\d.]+ [-\d.]+', 'point %.2f %.2f' % new, s.point.head)
+            # the label naming the section moves with it
+            near = [o for o in s.labels if math.dist(_xy(o), s.at) < 3 * s.K]
+            if near:
+                lab = min(near, key=lambda o: math.dist(_xy(o), s.at))
+                x, y = _xy(lab)
+                lab.head = re.sub(r'^point [-\d.]+ [-\d.]+', 'point %.2f %.2f' % (x + dx, y + dy), lab.head)
+            s.fp = fp
+            placed.append(fp)
+            moved += 1
+            break
+        else:
+            print(f'  {s.scrap} {s.xs}: no clear spot within {REACH:g} m, left where it was')
+            placed.append(s.fp)
+    return moved
+
+
+def run():
+    survey = Survey()
+    to_grid, err, n = lonlat_to_survey(survey)
+    print(f'KML to survey grid: fitted on {n} centreline points, {err * 100:.1f} cm average')
+    polys = _kml_polygons(PASSAGES_KML)
+    for sheet, spec in SHEETS.items():
+        parts = []
+        for title, (dx, dy) in spec['maps'].items():
+            for ring in polys.get(title, []):
+                g = Polygon([to_grid(p) for p in ring]).buffer(0)
+                parts.append(translate(g, dx, dy))
+            if title not in polys:
+                print(f'  warning: no map "{title}" in {PASSAGES_KML}')
+        obstacles = unary_union(parts).buffer(MARGIN)
+        secs = collect(survey, sheet)
+        turned = sum(orient(survey, s) for s in secs)
+        moved = place(secs, obstacles)
+        print(f'{sheet}: {len(secs)} cross-sections, {turned} lines turned or given arrows, {moved} moved')
+    write()
+
+
+def write():
+    for path, (text, scraps) in FILES.items():
+        raw = open(path, 'rb').read()
+        out, pos = [], 0
+        for m in _scraps(text):
+            if m.group(2) not in scraps:
+                continue
+            body = '\n'.join(o.text() for o in scraps[m.group(2)])
+            out.append(text[pos:m.start(3)] + body.rstrip('\n') + '\n')
+            pos = m.end(3)
+        out.append(text[pos:])
+        t = ''.join(out)
+        if b'\r\n' in raw:
+            t = t.replace('\n', '\r\n')
+        open(path, 'wb').write(t.encode('utf-8'))
+
+
+def _xy(o):
+    v = o.head.split()
+    return float(v[1]), float(v[2])
