@@ -152,8 +152,8 @@
 <div id="panel" class="glass">
   <h2 id="panel-h" role="button" tabindex="0" aria-expanded="true">View</h2>
   <div class="body">
-    <div class="row"><label for="opacity">Ground</label><input id="opacity" type="range" min="0" max="1" step="0.01" value="0.9"></div>
-    <div class="row"><label for="xray">X-ray over the cave</label><label class="toggle"><input id="xray" type="checkbox" checked><span></span></label></div>
+    <div class="row"><label for="opacity">Ground</label><input id="opacity" type="range" min="0" max="1" step="0.01" value="0.7"></div>
+    <div class="row"><label for="xray">X-ray over the cave</label><label class="toggle"><input id="xray" type="checkbox"><span></span></label></div>
     <div class="row"><label for="walls">Passage walls</label><label class="toggle"><input id="walls" type="checkbox" checked><span></span></label></div>
     <div class="row"><label for="legs">Centreline</label><label class="toggle"><input id="legs" type="checkbox" checked><span></span></label></div>
     <div class="row"><label for="splays">Splay shots</label><label class="toggle"><input id="splays" type="checkbox"><span></span></label></div>
@@ -163,7 +163,7 @@
     <div class="buttons">
       <button class="btn" id="v-reset">Reset</button>
       <button class="btn" id="v-top">From above</button>
-      <button class="btn" id="v-under">From below</button>
+      <button class="btn" id="v-side">Over the ground</button>
     </div>
   </div>
 </div>
@@ -389,7 +389,7 @@ imgTex.anisotropy = renderer.capabilities.getMaxAnisotropy();
 const groundMat = new THREE.ShaderMaterial({
   uniforms: {
     uMap: { value: imgTex }, uMask: { value: null }, uRes: { value: new THREE.Vector2(1, 1) }, uLight: { value: LIGHT },
-    uOpacity: { value: 0.9 }, uXray: { value: 0.78 }, uTime: { value: 0 },
+    uOpacity: { value: 0.7 }, uXray: { value: 0 }, uTime: { value: 0 },
   },
   vertexShader: `
     attribute float alt;
@@ -417,7 +417,7 @@ const groundMat = new THREE.ShaderMaterial({
       // the cave's silhouette from this viewpoint, blurred: thin the ground over it
       float m = texture2D(uMask, gl_FragCoord.xy / uRes).r;
       float alpha = uOpacity * (1.0 - uXray * smoothstep(0.0, 0.85, m));
-      if (!gl_FrontFacing) c *= 0.45;
+      if (!gl_FrontFacing) c *= 0.6;
       gl_FragColor = vec4(c, alpha);
       #include <colorspace_fragment>
     }`,
@@ -475,7 +475,7 @@ const sideMat = new THREE.ShaderMaterial({
       float fw = max(fwidth(a10), 1e-4);
       float l = (1.0 - min(abs(fract(a10 - 0.5) - 0.5) / fw, 1.0)) * (1.0 - smoothstep(0.15, 0.5, fw));
       c += vec3(0.35, 0.75, 1.0) * l * 0.2;
-      gl_FragColor = vec4(c, 0.14 + 0.3 * t + l * 0.1);
+      gl_FragColor = vec4(c, 0.05 + 0.15 * t + l * 0.06);
       #include <colorspace_fragment>
     }`,
   transparent: true, side: THREE.DoubleSide, depthWrite: false,
@@ -581,7 +581,7 @@ const centre = new THREE.Vector3();
   const b = new THREE.Box3().setFromBufferAttribute(legs.geometry.attributes.position);
   b.getCenter(centre);
 }
-const target = () => new THREE.Vector3(centre.x, (centre.y + (T.max - zRef)) / 2 * world.scale.y, centre.z);
+const target = () => new THREE.Vector3(centre.x, centre.y * world.scale.y, centre.z);
 const R0 = Math.max(W, HH) * 0.7;
 function viewFrom(az, el, dist = R0) {
   const t = target();
@@ -592,7 +592,8 @@ let fly = null;
 function flyTo(v, ms = 1600) {
   fly = { p0: camera.position.clone(), t0: controls.target.clone(), p1: v.pos, t1: v.target, start: performance.now(), ms };
 }
-const home = () => viewFrom(Math.PI * 0.8, 0.5);
+// the fly-around: from just under the ground, looking up at the cave beneath it
+const home = () => viewFrom(Math.PI * 0.8, -0.12, R0 * 1.05);
 {
   const v0 = viewFrom(Math.PI * 0.55, 1.15, R0 * 2.6);
   camera.position.copy(v0.pos); controls.target.copy(v0.target);
@@ -650,7 +651,7 @@ $('exag').onclick = e => {
 };
 $('v-reset').onclick = () => flyTo(home());
 $('v-top').onclick = () => flyTo(viewFrom(controls.getAzimuthalAngle(), 1.5, R0 * 1.15));
-$('v-under').onclick = () => flyTo(viewFrom(controls.getAzimuthalAngle() + 0.3, -0.38, R0 * 0.85));
+$('v-side').onclick = () => flyTo(viewFrom(controls.getAzimuthalAngle(), 0.5));
 $('compass').onclick = () => {
   const off = camera.position.clone().sub(controls.target), d = off.length(), el = Math.asin(off.y / d);
   flyTo({ pos: controls.target.clone().add(new THREE.Vector3(0, d * Math.sin(el), d * Math.cos(el))), target: controls.target.clone() }, 900);

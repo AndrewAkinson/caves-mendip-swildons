@@ -2,7 +2,8 @@
 
 The cave in 3D beneath the ground, in the browser: the survey under
 the Environment Agency's LIDAR terrain, draped with satellite imagery.
-It spins until you take hold of it. It's in the spirit of the
+It flies in from above to just below the ground, looking up at the
+cave under it, and spins there until you take hold of it. It's in the spirit of the
 [Qgis2threejs](https://github.com/minorua/Qgis2threejs) exports, but
 made straight from the build, so it never goes out of date.
 
@@ -30,8 +31,10 @@ python3 -m tools.model3d      # after the main build; writes output/3d/
   next build fetches a bigger area: commit the new file.
 - **Satellite imagery** from Esri World Imagery. The page loads it
   when it opens, so it isn't stored here.
-- **X-ray**: the ground fades wherever the cave is behind it, from
-  whatever angle you look. The page draws the cave on its own into a
+- **The ground** is see-through (70% by default, with a slider), so
+  from above the cave shows through it with depth as the view turns.
+- **X-ray** (off by default): the ground fades wherever the cave is
+  behind it, from whatever angle you look. The page draws the cave on its own into a
   small hidden image each frame, blurs it, and uses that to fade the ground.
 
 Colours are altitude, warm near the surface and cold at depth, from the
