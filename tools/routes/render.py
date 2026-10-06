@@ -151,9 +151,9 @@ def route_layer(view, pts_svg, width_mm=1.0, chevron_every=9.0, lane_mm=0.0):
     so the drawing underneath stays readable, and chevrons for the way."""
     k = view.k
     p = offset(pts_svg, k * lane_mm) if lane_mm else pts_svg
-    o = [f'<path d="{path_d(p)}" fill="none" stroke="#fff" stroke-opacity="0.6" stroke-width="{k * (width_mm + 0.6):.2f}" '
+    o = [f'<path d="{path_d(p)}" fill="none" stroke="#fff" stroke-opacity="0.35" stroke-width="{k * (width_mm + 0.6):.2f}" '
          f'stroke-linejoin="round" stroke-linecap="round"/>',
-         f'<path d="{path_d(p)}" fill="none" stroke="{ROUTE}" stroke-opacity="0.85" stroke-width="{k * width_mm:.2f}" '
+         f'<path d="{path_d(p)}" fill="none" stroke="{ROUTE}" stroke-opacity="0.6" stroke-width="{k * width_mm:.2f}" '
          f'stroke-linejoin="round" stroke-linecap="round"/>']
     s = k * width_mm * 0.36
     for x, y, a in along(p, k * chevron_every, k * chevron_every / 2):
@@ -290,8 +290,8 @@ def profile_svg(route, decisions, places, w_mm, h_mm):
 
 LEGEND = f'''
 <div class="legend">
-  <span><svg width="14mm" height="5mm" viewBox="0 0 14 5"><path d="M1 2.5 L13 2.5" stroke="#fff" stroke-opacity="0.6" stroke-width="1.6"/>
-    <path d="M1 2.5 L13 2.5" stroke="{ROUTE}" stroke-opacity="0.85" stroke-width="1"/><path d="M6.3 2 L7 2.5 L6.3 3" fill="none" stroke="#fff" stroke-width="0.2"/></svg>
+  <span><svg width="14mm" height="5mm" viewBox="0 0 14 5"><path d="M1 2.5 L13 2.5" stroke="#fff" stroke-opacity="0.35" stroke-width="1.6"/>
+    <path d="M1 2.5 L13 2.5" stroke="{ROUTE}" stroke-opacity="0.6" stroke-width="1"/><path d="M6.3 2 L7 2.5 L6.3 3" fill="none" stroke="#fff" stroke-width="0.2"/></svg>
     The route: chevrons point the way; it keeps right where it passes twice</span>
   <span><svg width="6mm" height="6mm" viewBox="-3 -3 6 6"><circle r="2.4" fill="{BADGE}"/><text text-anchor="middle" dy="0.36em" font-size="2.7" fill="#fff" font-weight="700">3</text></svg>
     Decision, with a close-up</span>
