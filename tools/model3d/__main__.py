@@ -173,12 +173,15 @@ def place_names():
     except (OSError, ImportError) as e:
         print(f'no passage names: {e}', file=sys.stderr)
         return []
+    # only stations on a leg: Swildons_Centreline.th fixes a fake station,
+    # 'bottom', at 140 m beside the entrance to pin the altitude colours
+    real = [k for k in s.pos if s.adj.get(k)]
     seen, out = set(), []
     for t, x, y in labels:
         t = re.sub(r'\s*\(.*?\)', '', t).strip()
         if len(t) < 4 or t in seen or re.match(r'^C[\d.]+$', t):
             continue
-        k = min(s.pos, key=lambda k: math.hypot(s.pos[k][0] - x, s.pos[k][1] - y))
+        k = min(real, key=lambda k: math.hypot(s.pos[k][0] - x, s.pos[k][1] - y))
         if math.hypot(s.pos[k][0] - x, s.pos[k][1] - y) > 20:
             continue
         seen.add(t)
