@@ -168,6 +168,13 @@ def badge(view, p, text, r_mm=2.4, fill=BADGE):
             f'font-size="{k * r_mm * 1.15:.2f}" fill="#fff" font-weight="700">{esc(text)}</text></g>')
 
 
+def badge_k(k, p, text, r_mm=2.2, fill=BADGE):
+    """A numbered badge, sized by map units per mm."""
+    return (f'<g transform="translate({p[0]:.2f} {p[1]:.2f})"><circle r="{k * r_mm:.2f}" fill="{fill}" '
+            f'stroke="#fff" stroke-width="{k * 0.45:.2f}"/><text text-anchor="middle" dy="0.36em" '
+            f'font-size="{k * r_mm * 1.15:.2f}" fill="#fff" font-weight="700">{esc(text)}</text></g>')
+
+
 def flag(view, p, kind):
     """Start (green) or finish (chequered) marker."""
     k = view.k
