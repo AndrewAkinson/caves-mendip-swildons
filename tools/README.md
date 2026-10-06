@@ -127,6 +127,15 @@ write notes in red or orange or they will be read as walls.
    ```
 
    Each command prints the scraps it made, and the map they go in.
+   The drawing follows Therion's conventions (see `tidy.py`):
+   - the walls are the scrap's outline, drawn with the passage on their
+     left, joined by invisible walls where there's no wall, so the fill
+     stops at the walls
+   - water has an invisible border and stays inside the walls, and
+     nothing uses `-clip off`
+   - big boulders get rock edges, slope arrows are kept off steps and
+     pitches, climbs are labelled C2 and pitches P5 (no units), and
+     labels go outside the passage
 
    - **Inputs:** un-comment the `input` lines for the two `.th2` files
      in the trip's `.th`.
@@ -146,6 +155,13 @@ write notes in red or orange or they will be read as walls.
      5 m). Raise them for big chambers and pots.
    - `--tol`: how far apart two stations' shifts can be before the
      sketch is split.
+   - `--map-scale`: the scale of the sheet it will be printed at
+     (default 500; the Entrance Series sheets are 200), for sizing
+     labels and arrows.
+
+   `python3 -m tools.sketch2therion tidy FILE.th2 ...` does the same to
+   drawings converted before, and reports how much of each scrap's
+   walls ended up on its outline.
 
 6. **Build and tidy.** Build the sheets and look at them. Each `.th2`
    has its sketch linked as a backdrop, so you can open it in xTherion
@@ -211,3 +227,4 @@ the way the sketch was drawn, so convert from that instead.
 | `symbols.py`, `features.py` | Find boulders, slope arrows, pools, water flow and formations. |
 | `floor.py` | Reads the floor off the side view for steps, climbs and gradients. |
 | `convert.py` | Builds the scraps: the passage fill and walls-or-borders, then the scraps for the cross-sections and where they go. |
+| `tidy.py` | Redraws converted scraps the conventional Therion way: walls as the outline (passage on their left), water inside invisible borders, labels outside the passage. |

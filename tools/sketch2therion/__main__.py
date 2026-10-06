@@ -6,6 +6,10 @@
               cross-sections, and a plan scrap placing the cross-sections)
   xvi         a PocketTopo .top or _th.txt -> XVI, to use as a backdrop
   extend      copy PocketTopo's left/right leg directions into a .th file
+  tidy        redraw converted th2 files the conventional Therion way (the
+              conversions above already do this): walls as the outline with
+              the passage on their left, no -clip off, C/P labels outside
+              the passage, ... (see tidy.py)
 
 Sketches can be SexyTopo or PocketTopo .xvi files, PocketTopo .top files or
 PocketTopo Therion exports (_th.txt). Run from the top of the repository,
@@ -16,7 +20,7 @@ import os
 import re
 import sys
 
-from . import convert, pockettopo, register, xvi
+from . import convert, pockettopo, register, tidy, xvi
 
 PLAN_LAYOUT = 'output/layout-plan.xvi'
 EXT_LAYOUT = 'output/layout-extended.xvi'
@@ -93,7 +97,7 @@ def cmd_plan(a):
         floor = fl.analyse(load(a.floor, 'elevation'))
         print(f"floor: {len(floor['climbs'])} steps, {len(floor['gradients'])} gradients")
     text, scraps, sections = convert.plan(sk, _opts(a), a.output, layout(a.layout or PLAN_LAYOUT), floor, a.tol)
-    write_th2(text, a.output)
+    write_th2(tidy.tidy_text(text, a.map_scale), a.output)
     print(f"wrote {a.output}: {len(scraps)} plan scraps, {len(sections)} cross-sections")
     print("Add to a plan map (e.g. in Swildons_MAP_Streamway1.th):")
     for s in scraps:
@@ -105,7 +109,7 @@ def cmd_extended(a):
     text, scraps, sections, plan_scraps = convert.extended(
         sk, _opts(a), a.output, layout(a.layout or EXT_LAYOUT),
         layout(a.plan_layout or PLAN_LAYOUT), a.tol, a.floor_reach, a.roof_reach)
-    write_th2(text, a.output)
+    write_th2(tidy.tidy_text(text, a.map_scale), a.output)
     print(f"wrote {a.output}: {len(scraps)} elevation scraps, {len(sections)} cross-sections")
     print("Add to an extended map (e.g. in Swildons_MAP-elev_Streamway.th):")
     for s in scraps:
@@ -114,6 +118,15 @@ def cmd_extended(a):
         print("and, for the cross-sections, to a plan map:")
         for s in plan_scraps:
             print(f"  {s}@{a.survey or '<survey>'}.Swildons")
+
+
+def cmd_tidy(a):
+    for f in a.files:
+        tidy.tidy_file(f, a.map_scale)
+    for r in tidy.REPORT:
+        name, kept, total = r[:3]
+        note = '' if kept else '  (left as it was: the walls could not be made into an outline)'
+        print(f"  {name}: {100 * kept / max(total, 1):.0f}% of the walls on the outline{note}")
 
 
 def cmd_xvi(a):
@@ -179,6 +192,8 @@ def main(argv=None):
         q.add_argument('--copyright', nargs=2, metavar=('YEAR', 'HOLDER'))
         q.add_argument('--qualify', action='store_true',
                        help='write stations as name@survey, for a th2 input outside the survey')
+        q.add_argument('--map-scale', type=int, default=500,
+                       help='scale of the sheet it will be printed at, for sizing labels (default 500)')
 
     q = sub.add_parser('check', help='how well a sketch fits the survey')
     common(q, 1.5)
@@ -201,6 +216,12 @@ def main(argv=None):
     q.add_argument('--roof-reach', type=float, default=5.0,
                    help='and up to a roof line this far above them (default 5 m; more for big chambers)')
     q.set_defaults(func=cmd_extended)
+
+    q = sub.add_parser('tidy', help='redraw converted th2 files the conventional Therion way')
+    q.add_argument('files', nargs='+')
+    q.add_argument('--map-scale', type=int, default=500,
+                   help='scale of the sheet the drawing is printed at, for sizing labels and arrows (default 500)')
+    q.set_defaults(func=cmd_tidy)
 
     q = sub.add_parser('xvi', help='PocketTopo .top or _th.txt -> XVI')
     q.add_argument('sketch')
