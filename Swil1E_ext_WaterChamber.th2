@@ -319,6 +319,7 @@ line border -subtype invisible -id WaterChamberEE1-water1 -close on
   1871.08 841.01
   1875.69 843.95
   1886.32 846.69
+  1920.74 845.58
 endline
 
 area water
@@ -954,6 +955,7 @@ line border -subtype invisible -id WaterChamberEE2-water1 -close on
   1784.28 961.13
   1778.43 964.42
   1773.95 971.95
+  1773.60 979.63
 endline
 
 area water

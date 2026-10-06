@@ -1153,6 +1153,7 @@ line border -subtype invisible -id BarnesLoopToTratmansSE2-water1 -close on
   2457.80 706.41
   2454.12 710.36
   2451.69 716.34
+  2440.64 721.79
 endline
 
 area water
@@ -1181,6 +1182,7 @@ line border -subtype invisible -id BarnesLoopToTratmansSE2-water2 -close on
   2291.05 779.99
   2295.30 783.24
   2300.28 784.61
+  2309.79 784.49
 endline
 
 area water
@@ -1208,6 +1210,7 @@ line border -subtype invisible -id BarnesLoopToTratmansSE2-water3 -close on
   2129.01 803.67
   2124.64 806.75
   2113.24 821.41
+  2104.72 847.14
 endline
 
 area water
@@ -1232,6 +1235,7 @@ line border -subtype invisible -id BarnesLoopToTratmansSE2-water4 -close on
   1990.15 827.45
   1982.99 830.27
   1978.89 835.44
+  1974.65 862.18
 endline
 
 area water
@@ -2072,6 +2076,7 @@ line border -subtype invisible -id BarnesLoopToTratmansSE1-water1 -close on
   2603.05 499.42
   2593.12 509.91
   2591.87 514.87
+  2592.29 521.27
 endline
 
 area water
@@ -2102,6 +2107,7 @@ line border -subtype invisible -id BarnesLoopToTratmansSE1-water2 -close on
   2482.00 541.72
   2484.32 548.15
   2489.43 552.68
+  2496.31 554.21
 endline
 
 area water
@@ -2130,6 +2136,7 @@ line border -subtype invisible -id BarnesLoopToTratmansSE1-water3 -close on
   2320.14 551.74
   2291.34 559.86
   2282.78 566.55
+  2279.78 576.27
 endline
 
 area water
@@ -2154,6 +2161,7 @@ line border -subtype invisible -id BarnesLoopToTratmansSE1-water4 -close on
   2150.05 575.95
   2150.50 582.69
   2154.10 588.41
+  2159.53 591.58
 endline
 
 area water
@@ -2180,6 +2188,7 @@ line border -subtype invisible -id BarnesLoopToTratmansSE1-water5 -close on
   2033.48 588.07
   2036.37 593.90
   2040.59 597.28
+  2047.01 598.89
 endline
 
 area water
@@ -2207,6 +2216,7 @@ line border -subtype invisible -id BarnesLoopToTratmansSE1-water6 -close on
   1831.10 652.20
   1830.15 657.56
   1831.39 662.96
+  1835.04 667.75
 endline
 
 area water
@@ -2235,6 +2245,7 @@ line border -subtype invisible -id BarnesLoopToTratmansSE1-water7 -close on
   1572.59 721.75
   1556.96 730.11
   1553.58 734.48
+  1551.46 740.79
 endline
 
 area water
@@ -2519,6 +2530,7 @@ line border -subtype invisible -id xs23_25-water1 -close on
   1050.80 907.58
   1024.73 909.22
   1019.24 913.62
+  1038.93 916.34
 endline
 
 area water

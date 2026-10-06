@@ -918,6 +918,7 @@ line border -subtype invisible -id LowerOxbowEE1-water1 -close on
   1335.40 830.76
   1337.91 835.43
   1341.99 838.81
+  1347.12 840.40
 endline
 
 area water

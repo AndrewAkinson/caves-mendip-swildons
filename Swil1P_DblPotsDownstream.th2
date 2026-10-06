@@ -1286,6 +1286,7 @@ line border -subtype invisible -id DblPotsSP1-water1 -close on
   13.00 1176.47
   11.56 1177.62
   4.83 1176.98
+  -0.75 1178.65
 endline
 
 area water
@@ -1328,6 +1329,7 @@ line border -subtype invisible -id DblPotsSP1-water2 -close on
   256.42 1065.29
   257.31 1070.74
   264.43 1089.33
+  272.41 1100.60
 endline
 
 area water
@@ -1358,6 +1360,7 @@ line border -subtype invisible -id DblPotsSP1-water3 -close on
   446.37 969.81
   438.94 973.12
   433.68 979.61
+  416.34 1013.74
 endline
 
 area water
@@ -1389,6 +1392,7 @@ line border -subtype invisible -id DblPotsSP1-water4 -close on
   706.20 862.28
   697.33 876.22
   696.72 881.63
+  698.31 886.92
 endline
 
 area water
@@ -1434,6 +1438,7 @@ line border -subtype invisible -id DblPotsSP1-water5 -close on
   774.27 973.51
   766.81 984.44
   765.74 1005.40
+  768.66 1012.69
 endline
 
 area water
@@ -1482,6 +1487,7 @@ line border -subtype invisible -id DblPotsSP1-water6 -close on
   964.79 973.06
   929.57 979.37
   924.79 982.51
+  913.40 996.41
 endline
 
 area water

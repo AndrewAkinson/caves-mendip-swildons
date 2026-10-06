@@ -1416,6 +1416,7 @@ line border -subtype invisible -id DblPotsDownstreamSE1-water1 -close on
   1867.75 754.01
   1870.13 761.71
   1876.23 766.70
+  1884.52 767.76
 endline
 
 area water
@@ -1447,6 +1448,7 @@ line border -subtype invisible -id DblPotsDownstreamSE1-water2 -close on
   1337.67 806.34
   1336.37 814.10
   1338.81 820.39
+  1344.06 824.81
 endline
 
 area water
@@ -1476,6 +1478,7 @@ line border -subtype invisible -id DblPotsDownstreamSE1-water3 -close on
   1187.92 785.49
   1183.68 788.21
   1173.31 799.77
+  1167.55 808.78
 endline
 
 area water
@@ -1499,6 +1502,7 @@ line border -subtype invisible -id DblPotsDownstreamSE1-water4 -close on
   1053.15 890.66
   1055.36 895.66
   1060.35 899.98
+  1066.17 901.46
 endline
 
 area water
@@ -1642,6 +1646,7 @@ line border -subtype invisible -id xs22_1-water1 -close on
   927.41 919.20
   923.76 923.72
   922.70 930.18
+  971.26 932.48
 endline
 
 area water

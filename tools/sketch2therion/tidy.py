@@ -53,12 +53,24 @@ class Obj:
 
     def text(self):
         if self.kind == 'line':
-            return '\n'.join([self.head] + self.rows + ['endline'])
+            return '\n'.join([self.head] + self.closed_rows() + ['endline'])
         if self.kind == 'area':
             return '\n'.join([self.head] + self.rows + ['endarea'])
         if self.kind == 'point':
             return self.head
         return self.raw
+
+    def closed_rows(self):
+        """A closed line ends where it starts. xtherion otherwise adds the
+        point itself on loading and is left with a stale point selected, so
+        selecting a line afterwards fails ("no such element in array")."""
+        segs = self.segments()
+        if '-close on' not in self.head or len(segs) < 2:
+            return self.rows
+        first = ('%.2f' % segs[0][-2], '%.2f' % segs[0][-1])
+        if ('%.2f' % segs[-1][-2], '%.2f' % segs[-1][-1]) == first:
+            return self.rows
+        return self.rows + ['  ' + ' '.join(first)]
 
     # geometry of a line: rows are "x y" then "c1x c1y c2x c2y x y" (Bezier)
     def segments(self):

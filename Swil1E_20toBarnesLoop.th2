@@ -1979,6 +1979,7 @@ line border -subtype invisible -id 20ftToBarnesLoopSE1-water1 -close on
   3269.41 530.58
   3224.72 533.55
   3210.36 540.96
+  3195.19 551.89
 endline
 
 area water
@@ -2010,6 +2011,7 @@ line border -subtype invisible -id 20ftToBarnesLoopSE1-water2 -close on
   2577.27 640.01
   2579.16 646.33
   2583.77 651.05
+  2590.09 653.15
 endline
 
 area water
@@ -2043,6 +2045,7 @@ line border -subtype invisible -id 20ftToBarnesLoopSE1-water3 -close on
   1846.46 682.69
   1844.24 689.11
   1845.36 695.81
+  1849.64 701.22
 endline
 
 area water
@@ -2547,6 +2550,7 @@ line rock-border -close on
   951.25 1109.86 950.60 1112.96 950.59 1115.16
   950.58 1117.36 950.96 1119.26 951.72 1120.87
   952.49 1122.47 954.59 1124.15 955.17 1124.80
+  960.93 1126.97
 endline
 
 point 943.83 1095.03 flowstone

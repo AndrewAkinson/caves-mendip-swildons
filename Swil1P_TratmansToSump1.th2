@@ -4402,6 +4402,7 @@ line border -subtype invisible -id TratmansToSump1SP1-water1 -close on
   -3339.94 980.31
   -3333.67 990.57
   -3334.30 992.97
+  -3446.23 1058.80
 endline
 
 area water
@@ -4452,6 +4453,7 @@ line border -subtype invisible -id TratmansToSump1SP1-water2 -close on
   -3467.75 1020.51
   -3468.93 1028.08
   -3465.18 1035.85
+  -3469.38 1044.41
 endline
 
 area water
@@ -4494,6 +4496,7 @@ line border -subtype invisible -id TratmansToSump1SP1-water3 -close on
   -3163.14 1641.86
   -3174.05 1650.74
   -3217.89 1702.68
+  -3221.53 1709.19
 endline
 
 area water
@@ -4531,6 +4534,7 @@ line border -subtype invisible -id TratmansToSump1SP1-water4 -close on
   -1528.71 1118.09
   -1567.26 1113.29
   -1580.77 1115.76
+  -1588.16 1123.68
 endline
 
 area water
@@ -4551,6 +4555,7 @@ line border -subtype invisible -id TratmansToSump1SP1-water5 -close on
   -563.42 1063.48
   -576.82 1070.90
   -617.06 1153.32
+  -619.49 1161.27
 endline
 
 area water
@@ -4586,6 +4591,7 @@ line border -subtype invisible -id TratmansToSump1SP1-water6 -close on
   -317.98 1054.96
   -318.38 1056.94
   -346.55 1087.90
+  -346.76 1093.99
 endline
 
 area water
@@ -4611,6 +4617,7 @@ line border -subtype invisible -id TratmansToSump1SP1-water7 -close on
   193.17 813.24
   171.82 830.60
   169.41 837.10
+  169.63 846.82
 endline
 
 area water
@@ -4641,6 +4648,7 @@ line border -subtype invisible -id TratmansToSump1SP1-water8 -close on
   359.91 717.77
   360.97 724.31
   364.95 729.59
+  370.48 732.49
 endline
 
 area water
@@ -4687,6 +4695,7 @@ line border -subtype invisible -id TratmansToSump1SP1-water9 -close on
   782.59 772.69
   744.84 842.03
   742.96 859.79
+  747.56 870.46
 endline
 
 area water
@@ -4727,6 +4736,7 @@ line border -subtype invisible -id TratmansToSump1SP1-water10 -close on
   782.49 772.86
   744.74 842.23
   742.89 859.49
+  744.23 864.33
 endline
 
 area water

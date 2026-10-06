@@ -3290,6 +3290,7 @@ line border -subtype invisible -id TratmansToSump1SE1-water1 -close on
   6658.37 61.04
   6657.49 65.09
   6658.18 70.33
+  6663.60 77.40
 endline
 
 area water
@@ -3319,6 +3320,7 @@ line border -subtype invisible -id TratmansToSump1SE1-water2 -close on
   3416.05 441.85
   3410.43 447.23
   3404.47 465.97
+  3405.31 471.21
 endline
 
 area water
@@ -3347,6 +3349,7 @@ line border -subtype invisible -id TratmansToSump1SE1-water3 -close on
   3211.23 522.91
   3063.15 525.40
   3056.92 527.69
+  3051.78 533.53
 endline
 
 area water
@@ -3377,6 +3380,7 @@ line border -subtype invisible -id TratmansToSump1SE1-water4 -close on
   2351.35 602.34
   2303.26 603.53
   2295.76 605.99
+  2289.70 613.03
 endline
 
 area water

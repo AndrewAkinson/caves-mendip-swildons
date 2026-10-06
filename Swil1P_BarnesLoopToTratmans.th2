@@ -2370,6 +2370,7 @@ line border -subtype invisible -id BarnesLoopSP1-water1 -close on
   22.11 -1058.43
   14.82 -1045.29
   14.30 -1040.05
+  15.79 -1034.88
 endline
 
 area water
@@ -2406,6 +2407,7 @@ line border -subtype invisible -id BarnesLoopSP1-water2 -close on
   377.84 -845.52
   391.85 -859.79
   377.83 -856.85
+  366.76 -850.59
 endline
 
 area water
@@ -2445,6 +2447,7 @@ line border -subtype invisible -id BarnesLoopSP1-water3 -close on
   365.21 -780.59
   359.04 -778.64
   353.28 -771.75
+  340.61 -725.65
 endline
 
 area water
@@ -2492,6 +2495,7 @@ line border -subtype invisible -id BarnesLoopSP1-water4 -close on
   253.88 -463.01
   247.06 -441.16
   247.22 -434.68
+  249.97 -429.87
 endline
 
 area water
@@ -2531,6 +2535,7 @@ line border -subtype invisible -id BarnesLoopSP1-water5 -close on
   147.01 -318.42
   139.00 -294.44
   139.62 -287.90
+  150.08 -266.46
 endline
 
 area water
@@ -2560,6 +2565,7 @@ line border -subtype invisible -id BarnesLoopSP1-water6 -close on
   65.23 -197.87
   63.68 -194.87
   60.79 -174.86
+  61.02 -151.81
 endline
 
 area water
@@ -2611,6 +2617,7 @@ line border -subtype invisible -id BarnesLoopSP1-water7 -close on
   238.00 -30.74
   248.86 -43.13
   250.60 -50.80
+  237.39 -30.72
 endline
 
 area water
@@ -2630,6 +2637,7 @@ line border -subtype invisible -id BarnesLoopSP1-water8 -close on
   523.54 -46.88
   519.54 -45.77
   511.36 -39.23
+  506.90 -29.51
 endline
 
 area water
@@ -2655,6 +2663,7 @@ line border -subtype invisible -id BarnesLoopSP1-water9 -close on
   660.06 -33.60
   640.23 -37.77
   611.46 -32.12
+  602.48 -25.85
 endline
 
 area water
@@ -2682,6 +2691,7 @@ line border -subtype invisible -id BarnesLoopSP1-water10 -close on
   869.94 -286.72
   870.10 -280.13
   878.33 -266.15
+  888.41 -260.59
 endline
 
 area water
@@ -2711,6 +2721,7 @@ line border -subtype invisible -id BarnesLoopSP1-water11 -close on
   1126.20 -37.21
   1114.01 -23.61
   1112.40 -9.99
+  1099.82 -6.98
 endline
 
 area water
@@ -2743,6 +2754,7 @@ line border -subtype invisible -id BarnesLoopSP1-water12 -close on
   1311.70 -95.07
   1307.07 -82.80
   1305.91 -70.45
+  1292.20 -63.83
 endline
 
 area water
@@ -2779,6 +2791,7 @@ line border -subtype invisible -id BarnesLoopSP1-water13 -close on
   1396.39 -0.91
   1396.32 -7.57
   1393.54 -12.78
+  1383.83 -7.80
 endline
 
 area water
@@ -2816,6 +2829,7 @@ line border -subtype invisible -id BarnesLoopSP1-water14 -close on
   1405.55 74.55
   1406.39 62.79
   1396.29 64.47
+  1387.42 68.16
 endline
 
 area water
@@ -2853,6 +2867,7 @@ line border -subtype invisible -id BarnesLoopSP1-water15 -close on
   1375.69 88.84
   1372.13 104.60
   1357.46 143.80
+  1357.25 153.29
 endline
 
 area water
@@ -2880,6 +2895,7 @@ line border -subtype invisible -id BarnesLoopSP1-water16 -close on
   1329.36 238.44
   1319.54 258.85
   1325.50 285.73
+  1327.77 290.50
 endline
 
 area water
@@ -2904,6 +2920,7 @@ line border -subtype invisible -id BarnesLoopSP1-water17 -close on
   1302.13 464.09
   1297.75 480.92
   1271.18 493.09
+  1269.43 503.53
 endline
 
 area water
@@ -2930,6 +2947,7 @@ line border -subtype invisible -id BarnesLoopSP1-water18 -close on
   1085.67 698.51
   1086.66 703.73
   1089.49 708.13
+  1101.92 715.53
 endline
 
 area water
