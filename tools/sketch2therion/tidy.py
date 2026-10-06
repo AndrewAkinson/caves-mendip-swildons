@@ -350,11 +350,14 @@ def rebuild_outline(objs, ring_obj, K, name=''):
         ac = list(arc.coords)
         if math.dist(ac[0], w['pts'][-1]) > math.dist(ac[-1], w['pts'][-1]):
             ac = ac[::-1]           # round from the wall's end back to its start
-        sliver = Polygon(list(w['pts']) + ac).buffer(0)
-        if sliver.is_empty:
+        try:
+            sliver = Polygon(list(w['pts']) + ac).buffer(0)
+            if sliver.is_empty:
+                continue
+            inner = sliver.intersection(rp)
+            outer = sliver.difference(rp)
+        except Exception:           # degenerate geometry: leave this wall as it is
             continue
-        inner = sliver.intersection(rp)
-        outer = sliver.difference(rp)
         if not inner.is_empty and inner.area / w['line'].length < 1.2 * K \
                 and not any(inner.contains(st) and w['line'].distance(st) > 0.15 * K for st in stations):
             cuts.append(inner)

@@ -10,6 +10,8 @@
               conversions above already do this): walls as the outline with
               the passage on their left, no -clip off, C/P labels outside
               the passage, ... (see tidy.py)
+  roofs       redraw converted extended elevations' fill from the splay
+              shots where no roof or floor was sketched (after a build)
   sections    point the cross-section markers the way each section looks,
               and move section drawings off passages and each other
 
@@ -131,6 +133,14 @@ def cmd_tidy(a):
         print(f"  {name}: {100 * kept / max(total, 1):.0f}% of the walls on the outline{note}")
 
 
+def cmd_roofs(a):
+    from . import roofs
+    splays = roofs.Splays()
+    for f in a.files:
+        done = roofs.redo_file(f, splays, a.map_scale)
+        print(f"  {f}: {', '.join(done) or 'nothing to redo'}")
+
+
 def cmd_sections(a):
     from . import sections
     sections.run()
@@ -229,6 +239,11 @@ def main(argv=None):
     q.add_argument('--map-scale', type=int, default=500,
                    help='scale of the sheet the drawing is printed at, for sizing labels and arrows (default 500)')
     q.set_defaults(func=cmd_tidy)
+
+    q = sub.add_parser('roofs', help="elevation fill from the splays where no roof or floor was sketched")
+    q.add_argument('files', nargs='+')
+    q.add_argument('--map-scale', type=int, default=500)
+    q.set_defaults(func=cmd_roofs)
 
     q = sub.add_parser('sections', help='turn cross-section markers and move sections clear')
     q.set_defaults(func=cmd_sections)

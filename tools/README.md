@@ -159,6 +159,19 @@ write notes in red or orange or they will be read as walls.
      (default 500; the Entrance Series sheets are 200), for sizing
      labels and arrows.
 
+   For an extended elevation, run this after a build too:
+
+   ```bash
+   python3 -m tools.sketch2therion roofs Swil1E_Sump1ToSwildons2.th2
+   ```
+
+   Where the sketch has no roof or floor, the conversion has to guess.
+   This redraws those parts from the splay shots instead: the passage
+   goes up to the roof and down to the floor that the steep splays at
+   each station measured. Fill well beyond them, from a sketch line
+   that belonged to another passage, is cut back. Drawn walls near the
+   splay roof or floor still win.
+
    `python3 -m tools.sketch2therion tidy FILE.th2 ...` does the same to
    drawings converted before, and reports how much of each scrap's
    walls ended up on its outline.
@@ -243,4 +256,5 @@ the way the sketch was drawn, so convert from that instead.
 | `floor.py` | Reads the floor off the side view for steps, climbs and gradients. |
 | `convert.py` | Builds the scraps: the passage fill and walls-or-borders, then the scraps for the cross-sections and where they go. |
 | `sections.py`, `sections.thconfig` | Point the cross-section lines the way each section looks, and move section drawings clear of the passages and each other. |
+| `roofs.py` | Extended-elevation fill from the splays where no roof or floor was sketched. |
 | `tidy.py` | Redraws converted scraps the conventional Therion way: walls as the outline (passage on their left), water inside invisible borders, labels outside the passage. |
