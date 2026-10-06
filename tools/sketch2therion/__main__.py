@@ -157,9 +157,10 @@ def cmd_details(a):
 def cmd_smooth(a):
     from . import smooth
     for f in a.files:
-        for name, before, after in smooth.redo_file(f, scraps=a.scrap):
-            if before:
-                print(f"  {name}: wall points {before} -> {after}")
+        for name, before, after, dropped, borders, joined in smooth.redo_file(f, scraps=a.scrap):
+            if before or dropped or borders or joined:
+                print(f"  {name}: {joined} walls joined, {dropped} doubled or stray pieces gone, "
+                      f"{borders} made borders; wall points {before} -> {after}")
 
 
 def cmd_sections(a):

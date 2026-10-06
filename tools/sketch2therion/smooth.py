@@ -437,6 +437,196 @@ def smooth_scrap(objs, K):
     return before, sum(len(o.segments()) for o in walls)
 
 
+# -- one line per wall ------------------------------------------------------------------
+
+DOUBLE = 0.3        # m: a wall piece off the outline this close along an outline wall doubles it
+GAP = 0.6           # m: walls of the same kind this close, end to start and heading on, are one wall
+BRIDGE = 0.75       # m: a presumed wall across less than this, between two walls, goes
+SNAP = 0.1          # m: closer than this the next wall's start just moves onto the end
+STUB = 1.0          # m: a wall piece off the outline and outside the passage shorter than this goes
+
+
+def _outline_score(objs):
+    """How bad the scrap's outlines are, as Therion and MetaPost see them:
+    (outlines MetaPost says cross themselves, outlines that cross
+    themselves, outlines)."""
+    outline = [o for o in objs if o.kind == 'line' and o.head.startswith('line wall')
+               and '-outline none' not in o.head and '-close on' not in o.head and len(o.segments()) > 1]
+    ol = [bezier_points(o.segments(), 20) for o in outline]
+    zero = bad = 0
+    rings = therion_rings(ol)
+    for ring in rings:
+        pts = [p for i, rev in ring for p in (ol[i][::-1] if rev else ol[i])]
+        segs = [reverse_segments(outline[i].segments()) if rev else outline[i].segments() for i, rev in ring]
+        zero += mp_turning(segs) == 0
+        bad += not ring_ok(pts)[0]
+    return zero, bad, len(rings)
+
+
+def _smooth_join(segs, k):
+    """Make the node at row k smooth if the line only bends a little there."""
+    if k + 1 >= len(segs) or len(segs[k]) != 6 or len(segs[k + 1]) != 6:
+        return
+    p = (segs[k][4], segs[k][5])
+    a, b = _sub(p, (segs[k][2], segs[k][3])), _sub((segs[k + 1][0], segs[k + 1][1]), p)
+    la, lb = math.hypot(*a), math.hypot(*b)
+    if la < 1e-9 or lb < 1e-9 or _turn(a, b) > 45:
+        return
+    u = _unit(_add(_unit(a), _unit(b)))
+    segs[k][2], segs[k][3] = p[0] - u[0] * la, p[1] - u[1] * la
+    segs[k + 1][0], segs[k + 1][1] = p[0] + u[0] * lb, p[1] + u[1] * lb
+
+
+def one_line_per_wall(objs, K):
+    """Walls drawn as one line each, not in pieces:
+    - pieces of the sketched walls that didn't end up on the outline
+      (`-outline none`) go where they double an outline wall or stick out
+      a little past it; inside the passage they are the edge of something,
+      a `line border`
+    - walls of the same kind that run on from one another (one ends where
+      the next starts) are joined into one line, smooth through the join
+      if it is a gentle bend, so long as Therion still makes the outline
+      as well as before.
+    Returns (dropped, made borders, joined)."""
+    walls = [o for o in objs if o.kind == 'line' and o.head.startswith('line wall')]
+    outline = [o for o in walls if '-outline none' not in o.head and '-close on' not in o.head
+               and len(o.segments()) > 1]
+    dropped = bordered = joined = 0
+    if outline:
+        lines = [LineString(bezier_points(o.segments())) for o in outline]
+        tree = STRtree(lines)
+        polys = [Polygon(r).buffer(0) for r in therion_chain([list(l.coords) for l in lines]) if len(r) > 3]
+        passage = None
+        for g in polys:
+            passage = g if passage is None else passage.union(g)
+        for o in walls:
+            if '-outline none' not in o.head or len(o.segments()) < 2:
+                continue
+            g = LineString(bezier_points(o.segments()))
+            samples = [g.interpolate(i / 10, normalized=True) for i in range(11)]
+            near = [lines[int(j)] for j in tree.query(g.buffer(DOUBLE * K))]
+            along = sum(any(l.distance(q) < DOUBLE * K for l in near) for q in samples)
+            inside = sum(passage is not None and passage.buffer(-0.05 * K).contains(q) for q in samples)
+            outside = sum(passage is None or not passage.buffer(0.05 * K).contains(q) for q in samples)
+            if along >= 9 or (outside >= 9 and g.length < STUB * K):
+                o.kind = 'drop'
+                dropped += 1
+            elif inside >= 9:
+                o.head = 'line border'
+                bordered += 1
+    # join walls that run on from one another: one ends where the next
+    # starts, or a little short of it and heading for it
+    def end_dir(segs, at_end):
+        """Which way the wall runs at its end (or start), over the last
+        30 cm or so: a sketched wall wobbles right at its end."""
+        d = bezier_points(segs, 8)
+        if at_end:
+            return _mul(_tangent(d, len(d) - 1, 0.3 * K, False), -1)
+        return _tangent(d, 0, 0.3 * K, True)
+
+    score = _outline_score(objs)
+    # spurs (a short wall with one end free, off another's end) and
+    # presumed walls bridging less than BRIDGE between two walls go, so the
+    # walls either side can join up
+    walls = [o for o in objs if o.kind == 'line' and o.head.startswith('line wall')
+             and '-close on' not in o.head and ' -id ' not in o.head + ' ' and len(o.segments()) > 1]
+    for o in walls:
+        sg = o.segments()
+        e0, e1 = tuple(sg[0][-2:]), tuple(sg[-1][-2:])
+        other = [tuple(w.segments()[k][-2:]) for w in walls if w is not o and w.kind != 'drop' for k in (0, -1)]
+        n0 = sum(math.dist(e0, p) <= GAP * K for p in other)
+        n1 = sum(math.dist(e1, p) <= GAP * K for p in other)
+        length = LineString(bezier_points(sg)).length
+        spur = length < STUB * K and (n0 == 0) != (n1 == 0)
+        bridge = '-subtype presumed' in o.head and math.dist(e0, e1) < BRIDGE * K and n0 and n1
+        if not (spur or bridge):
+            continue
+        o.kind = 'drop'
+        new = _outline_score(objs)
+        if new <= score:
+            score = new
+            dropped += 1
+        else:
+            o.kind = 'line'
+    objs[:] = [o for o in objs if o.kind != 'drop']
+    failed = set()
+    while True:
+        walls = [o for o in objs if o.kind == 'line' and o.head.startswith('line wall')
+                 and '-close on' not in o.head and ' -id ' not in o.head + ' ' and len(o.segments()) > 1]
+        ends = [(tuple(o.segments()[k][-2:]), o, k) for o in walls for k in (0, -1)]
+        done = False
+        for a in walls:
+            sa = a.segments()
+            end = tuple(sa[-1][-2:])
+            # pieces off the outline don't stand in the way of outline walls
+            near = [(math.dist(end, p), o, k) for p, o, k in ends
+                    if not (o is a and k == -1) and math.dist(end, p) <= GAP * K
+                    and ('-outline none' in a.head or '-outline none' not in o.head)]
+            # the wall end there (or, where they meet exactly, the only one
+            # at that point; else the nearest, if much the nearest), the
+            # start of a wall of the same kind
+            near.sort(key=lambda x: x[0])
+            exact = [x for x in near if x[0] == 0]
+            if exact:
+                if len(exact) != 1:
+                    continue
+            elif not near or (len(near) > 1 and near[1][0] < 2 * near[0][0] + 0.05 * K):
+                continue
+            d, b, k = near[0]
+            key = (a.rows[0], a.rows[-1], b.rows[0], b.rows[-1])
+            if k != 0 or b is a or b.head != a.head or key in failed:
+                continue
+            sb = [list(r) for r in b.segments()]
+            old_a, old_kind = a.rows, b.kind
+            if d == 0:
+                segs = sa + sb[1:]
+                _smooth_join(segs, len(sa) - 1)
+            else:
+                # the two as one: where one runs a little past the other's
+                # end, cut that bit off, then refit the whole wall
+                if _turn(end_dir(sa, True), end_dir(sb, False)) > 60:
+                    continue
+                pa, pb = bezier_points(sa, 8), bezier_points(sb, 8)
+                q = pb[0]
+                tail = [i for i in range(len(pa)) if math.dist(pa[i], pa[-1]) < GAP * K]
+                i = min(tail, key=lambda i: math.dist(pa[i], q))
+                head = [j for j in range(len(pb)) if math.dist(pb[j], pb[0]) < GAP * K]
+                j = min(head, key=lambda j: math.dist(pb[j], pa[i]))
+                pts = pa[:i + 1] + pb[j:]
+                if len(pts) < 3 or not LineString(pts).is_simple:
+                    continue
+                segs = fit_wall([[x, y] for x, y in pts], K)
+                # keep the two outer ends exactly where they were
+                segs[0] = [sa[0][-2], sa[0][-1]]
+                if len(segs[-1]) == 6:
+                    segs[-1][4:] = [sb[-1][-2], sb[-1][-1]]
+                else:
+                    segs[-1] = [sb[-1][-2], sb[-1][-1]]
+            g = LineString(bezier_points(segs, 20))
+            ends_ab = [Point(sa[0][-2:]), Point(sb[-1][-2:])]
+            others = [LineString(bezier_points(o.segments(), 20)) for o in walls if o is not a and o is not b]
+            if not g.is_simple or any(min(e.distance(x) for e in ends_ab) > 1e-3
+                                      for o in others if g.intersects(o)
+                                      for x in getattr(g.intersection(o), 'geoms', [g.intersection(o)])):
+                failed.add(key)
+                continue
+            a.set_segments(segs)
+            b.kind = 'drop'
+            new = _outline_score(objs)
+            if new <= score:
+                score = new
+                joined += 1
+                done = True
+                failed.clear()      # what failed may work now
+                break
+            a.rows, b.kind = old_a, old_kind
+            failed.add(key)
+        if not done:
+            break
+    objs[:] = [o for o in objs if o.kind != 'drop']
+    return dropped, bordered, joined
+
+
 def redo_file(path, scraps=None):
     """Refit the walls of the file's scraps (or those named in `scraps`)."""
     raw = open(path, 'rb').read()
@@ -447,13 +637,15 @@ def redo_file(path, scraps=None):
         if scraps and name not in scraps:
             continue
         objs = parse_scrap(body)
-        b, a = smooth_scrap(objs, scale_of(header))
-        if a == b:
-            report.append((name, b, a))
+        K = scale_of(header)
+        tidy = one_line_per_wall(objs, K)
+        b, a = smooth_scrap(objs, K)
+        if a == b and not any(tidy):
+            report.append((name, b, a) + tidy)
             continue
         out.append(t[pos:m.start(3)] + '\n'.join(o.text() for o in objs).rstrip('\n') + '\n')
         pos = m.end(3)
-        report.append((name, b, a))
+        report.append((name, b, a) + tidy)
     out.append(t[pos:])
     t = ''.join(out)
     if b'\r\n' in raw:

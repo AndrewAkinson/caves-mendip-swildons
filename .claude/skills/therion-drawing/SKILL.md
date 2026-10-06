@@ -67,8 +67,12 @@ too.
 ## Symbols: lines
 
 - Draw lines with as few points as follow the shape, smooth in both
-  directions (about one a metre, as Footleg's walls are). `python3 -m
-  tools.sketch2therion smooth` refits converted walls like this.
+  directions (about one a metre, as Footleg's walls are).
+- One line per wall, not a run of pieces: Therion caps each line's ends,
+  so pieces show as bumps where they meet, and a piece lying along
+  another wall draws it twice. Start a new line only where the wall
+  changes kind (wall to presumed) or turns a real corner.
+  `python3 -m tools.sketch2therion smooth` does both for converted walls.
 - Rocks and boulders (`line rock-border`) are closed (`-close on`) and
   not smoothed: straight segments.
 - A closed line (`-close on`) ends on its first point. If it doesn't,

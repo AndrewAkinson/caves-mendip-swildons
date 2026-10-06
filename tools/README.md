@@ -195,8 +195,12 @@ write notes in red or orange or they will be read as walls.
    python3 -m tools.sketch2therion smooth Swil1P_Sump1ToSwildons2.th2 Swil1E_Sump1ToSwildons2.th2
    ```
 
-   The converted walls follow the sketch stroke by stroke, with four or
-   five points a metre. This refits each wall with as few smooth Bézier
+   The converted walls come in pieces, a stroke at a time, with four or
+   five points a metre. This first makes them one line per wall: pieces
+   that double a wall or stick out past it go, walls of the same kind
+   that run on from one another (end to start, or within 60 cm and
+   heading on) are joined, and so are the walls either side of a short
+   presumed wall or a stray spur. Then it refits each wall with as few smooth Bézier
    curves as keep within 10 cm of it, as a wall drawn in xTherion would
    be. Sharp corners stay corners, and each wall keeps its ends, so the
    outline joins up as before. A wall that would then cross itself or
@@ -293,5 +297,5 @@ the way the sketch was drawn, so convert from that instead.
 | `sections.py`, `sections.thconfig` | Point the cross-section lines the way each section looks, and move section drawings clear of the passages and each other. |
 | `roofs.py` | Fill from the splays where the sketch has no wall: roof and floor in elevation, the passage sides in plan. |
 | `details.py` | Floor steps, presumed walls and cleaner boulders in plan. |
-| `smooth.py` | Refits converted walls with fewer, smooth points, checking the outline still works for Therion and MetaPost. |
+| `smooth.py` | Joins converted walls into one line per wall and refits them with fewer, smooth points, checking the outline still works for Therion and MetaPost. |
 | `tidy.py` | Redraws converted scraps the conventional Therion way: walls as the outline (passage on their left), presumed walls where none was sketched, water out to the walls, labels outside the passage. |
