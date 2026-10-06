@@ -30,6 +30,13 @@ too.
 - The outline must not cross itself, and no wall may loop back on
   itself. Otherwise Therion warns "invalid scrap outline" (no 3D model
   for the scrap) or MetaPost "scrap outline intersects itself".
+- MetaPost also gives that warning for an outline that doesn't cross
+  itself, when it miscounts its turns: where one wall ends on the next,
+  Therion joins them with a line of no length, which MetaPost takes as
+  pointing east, so walls running west across the join can lose a whole
+  turn. `mp_turning` in `tools/sketch2therion/smooth.py` counts as
+  MetaPost does; turning the walls' ends slightly off due west, or
+  making the two walls one line, fixes it.
 - A line inside the passage is not a wall: a `line border` (a ledge,
   the edge of another level) or a step (see Symbols: lines). In the
   streamway it's mostly the edge of a step down (a shelf, the stream in
@@ -60,7 +67,8 @@ too.
 ## Symbols: lines
 
 - Draw lines with as few points as follow the shape, smooth in both
-  directions.
+  directions (about one a metre, as Footleg's walls are). `python3 -m
+  tools.sketch2therion smooth` refits converted walls like this.
 - Rocks and boulders (`line rock-border`) are closed (`-close on`) and
   not smoothed: straight segments.
 - A closed line (`-close on`) ends on its first point. If it doesn't,

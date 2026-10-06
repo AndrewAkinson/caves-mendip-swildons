@@ -183,11 +183,26 @@ write notes in red or orange or they will be read as walls.
    ```
 
    This turns lines inside the passage into floor steps, with the
-   ticks on the survey's side (the stream is usually in the low part).
+   ticks on the low side: towards the water, else the survey's side.
    It drops strokes that just double a wall, and draws gaps in the
    walls along the passage as presumed (dashed) walls. It also redraws
    boulders as clean blocks with facet edges. Check the steps:
-   where the survey isn't on the low side, flip the line in xTherion.
+   where the ticks aren't on the low side, flip the line in xTherion.
+
+   Last, on both files:
+
+   ```bash
+   python3 -m tools.sketch2therion smooth Swil1P_Sump1ToSwildons2.th2 Swil1E_Sump1ToSwildons2.th2
+   ```
+
+   The converted walls follow the sketch stroke by stroke, with four or
+   five points a metre. This refits each wall with as few smooth Bézier
+   curves as keep within 10 cm of it, as a wall drawn in xTherion would
+   be. Sharp corners stay corners, and each wall keeps its ends, so the
+   outline joins up as before. A wall that would then cross itself or
+   another, or break the outline for Therion or MetaPost, is fitted more
+   tightly or left as it was. In a file that also has hand-drawn scraps,
+   name the converted ones with `--scrap`.
 
    `python3 -m tools.sketch2therion tidy FILE.th2 ...` does the same to
    drawings converted before, and reports how much of each scrap's
@@ -278,4 +293,5 @@ the way the sketch was drawn, so convert from that instead.
 | `sections.py`, `sections.thconfig` | Point the cross-section lines the way each section looks, and move section drawings clear of the passages and each other. |
 | `roofs.py` | Fill from the splays where the sketch has no wall: roof and floor in elevation, the passage sides in plan. |
 | `details.py` | Floor steps, presumed walls and cleaner boulders in plan. |
+| `smooth.py` | Refits converted walls with fewer, smooth points, checking the outline still works for Therion and MetaPost. |
 | `tidy.py` | Redraws converted scraps the conventional Therion way: walls as the outline (passage on their left), presumed walls where none was sketched, water out to the walls, labels outside the passage. |

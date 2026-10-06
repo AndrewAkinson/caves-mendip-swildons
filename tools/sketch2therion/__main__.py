@@ -14,6 +14,8 @@
               shots where no roof or floor was sketched (after a build)
   details     plan details: interior lines -> floor steps, cleaner
               boulders (after a build)
+  smooth      refit converted walls with fewer, smooth points (last, after
+              roofs and details)
   sections    point the cross-section markers the way each section looks,
               and move section drawings off passages and each other
 
@@ -152,6 +154,14 @@ def cmd_details(a):
             print(f"  {name}: {steps} floor steps, {blocks} boulders")
 
 
+def cmd_smooth(a):
+    from . import smooth
+    for f in a.files:
+        for name, before, after in smooth.redo_file(f, scraps=a.scrap):
+            if before:
+                print(f"  {name}: wall points {before} -> {after}")
+
+
 def cmd_sections(a):
     from . import sections
     sections.run()
@@ -261,6 +271,12 @@ def main(argv=None):
     q.add_argument('files', nargs='+')
     q.add_argument('--scrap', nargs='+', help='only these scraps (default: every plan scrap)')
     q.set_defaults(func=cmd_details)
+
+    q = sub.add_parser('smooth', help='refit converted walls with fewer, smooth points')
+    q.add_argument('files', nargs='+')
+    q.add_argument('--scrap', nargs='+', help="only these scraps (default: every scrap in the file; "
+                   "name them in files with hand-drawn scraps too)")
+    q.set_defaults(func=cmd_smooth)
 
     q = sub.add_parser('sections', help='turn cross-section markers and move sections clear')
     q.set_defaults(func=cmd_sections)
