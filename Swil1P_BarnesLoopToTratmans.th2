@@ -2165,12 +2165,16 @@ line wall -outline none
 endline
 
 line rock-border -close on
-  401.71 -873.64
+  390.78 -861.50
+  401.46 -874.57
   407.63 -871.84
   411.90 -875.19
   414.25 -895.73
-  399.70 -881.20
-  401.71 -873.64
+  412.53 -894.01
+  425.36 -929.08
+  390.00 -893.77
+  383.09 -882.38
+  390.78 -861.50
 endline
 
 line rock-border -close on
@@ -2328,9 +2332,9 @@ line rock-border -close on
   1217.19 -109.46
 endline
 
-point 496.94 -67.19 gradient -orientation 291.4
+point 516.62 -67.19 gradient -orientation 291.4
 
-point 626.38 57.10 gradient -orientation 140.2
+point 646.06 57.10 gradient -orientation 140.2
 
 point 789.03 57.11 gradient -orientation 223.9
 
@@ -3102,21 +3106,21 @@ line floor-step
 endline
 
 
-point 1271.27 513.89 gradient -orientation 148.2
+point 1251.59 513.89 gradient -orientation 148.2
 
-point 1380.73 299.19 gradient -orientation 157.3
+point 1380.73 318.88 gradient -orientation 157.3
 
 point 798.50 -25.44 gradient -orientation 299.7
 
-point 612.06 -21.47 gradient -orientation 242.9
+point 651.43 46.72 gradient -orientation 242.9
 
-point 168.95 -298.20 gradient -orientation 135.9
+point 208.32 -230.01 gradient -orientation 135.9
 
 point 435.16 -936.10 gradient -orientation 148.2
 
 point 283.39 -1017.48 gradient -orientation 309.5
 
-point -3.84 -1083.68 gradient -orientation 241.2
+point -23.52 -1083.68 gradient -orientation 241.2
 
 point 1000.00 1000.00 station -name 23.0
 

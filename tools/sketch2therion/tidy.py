@@ -586,6 +586,84 @@ def water_to_walls(pool, objs, K):
     return g.simplify(0.02 * K)
 
 
+def edge_fixes(objs, K, map_scale=500):
+    """Slope arrows out of the water (and still inside the walls, off steps
+    and pitches), and boulders at the edge of the passage drawn out over
+    the wall, which clips them. Returns (arrows moved, arrows dropped,
+    boulders extended)."""
+    walls = [o for o in objs if o.kind == 'line' and o.head.startswith('line wall')
+             and '-outline none' not in o.head and len(o.segments()) > 1]
+    rings = therion_chain([bezier_points(o.segments(), 20) for o in walls])
+    inside = Polygon(rings[0]).buffer(0) if len(rings) == 1 else None
+    pools = []
+    for o in objs:
+        if o.kind == 'line' and o.head.startswith('line border') and '-id' in o.head and '-close on' in o.head:
+            g = Polygon([(s[-2], s[-1]) for s in o.segments()]).buffer(0)
+            if not g.is_empty:
+                pools.append(g)
+    water = unary_union(pools) if pools else None
+    if inside is not None and water is not None:
+        water = water.intersection(inside)
+    steps = [LineString(bezier_points(o.segments())) for o in objs
+             if o.kind == 'line' and re.match(r'line (floor-step|pit|ceiling-step|wall)\b', o.head)
+             and len(o.segments()) > 1 and '-subtype invisible' not in o.head]
+    half = 0.004 * map_scale * K / 2
+    moved = dropped = extended = 0
+    for o in objs:
+        if o.kind != 'point' or not re.match(r'point \S+ \S+ gradient\b', o.head):
+            continue
+        v = o.head.split()
+        x, y = float(v[1]), float(v[2])
+        m = re.search(r'-orientation ([-\d.]+)', o.head)
+        brg = math.radians(float(m.group(1))) if m else 0
+        ux, uy = math.sin(brg), math.cos(brg)
+
+        def clear(px, py):
+            seg = LineString([(px - ux * half, py - uy * half), (px + ux * half, py + uy * half)])
+            if inside is not None and not inside.contains(seg):
+                return False
+            if water is not None and seg.buffer(0.1 * K).intersects(water):
+                return False
+            return not any(seg.intersects(st) for st in steps)
+        if water is None or not Point(x, y).buffer(half).intersects(water):
+            continue
+        spot = None
+        for d in (0.5, 1.0, 1.5, 2.0, 3.0):
+            for k in range(12):
+                a = k * math.pi / 6
+                q = (x + math.cos(a) * d * K, y + math.sin(a) * d * K)
+                if clear(*q):
+                    spot = q
+                    break
+            if spot:
+                break
+        if spot is None:
+            o.kind = 'drop'
+            dropped += 1
+        else:
+            o.head = re.sub(r'^point [-\d.]+ [-\d.]+', 'point %.2f %.2f' % spot, o.head)
+            moved += 1
+    if walls:
+        wall_lines = unary_union([LineString(bezier_points(o.segments())) for o in walls])
+        for o in objs:
+            if not (o.kind == 'line' and o.head.startswith('line rock-border') and '-close on' in o.head):
+                continue
+            pts = bezier_points(o.segments())
+            if len(pts) < 4:
+                continue
+            g = Polygon(pts).buffer(0)
+            if g.is_empty or g.geom_type != 'Polygon' or g.distance(wall_lines) > 0.3 * K:
+                continue
+            reach = g.buffer(0.4 * K, join_style=2).intersection(wall_lines.buffer(0.25 * K))
+            h = unary_union([g, reach]).buffer(0)
+            if h.geom_type != 'Polygon':
+                continue
+            corners = list(h.exterior.simplify(0.06 * K).coords)
+            o.set_segments([[a, b] for a, b in corners])
+            extended += 1
+    return moved, dropped, extended
+
+
 # -- closing the outline the way Therion does --------------------------------------
 
 def _station_legs(objs):
@@ -631,51 +709,57 @@ def therion_chain(lines):
     return out
 
 
+def outline_sound(rings, lines=()):
+    """What Therion and MetaPost need of a joined-up outline: one ring that
+    doesn't cross itself and turns once round, and, where one line joins
+    the next, no point visited twice and no cusp (a turn straight back,
+    where MetaPost loses count)."""
+    if len(rings) != 1:
+        return False
+    pts = [rings[0][0]]
+    for q in rings[0][1:]:
+        if math.dist(q, pts[-1]) > 1e-3:
+            pts.append(q)
+    if len(pts) > 1 and math.dist(pts[0], pts[-1]) < 1e-3:
+        pts.pop()
+    if len(pts) < 3 or not Polygon(pts).is_valid:
+        return False
+    ends = {(round(l[i][0], 2), round(l[i][1], 2)) for l in lines for i in (0, -1)}
+    seen = {}
+    turn = 0.0
+    for i in range(len(pts)):
+        a, b, c = pts[i - 2], pts[i - 1], pts[i]
+        t = math.atan2(c[1] - b[1], c[0] - b[0]) - math.atan2(b[1] - a[1], b[0] - a[0])
+        t = (t + math.pi) % (2 * math.pi) - math.pi
+        turn += t
+        key = (round(b[0], 2), round(b[1], 2))
+        if key in ends:
+            if abs(t) > math.radians(170):
+                return False
+            seen[key] = seen.get(key, 0) + 1
+    if any(v > 1 for v in seen.values()):
+        return False
+    return abs(abs(turn) - 2 * math.pi) < 0.5
+
+
 def close_outline(objs, K):
-    """Replace the invisible walls closing the outline: along the side of
-    the passage they become presumed walls (the wall is there, it just
-    wasn't drawn), across it (an open end, a junction, where the drawing
-    stops) they go, and Therion closes the gap with a straight line.
-    Kept invisible only where Therion's joining would go wrong without
-    them. Returns (presumed, left open, kept invisible)."""
-    legs = _station_legs(objs)
-    all_legs = unary_union(legs) if legs else None
+    """Leave the gaps between walls open: Therion closes the outline itself,
+    joining each wall's end to the nearest free end of another. Where its
+    joining would go wrong without one (jumping across the passage, or
+    closing the outline early), a short gap is bridged by carrying the
+    wall on across it, and a longer one becomes a presumed wall.
+    Returns (presumed, left open, needed)."""
     gaps = [o for o in objs if o.kind == 'line' and o.head.startswith('line wall')
             and '-subtype invisible' in o.head and '-close on' not in o.head]
     if not gaps:
         return 0, 0, 0
-    presumed, opened = [], []
-    for o in gaps:
-        pts = bezier_points(o.segments())
-        line = LineString(pts)
-        along = tot = 0.0
-        if all_legs is not None and not line.intersects(all_legs) and line.length >= 0.5 * K:
-            for a, b in zip(pts, pts[1:]):
-                d = math.dist(a, b)
-                if d < 1e-9:
-                    continue
-                m = Point((a[0] + b[0]) / 2, (a[1] + b[1]) / 2)
-                leg = min(legs, key=lambda l: l.distance(m))
-                (x0, y0), (x1, y1) = leg.coords[0], leg.coords[-1]
-                L = math.dist((x0, y0), (x1, y1)) or 1
-                along += d * abs(((b[0] - a[0]) * (x1 - x0) + (b[1] - a[1]) * (y1 - y0)) / (d * L))
-                tot += d
-        if tot and along / tot > 0.5:
-            presumed.append(o)
-        else:
-            opened.append(o)
+    presumed, opened = [], list(gaps)
 
     def outline_ok(skip):
         lines = [bezier_points(o.segments(), 20) for o in objs
                  if o.kind == 'line' and o.head.startswith('line wall') and '-outline none' not in o.head
                  and '-close on' not in o.head and o not in skip and len(o.segments()) > 1]
-        rings = therion_chain(lines)
-        if len(rings) != 1:
-            return False
-        p = Polygon(rings[0])
-        return p.is_valid
-    for o in presumed:
-        o.head = 'line wall -subtype presumed'
+        return outline_sound(therion_chain(lines), lines)
     # leave each gap open where Therion's own joining then still makes
     # one clean outline; otherwise it has to stay
     skip, kept = set(), []
@@ -880,6 +964,8 @@ def tidy_scrap(header, body, map_scale=500, elevation=False):
                 o.head = re.sub(r'^point [-\d.]+ [-\d.]+', 'point %.2f %.2f' % spot, o.head)
         placed.append(box(x - w / 2, y - h / 2, x + w / 2, y + h / 2))
 
+    objs = [o for o in objs if o.kind != 'drop']
+    edge_fixes(objs, K, map_scale)
     return '\n'.join(o.text() for o in objs if o.kind != 'drop')
 
 

@@ -49,6 +49,7 @@ SHEETS = {
                         'Swildons 1 - Streamway': (0.0, 0.0)}},
 }
 MARGIN = 0.4        # metres kept clear round passages and sections
+ARROW = {'entrance': 0.6, 'master': 1.5}   # m: a section arrow, about 3 mm on each sheet
 REACH = 30.0        # how far from its station a section may go (m)
 
 KML = '{http://earth.google.com/kml/2.0}'
@@ -295,6 +296,118 @@ def orient(survey, sec):
     return changed
 
 
+def extend_cut(sec, passages, others, arrow):
+    """Carry a section line right across the passage it cuts, and an
+    arrow's length beyond on each side so the arrows are clear of it. An
+    end whose arrow would land on another passage gets none (-direction
+    begin/end). Returns True if the line changed."""
+    from shapely.geometry import LineString as LS
+    (x0, y0), (x1, y1) = sec.cut
+    L = math.dist((x0, y0), (x1, y1))
+    if L < 1e-6:
+        return False
+    ux, uy = (x1 - x0) / L, (y1 - y0) / L
+    mid = Point((x0 + x1) / 2, (y0 + y1) / 2)
+    if sec.station and sec.station in sec.survey.lookup:
+        g = sec.survey.pos[sec.survey.lookup[sec.station]]
+        mid = Point(g[0] + sec.shift[0], g[1] + sec.shift[1])
+    here = min(getattr(passages, 'geoms', [passages]), key=lambda p: p.distance(mid))
+
+    def exit_at(sign):
+        far = LS([(mid.x, mid.y), (mid.x + sign * ux * 60, mid.y + sign * uy * 60)])
+        hit = far.intersection(here.boundary)
+        pts = [q for q in getattr(hit, 'geoms', [hit]) if not q.is_empty and q.geom_type == 'Point']
+        if not pts:
+            return None
+        return min(mid.distance(q) for q in pts)
+    a, b = exit_at(-1), exit_at(1)
+    if a is None or b is None:
+        return False
+    a, b = a + arrow, b + arrow
+    start = (mid.x - ux * a, mid.y - uy * a)
+    end = (mid.x + ux * b, mid.y + uy * b)
+    # an arrow sits on the line's left at each end: is that clear?
+    nx, ny = -uy, ux
+
+    def clear(p):
+        tip = Point(p[0] + nx * arrow * 0.6, p[1] + ny * arrow * 0.6)
+        return not LS([p, (tip.x, tip.y)]).buffer(arrow * 0.3).intersects(others)
+    cs, ce = clear(start), clear(end)
+    direction = 'both' if (cs and ce) or not (cs or ce) else ('begin' if cs else 'end')
+    old_ends = [sec.scrap_xy(sec.cut[0]), sec.scrap_xy(sec.cut[1])]
+    new_ends = [sec.scrap_xy(start), sec.scrap_xy(end)]
+    sec.line.rows = ['  %.2f %.2f' % new_ends[0], '  %.2f %.2f' % new_ends[1]]
+    sec.line.head = re.sub(r'-direction \S+', '-direction ' + direction, sec.line.head)
+    if '-direction' not in sec.line.head:
+        sec.line.head += ' -direction ' + direction
+    # the station label at each end of the line moves out with it
+    for o, n in zip(old_ends, new_ends):
+        near = [l for l in sec.labels if math.dist(_xy(l), o) < 1.5 * sec.K]
+        if near:
+            lab = min(near, key=lambda l: math.dist(_xy(l), o))
+            x, y = _xy(lab)
+            lab.head = re.sub(r'^point [-\d.]+ [-\d.]+', 'point %.2f %.2f'
+                              % (x + n[0] - o[0], y + n[1] - o[1]), lab.head)
+    sec.cut = [start, end]
+    return True
+
+
+LABEL_MM = {'xs': 1.4, 's': 1.8, 'm': 2.4, 'l': 3.4, 'xl': 4.6}
+SCALE = {'entrance': 200, 'master': 500}
+
+
+def clear_labels(secs, passages, sheet):
+    """Move the cross-sections' labels that sit on a passage (from any
+    survey on the sheet) to the nearest clear spot. Returns how many moved."""
+    from shapely.geometry import box
+    k = SCALE[sheet] / 1000          # metres on the ground per mm on the sheet
+    seen, labs = set(), []
+    for s in secs:
+        for l in s.labels:
+            if id(l) not in seen:
+                seen.add(id(l))
+                labs.append((l, s))
+    taken = [s.fp for s in secs if getattr(s, 'fp', None) is not None]
+
+    def size(l):
+        t = re.search(r'-text "([^"]*)"', l.head)
+        sc = re.search(r'-scale (\w+)', l.head)
+        h = LABEL_MM.get(sc.group(1) if sc else 'm', 2.4) * k
+        return max(1, len(t.group(1) if t else 'x')) * h * 0.6, h * 1.3
+    boxes = {}
+    for l, s in labs:
+        w, h = size(l)
+        x, y = s.grid(_xy(l))
+        boxes[id(l)] = box(x - w / 2, y - h / 2, x + w / 2, y + h / 2)
+    moved = 0
+    clear_of = passages.buffer(0.1)
+    for l, s in labs:
+        b = boxes[id(l)]
+        others = [boxes[i] for i in boxes if i != id(l)]
+        if not b.intersects(clear_of):
+            continue
+        c = b.centroid
+        spot = None
+        for r in [i * 0.25 for i in range(1, 40)]:
+            for a in range(16):
+                dx, dy = r * math.cos(a * math.pi / 8), r * math.sin(a * math.pi / 8)
+                nb = translate(b, dx, dy)
+                if nb.intersects(clear_of) or any(nb.intersects(o) for o in others) \
+                        or any(nb.intersects(t) for t in taken):
+                    continue
+                spot = (dx, dy)
+                break
+            if spot:
+                break
+        if spot is None:
+            continue
+        boxes[id(l)] = translate(b, *spot)
+        new = s.scrap_xy((c.x + spot[0], c.y + spot[1]))
+        l.head = re.sub(r'^point [-\d.]+ [-\d.]+', 'point %.2f %.2f' % new, l.head)
+        moved += 1
+    return moved
+
+
 def place(secs, obstacles):
     """Move section drawings off the passages and each other. Returns how many moved."""
     obst = prep(obstacles)
@@ -361,11 +474,21 @@ def run():
                 parts.append(translate(g, dx, dy))
             if title not in polys:
                 print(f'  warning: no map "{title}" in {PASSAGES_KML}')
-        obstacles = unary_union(parts).buffer(MARGIN)
+        passages = unary_union(parts)
+        obstacles = passages.buffer(MARGIN)
         secs = collect(survey, sheet)
         turned = sum(orient(survey, s) for s in secs)
+        across = 0
+        for s in secs:
+            s.survey = survey
+            here = min(getattr(passages, 'geoms', [passages]),
+                       key=lambda p: p.distance(Point(*((s.cut[0][0] + s.cut[1][0]) / 2, (s.cut[0][1] + s.cut[1][1]) / 2))))
+            others = passages.difference(here.buffer(0.05))
+            across += extend_cut(s, passages, others, ARROW[sheet])
         moved = place(secs, obstacles)
-        print(f'{sheet}: {len(secs)} cross-sections, {turned} lines turned or given arrows, {moved} moved')
+        labels = clear_labels(secs, passages, sheet)
+        print(f'{sheet}: {len(secs)} cross-sections, {turned} lines turned, {across} carried across the passage, '
+              f'{moved} drawings moved, {labels} labels moved off passages')
     write()
 
 

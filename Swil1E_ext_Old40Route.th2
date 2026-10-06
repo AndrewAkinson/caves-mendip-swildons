@@ -1431,64 +1431,64 @@ scrap Old40RouteXS -projection plan -author 2013.06.29 "Footleg" -copyright 2013
 # Where each cross-section is cut (line section) and drawn (point section).
 
 line section -direction both
-  1130.70 972.29
-  869.30 1027.71
+  1090.11 980.90
+  852.95 1031.18
 endline
 
 point 577.04 1089.68 section -scrap xs_Old40Route_9_8
 
-point 1153.81 967.39 label -text "9.8" -scale xs
+point 1113.22 976.00 label -text "9.8" -scale xs
 
 point 577.04 1219.98 label -text "9.8" -scale xs
 
 line section -direction both
-  1089.19 840.57
-  1119.47 865.73
+  1078.51 831.69
+  1139.45 882.33
 endline
 
 point 1327.06 1038.15 section -scrap xs_Old40Route_9_7
 
-point 1137.64 880.82 label -text "9.7" -scale xs
+point 1157.62 897.42 label -text "9.7" -scale xs
 
 point 1327.06 1162.33 label -text "9.7" -scale xs
 
 line section -direction both
-  1157.21 755.22
-  1213.66 784.15
+  1141.52 747.18
+  1208.93 781.73
 endline
 
 point 1270.67 818.90 section -scrap xs_Old40Route_9_6
 
 line section -direction both
-  1213.13 652.26
-  1260.10 702.86
+  1201.05 639.25
+  1254.48 696.81
 endline
 
 point 1173.35 602.16 section -scrap xs_Old40Route_9_4
 
-point 1276.17 720.17 label -text "9.4" -scale xs
+point 1270.55 714.12 label -text "9.4" -scale xs
 
 point 1264.42 862.49 label -text "9.4" -scale xs
 
 line section -direction both
-  1283.23 520.10
-  1323.07 579.90
+  1285.15 522.99
+  1335.94 599.22
 endline
 
 point 1442.34 715.88 section -scrap xs_Old40Route_9_2
 
 point 1387.23 633.17 label -text "9.2" -scale xs
 
-point 1226.00 610.48 label -text "9.2" -scale xs
+point 1213.92 597.47 label -text "9.2" -scale xs
 
 line section -direction both
-  1423.89 379.25
-  1524.14 478.23
+  1443.79 398.89
+  1492.77 447.25
 endline
 
 point 1592.92 546.14 section -scrap xs_Old40Route_9_1
 
-point 1540.95 494.83 label -text "9.1" -scale xs
+point 1509.58 463.85 label -text "9.1" -scale xs
 
 point 1592.92 634.92 label -text "9.1" -scale xs
 

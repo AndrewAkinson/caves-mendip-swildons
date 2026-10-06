@@ -1626,57 +1626,57 @@ scrap Old40to20XS -projection plan -author 2017.03.11 "Footleg" -copyright 2017 
 # station, as wide as the splays) and where each is drawn (point section).
 
 line section -direction both
-  1008.37 672.56
-  939.33 681.69
+  1041.05 667.59
+  880.58 688.81
 endline
 
 point 1207.13 646.29 section -scrap xs17_1
 
 line section -direction both
-  1062.94 397.79
-  971.16 369.71
+  1075.63 401.30
+  915.25 352.23
 endline
 
 point 905.43 344.96 section -scrap xs17_3
 
 line section -direction both
-  295.90 12.57
-  367.19 136.20
+  268.07 -36.53
+  404.09 199.34
 endline
 
 point 144.87 -249.33 section -scrap xs17_10
 
 line section -direction both
-  18.80 217.71
-  91.51 328.76
+  -13.75 167.43
+  115.76 365.24
 endline
 
 point -134.93 -17.08 section -scrap xs17_12
 
 line section -direction both
-  -232.78 204.89
-  -65.93 448.29
+  -185.27 274.22
+  -33.48 495.66
 endline
 
 point 53.98 623.21 section -scrap xs17_13
 
 line section -direction both
-  -276.13 420.09
-  -227.71 517.92
+  -298.63 374.23
+  -198.78 575.97
 endline
 
 point -520.72 -74.16 section -scrap xs17_14
 
 line section -direction both
-  -597.14 634.23
-  -596.65 706.16
+  -597.80 544.84
+  -596.39 750.65
 endline
 
 point -599.06 348.03 section -scrap xs17_19
 
 line section -direction both
-  -959.41 849.77
-  -834.39 988.24
+  -995.83 809.99
+  -847.61 974.16
 endline
 
 point -696.90 1140.52 section -scrap xs17_22

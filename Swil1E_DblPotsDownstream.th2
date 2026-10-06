@@ -975,13 +975,6 @@ line wall
   2514.14 966.89 2513.19 965.86 2512.53 958.33
   2511.86 950.80 2511.91 931.20 2511.78 925.70
 endline
-line wall -subtype presumed
-  2511.78 925.70
-  2505.68 925.70
-  2503.79 900.45
-  2490.01 874.91
-  2506.24 860.45
-endline
 line wall
   2506.24 860.45
   2505.39 859.43 2502.83 857.80 2500.71 857.12
@@ -1052,27 +1045,9 @@ line wall
   1586.97 929.26 1587.93 928.45 1583.24 930.40
   1578.56 932.36 1564.79 939.01 1561.03 940.78
 endline
-line wall -subtype presumed
-  1561.03 940.78
-  1562.95 945.38
-  1559.97 947.16
-  1559.68 955.59
-  1544.58 957.58
-  1538.06 964.15
-  1526.85 984.81
-  1523.95 996.78
-  1523.50 1010.25
-  1517.10 1010.04
-endline
 line wall
   1517.10 1010.04
   1517.71 1011.92 1519.04 1015.80 1520.44 1020.10
-endline
-line wall -subtype presumed
-  1520.44 1020.10
-  1497.38 1023.77
-  1406.03 1223.33
-  1405.11 1230.79
 endline
 line wall
   1405.11 1230.79
@@ -1093,16 +1068,6 @@ line wall
   1310.20 1235.86
   1309.81 1235.94 1309.42 1236.01 1309.03 1236.06
   1305.64 1236.53 1303.56 1236.90 1298.03 1236.39
-endline
-line wall -subtype presumed
-  1298.03 1236.39
-  1313.47 1222.62
-  1322.02 1233.06
-  1279.60 1180.66
-  1204.87 1178.13
-  1193.31 1159.34
-  1181.82 1149.91
-  1195.78 1123.44
 endline
 line wall
   1195.78 1123.44
@@ -2166,64 +2131,64 @@ scrap DblPotsDownstreamXS -projection plan -author 2017.07.08 "Footleg" -copyrig
 # station, as wide as the splays) and where each is drawn (point section).
 
 line section -direction both
-  946.52 973.68
-  979.56 1155.04
+  936.42 916.29
+  974.48 1125.24
 endline
 
 point 1008.43 1313.52 section -scrap xs22_1
 
 line section -direction both
-  699.39 856.16
-  694.85 900.82
+  703.89 815.56
+  687.79 973.88
 endline
 
 point 719.33 659.69 section -scrap xs22_5
 
 line section -direction both
-  497.92 859.62
-  539.33 955.94
+  487.82 835.95
+  563.41 1011.77
 endline
 
 point 614.79 1131.45 section -scrap xs22_6
 
 line section -direction both
-  157.86 1147.63
-  189.14 1240.73
+  138.88 1091.29
+  199.78 1272.55
 endline
 
 point 278.68 1507.27 section -scrap xs22_8
 
 line section -direction both
-  171.78 920.73
-  -191.25 840.51
+  70.42 898.32
+  -80.42 864.99
 endline
 
 point -660.11 736.91 section -scrap xs22_12
 
 line section -direction both
-  66.56 850.14
-  -32.96 823.39
+  85.65 855.04
+  -63.31 815.00
 endline
 
 point -172.61 785.87 section -scrap xs22_13
 
 line section -direction both
-  99.60 539.95
-  19.76 524.44
+  143.94 548.60
+  -21.17 516.53
 endline
 
 point 575.55 632.37 section -scrap xs22_15
 
 line section -direction both
-  106.72 275.16
-  40.99 286.57
+  137.04 270.10
+  -0.99 294.06
 endline
 
 point 278.80 245.30 section -scrap xs22_17
 
 line section -direction both
-  5.75 -115.39
-  -156.22 90.36
+  -26.53 -74.21
+  -426.18 433.47
 endline
 
 point 161.31 -313.00 section -scrap xs22_20

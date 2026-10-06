@@ -235,11 +235,6 @@ line wall
   1157.24 933.44
   1157.31 930.61 1157.31 924.08 1157.43 917.55
 endline
-line wall -subtype presumed
-  1157.43 917.55
-  1180.72 914.87
-  1180.72 839.82
-endline
 line wall
   1180.72 839.82
   1181.48 838.78 1182.79 838.35 1183.98 836.90
@@ -254,25 +249,10 @@ line wall
   1204.18 833.39 1205.80 833.26 1213.33 833.26
   1215.12 833.26 1217.18 833.35 1219.48 832.52
 endline
-line wall -subtype presumed
-  1219.48 832.52
-  1225.37 825.34
-  1225.57 793.75
-  1234.99 793.75
-  1235.00 833.34
-endline
 line wall
   1235.00 833.34
   1237.95 834.47 1240.95 834.50 1243.84 834.39
   1254.55 833.97 1271.97 831.35 1277.62 830.78
-endline
-line wall -subtype presumed
-  1277.62 830.78
-  1280.37 829.43
-  1286.71 840.55
-  1286.10 843.90
-  1273.81 853.43
-  1265.06 845.65
 endline
 line wall
   1265.06 845.65
@@ -282,24 +262,12 @@ line wall
   1249.42 910.72 1248.06 926.61 1247.73 939.41
   1247.39 952.21 1248.63 968.49 1248.82 974.34
 endline
-line wall -subtype presumed
-  1248.82 974.34
-  1252.83 973.63
-  1255.09 986.49
-  1263.67 1003.79
-  1278.29 1020.62
-endline
 line wall
   1278.29 1020.62
   1274.15 1021.59 1270.27 1023.05 1264.85 1023.02
   1259.42 1022.99 1248.70 1020.96 1243.44 1021.10
   1238.19 1021.24 1239.06 1023.29 1233.31 1023.86
   1229.96 1024.19 1226.76 1024.62 1222.00 1024.76
-endline
-line wall -subtype presumed
-  1222.00 1024.76
-  1221.96 951.13
-  1204.58 1024.19
 endline
 line wall
   1204.58 1024.19
@@ -321,13 +289,6 @@ line wall
   1048.84 1009.83 1046.77 1011.33 1038.33 1011.16
   1029.89 1010.99 1022.05 1008.77 1011.41 1008.75
   1000.76 1008.73 980.61 1010.68 974.43 1010.98
-endline
-line wall -subtype presumed
-  974.43 1010.98
-  971.44 1011.64
-  966.15 991.66
-  950.23 968.58
-  953.10 967.75
 endline
 line border
   1151.61 976.42
@@ -470,26 +431,26 @@ scrap CisternDigXS -projection plan -author 2017.03.11 "Footleg" -copyright 2017
 # Where each cross-section is cut (line section) and drawn (point section).
 
 line section -direction both
-  1018.61 1006.40
-  981.39 993.60
+  1075.10 1025.83
+  697.22 895.87
 endline
 
 point 1606.64 1208.67 section -scrap xs_CisternDig_18_3
 
-point 959.05 985.91 label -text "18.3" -scale xs
+point 684.72 888.18 label -text "18.3" -scale xs
 
 point 1606.64 1310.82 label -text "18.3" -scale xs
 
 line section -direction both
-  1023.13 890.50
-  984.75 899.27
+  1042.24 886.13
+  974.13 901.69
 endline
 
 point 1100.87 877.80 section -scrap xs_CisternDig_18_5
 
 point 1196.73 855.89 label -text "18.5" -scale xs
 
-point 865.86 1040.52 label -text "18.5" -scale xs
+point 850.79 1076.89 label -text "18.5" -scale xs
 
 point 1000.00 1000.00 station -name 18.3@CisternDig
 

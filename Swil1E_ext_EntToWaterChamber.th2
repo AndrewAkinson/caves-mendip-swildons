@@ -3754,15 +3754,6 @@ line wall
   983.93 974.91 995.01 971.62 1004.14 969.87
   1013.28 968.11 1026.21 967.61 1030.65 967.14
 endline
-line wall -subtype presumed
-  1030.65 967.14
-  1024.56 958.68
-  1027.59 956.50
-  1027.59 937.06
-  1054.01 921.93
-  1058.55 897.25
-  1060.84 897.26
-endline
 line wall
   1060.84 897.26
   1063.13 897.18 1071.13 897.56 1074.62 897.18
@@ -3773,26 +3764,9 @@ line wall
   1139.06 859.97 1140.07 861.64 1144.94 860.07
   1149.79 858.52 1161.21 853.26 1164.48 851.67
 endline
-line wall -subtype presumed
-  1164.48 851.67
-  1159.78 845.60
-  1164.97 841.57
-  1176.79 825.92
-  1189.11 832.74
-endline
 line wall
   1189.11 832.74
   1189.13 825.72 1188.95 805.14 1190.20 789.95
-endline
-line wall -subtype presumed
-  1190.20 789.95
-  1200.42 818.24
-  1212.45 834.28
-  1219.66 839.54
-  1301.13 829.81
-  1310.33 829.82
-  1312.40 831.46
-  1309.60 836.55
 endline
 line wall
   1309.60 836.55
@@ -3820,12 +3794,6 @@ line wall
   1617.80 708.72 1629.57 706.54 1637.51 705.99
   1645.45 705.44 1648.68 707.59 1654.14 707.56
   1659.61 707.54 1667.59 706.13 1670.35 705.78
-endline
-line wall -subtype presumed
-  1670.35 705.78
-  1658.16 691.85
-  1668.17 683.13
-  1670.67 686.06
 endline
 line wall
   1670.67 686.06
@@ -3895,15 +3863,6 @@ line wall
   2852.43 593.42 2847.93 592.92 2862.78 593.13
   2877.63 593.34 2922.18 595.52 2934.06 596.08
 endline
-line wall -subtype presumed
-  2934.06 596.08
-  2936.96 596.21
-  2933.71 611.75
-  2934.42 635.22
-  2916.88 645.48
-  2907.24 654.21
-  2896.45 645.86
-endline
 line wall
   2896.45 645.86
   2896.36 645.47 2896.35 645.19 2896.34 644.94
@@ -3954,11 +3913,6 @@ endline
 line wall
   2508.35 847.53
   2504.68 847.25 2501.63 848.56 2495.69 849.09
-endline
-line wall -subtype presumed
-  2495.69 849.09
-  2479.28 836.43
-  2438.95 852.08
 endline
 line wall
   2438.95 852.08
@@ -4311,14 +4265,6 @@ line wall
   1569.84 987.87
   1568.91 988.91
 endline
-line wall -subtype presumed
-  1568.91 988.91
-  1552.81 996.08
-  1507.55 1025.58
-  1502.80 1027.10
-  1499.09 1030.97
-  1494.86 1031.67
-endline
 line wall
   1494.86 1031.67
   1492.69 1032.08
@@ -4358,37 +4304,12 @@ line wall
   1254.46 901.83 1244.09 911.06 1237.36 915.53
   1230.70 919.97 1224.32 923.14 1221.75 924.93
 endline
-line wall -subtype presumed
-  1221.75 924.93
-  1225.82 928.14
-  1213.90 943.49
-  1206.82 961.63
-  1205.20 981.04
-  1206.25 987.65
-  1008.06 1101.57
-  1008.04 1135.87
-endline
 line wall
   1008.04 1135.87
   1006.92 1135.97 1006.06 1135.96 1005.23 1135.96
   983.97 1135.96 976.97 1139.77 960.93 1140.68
   944.90 1141.59 920.04 1140.75 909.02 1141.42
   907.02 1141.54 905.41 1141.67 904.09 1141.76
-endline
-line wall -subtype presumed
-  904.09 1141.76
-  892.99 1142.16
-  910.31 1130.56
-  919.18 1120.59
-  925.92 1109.08
-  930.28 1096.47
-  932.08 1083.25
-  929.86 1063.40
-  925.18 1050.90
-  918.15 1039.57
-  909.02 1029.83
-  897.09 1021.30
-  901.15 1010.94
 endline
 line wall
   901.15 1010.94
@@ -4920,25 +4841,12 @@ line wall
   1884.68 540.13
   1885.30 539.76
 endline
-line wall -subtype presumed
-  1885.30 539.76
-  1879.80 535.71
-  1885.53 527.93
-  1897.65 536.90
-endline
 line wall
   1897.65 536.90
   1898.13 534.32 1900.23 529.00 1900.34 521.71
   1900.45 514.41 1898.52 499.27 1898.35 493.07
   1898.18 486.86 1899.81 488.62 1899.31 484.50
   1899.15 483.15 1898.73 481.24 1899.62 478.86
-endline
-line wall -subtype presumed
-  1899.62 478.86
-  1909.40 499.46
-  1917.58 510.35
-  1936.18 524.23
-  1929.25 536.23
 endline
 line wall
   1929.25 536.23
@@ -4981,17 +4889,6 @@ line wall
   1614.54 718.44 1614.23 714.46 1611.42 713.02
   1608.60 711.59 1601.76 709.90 1599.75 709.30
 endline
-line wall -subtype presumed
-  1599.75 709.30
-  1601.16 712.68
-  1599.49 713.80
-  1599.11 719.58
-  1593.23 719.19
-  1579.08 722.92
-  1566.04 730.29
-  1557.50 730.30
-  1554.30 717.22
-endline
 line wall
   1554.30 717.22
   1553.57 720.01 1551.40 730.19 1550.24 733.79
@@ -4999,25 +4896,11 @@ line wall
   1546.01 740.31 1544.44 741.52 1542.57 742.50
   1540.73 743.46 1537.27 744.31 1536.23 745.13
 endline
-line wall -subtype presumed
-  1536.23 745.13
-  1537.77 748.25
-  1520.47 757.74
-  1517.17 754.00
-  1515.53 754.51
-  1512.48 748.63
-endline
 line wall
   1512.48 748.63
   1510.58 753.03 1504.70 770.33 1501.23 774.93
   1497.76 779.53 1496.85 776.54 1491.63 776.26
   1487.74 776.05 1478.77 774.71 1473.20 776.31
-endline
-line wall -subtype presumed
-  1473.20 776.31
-  1451.48 772.53
-  1432.71 773.69
-  1432.81 770.92
 endline
 line border
   1081.27 946.64
@@ -8801,212 +8684,212 @@ scrap EntToWaterChamberXS -projection plan -author 2013.02.23 "Footleg" -copyrig
 # Where each cross-section is cut (line section) and drawn (point section).
 
 line section -direction both
-  939.12 854.76
-  1060.88 1145.24
+  892.36 743.20
+  1128.42 1306.38
 endline
 
 point 777.13 468.32 section -scrap xs_OldGrottoToWaterChamber_6_11
 
-point 929.99 832.98 label -text "6.11" -scale xs
+point 883.23 721.42 label -text "6.11" -scale xs
 
 point 777.13 643.25 label -text "6.11" -scale xs
 
 line section -direction both
-  1184.14 1371.89
-  898.53 1239.13
+  1113.72 1339.16
+  1018.97 1295.11
 endline
 
 point 1177.04 1329.44 section -scrap xs_OldGrottoToWaterChamber_6_9
 
-point 877.11 1229.17 label -text "6.9" -scale xs
+point 997.55 1285.15 label -text "6.9" -scale xs
 
 point 748.01 1327.28 label -text "6.9" -scale xs
 
 line section -direction both
-  1199.45 1515.93
-  1101.33 1579.35
+  1172.13 1533.59
+  1083.54 1590.85
 endline
 
 point 843.54 1745.99 section -scrap xs_OldGrottoToWaterChamber_6_8
 
-point 1081.50 1592.17 label -text "6.8" -scale xs
+point 1063.71 1603.67 label -text "6.8" -scale xs
 
 point 843.54 1907.29 label -text "6.8" -scale xs
 
 line section -direction both
-  1524.64 1467.44
-  1494.25 1644.37
+  1514.63 1525.73
+  1497.15 1627.50
 endline
 
 point 1537.49 1392.65 section -scrap xs_OldGrottoToWaterChamber_6_6
 
 line section -direction both
-  1661.52 1638.07
-  1769.97 1732.01
+  1622.39 1604.17
+  1770.46 1732.44
 endline
 
 point 1698.65 1588.11 section -scrap xs_OldGrottoToWaterChamber_6_5
 
-point 1643.67 1622.60 label -text "6.5" -scale xs
+point 1562.78 1630.46 label -text "6.5" -scale xs
 
-point 1698.65 1702.85 label -text "6.5" -scale xs
+point 1687.35 1730.13 label -text "6.5" -scale xs
 
 line section -direction both
-  4503.78 1990.69
-  4464.73 1985.69
+  4529.96 1994.04
+  3914.84 1915.28
 endline
 
 point 4707.80 2016.77 section -scrap xs_NewGrottoes_5_8
 
 line section -direction both
-  4090.45 2008.71
-  4173.33 1863.73
+  4079.11 2028.55
+  4204.82 1808.65
 endline
 
 point 3999.12 2168.48 section -scrap xs_NewGrottoes_5_5
 
 line section -direction both
-  3905.93 1861.63
-  4129.50 1910.02
+  3858.02 1851.26
+  4337.33 1955.01
 endline
 
 point 4106.30 1732.40 section -scrap xs_NewGrottoes_5_4
 
-point 3882.85 1856.63 label -text "5.4" -scale xs
+point 3965.46 1722.75 label -text "5.4" -scale xs
 
 point 3790.36 1946.99 label -text "5.4" -scale xs
 
 line section -direction both
-  3884.22 1792.25
-  3956.72 1810.12
+  3862.06 1786.78
+  4070.79 1838.23
 endline
 
 point 3812.75 2097.15 section -scrap xs_NewGrottoes_5_3
 
-point 3979.66 1815.77 label -text "5.3" -scale xs
+point 4103.57 1843.88 label -text "5.3" -scale xs
 
-point 4105.58 1992.24 label -text "5.3" -scale xs
+point 4101.77 2030.27 label -text "5.3" -scale xs
 
 line section -direction both
-  3938.61 1648.18
-  3977.93 1650.25
+  3925.02 1647.46
+  3982.97 1650.51
 endline
 
 point 4316.47 1668.11 section -scrap xs_NewGrottoes_5_2
 
-point 4001.51 1651.49 label -text "5.2" -scale xs
+point 4006.55 1651.75 label -text "5.2" -scale xs
 
 point 4316.47 1763.03 label -text "5.2" -scale xs
 
 line section -direction both
-  1875.66 1940.39
-  2188.11 1980.08
+  1624.60 1908.50
+  2065.89 1964.56
 endline
 
 point 1450.31 1857.69 section -scrap xs_ShortDryWay_4_2
 
-point 1852.23 1937.41 label -text "4.2" -scale xs
+point 1601.17 1905.52 label -text "4.2" -scale xs
 
 point 1643.76 2103.73 label -text "4.2" -scale xs
 
 line section -direction both
-  1931.19 1835.80
-  1809.76 2126.41
+  1905.51 1897.24
+  1803.50 2141.37
 endline
 
 point 1985.55 1705.72 section -scrap xs_LongDryWay_2_59
 
 line section -direction both
-  2092.26 2191.88
-  1884.90 2053.79
+  2162.78 2238.84
+  1632.95 1886.00
 endline
 
 point 2391.61 2391.21 section -scrap xs_LongDryWay_2_58
 
-point 1865.24 2040.70 label -text "2.58" -scale xs
+point 1613.29 1872.91 label -text "2.58" -scale xs
 
 point 2391.61 2461.59 label -text "2.58" -scale xs
 
 line section -direction both
-  2259.49 2212.10
-  2175.16 2202.08
+  2485.00 2238.89
+  2155.32 2199.72
 endline
 
 point 2128.75 2312.65 section -scrap xs_LongDryWay_2_56
 
-point 2282.94 2214.88 label -text "2.56" -scale xs
+point 2508.45 2241.67 label -text "2.56" -scale xs
 
 point 2128.75 2373.99 label -text "2.56" -scale xs
 
 line section -direction both
-  2518.22 2124.99
-  2577.84 2159.26
+  2527.52 2130.34
+  2593.60 2168.32
 endline
 
 point 3089.15 2453.16 section -scrap xs_LongDryWay_2_54
 
-point 2598.32 2171.03 label -text "2.54" -scale xs
+point 2614.08 2219.46 label -text "2.54" -scale xs
 
 point 3089.15 2576.00 label -text "2.54" -scale xs
 
 line section -direction both
-  2648.12 2041.81
-  2762.12 2122.76
+  2648.36 2041.98
+  2743.09 2109.25
 endline
 
 point 2569.40 1968.41 section -scrap xs_LongDryWay_2_51
 
-point 2781.38 2136.43 label -text "2.51" -scale xs
+point 2762.35 2122.92 label -text "2.51" -scale xs
 
 point 2888.80 2360.19 label -text "2.51" -scale xs
 
 line section -direction both
-  2772.71 2004.76
-  2890.28 1968.47
+  2694.34 2028.95
+  2876.59 1972.70
 endline
 
 point 2742.91 1833.19 section -scrap xs_LongDryWay_2_49
 
-point 3068.25 2012.40 label -text "2.49" -scale xs
+point 2914.92 2060.19 label -text "2.49" -scale xs
 
 point 3034.62 2067.11 label -text "2.49" -scale xs
 
 line section -direction both
-  3107.35 1956.48
-  3065.88 1970.29
+  3474.80 1834.12
+  2922.39 2018.08
 endline
 
 point 3103.71 2060.31 section -scrap xs_LongDryWay_2_43
 
 point 2751.76 1887.02 label -text "2.43" -scale xs
 
-point 2948.31 2081.27 label -text "2.43" -scale xs
+point 2908.94 2081.27 label -text "2.43" -scale xs
 
 line section -direction both
-  3859.90 1662.70
-  3953.49 1468.80
+  3706.69 1980.11
+  3948.58 1478.96
 endline
 
 point 4110.17 1491.69 section -scrap xs_LongDryWay_2_39
 
-point 3963.76 1447.53 label -text "2.39" -scale xs
+point 3951.89 1464.65 label -text "2.39" -scale xs
 
-point 4035.19 1479.61 label -text "2.39" -scale xs
+point 4035.19 1509.14 label -text "2.39" -scale xs
 
 line section -direction both
-  3870.95 1759.32
-  3792.04 1725.72
+  3892.57 1768.53
+  3771.50 1716.97
 endline
 
 point 3702.01 1695.39 section -scrap xs_LongDryWay_2_38
 
-point 3770.31 1716.46 label -text "2.38" -scale xs
+point 3749.77 1707.71 label -text "2.38" -scale xs
 
 point 3702.01 1778.16 label -text "2.38" -scale xs
 
 line section -direction both
-  3788.05 1858.38
-  3763.13 1888.86
+  3889.04 1734.87
+  3676.89 1994.34
 endline
 
 point 3470.76 2246.59 section -scrap xs_LongDryWay_2_37
@@ -9016,52 +8899,52 @@ point 3771.29 2053.28 label -text "2.37" -scale xs
 point 3470.76 2346.40 label -text "2.37" -scale xs
 
 line section -direction both
-  3461.85 1752.27
-  3498.78 1731.20
+  3417.09 1777.81
+  3679.61 1628.03
 endline
 
 point 3318.73 2185.68 section -scrap xs_LongDryWay_2_31
 
-point 3441.33 1763.97 label -text "2.31" -scale xs
+point 3386.73 1789.51 label -text "2.31" -scale xs
 
 point 3257.35 2035.56 label -text "2.31" -scale xs
 
 line section -direction both
-  3811.25 1436.00
-  3571.42 1557.70
+  3779.05 1452.34
+  3391.10 1649.21
 endline
 
 point 4301.87 1187.05 section -scrap xs_LongDryWay_2_24
 
-point 3550.36 1568.39 label -text "2.24" -scale xs
+point 3370.04 1659.90 label -text "2.24" -scale xs
 
 point 4301.87 1375.01 label -text "2.24" -scale xs
 
 line section -direction both
-  3560.05 1578.03
-  3479.32 1517.24
+  3593.07 1602.90
+  3496.58 1530.24
 endline
 
 point 2957.48 1124.29 section -scrap xs_LongDryWay_2_23
 
-point 3460.45 1503.03 label -text "2.23" -scale xs
+point 3477.71 1516.03 label -text "2.23" -scale xs
 
 point 2957.48 1257.85 label -text "2.23" -scale xs
 
 line section -direction both
-  3369.29 1726.81
-  3277.96 1677.13
+  3409.28 1748.56
+  3180.08 1623.89
 endline
 
 point 3032.84 1650.70 section -scrap xs_LongDryWay_2_19
 
-point 3257.21 1665.84 label -text "2.19" -scale xs
+point 3159.33 1612.60 label -text "2.19" -scale xs
 
 point 3320.08 1472.11 label -text "2.19" -scale xs
 
 line section -direction both
-  3115.99 1538.41
-  3128.11 1500.96
+  3100.92 1584.98
+  3151.22 1429.55
 endline
 
 point 3242.69 1418.46 section -scrap xs_LongDryWay_2_15
@@ -9071,30 +8954,30 @@ point 2992.63 1604.67 label -text "2.15" -scale xs
 point 3071.53 1812.28 label -text "2.15" -scale xs
 
 line section -direction both
-  3125.64 1362.39
-  3178.29 1391.94
+  3131.26 1365.54
+  3519.18 1583.26
 endline
 
 point 2698.25 1122.50 section -scrap xs_LongDryWay_2_12
 
-point 3198.89 1403.50 label -text "2.12" -scale xs
+point 3553.70 1608.74 label -text "2.12" -scale xs
 
 point 2698.25 1250.41 label -text "2.12" -scale xs
 
 line section -direction both
-  3266.91 1031.85
-  3348.83 1067.36
+  3254.17 1026.33
+  3342.73 1064.72
 endline
 
 point 3548.34 1137.13 section -scrap xs_LongDryWay_2_6
 
-point 3370.51 1076.76 label -text "2.6" -scale xs
+point 3346.22 1066.59 label -text "2.6" -scale xs
 
 point 3504.85 1297.18 label -text "2.6" -scale xs
 
 line section -direction both
-  3340.42 864.95
-  3414.70 893.31
+  3337.75 863.94
+  3415.30 893.54
 endline
 
 point 3298.82 742.75 section -scrap xs_LongDryWay_2_4
@@ -9140,46 +9023,46 @@ scrap EntToWaterChamberXSTop -projection plan -author 2013.02.23 "Footleg" -copy
 # move with that level where the Entrance Series plan displaces it.
 
 line section -direction both
-  3403.77 771.31
-  3439.54 787.74
+  3384.95 762.67
+  3459.00 796.68
 endline
 
 point 3347.66 752.59 section -scrap xs_LongDryWay_2_3
 
 point 3260.23 712.43 label -text "2.3" -scale xs
 
-point 3548.44 949.72 label -text "2.3" -scale xs
+point 3506.68 907.96 label -text "2.3" -scale xs
 
 line section -direction both
-  3466.83 677.60
-  3509.55 601.93
+  3356.15 873.64
+  3614.39 416.22
 endline
 
 point 3546.35 650.02 section -scrap xs_LongDryWay_2_2
 
-point 3521.17 581.36 label -text "2.2" -scale xs
+point 3626.01 395.65 label -text "2.2" -scale xs
 
 point 3546.35 715.36 label -text "2.2" -scale xs
 
 line section -direction both
-  3416.84 968.60
-  3387.10 994.40
+  3423.66 962.68
+  3366.45 1012.31
 endline
 
 point 3296.41 1070.07 section -scrap xs_ZigZags_1_19
 
-point 3369.26 1009.88 label -text "1.19" -scale xs
+point 3348.61 1027.79 label -text "1.19" -scale xs
 
 point 3296.41 1148.76 label -text "1.19" -scale xs
 
 line section -direction both
-  3592.03 876.64
-  3739.47 961.15
+  3561.57 859.19
+  3712.64 945.78
 endline
 
 point 3726.34 1085.38 section -scrap xs_ZigZags_1_15
 
-point 3759.96 972.90 label -text "1.15" -scale xs
+point 3733.13 957.53 label -text "1.15" -scale xs
 
 point 3902.14 1234.02 label -text "1.15" -scale xs
 
@@ -9195,19 +9078,19 @@ point 4055.25 1041.95 label -text "1.14" -scale xs
 point 4484.12 1607.31 label -text "1.14" -scale xs
 
 line section -direction both
-  3958.49 724.27
-  4096.62 689.90
+  3819.80 758.78
+  4109.04 686.81
 endline
 
 point 4413.15 611.13 section -scrap xs_ZigZags_1_12
 
-point 4119.55 684.19 label -text "1.12" -scale xs
+point 4131.97 681.10 label -text "1.12" -scale xs
 
 point 4413.15 688.69 label -text "1.12" -scale xs
 
 line section -direction both
-  3859.28 818.89
-  3873.00 681.11
+  3863.20 779.54
+  3870.47 706.52
 endline
 
 point 3936.39 44.20 section -scrap xs_ZigZags_1_11
@@ -9217,26 +9100,26 @@ point 3915.74 498.89 label -text "1.11" -scale xs
 point 3936.39 116.69 label -text "1.11" -scale xs
 
 line section -direction both
-  3702.41 585.74
-  3731.45 559.15
+  3684.66 601.99
+  3900.40 404.44
 endline
 
 point 4084.09 236.15 section -scrap xs_ZigZags_1_6
 
-point 3748.87 543.19 label -text "1.6" -scale xs
+point 3917.82 388.48 label -text "1.6" -scale xs
 
 point 4084.09 352.16 label -text "1.6" -scale xs
 
 line section -direction both
-  3793.10 453.33
-  3852.57 549.82
+  3794.47 455.55
+  3837.16 524.82
 endline
 
 point 3977.92 528.92 section -scrap xs_ZigZags_1_4
 
-point 3864.96 569.93 label -text "1.4" -scale xs
+point 3849.55 544.93 label -text "1.4" -scale xs
 
-point 3937.52 798.24 label -text "1.4" -scale xs
+point 3929.99 780.05 label -text "1.4" -scale xs
 
 point 3716.93 572.44 station -name 1.6@ZigZags
 point 3488.19 639.76 station -name 2.2@LongDryWay

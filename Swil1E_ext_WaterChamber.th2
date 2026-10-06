@@ -33,14 +33,6 @@ line wall
   1073.11 975.00 1073.48 975.14 1073.83 975.28
   1074.82 975.68 1075.76 976.12 1077.05 975.91
 endline
-line wall -subtype presumed
-  1077.05 975.91
-  1080.21 976.14
-  1084.03 980.16
-  1088.65 981.66
-  1092.76 986.39
-  1104.96 991.73
-endline
 line wall
   1104.96 991.73
   1104.80 993.11 1105.13 993.26 1105.43 993.39
@@ -60,15 +52,6 @@ line wall
   1111.96 997.51
   1112.59 997.30 1113.31 997.15 1115.39 997.62
   1117.98 998.20 1125.03 1000.45 1127.72 999.89
-endline
-line wall -subtype presumed
-  1127.72 999.89
-  1138.85 999.61
-  1138.86 1003.84
-  1141.25 1004.84
-  1139.27 1011.78
-  1142.78 1017.14
-  1134.65 1027.85
 endline
 line wall
   1134.65 1027.85
@@ -164,19 +147,6 @@ line wall
   1020.74 1105.61 1012.51 1109.41 999.87 1110.68
   987.23 1111.96 985.32 1112.33 952.51 1112.17
   941.50 1112.12 923.84 1111.87 904.13 1111.29
-endline
-line wall -subtype presumed
-  904.13 1111.29
-  930.94 1100.71
-  942.08 1093.55
-  955.48 1078.65
-  955.49 1050.01
-  984.82 1053.60
-  986.42 1051.88
-  994.09 1036.76
-  995.29 951.30
-  1004.68 951.26
-  1008.27 953.93
 endline
 line border
   975.24 1079.33
@@ -635,12 +605,6 @@ line wall
   1837.13 1037.42
   1837.98 1041.28
 endline
-line wall -subtype presumed
-  1837.98 1041.28
-  1855.42 1039.94
-  1857.37 1042.06
-  1854.59 1046.18
-endline
 line wall
   1854.59 1046.18
   1856.86 1048.06 1864.49 1055.01 1867.96 1057.19
@@ -650,45 +614,6 @@ line wall
   1917.23 1061.38 1914.21 1058.21 1920.70 1059.63
   1927.20 1061.05 1938.94 1066.81 1951.23 1069.82
   1963.52 1072.82 1987.25 1076.37 1994.50 1077.69
-endline
-line wall -subtype presumed
-  1994.50 1077.69
-  1992.87 1075.03
-  1997.49 1068.84
-  2006.37 1068.84
-  2101.76 1079.58
-  2101.76 1267.74
-  2092.58 1267.76
-  2089.47 1263.12
-  2084.42 1260.61
-  2081.54 1256.06
-  2076.50 1253.56
-  2073.60 1249.00
-  2068.56 1246.50
-  2065.67 1241.95
-  2060.64 1239.44
-  2057.74 1234.89
-  2052.71 1232.39
-  2049.81 1227.84
-  2044.78 1225.33
-  2041.88 1220.78
-  2036.85 1218.29
-  2033.95 1213.72
-  2028.92 1211.23
-  2026.02 1206.67
-  2020.99 1204.17
-  2018.09 1199.61
-  2013.06 1197.12
-  2010.16 1192.56
-  2005.13 1190.06
-  2002.23 1185.50
-  1997.20 1183.01
-  1994.30 1178.44
-  1989.27 1175.95
-  1986.37 1171.39
-  1973.37 1161.62
-  1972.06 1142.86
-  1975.00 1140.87
 endline
 line wall
   1975.00 1140.87
@@ -896,23 +821,9 @@ line wall
   1559.15 1106.42
   1558.28 1106.82
 endline
-line wall -subtype presumed
-  1558.28 1106.82
-  1564.55 1112.98
-  1554.85 1132.86
-  1552.15 1131.93
-endline
 line wall
   1552.15 1131.93
   1546.29 1131.56 1522.99 1129.81 1516.96 1129.59
-endline
-line wall -subtype presumed
-  1516.96 1129.59
-  1522.33 1142.36
-  1516.83 1144.67
-  1502.01 1156.66
-  1490.96 1172.58
-  1488.37 1170.95
 endline
 line wall
   1488.37 1170.95
@@ -1430,117 +1341,117 @@ scrap WaterChamberXS -projection plan -author 2016.07.09 "Footleg" -copyright 20
 # Where each cross-section is cut (line section) and drawn (point section).
 
 line section -direction both
-  1016.00 1031.72
-  984.00 968.28
+  1011.16 1022.12
+  975.10 950.63
 endline
 
 point 1159.81 1316.80 section -scrap xs_WaterChamber_13_26
 
-point 973.36 947.19 label -text "13.26" -scale xs
+point 958.15 947.89 label -text "13.26" -scale xs
 
 point 1159.81 1392.01 label -text "13.26" -scale xs
 
 line section -direction both
-  802.30 960.66
-  957.54 953.51
+  775.60 961.89
+  942.33 954.21
 endline
 
 point 1430.48 931.72 section -scrap xs_WaterChamber_13_25
 
-point 981.14 952.42 label -text "13.25" -scale xs
+point 972.24 934.77 label -text "13.25" -scale xs
 
 point 1430.48 1042.95 label -text "13.25" -scale xs
 
 line section -direction both
-  769.86 912.22
-  789.98 875.18
+  758.70 932.77
+  792.04 871.39
 endline
 
 point 555.83 1306.15 section -scrap xs_WaterChamber_13_24
 
-point 801.26 854.42 label -text "13.24" -scale xs
+point 803.32 850.63 label -text "13.24" -scale xs
 
 point 555.83 1392.26 label -text "13.24" -scale xs
 
 line section -direction both
-  251.28 789.18
-  263.68 736.80
+  245.99 811.54
+  267.88 719.05
 endline
 
 point 184.46 1071.64 section -scrap xs_WaterChamber_13_21
 
-point 269.11 713.82 label -text "13.21" -scale xs
+point 273.31 696.07 label -text "13.21" -scale xs
 
 point 184.46 1216.23 label -text "13.21" -scale xs
 
 line section -direction both
-  -883.75 875.57
-  -865.07 927.58
+  -893.67 847.94
+  -864.18 930.06
 endline
 
 point -825.41 1038.04 section -scrap xs_WaterChamber_13_14
 
 line section -direction both
-  -574.30 757.91
-  -594.21 825.55
+  -577.02 767.15
+  -600.50 846.93
 endline
 
 point -610.91 882.31 section -scrap xs_WaterChamber_13_12
 
-point -600.88 848.21 label -text "13.12" -scale xs
+point -607.17 869.59 label -text "13.12" -scale xs
 
 point -610.91 927.42 label -text "13.12" -scale xs
 
 line section -direction both
-  -239.92 740.39
-  -201.82 730.47
+  -319.59 761.14
+  -47.20 690.22
 endline
 
 point -130.39 659.51 section -scrap xs_WaterChamber_13_8
 
-point -178.96 724.52 label -text "13.8" -scale xs
+point -24.34 684.27 label -text "13.8" -scale xs
 
-point -130.39 702.00 label -text "13.8" -scale xs
+point -169.76 702.00 label -text "13.8" -scale xs
 
 line section -direction both
-  -475.06 1464.70
-  -442.26 1486.48
+  -494.73 1451.64
+  -438.87 1488.73
 endline
 
 point -193.59 1651.59 section -scrap xs_WaterChamber_13_5
 
-point -422.58 1499.55 label -text "13.5" -scale xs
+point -419.19 1501.80 label -text "13.5" -scale xs
 
 point -193.59 1705.99 label -text "13.5" -scale xs
 
 line section -direction both
-  -466.62 1373.50
-  -429.45 1395.79
+  -470.71 1371.05
+  -409.87 1407.53
 endline
 
 point -181.22 1544.64 section -scrap xs_WaterChamber_13_4
 
-point -409.19 1407.94 label -text "13.4" -scale xs
+point -389.61 1419.68 label -text "13.4" -scale xs
 
 point -181.22 1589.98 label -text "13.4" -scale xs
 
 line section -direction both
-  -353.28 1284.68
-  -303.41 1318.47
+  -372.49 1271.67
+  -308.62 1314.94
 endline
 
 point -197.89 1389.97 section -scrap xs_WaterChamber_13_3
 
 line section -direction both
-  -244.90 1073.50
-  -163.76 1130.43
+  -286.26 1044.48
+  -177.15 1121.04
 endline
 
 point -180.40 1237.67 section -scrap xs_WaterChamber_13_1
 
-point -258.69 1182.73 label -text "13.1" -scale xs
+point -244.77 1196.65 label -text "13.1" -scale xs
 
-point -66.13 1310.33 label -text "13.1" -scale xs
+point -16.92 1310.33 label -text "13.1" -scale xs
 
 point -448.03 1384.65 station -name 13.4@WaterChamber
 

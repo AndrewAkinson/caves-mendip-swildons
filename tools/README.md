@@ -130,14 +130,15 @@ write notes in red or orange or they will be read as walls.
    The drawing follows Therion's conventions (see `tidy.py`):
    - the walls are the scrap's outline, drawn with the passage on their
      left, so the fill stops at the walls
-   - a gap where the wall wasn't sketched along the passage is a
-     presumed wall; a gap across the passage is left for Therion to
-     close
+   - the gaps between walls are left open for Therion to close, except
+     where its joining would go wrong (then the wall is carried across a
+     short gap, or a presumed wall drawn across a longer one)
    - water has one invisible border, which runs out under the walls it
      lies against so the wall is its edge, and nothing uses `-clip off`
-   - big boulders get rock edges, slope arrows are kept off steps and
-     pitches, climbs are labelled C2 and pitches P5 (no units), and
-     labels go outside the passage
+   - big boulders get rock edges, and boulders at the edge of the
+     passage go out over the wall; slope arrows are kept off steps,
+     pitches and water; climbs are labelled C2 and pitches P5 (no
+     units), and labels go outside the passage
 
    - **Inputs:** un-comment the `input` lines for the two `.th2` files
      in the trip's `.th`.
@@ -201,7 +202,10 @@ write notes in red or orange or they will be read as walls.
 
    This gives every cross-section line arrows (`-direction both`) that
    point the way the section is seen: along the survey, from its
-   station towards the next one. It also moves any section drawing
+   station towards the next one. It also carries each line right across
+   its passage so the arrows are clear of it (one arrow only where the
+   other would land on another passage). And it moves section labels
+   off the passages of every survey on the sheet. It also moves any section drawing
    that overlaps a passage or another section, from any survey on the
    same sheet, to the nearest clear spot, preferring one in line with
    the cut. Its label moves with it. A new sheet, or a map drawn

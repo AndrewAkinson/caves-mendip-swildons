@@ -1294,52 +1294,52 @@ scrap ShowerbathAreaXS -projection plan -author 2013.06.30 "Footleg" -copyright 
 # Where each cross-section is cut (line section) and drawn (point section).
 
 line section -direction both
-  986.88 979.51
-  1013.12 1020.49
+  980.24 969.14
+  1017.31 1027.04
 endline
 
 point 677.71 496.80 section -scrap xs_ShowerbathArea_20_27
 
-point 974.14 959.62 label -text "20.27" -scale xs
+point 967.50 949.25 label -text "20.27" -scale xs
 
 point 677.71 548.32 label -text "20.27" -scale xs
 
 line section -direction both
-  1027.54 950.67
-  1063.01 933.58
+  986.75 970.33
+  1083.68 923.62
 endline
 
 point 1120.67 878.86 section -scrap xs_ShowerbathArea_20_26
 
-point 1092.82 892.28 label -text "20.26" -scale xs
+point 1113.49 882.32 label -text "20.26" -scale xs
 
-point 1112.14 951.70 label -text "20.26" -scale xs
+point 1103.16 920.44 label -text "20.26" -scale xs
 
 line section -direction both
-  1128.18 930.05
-  1137.18 968.38
+  1122.97 907.88
+  1141.00 984.65
 endline
 
 point 1132.68 772.05 section -scrap xs_ShowerbathArea_20_25
 
-point 1142.58 991.37 label -text "20.25" -scale xs
+point 1166.09 1007.64 label -text "20.25" -scale xs
 
-point 1160.89 1138.69 label -text "20.25" -scale xs
+point 1141.20 1138.69 label -text "20.25" -scale xs
 
 line section -direction both
-  1259.34 906.65
-  1246.17 943.75
+  1266.17 887.43
+  1136.11 1253.81
 endline
 
 point 1290.72 970.44 section -scrap xs_ShowerbathArea_20_23
 
-point 1304.51 931.56 label -text "20.23" -scale xs
+point 1310.30 921.49 label -text "20.23" -scale xs
 
 point 1196.27 763.20 label -text "20.23" -scale xs
 
 line section -direction both
-  1272.65 869.54
-  1325.78 904.48
+  1271.79 868.97
+  1325.60 904.36
 endline
 
 point 1377.38 938.42 section -scrap xs_ShowerbathArea_20_22
@@ -1349,41 +1349,41 @@ point 1345.52 917.46 label -text "20.22" -scale xs
 point 1377.38 992.30 label -text "20.22" -scale xs
 
 line section -direction both
-  1312.17 562.84
-  1314.60 622.20
+  1311.10 536.70
+  1324.52 864.43
 endline
 
 point 1313.38 395.67 section -scrap xs_ShowerbathArea_20_11
 
 point 1311.52 350.34 label -text "20.11" -scale xs
 
-point 1317.43 746.50 label -text "20.11" -scale xs
+point 1226.50 784.17 label -text "20.11" -scale xs
 
 line section -direction both
-  1688.36 461.30
-  1566.76 477.28
+  1717.54 457.46
+  1353.29 505.33
 endline
 
 point 2035.18 415.72 section -scrap xs_ShowerbathArea_20_9
 
-point 1711.78 458.22 label -text "20.9" -scale xs
+point 1740.96 454.38 label -text "20.9" -scale xs
 
 point 2035.18 521.43 label -text "20.9" -scale xs
 
 line section -direction both
-  1507.71 460.82
-  1556.86 369.88
+  1423.24 617.11
+  1568.04 349.20
 endline
 
 point 1765.76 -16.59 section -scrap xs_ShowerbathArea_20_8
 
-point 1568.09 349.10 label -text "20.8" -scale xs
+point 1579.27 328.42 label -text "20.8" -scale xs
 
 point 1765.76 60.52 label -text "20.8" -scale xs
 
 line section -direction both
-  1389.27 594.93
-  1287.90 500.34
+  1357.17 564.98
+  1090.52 316.17
 endline
 
 point 1579.86 750.09 section -scrap xs_ShowerbathArea_20_2
@@ -1404,8 +1404,8 @@ point 1612.70 691.85 label -text "20.16" -scale xs
 point 1914.97 683.91 label -text "20.16" -scale xs
 
 line section -direction both
-  1367.09 303.29
-  1388.03 269.94
+  1166.74 622.37
+  1390.26 266.38
 endline
 
 point 1577.30 -31.52 section -scrap xs_ShowerbathArea_20_7
@@ -1415,13 +1415,13 @@ point 1744.47 716.71 label -text "20.7" -scale xs
 point 1577.30 35.04 label -text "20.7" -scale xs
 
 line section -direction both
-  1504.53 415.55
-  1474.99 371.85
+  1591.91 544.80
+  1441.62 322.48
 endline
 
 point 1776.27 634.11 section -scrap xs_ShowerbathArea_20_4
 
-point 1461.76 352.28 label -text "20.4" -scale xs
+point 1428.39 302.91 label -text "20.4" -scale xs
 
 point 1386.33 381.43 label -text "20.4" -scale xs
 

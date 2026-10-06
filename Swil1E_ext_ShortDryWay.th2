@@ -30,13 +30,6 @@ line wall
   1243.04 860.04 1243.17 859.45 1251.40 858.81
   1259.64 858.17 1282.96 857.46 1289.33 857.13
 endline
-line wall -subtype presumed
-  1289.33 857.13
-  1274.39 839.48
-  1289.01 821.15
-  1289.97 815.86
-  1295.42 816.85
-endline
 line wall
   1295.42 816.85
   1296.07 814.59 1297.46 806.78 1299.20 803.66
@@ -67,14 +60,6 @@ line wall
   1500.92 754.10 1491.43 756.10 1518.04 753.27
   1544.66 750.45 1631.78 739.79 1654.59 737.03
 endline
-line wall -subtype presumed
-  1654.59 737.03
-  1637.23 720.65
-  1645.40 710.33
-  1653.55 692.32
-  1653.88 678.21
-  1659.10 678.33
-endline
 line wall
   1659.10 678.33
   1659.63 675.87 1661.07 667.43 1662.28 663.97
@@ -83,14 +68,6 @@ line wall
   1700.74 661.21 1702.16 659.01 1708.45 658.91
   1714.75 658.81 1723.42 660.46 1731.48 660.39
   1739.55 660.31 1752.61 658.79 1756.89 658.42
-endline
-line wall -subtype presumed
-  1756.89 658.42
-  1750.96 654.94
-  1752.12 651.15
-  1749.10 646.51
-  1752.26 642.29
-  1760.50 642.29
 endline
 line wall
   1760.50 642.29
@@ -281,13 +258,6 @@ line wall
   2138.39 750.50
   2131.93 751.96
 endline
-line wall -subtype presumed
-  2131.93 751.96
-  2131.39 748.05
-  2067.02 725.63
-  2023.22 736.02
-  1918.32 810.44
-endline
 line wall
   1918.32 810.44
   1914.40 813.79
@@ -298,23 +268,11 @@ line wall
   1905.70 817.43
   1904.75 817.62
 endline
-line wall -subtype presumed
-  1904.75 817.62
-  1893.96 823.36
-  1882.66 832.95
-  1871.39 838.13
-endline
 line wall
   1871.39 838.13
   1870.17 837.82
   1867.96 838.78
   1867.64 839.81
-endline
-line wall -subtype presumed
-  1867.64 839.81
-  1853.91 845.76
-  1810.10 874.08
-  1790.29 882.28
 endline
 line wall
   1790.29 882.28
@@ -457,14 +415,6 @@ line wall
   1256.39 997.71 1254.88 999.78 1253.54 999.59
   1252.20 999.39 1250.16 995.28 1249.42 994.39
 endline
-line wall -subtype presumed
-  1249.42 994.39
-  1249.48 999.74
-  1193.60 1000.21
-  1193.54 958.58
-  1190.45 951.96
-  1192.34 949.95
-endline
 line wall
   1192.34 949.95
   1188.86 949.80 1182.71 949.59 1175.20 949.27
@@ -508,15 +458,6 @@ endline
 line wall
   1025.82 985.56
   1021.68 988.34 1005.44 999.46 1001.34 1002.25
-endline
-line wall -subtype presumed
-  1001.34 1002.25
-  1005.16 1003.70
-  1004.71 1039.36
-  995.29 1039.36
-  995.28 1001.03
-  986.49 994.89
-  987.24 992.81
 endline
 line wall
   987.24 992.81
@@ -1609,44 +1550,44 @@ scrap ShortDryWayXS -projection plan -author 2013.02.24 "Footleg" -copyright 201
 # Where each cross-section is cut (line section) and drawn (point section).
 
 line section -direction both
-  985.71 980.32
-  1014.29 1019.68
+  985.93 980.62
+  1027.41 1037.76
 endline
 
 point 1119.95 1165.19 section -scrap xs_ShortDryWay_3_13
 
 line section -direction both
-  1253.47 845.16
-  1321.33 972.95
+  1266.36 869.43
+  1299.27 931.41
 endline
 
 point 1159.72 668.60 section -scrap xs_ShortDryWay_3_11
 
 line section -direction both
-  1646.72 628.93
-  1695.79 722.25
+  1659.18 652.62
+  1692.86 716.67
 endline
 
 point 1437.19 230.41 section -scrap xs_ShortDryWay_3_8
 
-point 1706.79 743.16 label -text "3.8" -scale xs
+point 1703.86 737.58 label -text "3.8" -scale xs
 
 point 1437.19 310.18 label -text "3.8" -scale xs
 
 line section -direction both
-  1785.94 378.19
-  1899.10 517.08
+  1827.28 428.93
+  1874.97 487.46
 endline
 
 point 1512.96 389.52 section -scrap xs_ShortDryWay_3_6
 
-point 1914.02 535.39 label -text "3.6" -scale xs
+point 1917.17 517.07 label -text "3.6" -scale xs
 
 point 2006.16 784.85 label -text "3.6" -scale xs
 
 line section -direction both
-  1998.00 291.62
-  2043.73 555.63
+  2009.40 357.43
+  2025.61 451.01
 endline
 
 point 2064.35 674.69 section -scrap xs_ShortDryWay_3_5
