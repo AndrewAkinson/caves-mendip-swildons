@@ -11,6 +11,11 @@ survey swil2b
 centreline
 cs OSGB:ST 
 date 1951.08.05
+# Stanton's bearings come out 3 degrees clockwise of the resurvey even after
+# the magnetic declination Therion works out for the date. Measured on his
+# streamway books (swildons1-c, d and e, 1952-53) against the resurvey there,
+# where it is the same for all three; assumed for his other books.
+calibrate compass 3    # back bearings too
 
 #in this survey some angles are in degrees:minutes, others decimal degrees
 units tape feet
