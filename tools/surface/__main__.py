@@ -126,13 +126,17 @@ def build(cfg, gj, out_dir):
         d = W / ar - H
         y0 -= d / 2; y1 += d / 2
     W, H = x1 - x0, y1 - y0
-    P = lambda ll: merc(ll[0], ll[1], z)
+    # Draw relative to the map's top-left corner. At zoom 18 the absolute
+    # Mercator coordinates are around 33 million, beyond the float precision
+    # Firefox and Safari use for SVG, which then draw nothing at all.
+    ox, oy = x0, y0
+    P = lambda ll: (merc(ll[0], ll[1], z)[0] - ox, merc(ll[0], ll[1], z)[1] - oy)
     m_per_px = 156543.03392 * math.cos(math.radians(ent[1])) / 2 ** z
     k = W / 180          # map units per mm on the printed page
 
     def label(x, y, r, text, colour, size):
         w = len(text) * size * 0.55 * k
-        left = x > x0 + W * 0.6 or x + r + k + w > x1 - k * 4
+        left = x > W * 0.6 or x + r + k + w > W - k * 4
         tx = x - r - k if left else x + r + k
         return (f'<text x="{tx:.1f}" y="{y + k * size * 0.35:.1f}" font-size="{k * size:.2f}" font-weight="700" fill="{colour}" '
                 f'text-anchor="{"end" if left else "start"}" stroke="#fff" stroke-width="{k * 0.9:.2f}" paint-order="stroke">{esc(text)}</text>')
@@ -140,8 +144,8 @@ def build(cfg, gj, out_dir):
     o = []
     for tx in range(int(x0 // 256), int(x1 // 256) + 1):
         for ty in range(int(y0 // 256), int(y1 // 256) + 1):
-            o.append(f'<image href="{tile(z, tx, ty)}" x="{tx * 256}" y="{ty * 256}" width="256.6" height="256.6"/>')
-    o.append(f'<rect x="{x0}" y="{y0}" width="{W}" height="{H}" fill="#fbfaf7" fill-opacity="0.18"/>')
+            o.append(f'<image href="{tile(z, tx, ty)}" x="{tx * 256 - ox:.1f}" y="{ty * 256 - oy:.1f}" width="256.6" height="256.6"/>')
+    o.append(f'<rect x="0" y="0" width="{W:.1f}" height="{H:.1f}" fill="#fbfaf7" fill-opacity="0.18"/>')
     # walks
     for name, desc, pts in walks:
         sp = [P(p) for p in pts]
@@ -180,7 +184,7 @@ def build(cfg, gj, out_dir):
     o.append(f'<g id="here" style="display:none"><circle r="{k * 6:.1f}" fill="#2b7de9" fill-opacity="0.18"/>'
              f'<circle r="{k * 1.8:.1f}" fill="#2b7de9" stroke="#fff" stroke-width="{k * 0.6:.2f}"/></g>')
 
-    svg = (f'<svg class="map" viewBox="{x0:.1f} {y0:.1f} {W:.1f} {H:.1f}" width="100%" height="100%" '
+    svg = (f'<svg class="map" viewBox="0 0 {W:.1f} {H:.1f}" width="100%" height="100%" '
            f'preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">{"".join(o)}</svg>')
     # scale bar
     target = 180 * 0.25 * k * m_per_px
@@ -256,11 +260,11 @@ Access and parking can change: check before you go. Made {date}.</div></footer>
 <script>
 // "Show where I am": the phone's position as a dot on the map (no network needed)
 (function () {{
-  var z = {z}, vb = [{x0:.1f}, {y0:.1f}, {W:.1f}, {H:.1f}];
+  var z = {z}, ox = {ox:.3f}, oy = {oy:.3f}, vb = [0, 0, {W:.1f}, {H:.1f}];
   var ent = [{ent[0]:.6f}, {ent[1]:.6f}];
   function merc(lon, lat) {{
     var n = 256 * Math.pow(2, z), s = Math.sin(lat * Math.PI / 180);
-    return [(lon + 180) / 360 * n, (0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI)) * n];
+    return [(lon + 180) / 360 * n - ox, (0.5 - Math.log((1 + s) / (1 - s)) / (4 * Math.PI)) * n - oy];
   }}
   function metres(a, b) {{
     var r = Math.PI / 180, la1 = a[1] * r, la2 = b[1] * r, dl = (b[0] - a[0]) * r;
