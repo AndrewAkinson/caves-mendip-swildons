@@ -92,6 +92,7 @@ layout plan-sheet
   base-scale 1 350
 
   symbol-hide line survey
+  symbol-hide point station   # survey stations are for surveyors, not for finding the way
 
   # The cave runs west to Sump 1, leaving room under the middle of the
   # plan: the title, scale bar and legend start there, not down the right.
@@ -113,6 +114,7 @@ layout plan-bw
   base-scale 1 350
 
   symbol-hide line survey
+  symbol-hide point station   # survey stations are for surveyors, not for finding the way
 
   # The cave runs west to Sump 1, leaving room under the middle of the
   # plan: the title, scale bar and legend start there, not down the right.
@@ -131,6 +133,7 @@ layout elevation-sheet
   base-scale 1 180
 
   symbol-hide line survey
+  symbol-hide point station   # survey stations are for surveyors, not for finding the way
 
   color map-fg altitude
   copy LayoutColourSymbols
@@ -146,6 +149,7 @@ layout streamway-elevation
   base-scale 1 350
 
   symbol-hide line survey
+  symbol-hide point station   # survey stations are for surveyors, not for finding the way
 
   map-header 0 72 nw
   legend-columns 5

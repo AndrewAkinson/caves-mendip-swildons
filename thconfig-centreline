@@ -53,6 +53,7 @@ layout whole-elevation
   base-scale 1 350
 
   symbol-hide line survey
+  symbol-hide point station   # survey stations are for surveyors, not for finding the way
 
   map-header 0 0 nw
   legend-columns 6

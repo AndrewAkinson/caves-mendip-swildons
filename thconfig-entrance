@@ -24,6 +24,7 @@ layout entrance-sheet
   base-scale 1 180
 
   symbol-hide line survey
+  symbol-hide point station   # survey stations are for surveyors, not for finding the way
 
   color map-fg altitude
   copy LayoutColourSymbols
