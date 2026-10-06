@@ -37,9 +37,9 @@ line border -id l51-1088-349 -subtype invisible
   1146.5 199.0
 endline
 
-point 1053.25 443.5 label -scale s -text "C1m"
+point 1053.25 443.5 label -scale s -text "C1"
 
-point 984.5 466.0 label -scale s -text "C1m"
+point 984.5 466.0 label -scale s -text "C1"
 
 point 1102.0 231.5 gradient -orientation 70.5
 
@@ -206,7 +206,7 @@ line wall
   smooth off
 endline
 
-point 609.5 770.5 label -scale s -text "C1m"
+point 609.5 770.5 label -scale s -text "C1"
 
 line border -id l58-827-664 -subtype invisible
   796.0 687.0
@@ -238,9 +238,9 @@ line floor-step
   smooth off
 endline
 
-point 745.5 599.5 label -scale s -text "C2m"
+point 745.5 599.5 label -scale s -text "C2"
 
-point 780.25 476.5 label -scale s -text "<center>step<br>(C0.5m)"
+point 780.25 476.5 label -scale s -text "<center>step<br>(C0.5)"
 
 line border -id l34-854-460
   873.0 440.0

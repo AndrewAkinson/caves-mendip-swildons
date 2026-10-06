@@ -397,7 +397,8 @@ line border -id l105-554-648 -close on -subtype invisible
   524.75 665.25 460.75 648.25 442.0 650.25
 endline
 
-point 423.25 665.5 air-draught -orientation 105.0
+point 393.44 587.97 air-draught -orientation 105.0
+point 385.25 559.46 date -value 2016.01.17
 
 line wall -subtype invisible
   571.25 523.75
@@ -486,7 +487,6 @@ point 531.8906299212597 620.6676377952754 station -name 12.23
 point 606.3406299212596 546.5776377952755 station -name 12.22
 
 point 116.5 738.0 dimensions -value [1.5 0.5]
-
 endscrap
 
 
@@ -509,7 +509,8 @@ line wall
   smooth off
 endline
 
-point 679.5 135.25 air-draught -orientation 101.5
+point 689.02 118.03 air-draught -orientation 101.5
+point 682.61 89.22 date -value 2016.01.17
 
 line border -subtype invisible -outline out
   793.5 204.25
@@ -549,7 +550,8 @@ point 749.5 159.25 gradient -orientation 233.7
 
 point 611.5 57.0 flowstone-choke -orientation 339.7
 
-point 444.0 94.5 air-draught -orientation 31.0
+point 417.03 110.74 air-draught -orientation 31.0
+point 392.01 126.41 date -value 2016.01.17
 
 point 469.25 83.0 gradient -orientation 31.0
 
@@ -660,7 +662,6 @@ point 944.8406299212596 184.28763779527537 station -name 12.13
 point 890.2706299212596 170.07763779527534 station -name 12.12
 
 point 783.2706299212596 170.46763779527544 station -name 12.11
-
 endscrap
 
 

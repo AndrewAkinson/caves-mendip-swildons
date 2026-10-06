@@ -179,7 +179,7 @@ line floor-step -reverse on -outline out -clip off
   smooth off
 endline
 
-point 3279.0 409.75 label -text "(C4m)" -scale m
+point 3279.0 409.75 label -text "(C4)" -scale m
 
 line arrow
   3243.0 501.5

@@ -562,7 +562,7 @@ endline
 
 point 2122.0 1391.0 label -text "<centre>Old 40ft<br>Pot" -scale l
 
-point 2278.5 1129.5 label -text "(C1.5m)" -scale s
+point 2278.5 1129.5 label -text "(C1.5)" -scale s
 
 point 2371.0 154.0 label -text "<centre>Folded<br>Strata" -scale m
 

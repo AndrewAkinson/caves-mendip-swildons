@@ -718,7 +718,7 @@ line border -id l107-1687-770 -subtype invisible
   1690.75 739.0
 endline
 
-point 1993.5 598.5 label -text "C3m" -scale s
+point 1993.5 598.5 label -text "C3" -scale s
 
 point 1831.0 612.5 label -text "Wet Way" -scale l
 
