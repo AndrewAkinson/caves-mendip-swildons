@@ -163,7 +163,7 @@ line border -id l86-824-490 -subtype invisible -outline out
   smooth off
 endline
 
-line floor-step -outline out
+line floor-step
   542.75 328.25
   555.5 320.5 563.5 317.0 566.5 314.5
   569.5 312.0 574.5 312.5 578.5 318.5

@@ -2,6 +2,7 @@ encoding  utf-8
 input gb_layout.thc
 
 source swildonsmaster.th
+source altitude-colours.th
 
 select MasterPlan@SwildonsHole
 
@@ -17,7 +18,7 @@ layout local
     symbol-hide line survey
     
     #color by altitude (comment out this for b&w PDFs or for single colour filled passages)
-    color map-fg altitude
+    color map-fg altitude:warm
 	
     #Single passage fill color (comment out this for b&w PDFs or for colour by altitude)
 	#color map-fg [50 50 50] # mid-grey

@@ -259,7 +259,7 @@ endscrap
 
 scrap UpperOxbowSP3 -projection plan -station-names "" @WetWayOxbows -author 2016.07.14 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
-line floor-step -outline out
+line floor-step
   1298.75 1091.5
   1292.25 1085.75 1286.25 1083.5 1289.25 1072.75
   1292.25 1062.0 1300.25 1051.0 1303.25 1044.25
@@ -529,7 +529,7 @@ line wall -subtype unsurveyed
   smooth off
 endline
 
-line floor-step -outline out
+line floor-step
   655.5 962.0
   699.5 972.0 727.12 977.75 750.5 990.0
   782.0 1006.5 794.71 1012.07 826.5 1027.0

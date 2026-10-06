@@ -16,6 +16,7 @@ encoding  utf-8
 input gb_layout.thc
 
 source swildonsmaster.th
+source altitude-colours.th
 
 select PlanWithStanton@SwildonsHole
 
@@ -35,7 +36,7 @@ layout stanton-sheet
   legend-columns 4
   legend-width 26 cm
 
-  color map-fg altitude
+  color map-fg altitude:warm
   copy LayoutColourSymbols
 endlayout
 

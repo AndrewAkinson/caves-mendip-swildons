@@ -1,0 +1,12 @@
+encoding  utf-8
+# Passage colours by height. Water is always blue, so the passages
+# never are: dark red at the bottom of the cave through orange and
+# yellow to green at the entrance. Used as  color map-fg altitude:warm
+lookup altitude:warm -title "Altitude"
+  240 [50 72 38]
+  220 [76 84 42]
+  200 [96 86 46]
+  180 [96 68 34]
+  160 [86 48 28]
+  140 [66 32 26]
+endlookup

@@ -7,45 +7,45 @@ encoding  utf-8
 
 scrap CisternDigEE1 -projection extended -author 2017.03.11 "Footleg" -copyright 2017 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1041.81 1117.64
   1027.11 1119.66
   1023.86 1095.55 1019.40 1100.18 1030.49 1078.00
   1028.26 1075.27 1026.04 1072.54 1023.81 1069.81
   1023.05 1076.94
 endline
-line wall
+line wall -outline out
   1023.05 1076.94
   1019.43 1071.51 1012.58 1061.10 1009.29 1058.37
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1009.29 1058.37
   995.32 1050.46
   995.32 985.94
 endline
-line wall
+line wall -outline out
   995.32 985.94
   1037.42 993.35 1040.88 1037.21 1069.78 1062.99
   1094.75 1085.27 1144.40 1161.51 1166.14 1170.88
   1184.42 1178.75 1211.66 1177.19 1231.53 1181.97
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1231.53 1181.97
   1234.17 1181.37
   1245.08 1205.08
   1264.05 1225.20
 endline
-line wall
+line wall -outline out
   1264.05 1225.20
   1257.43 1225.07 1241.72 1224.58 1237.76 1224.47
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1237.76 1224.47
   1239.94 1231.08
   1221.54 1238.65
   1214.18 1227.08
 endline
-line wall
+line wall -outline out
   1214.18 1227.08
   1203.34 1255.36 1183.89 1268.59 1155.26 1276.33
   1154.41 1270.86
@@ -140,32 +140,32 @@ endscrap
 scrap CisternDigEE2 -projection extended -author 2017.03.11 "Footleg" -copyright 2017 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 
-line wall
+line wall -outline out
   953.10 967.75
   958.49 968.41 970.38 970.73 984.98 971.64
   999.58 972.55 1023.21 972.03 1040.77 973.21
   1058.33 974.39 1079.91 977.96 1090.34 978.73
   1100.70 979.50 1101.16 978.01 1103.30 977.56
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1103.30 977.56
   1101.93 972.82
   1124.94 966.16 1141.14 952.91 1149.55 930.51
   1157.24 933.44
 endline
-line wall
+line wall -outline out
   1157.24 933.44
   1157.31 930.61 1157.31 924.08 1157.43 917.55
 endline
-line wall
+line wall -outline out
   1180.72 839.82
   1181.48 838.78 1182.79 838.35 1183.98 836.90
 endline
-line wall
+line wall -outline out
   1186.43 836.66
   1216.84 831.57 1246.90 834.59 1277.62 830.78
 endline
-line wall
+line wall -outline out
   1265.06 845.65
   1263.99 846.78 1260.42 849.78 1258.95 852.16
   1257.47 854.53 1257.50 852.43 1256.14 859.98
@@ -173,15 +173,15 @@ line wall
   1249.42 910.72 1248.06 926.61 1247.73 939.41
   1247.39 952.21 1248.63 968.49 1248.82 974.34
 endline
-line wall
+line wall -outline out
   1278.29 1020.62
   1231.24 1026.54 1183.84 1023.91 1137.61 1016.13
 endline
-line wall
+line wall -outline out
   1133.84 1014.98
   1132.46 1013.81 1130.84 1013.34 1128.89 1013.65
 endline
-line wall
+line wall -outline out
   1126.46 1013.17
   1123.99 1011.73 1121.03 1011.22 1117.56 1010.87
   1102.35 1009.32 1075.25 1009.73 1062.05 1009.78

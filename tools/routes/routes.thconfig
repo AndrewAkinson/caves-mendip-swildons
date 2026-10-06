@@ -14,6 +14,7 @@ encoding  utf-8
 input ../../gb_layout.thc
 
 source ../../swildonsmaster.th
+source ../../altitude-colours.th
 source routes.th
 
 select RouteBase

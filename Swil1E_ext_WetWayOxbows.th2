@@ -8,30 +8,30 @@ encoding  utf-8
 scrap WetWayOxbowsEE1 -projection extended -author 2016.01.16 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 
-line wall
+line wall -outline out
   932.52 981.93
   935.48 982.30 940.18 982.71 948.36 985.05
   957.70 987.71 977.02 994.84 987.43 997.65
   997.84 1000.45 1003.75 999.88 1010.81 1001.88
   1017.86 1003.88 1026.60 1008.36 1029.79 1009.66
 endline
-line wall
+line wall -outline out
   1123.80 971.09
   1121.85 965.43 1121.83 959.28 1120.84 953.37
   1137.75 939.77 1146.61 947.72 1165.61 949.92
   1198.81 953.75 1243.65 934.12 1275.86 926.00
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1275.86 926.00
   1274.69 923.00
   1301.09 912.66 1312.28 900.30 1323.11 873.76
   1347.46 880.14
 endline
-line wall
+line wall -outline out
   1347.46 880.14
   1339.20 870.88 1331.38 860.85 1327.85 852.06
 endline
-line wall
+line wall -outline out
   1327.06 848.80
   1338.01 847.69 1348.96 846.71 1359.93 845.85
   1360.20 849.76
@@ -42,7 +42,7 @@ line wall
   1774.85 722.36 1790.63 725.66 1817.32 725.68
   1878.04 725.72 1905.98 715.92 1921.63 779.88
 endline
-line wall
+line wall -outline out
   1951.09 869.21
   1954.55 868.71 1964.54 866.82 1971.53 865.99
   1978.52 865.16 1971.80 864.16 1993.09 864.30
@@ -66,7 +66,7 @@ line wall
   2337.98 792.55 2344.65 787.68 2351.40 784.89
   2358.10 782.12 2368.22 779.13 2371.42 777.08
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   2371.42 777.08
   2370.61 774.97
   2390.27 763.86
@@ -79,18 +79,18 @@ line wall -subtype presumed
   2418.10 668.08 2409.88 660.89 2408.83 651.58
   2404.56 613.63 2440.57 580.80 2444.96 542.87
 endline
-line wall
+line wall -outline out
   2444.96 542.87
   2454.32 543.36 2466.48 544.29 2476.25 544.39
   2489.37 544.53 2508.78 543.49 2515.32 543.32
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   2515.32 543.32
   2516.50 540.64
   2548.80 553.10 2562.15 552.48 2592.14 534.96
   2595.03 538.77
 endline
-line wall
+line wall -outline out
   2595.03 538.77
   2645.25 502.91 2743.04 519.99 2804.58 507.10
   2803.44 505.25 2802.30 503.40 2801.16 501.55
@@ -98,7 +98,7 @@ line wall
   2970.72 478.80
   3001.08 477.68 3031.44 476.44 3061.80 475.26
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   3061.80 475.26
   3065.00 462.97
   3066.64 461.44 3069.73 463.11 3071.66 461.96
@@ -106,22 +106,22 @@ line wall -subtype presumed
   3098.91 455.33 3108.20 453.26 3124.66 454.88
   3121.30 465.93
 endline
-line wall
+line wall -outline out
   3121.30 465.93
   3124.33 468.16 3136.14 477.02 3139.16 479.24
 endline
-line wall
+line wall -outline out
   3149.88 460.53
   3157.34 461.15 3164.79 461.77 3172.25 462.40
   3172.58 459.65
   3292.18 457.58 3257.27 426.12 3296.84 409.55
   3327.85 396.56 3407.93 407.18 3446.22 404.61
 endline
-line wall
+line wall -outline out
   3448.42 403.66
   3456.37 419.23 3452.88 432.78 3450.88 450.61
 endline
-line wall
+line wall -outline out
   3465.38 574.16
   3455.98 575.42 3434.72 578.42 3422.63 579.40
   3410.53 580.39 3398.27 579.93 3390.08 580.51
@@ -140,68 +140,68 @@ line wall
   2867.04 721.84 2868.36 720.08 2864.22 720.55
   2860.08 721.02 2851.20 723.01 2848.52 723.54
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   2848.52 723.54
   2850.84 725.67
   2849.99 731.32 2848.39 736.91 2848.30 742.62
   2819.92 753.34 2832.47 752.78 2811.50 750.64
 endline
-line wall
+line wall -outline out
   2811.50 750.64
   2802.74 750.47 2787.82 751.34 2780.43 752.07
   2773.60 752.75 2772.88 752.69 2768.35 754.48
 endline
-line wall
+line wall -outline out
   2767.79 754.69
   2744.43 759.76 2720.43 765.34 2697.76 771.61
 endline
-line wall
+line wall -outline out
   2694.11 772.57
   2692.65 772.25 2691.20 772.69 2689.85 773.99
 endline
-line wall
+line wall -outline out
   2686.20 774.98
   2684.63 774.69 2683.22 775.13 2681.94 776.40
 endline
-line wall
+line wall -outline out
   2678.27 777.42
   2676.69 777.13 2675.23 777.58 2674.01 778.84
 endline
-line wall
+line wall -outline out
   2670.32 779.87
   2668.70 779.60 2667.27 780.04 2666.06 781.29
 endline
-line wall
+line wall -outline out
   2662.23 782.33
   2660.71 782.07 2659.39 782.47 2658.32 783.61
 endline
-line wall
+line wall -outline out
   2654.26 784.76
   2652.70 784.53 2651.39 784.93 2650.35 786.04
 endline
-line wall
+line wall -outline out
   2646.40 787.16
   2644.70 786.96 2643.23 787.40 2642.14 788.59
 endline
-line wall
+line wall -outline out
   2639.27 789.50
   2633.07 791.08 2626.96 792.41 2620.29 793.30
 endline
-line wall
+line wall -outline out
   2459.06 813.91
   2449.70 814.18 2440.67 814.35 2433.83 814.32
   2415.68 814.25 2396.16 812.65 2386.95 812.90
 endline
-line wall
+line wall -outline out
   2386.95 812.90
   2386.32 812.85 2384.08 812.70 2383.90 812.52
   2383.76 812.39 2381.61 812.19 2381.05 812.04
 endline
-line wall
+line wall -outline out
   2380.47 814.16
   2357.33 819.67 2342.70 826.92 2329.81 846.91
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   2329.81 846.91
   2333.74 846.91
   2333.73 866.92
@@ -210,7 +210,7 @@ line wall -subtype presumed
   2285.91 856.64
   2291.02 846.39 2290.08 851.13 2294.93 844.71
 endline
-line wall
+line wall -outline out
   2294.93 844.71
   2292.42 844.21 2288.83 842.37 2280.11 841.98
   2271.40 841.58 2252.42 841.08 2242.59 842.30
@@ -219,12 +219,12 @@ line wall
   2125.89 892.09 2130.72 889.31 2127.28 890.13
   2124.83 890.72 2123.29 890.55 2122.17 890.30
 endline
-line wall
+line wall -outline out
   2121.42 888.35
   2121.34 888.33 2121.30 888.29 2121.22 888.26
   2120.63 888.01 2117.15 887.97 2116.00 888.28
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   2116.00 888.28
   2120.84 896.73
   2112.80 901.33
@@ -234,39 +234,39 @@ line wall -subtype presumed
   2084.55 950.03
   1955.67 951.05
 endline
-line wall
+line wall -outline out
   1955.67 951.05
   1952.69 951.17 1950.07 950.15 1947.48 949.14
 endline
-line wall
+line wall -outline out
   1942.76 948.90
   1922.67 939.76 1903.13 933.36 1881.51 928.88
   1880.16 906.26
   1857.89 910.37 1839.02 913.65 1816.66 909.26
 endline
-line wall
+line wall -outline out
   1818.86 904.49
   1814.99 903.72 1799.83 900.80 1795.33 900.91
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1795.33 900.91
   1794.44 902.04
   1748.88 881.19 1745.14 901.28 1721.13 885.63
   1732.03 868.96
 endline
-line wall
+line wall -outline out
   1732.03 868.96
   1728.10 868.75 1718.97 867.42 1708.74 867.88
   1698.51 868.35 1688.87 871.14 1670.60 871.72
   1652.33 872.30 1611.01 871.44 1599.06 871.40
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1599.06 871.40
   1603.95 880.75
   1578.61 897.70 1570.23 906.38 1564.08 935.75
   1561.08 935.31
 endline
-line wall
+line wall -outline out
   1561.08 935.31
   1555.21 935.01 1546.17 933.45 1525.93 933.07
   1505.68 932.68 1462.42 933.52 1439.58 933.08
@@ -275,14 +275,14 @@ line wall
   1342.22 935.20 1308.87 944.24 1296.71 946.77
   1295.83 946.96 1295.01 947.12 1294.38 947.13
 endline
-line wall
+line wall -outline out
   1294.38 947.13
   1293.51 946.17
   1293.17 945.67 1292.55 945.71 1290.06 946.22
   1285.10 947.25 1282.03 947.02 1261.87 952.50
   1241.70 957.97 1184.54 974.64 1169.04 979.10
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1169.04 979.10
   1184.42 993.49
   1177.96 1004.80
@@ -294,11 +294,11 @@ line wall -subtype presumed
   1040.19 1067.89
   1039.50 1073.14
 endline
-line wall
+line wall -outline out
   1039.50 1073.14
   1034.00 1071.10 1028.69 1069.07 1024.17 1066.15
 endline
-line wall
+line wall -outline out
   1008.05 1060.22
   1006.61 1061.02 1005.74 1060.72 1004.90 1060.44
   985.98 1054.14 982.02 1053.68 968.19 1050.65
@@ -613,25 +613,25 @@ endscrap
 scrap WetWayOxbowsEE2 -projection extended -author 2016.01.16 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
 
-line wall
+line wall -outline out
   -750.51 682.53
   -734.13 681.03 -714.89 679.66 -701.93 678.04
   -681.40 675.48 -662.81 671.31 -651.39 669.72
   -639.97 668.14 -636.42 668.74 -633.39 668.55
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   -633.39 668.55
   -638.62 664.83
   -636.98 655.86
   -591.79 654.64 -542.56 668.33 -503.15 677.37
   -502.07 679.69
 endline
-line wall
+line wall -outline out
   -502.07 679.69
   -488.63 719.08 -481.23 720.36 -440.32 722.59
   -416.43 723.89 -394.07 726.01 -369.84 724.16
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   -369.84 724.16
   -367.62 722.50
   -358.32 722.50
@@ -640,7 +640,7 @@ line wall -subtype presumed
   -135.40 802.26
   -136.86 804.02
 endline
-line wall
+line wall -outline out
   -136.86 804.02
   -117.25 805.80 -74.60 801.94 -57.75 815.89
   -44.25 827.07 -54.03 834.48 -34.52 838.51
@@ -663,7 +663,7 @@ line wall
   941.16 965.22 928.90 965.03 938.84 964.68
   948.79 964.33 989.84 963.63 1000.31 963.46
 endline
-line wall
+line wall -outline out
   1012.03 1019.95
   1003.06 1020.41 983.57 1021.85 970.92 1021.85
   958.27 1021.86 940.17 1020.26 933.60 1020.16
@@ -671,233 +671,233 @@ line wall
   927.29 1021.05 919.95 1019.47 908.36 1019.12
   896.77 1018.77 869.69 1019.12 861.89 1019.15
 endline
-line wall
+line wall -outline out
   571.66 1058.71
   568.69 1057.71 566.03 1056.16 563.46 1054.66
 endline
-line wall
+line wall -outline out
   529.14 1036.88
   529.14 1036.08 528.87 1035.98 528.27 1036.59
 endline
-line wall
+line wall -outline out
   522.57 1034.48
   521.24 1033.32 519.60 1032.82 517.67 1033.17
 endline
-line wall
+line wall -outline out
   515.24 1032.55
   513.49 1031.09 511.48 1030.54 509.43 1030.66
 endline
-line wall
+line wall -outline out
   506.11 1029.72
   505.31 1028.66 504.38 1028.34 503.54 1028.01
   502.77 1027.71 502.30 1027.47 501.33 1027.88
 endline
-line wall
+line wall -outline out
   488.38 1021.58
   487.31 1020.41 485.50 1019.90 483.22 1020.12
 endline
-line wall
+line wall -outline out
   480.24 1019.24
   479.04 1018.14 477.31 1017.68 475.25 1017.89
 endline
-line wall
+line wall -outline out
   472.15 1017.07
   470.84 1015.95 469.18 1015.51 467.16 1015.71
 endline
-line wall
+line wall -outline out
   464.03 1014.92
   462.63 1013.79 460.97 1013.36 459.04 1013.56
 endline
-line wall
+line wall -outline out
   455.90 1012.79
   454.48 1011.67 452.78 1011.22 450.91 1011.43
 endline
-line wall
+line wall -outline out
   447.75 1010.67
   446.26 1009.53 444.58 1009.09 442.76 1009.31
 endline
-line wall
+line wall -outline out
   439.59 1008.55
   438.06 1007.40 436.37 1006.96 434.60 1007.19
 endline
-line wall
+line wall -outline out
   431.42 1006.43
   429.84 1005.26 428.19 1004.83 426.43 1005.07
 endline
-line wall
+line wall -outline out
   423.25 1004.29
   421.59 1003.11 419.90 1002.66 418.26 1002.93
 endline
-line wall
+line wall -outline out
   415.06 1002.13
   413.38 1000.94 411.63 1000.47 410.07 1000.77
 endline
-line wall
+line wall -outline out
   406.84 999.93
   406.38 999.05 405.90 998.92 405.43 998.79
   404.22 998.46 403.04 998.13 401.85 998.57
 endline
-line wall
+line wall -outline out
   398.77 997.76
   397.08 996.49 395.36 996.02 393.63 996.32
 endline
-line wall
+line wall -outline out
   390.61 995.51
   388.99 994.24 387.28 993.77 385.45 994.05
 endline
-line wall
+line wall -outline out
   382.40 993.19
   380.78 991.92 379.09 991.43 377.24 991.73
 endline
-line wall
+line wall -outline out
   374.10 990.75
   372.89 989.57 371.48 989.14 369.84 989.33
 endline
-line wall
+line wall -outline out
   365.77 988.14
   364.63 986.95 363.23 986.49 361.51 986.72
 endline
-line wall
+line wall -outline out
   357.54 985.48
   356.64 984.26 355.51 983.87 354.18 984.18
 endline
-line wall
+line wall -outline out
   348.67 982.19
   348.07 981.18 347.24 980.86 346.10 981.34
 endline
-line wall
+line wall -outline out
   340.66 979.19
   340.40 978.24 339.84 978.01 338.97 978.53
 endline
-line wall
+line wall -outline out
   277.88 952.05
   277.36 951.02 276.49 950.74 275.31 951.19
 endline
-line wall
+line wall -outline out
   271.20 950.07
   269.91 948.78 268.15 948.30 266.03 948.61
 endline
-line wall
+line wall -outline out
   263.31 947.86
   261.95 946.70 260.28 946.29 258.32 946.50
 endline
-line wall
+line wall -outline out
   255.46 945.93
   232.26 941.07 208.43 936.53 185.76 930.62
 endline
-line wall
+line wall -outline out
   182.41 929.85
   180.75 928.66 179.11 928.21 177.42 928.49
 endline
-line wall
+line wall -outline out
   174.27 927.64
   172.61 926.34 170.94 925.84 169.11 926.18
 endline
-line wall
+line wall -outline out
   166.18 925.32
   164.69 924.03 163.00 923.57 161.02 923.86
 endline
-line wall
+line wall -outline out
   158.44 923.30
   150.11 921.44 138.77 919.77 129.44 917.93
 endline
-line wall
+line wall -outline out
   125.76 917.12
   124.41 916.02 122.73 915.54 120.77 915.76
 endline
-line wall
+line wall -outline out
   117.66 914.91
   116.25 913.68 114.51 913.17 112.50 913.44
 endline
-line wall
+line wall -outline out
   109.51 912.53
   108.04 911.26 106.31 910.75 104.35 911.07
 endline
-line wall
+line wall -outline out
   101.43 910.17
   99.90 908.87 98.16 908.37 96.27 908.70
 endline
-line wall
+line wall -outline out
   93.44 907.88
   91.83 906.57 90.07 906.08 88.26 906.40
 endline
-line wall
+line wall -outline out
   85.37 905.63
   83.76 904.40 82.06 903.98 80.38 904.27
 endline
-line wall
+line wall -outline out
   77.76 903.85
   65.19 901.39 51.96 899.81 40.24 897.58
 endline
-line wall
+line wall -outline out
   36.71 896.52
   35.57 895.32 34.14 894.85 32.45 895.09
 endline
-line wall
+line wall -outline out
   28.44 893.79
   27.30 892.52 25.88 892.03 24.19 892.37
 endline
-line wall
+line wall -outline out
   20.35 891.03
   19.47 889.83 18.33 889.44 16.99 889.73
 endline
-line wall
+line wall -outline out
   12.45 888.41
   11.22 887.11 9.77 886.66 8.20 886.99
 endline
-line wall
+line wall -outline out
   4.78 886.14
   2.96 884.76 1.29 884.35 -0.37 884.68
 endline
-line wall
+line wall -outline out
   -2.75 884.28
   -9.98 882.76 -17.12 881.11 -24.08 879.32
 endline
-line wall
+line wall -outline out
   -27.43 878.53
   -28.61 877.46 -30.24 877.01 -32.42 877.17
 endline
-line wall
+line wall -outline out
   -35.46 876.37
   -36.79 875.18 -38.46 874.71 -40.60 874.93
 endline
-line wall
+line wall -outline out
   -43.52 874.11
   -44.88 872.88 -46.61 872.39 -48.69 872.64
 endline
-line wall
+line wall -outline out
   -51.61 871.79
   -53.01 870.55 -54.76 870.04 -56.77 870.33
 endline
-line wall
+line wall -outline out
   -59.67 869.47
   -61.13 868.20 -62.86 867.71 -64.83 868.01
 endline
-line wall
+line wall -outline out
   -67.72 867.14
   -69.24 865.86 -70.98 865.36 -72.89 865.68
 endline
-line wall
+line wall -outline out
   -75.78 864.81
   -77.35 863.52 -79.07 863.02 -80.94 863.35
 endline
-line wall
+line wall -outline out
   -83.82 862.49
   -85.47 861.17 -87.18 860.68 -88.98 861.03
 endline
-line wall
+line wall -outline out
   -91.86 860.18
   -93.56 858.84 -95.33 858.34 -97.02 858.72
 endline
-line wall
+line wall -outline out
   -99.87 857.90
   -101.68 856.54 -103.50 856.03 -105.04 856.44
 endline
-line wall
+line wall -outline out
   -108.01 855.59
   -109.88 854.28 -111.53 853.84 -113.01 854.23
 endline
-line wall
+line wall -outline out
   -116.34 853.57
   -196.32 850.53 -273.93 836.72 -352.14 820.44
   -352.17 819.38 -352.21 818.32 -352.24 817.26
@@ -1017,7 +1017,7 @@ endscrap
 
 scrap WetWayOxbowsEE3 -projection extended -author 2016.01.16 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
-line wall
+line wall -outline out
   1134.52 946.95
   1135.53 946.00 1138.52 942.54 1140.16 941.16
   1141.80 939.78 1140.14 939.89 1144.42 938.71
@@ -1033,7 +1033,7 @@ line wall
   1381.37 834.13 1381.73 831.61 1382.06 822.39
   1382.35 814.35 1382.10 798.24 1383.50 789.84
 endline
-line wall
+line wall -outline out
   1384.57 780.92
   1385.46 779.35 1386.71 777.57 1388.86 776.73
   1391.70 775.62 1389.74 775.57 1400.69 775.60
@@ -1041,22 +1041,22 @@ line wall
   1466.04 778.61 1480.69 782.23 1495.33 786.06
   1492.95 794.38 1491.22 803.91 1490.10 813.17
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1490.10 813.17
   1496.70 786.39
 endline
-line wall
+line wall -outline out
   1496.70 786.39
   1505.56 790.46 1502.80 787.58 1508.25 796.30
 endline
-line wall
+line wall -outline out
   1510.25 789.81
   1518.99 791.92 1527.26 793.91 1534.45 795.30
   1557.57 799.77 1576.56 800.90 1593.31 803.76
   1610.06 806.62 1623.29 810.49 1634.94 812.47
   1646.59 814.46 1658.48 815.14 1663.82 815.46
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1663.82 815.46
   1894.96 875.57
   1915.10 877.65
@@ -1069,7 +1069,7 @@ line wall -subtype presumed
   1667.57 876.86
   1671.92 869.22
 endline
-line wall
+line wall -outline out
   1671.92 869.22
   1644.09 880.16 1615.44 884.47 1586.02 888.86
   1585.89 889.71 1585.77 890.57 1585.64 891.42
@@ -1080,7 +1080,7 @@ line wall
   1293.77 969.04 1262.54 977.48 1231.89 985.03
   1187.47 995.98 1138.14 994.97 1095.40 1009.39
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1095.40 1009.39
   1096.96 1010.87
   1095.10 1016.23

@@ -22,6 +22,7 @@ encoding  utf-8
 input gb_layout.thc
 
 source swildonsmaster.th
+source altitude-colours.th
 
 select PlanWithCentreline@SwildonsHole
 select WholeCaveExtended@SwildonsHole
@@ -41,7 +42,7 @@ layout plan-centreline
   legend-columns 4
   legend-width 26 cm
 
-  color map-fg altitude
+  color map-fg altitude:warm
   copy LayoutColourSymbols
 endlayout
 
@@ -59,7 +60,7 @@ layout whole-elevation
   legend-columns 6
   legend-width 34 cm
 
-  color map-fg altitude
+  color map-fg altitude:warm
   copy LayoutColourSymbols
 endlayout
 

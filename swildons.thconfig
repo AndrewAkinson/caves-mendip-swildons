@@ -24,6 +24,7 @@ encoding  utf-8
 input gb_layout.thc
 
 source swildonsmaster.th
+source altitude-colours.th
 
 # One map per projection. The plan is everything drawn so far; the
 # projected elevation is the drawn Entrance Series, and the extended
@@ -101,7 +102,7 @@ layout plan-sheet
   legend-width 26 cm
   copy header-two-columns
 
-  color map-fg altitude
+  color map-fg altitude:warm
   copy LayoutColourSymbols
 endlayout
 
@@ -135,7 +136,7 @@ layout elevation-sheet
   symbol-hide line survey
   symbol-hide point station   # survey stations are for surveyors, not for finding the way
 
-  color map-fg altitude
+  color map-fg altitude:warm
   copy LayoutColourSymbols
 endlayout
 
@@ -156,7 +157,7 @@ layout streamway-elevation
   legend-width 30 cm
   copy header-two-columns
 
-  color map-fg altitude
+  color map-fg altitude:warm
   copy LayoutColourSymbols
 endlayout
 

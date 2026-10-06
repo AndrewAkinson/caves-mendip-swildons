@@ -6,7 +6,7 @@ scrap DblPotsDownstreamSE1 -projection extended -author 2017.07.08 "Footleg" -co
 # Extended elevation traced from Footleg's PocketTopo side-view sketch: roof and floor
 # from the black lines (inside lines as thin borders), pools from the blue hatching.
 
-line wall
+line wall -outline out
   1160.45 870.95
   1178.33 804.54 1196.15 768.95 1264.59 815.04
   1263.26 816.14 1261.92 817.24 1260.59 818.34
@@ -34,7 +34,7 @@ line wall
   3193.93 379.43 3194.26 380.34 3194.58 381.26
   3341.16 361.91 3478.05 350.56 3625.56 362.87
 endline
-line wall
+line wall -outline out
   3507.47 446.16
   3479.95 451.59 3456.41 446.36 3429.24 447.60
   3409.60 448.49 3391.61 457.02 3372.67 458.92
@@ -47,16 +47,16 @@ line wall
   2712.35 694.86 2699.38 714.64 2684.12 721.20
   2636.02 741.87 2593.66 767.53 2566.86 811.73
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   2566.86 811.73
   2572.77 811.73
   2571.37 1004.17
 endline
-line wall
+line wall -outline out
   2571.37 1004.17
   2521.27 1001.89 2512.26 969.45 2511.78 925.70
 endline
-line wall
+line wall -outline out
   2477.60 851.24
   2428.18 848.19 2373.88 832.53 2327.24 852.62
   2327.68 851.93 2328.13 851.24 2328.57 850.55
@@ -64,7 +64,7 @@ line wall
   2252.76 912.27
   2246.93 911.38 2241.09 910.49 2235.27 909.50
 endline
-line wall
+line wall -outline out
   2208.86 1015.75
   2208.70 1019.28 2210.84 1024.79 2211.43 1027.76
   2212.14 1031.35 2211.80 1034.30 2211.23 1036.19
@@ -80,31 +80,31 @@ line wall
   1894.80 1072.38 1864.24 1079.04 1852.53 1080.57
   1840.83 1082.11 1842.32 1080.39 1839.46 1080.30
 endline
-line wall
+line wall -outline out
   1830.01 955.82
   1768.19 924.72 1714.45 938.81 1648.43 938.95
   1612.41 939.03 1596.76 924.85 1561.03 940.78
 endline
-line wall
+line wall -outline out
   1517.10 1010.04
   1517.71 1011.92 1519.04 1015.80 1520.44 1020.10
 endline
-line wall
+line wall -outline out
   1405.11 1230.79
   1376.04 1233.94 1347.59 1237.66 1318.56 1236.38
   1315.70 1236.25 1312.86 1236.02 1310.20 1235.86
 endline
-line wall
+line wall -outline out
   1310.20 1235.86
   1309.81 1235.94 1309.42 1236.01 1309.03 1236.06
   1305.64 1236.53 1303.56 1236.90 1298.03 1236.39
 endline
-line wall
+line wall -outline out
   1195.78 1123.44
   1181.73 1124.59 1171.55 1134.76 1158.35 1136.11
   1090.19 1143.04 1073.77 1123.57 1012.81 1114.29
 endline
-line wall
+line wall -outline out
   988.14 962.27
   998.43 953.11 1001.30 943.29 1009.42 933.06
   1024.08 914.60 1045.17 901.48 1062.03 889.79

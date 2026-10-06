@@ -13,6 +13,7 @@ encoding  utf-8
 input gb_layout.thc
 
 source swildonsmaster.th
+source altitude-colours.th
 
 select EntranceSeriesPlanSections@SwildonsHole
 select EntranceSeriesExtended@SwildonsHole
@@ -26,7 +27,7 @@ layout entrance-sheet
   symbol-hide line survey
   symbol-hide point station   # survey stations are for surveyors, not for finding the way
 
-  color map-fg altitude
+  color map-fg altitude:warm
   copy LayoutColourSymbols
 endlayout
 

@@ -7,7 +7,7 @@ encoding  utf-8
 
 scrap WetWayKeyholeEE1 -projection extended -author 2016.07.09 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
-line wall
+line wall -outline out
   909.22 976.27
   968.56 948.66 1035.42 923.87 1084.26 969.70
   1112.10 995.82 1127.59 990.04 1162.65 994.34
@@ -15,26 +15,26 @@ line wall
   1214.77 1002.93 1213.81 1005.35 1213.66 1005.73
   1221.84 1007.89 1230.07 1009.93 1238.30 1011.91
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1238.30 1011.91
   1234.15 1006.72
   1236.27 1004.65
   1245.71 1004.65
   1403.06 1039.44
 endline
-line wall
+line wall -outline out
   1403.06 1039.44
   1418.40 1044.09 1433.77 1045.95 1449.60 1048.29
   1452.23 1055.59 1454.51 1062.62 1456.35 1070.18
   1475.27 1070.41 1479.18 1077.68 1481.41 1095.89
 endline
-line wall
+line wall -outline out
   1492.35 1102.59
   1501.54 1104.00 1510.73 1105.43 1519.91 1106.89
   1520.36 1108.45 1521.07 1110.89 1521.27 1111.55
   1542.63 1115.14 1567.62 1117.45 1586.26 1124.52
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1586.26 1124.52
   1588.95 1125.96
   1585.07 1134.56
@@ -44,7 +44,7 @@ line wall -subtype presumed
   1449.43 1233.00
   1410.98 1228.54
 endline
-line wall
+line wall -outline out
   1410.98 1228.54
   1406.61 1224.25 1399.72 1217.19 1392.75 1210.86
   1383.89 1202.81 1367.43 1189.94 1360.71 1183.30
@@ -53,7 +53,7 @@ line wall
   1334.35 1153.56 1330.98 1151.92 1325.37 1149.09
   1319.76 1146.26 1308.56 1141.71 1305.15 1140.22
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1305.15 1140.22
   1308.58 1147.25
   1303.77 1153.39

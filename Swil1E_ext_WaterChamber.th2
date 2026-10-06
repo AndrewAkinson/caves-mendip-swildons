@@ -7,31 +7,31 @@ encoding  utf-8
 
 scrap WaterChamberEE1 -projection extended -author 2016.07.09 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
-line wall
+line wall -outline out
   1008.27 953.93
   1008.18 954.72 1008.30 954.75 1008.43 954.78
   1012.40 955.68 1021.30 956.39 1026.73 957.60
 endline
-line wall
+line wall -outline out
   1031.48 959.39
   1031.68 960.37 1032.21 960.75 1033.14 960.57
 endline
-line wall
+line wall -outline out
   1047.46 968.25
   1054.84 969.79 1062.15 971.37 1069.30 973.18
 endline
-line wall
+line wall -outline out
   1072.93 974.10
   1073.11 975.00 1073.48 975.14 1073.83 975.28
   1074.82 975.68 1075.76 976.12 1077.05 975.91
 endline
-line wall
+line wall -outline out
   1104.96 991.73
   1107.48 994.98 1107.09 994.44 1111.12 999.57
   1111.60 999.03 1112.68 997.82 1113.13 997.31
   1117.95 998.38 1122.92 999.04 1127.72 999.89
 endline
-line wall
+line wall -outline out
   1134.65 1027.85
   1199.45 1002.63 1264.75 988.29 1333.82 981.05
   1328.99 974.78
@@ -47,7 +47,7 @@ line wall
   1650.73 895.79 1650.33 895.03 1649.93 894.26
   1629.18 901.20 1608.54 908.50 1587.88 915.72
 endline
-line wall
+line wall -outline out
   1552.88 1023.71
   1556.20 1025.23 1559.97 1026.95 1562.52 1027.92
   1567.15 1029.67 1571.81 1029.81 1574.38 1031.24
@@ -212,7 +212,7 @@ endscrap
 
 scrap WaterChamberEE2 -projection extended -author 2016.07.09 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
-line wall
+line wall -outline out
   1070.54 832.13
   1179.00 831.26 1161.23 868.83 1222.00 875.02
   1273.31 880.25 1324.69 867.90 1376.15 872.80
@@ -227,7 +227,7 @@ line wall
   1894.83 1061.68 1912.67 1058.05 1929.67 1060.87
   1951.59 1064.50 1972.84 1072.72 1994.50 1077.69
 endline
-line wall
+line wall -outline out
   1975.00 1140.87
   1973.29 1140.12
   1971.30 1139.17
@@ -433,11 +433,11 @@ line wall
   1559.15 1106.42
   1558.28 1106.82
 endline
-line wall
+line wall -outline out
   1552.15 1131.93
   1546.29 1131.56 1522.99 1129.81 1516.96 1129.59
 endline
-line wall
+line wall -outline out
   1488.37 1170.95
   1447.61 1163.05 1429.19 1153.32 1394.20 1142.27
   1366.61 1133.56 1336.50 1138.46 1308.67 1129.69

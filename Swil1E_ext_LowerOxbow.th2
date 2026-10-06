@@ -7,13 +7,13 @@ encoding  utf-8
 
 scrap LowerOxbowEE1 -projection extended -author 2016.07.10 "Footleg" -copyright 2016 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   2380.13 641.58
   2374.05 665.64 2376.02 653.64 2374.02 677.53
   2342.61 681.49 2327.11 687.02 2305.56 709.85
   2303.41 708.36
 endline
-line wall
+line wall -outline out
   2303.41 708.36
   2251.59 705.06 2201.83 704.82 2150.25 710.71
   2150.06 696.09

@@ -7,7 +7,7 @@ encoding  utf-8
 
 scrap Old40RouteEE1 -projection extended -author 2013.06.29 "Footleg" -copyright 2013 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
 
-line wall
+line wall -outline out
   879.69 912.11
   897.85 904.58 915.87 896.74 933.99 889.10
   936.19 895.66
@@ -18,25 +18,25 @@ line wall
   1231.91 833.72 1233.78 837.73 1236.98 838.10
   1261.80 817.91 1293.96 823.15 1324.05 820.04
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1301.81 1017.48
   1324.29 1017.48
   1324.29 1061.17
   1333.90 1069.45
   1323.11 1082.41
 endline
-line wall
+line wall -outline out
   1323.11 1082.41
   1338.45 1085.45 1353.46 1085.33 1369.12 1085.32
   1369.12 1091.99
   1409.00 1080.22 1451.93 1089.46 1491.45 1099.02
 endline
-line wall
+line wall -outline out
   1503.89 1090.00
   1503.97 1083.80 1505.55 1079.50 1506.79 1073.86
   1552.41 1051.97 1677.59 1076.50 1735.72 1064.65
 endline
-line wall
+line wall -outline out
   1740.04 1041.02
   1740.42 1042.09 1740.79 1043.17 1741.17 1044.24
   1752.01 1010.75 1760.30 1018.58 1771.56 999.91
@@ -45,11 +45,11 @@ line wall
   1849.51 878.28
   1849.57 864.65 1849.59 851.02 1849.62 837.39
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1849.62 837.39
   1918.72 651.79
 endline
-line wall
+line wall -outline out
   1918.72 651.79
   1935.76 652.73 1965.00 655.79 1976.33 656.18
   1989.33 656.62 1984.20 654.59 1990.06 654.18
@@ -57,25 +57,25 @@ line wall
   2018.90 652.90 2027.00 650.15 2034.21 649.16
   2041.40 648.18 2051.33 648.06 2057.48 647.84
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   2057.48 647.84
   2040.56 675.08 2035.88 685.74 2040.66 716.94
   2035.89 715.44
 endline
-line wall
+line wall -outline out
   2035.89 715.44
   2031.23 719.99 2029.73 720.34 2026.57 727.50
 endline
-line wall
+line wall -outline out
   2039.17 725.70
   2041.33 741.64 2043.03 757.66 2044.95 773.63
   2033.52 778.24 2022.89 783.99 2012.13 790.03
 endline
-line wall
+line wall -outline out
   2011.91 790.95
   2011.32 791.42 2010.92 791.60 2010.42 791.92
 endline
-line wall
+line wall -outline out
   2010.41 791.92
   1991.63 813.03 1973.84 834.37 1953.02 853.51
   1953.35 853.70 1954.40 854.32 1955.03 854.69
@@ -83,7 +83,7 @@ line wall
   1900.09 969.88 1900.20 986.29 1901.56 997.34
   1901.77 999.04 1901.96 1000.64 1902.11 1002.17
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1902.11 1002.17
   1899.09 1093.82
   1897.37 1094.71
@@ -93,11 +93,11 @@ line wall -subtype presumed
   1993.94 1177.38
   1993.54 1180.39
 endline
-line wall
+line wall -outline out
   1993.54 1180.39
   1966.02 1179.57 1907.70 1167.53 1886.53 1179.23
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1886.53 1179.23
   1878.01 1173.40 1868.73 1167.46 1859.53 1162.01
   1856.89 1166.60 1854.24 1171.18 1851.60 1175.77
@@ -105,22 +105,22 @@ line wall -subtype presumed
   1837.92 1169.62 1836.12 1161.60 1831.81 1155.56
   1816.05 1157.02
 endline
-line wall
+line wall -outline out
   1816.05 1157.02
   1811.41 1144.52 1807.98 1126.83 1804.54 1111.15
 endline
-line wall
+line wall -outline out
   1808.99 1153.13
   1793.11 1164.66 1776.51 1161.09 1757.38 1158.85
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1757.38 1158.85
   1759.47 1167.05
   1738.20 1177.50
   1720.73 1195.66
   1718.62 1194.43
 endline
-line wall
+line wall -outline out
   1718.62 1194.43
   1707.62 1194.62 1673.37 1194.57 1652.81 1195.26
   1632.25 1195.95 1622.83 1198.72 1595.20 1198.65
@@ -139,23 +139,23 @@ line wall
   1296.14 1200.56 1293.46 1200.36 1291.29 1198.07
   1289.13 1195.78 1286.21 1188.94 1285.13 1187.05
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1285.13 1187.05
   1281.23 1190.61
   1254.00 1171.78 1227.03 1175.83 1201.51 1161.86
   1191.93 1178.24 1194.73 1184.20 1179.42 1195.78
   1179.10 1193.72
 endline
-line wall
+line wall -outline out
   1179.10 1193.72
   1189.87 1165.25 1186.16 1132.69 1200.26 1106.39
 endline
-line wall
+line wall -outline out
   1199.42 1105.45
   1199.08 1105.75 1199.04 1105.81 1199.00 1105.88
   1198.60 1106.56 1198.11 1107.45 1196.41 1109.16
 endline
-line wall -subtype presumed
+line wall -subtype presumed -outline out
   1196.41 1109.16
   1177.38 1134.06
   1171.17 1131.94
@@ -167,14 +167,14 @@ line wall -subtype presumed
   1044.12 1237.12
   1044.07 1232.87
 endline
-line wall
+line wall -outline out
   1044.07 1232.87
   1044.54 1231.84 1045.48 1229.74 1045.72 1229.22
   1034.32 1231.16 1022.91 1233.82 1011.28 1234.33
   1011.01 1233.60 1010.42 1231.95 1010.28 1231.55
   1005.27 1231.93 1000.29 1232.11 995.28 1232.27
 endline
-line wall
+line wall -outline out
   910.51 1054.49
   910.61 1034.30 913.60 1017.76 896.12 1007.19
 endline

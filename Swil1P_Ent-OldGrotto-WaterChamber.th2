@@ -2702,7 +2702,7 @@ line border -id l450-931-1971 -subtype invisible
   971.0 1903.0
 endline
 
-line floor-step -id l449-948-1934 -reverse on -outline out -clip off
+line floor-step -id l449-948-1934 -reverse on -clip off
   924.5 1933.0
   947.5 1939.0 949.5 1931.0 955.5 1932.0
   964.24 1933.46 975.5 1938.5 980.0 1933.0

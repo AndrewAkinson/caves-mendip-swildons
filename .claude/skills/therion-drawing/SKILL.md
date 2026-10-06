@@ -13,7 +13,9 @@ too.
 
 ## Walls and the outline
 
-- Walls are `-outline out` by default; it doesn't need setting.
+- Every visible line on the outer edge of a scrap has `-outline out`
+  set explicitly; no line inside the passage (a step, border or pit
+  edge within it) has it.
 - Walls are the scrap's outline. Draw each `line wall` with the passage
   on its LEFT, or use `-reverse on` if the passage is on its right
   (Footleg's drawings do; `-reverse on` flips a line).
@@ -99,6 +101,15 @@ too.
 - Individually drawn rocks can be above or below the water; that needs
   careful ordering and use of clipping.
 
+## Passages over passages
+
+- A passage that drops below another (a rift under the main passage)
+  is drawn in its own scrap or alongside: where the upper passage's
+  floor edge crosses over it, that edge is a `line overhang` or
+  `line floor-step`, not a wall; walls are only the cave's outer edges.
+- Noses and fins of rock between passages are drawn: don't let a
+  scrap's closing line fill across them.
+
 ## Cross-sections
 
 - A `line section` goes right across the passage.
@@ -123,8 +134,12 @@ walls (`python3 -m tools.sketch2therion roofs`, see `tools/README.md`).
 
 ## .thconfig layouts
 
-These are set in `gb_layout.thc`:
+These are set in `gb_layout.thc` and `altitude-colours.th`:
 
+- Water is always blue, so passages never are: the altitude colours
+  (`lookup altitude:warm`, used as `color map-fg altitude:warm`) run
+  from dark red at the bottom of the cave through orange and yellow to
+  green at the entrance.
 - Water is solid blue and sump a darker solid blue (hatched only in the
   black-and-white layout).
 - Water flow is the same colour as the water.
