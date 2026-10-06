@@ -21,7 +21,8 @@ python3 -m tools.model3d      # after the main build; writes output/3d/
   legs that the resurvey has replaced) are left out.
 - **Names** of passages and places, taken from the labels in the plan
   drawings (the same ones the route cards use, from `tools.routes.survey`),
-  each at the height of the nearest station. The entrance gets a beacon.
+  each at the height of the nearest station. The entrance is labelled
+  just above the ground.
 - **The ground**: the Environment Agency's 1 m LIDAR composite terrain
   model (DTM), averaged to 2 m, covering the cave plus 250 m around it.
   It's fetched once from their WCS service and kept in `surface/lidar/`,
