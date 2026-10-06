@@ -15,8 +15,12 @@ python3 -m tools.model3d      # after the main build; writes output/3d/
 
 ## What's in it
 
-- **Passage walls** from `output/Swildons.lox`: the 3D passages Therion
-  builds from the drawings and splays. Only the resurvey has walls.
+- **Passage walls** from `output/Swildons-walls.lox`: the 3D passages
+  Therion builds from the drawings, exported for this page with
+  `-wall-source maps`. Therion's default also builds walls from every
+  splay shot, which come out as spikes wherever a splay reaches up an
+  aven or into a side passage; `Swildons.lox` keeps the default. Only
+  the resurvey has walls.
 - **The centreline** from `output/Swildons.3d`, Stanton's survey
   included. Splays can be turned on. Legs flagged `duplicate` (Stanton's
   legs that the resurvey has replaced) are left out.

@@ -705,7 +705,9 @@ function placeLabels() {
 const clock = new THREE.Clock();
 let first = true;
 function frame() {
-  const now = performance.now(), dt = clock.getDelta();
+  // at most a tenth of a second per frame: after the tab has been hidden the
+  // first frame would otherwise turn the model through the whole time away
+  const now = performance.now(), dt = Math.min(clock.getDelta(), 0.1);
   if (fly) {
     const t = Math.min(1, (now - fly.start) / fly.ms), e = ease(t);
     camera.position.lerpVectors(fly.p0, fly.p1, e);

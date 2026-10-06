@@ -3,7 +3,7 @@
     python3 -m tools.model3d      # after the main build; writes output/3d/
 
 Reads what Therion has just built: the centreline and stations from
-output/Swildons.3d, the passage walls from output/Swildons.lox, passage
+output/Swildons.3d, the passage walls from output/Swildons-walls.lox, passage
 names from the plan drawings (via tools.routes.survey and
 output/Swildons.sql) and the entrance's lat/long from
 output/Swildons-centreline.kml. The ground is the Environment Agency's
@@ -191,7 +191,8 @@ def place_names():
 
 def build(out_dir, chromium=None):
     legs, stations = read_3d('output/Swildons.3d')
-    walls = read_lox_walls('output/Swildons.lox') if os.path.exists('output/Swildons.lox') else []
+    lox = 'output/Swildons-walls.lox'     # walls from the drawings only (swildons.thconfig)
+    walls = read_lox_walls(lox) if os.path.exists(lox) else []
     cave = [p for a, b, f in legs if not f & 1 for p in (a, b)]
     xs, ys, zs = zip(*cave)
 
