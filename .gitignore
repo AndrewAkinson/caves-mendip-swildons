@@ -1,4 +1,4 @@
-# CI build (thconfig, thconfig-entrance)
+# CI build (swildons.thconfig, swildons-entrance.thconfig, ...)
 output/
 therion.log
 # OSTN15 grid-shift file, fetched by CI and by hand (see README)

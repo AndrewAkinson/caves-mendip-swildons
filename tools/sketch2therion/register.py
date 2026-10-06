@@ -9,7 +9,7 @@ stations whose offsets agree are grouped. One group means the sketch fits
 as it is; several mean it must be split, one scrap per group, or Therion
 will stretch the drawing between stations that have moved apart.
 
-Therion's layout comes from `tools/thconfig-layout`, which writes
+Therion's layout comes from `tools/layout.thconfig`, which writes
 output/layout-plan.xvi and output/layout-extended.xvi.
 """
 import math

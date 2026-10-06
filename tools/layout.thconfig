@@ -8,7 +8,7 @@ encoding  utf-8
 #  sketches onto the survey. Rerun it after adding or changing survey
 #  data (a new trip, equates, extend flags):
 #
-#    therion -l output/therion-layout.log tools/thconfig-layout
+#    therion -l output/therion-layout.log tools/layout.thconfig
 #
 #  from the top of the repository (see tools/README.md).
 # ---------------------------------------------------------------------

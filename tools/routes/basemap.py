@@ -1,6 +1,6 @@
 """The drawn survey as the background of a route card.
 
-Therion renders the plan to SVG (tools/routes/thconfig-routes). To draw a
+Therion renders the plan to SVG (tools/routes/routes.thconfig). To draw a
 route on top of it, the survey's coordinates have to be matched to the
 SVG's. Therion morphs every drawing onto its stations, so the render
 includes a tiny scrap, RouteReg (reg.th2), with three marks in an

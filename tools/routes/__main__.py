@@ -1,7 +1,7 @@
 """Build route cards: python3 -m tools.routes [route.toml ...]
 
-Needs, in output/: Swildons.sql (from the main build, thconfig) and
-routes-base.svg (from tools/routes/thconfig-routes). Writes
+Needs, in output/: Swildons.sql (from the main build, swildons.thconfig) and
+routes-base.svg (from tools/routes/routes.thconfig). Writes
 output/routes/<name>.html and, if Chromium is found, <name>.pdf, plus
 output/routes/index.html.
 """

@@ -8,7 +8,7 @@ Run after Therion, from the project root:
 
 It renders a PNG preview of the first page of each PDF (via Ghostscript,
 which the Therion container already has), reads the survey statistics out
-of therion.log, and writes a single self-contained index.html next to the
+of output/therion.log, and writes a single self-contained index.html next to the
 artefacts. No third-party Python packages.
 """
 
@@ -85,7 +85,7 @@ def render_preview(pdf_path, png_path, width=1100):
 
 
 def survey_stats():
-    """Headline numbers, from the centreline CSV and therion.log.
+    """Headline numbers, from the centreline CSV and output/therion.log.
 
     Deliberately NOT from the log's "Survey contains N survey stations"
     line: Survex counts every splay endpoint as a station, so for this
@@ -134,7 +134,7 @@ def survey_stats():
             stats["Legs"] = str(legs)
             stats["Splay shots"] = str(splays)
 
-    log = os.path.join(ROOT, "therion.log")
+    log = os.path.join(ROOT, "output", "therion.log")
     if not os.path.exists(log):
         return stats
     text = open(log, "r", errors="replace").read()

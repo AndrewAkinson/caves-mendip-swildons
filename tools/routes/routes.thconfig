@@ -7,7 +7,7 @@ encoding  utf-8
 #  SVG. The cards are windows onto it, with the route drawn on top.
 #  Run from the top of the repository after the main build:
 #
-#    therion -l output/therion-routes.log tools/routes/thconfig-routes
+#    therion -l output/therion-routes.log tools/routes/routes.thconfig
 #    python3 -m tools.routes
 # ---------------------------------------------------------------------
 

@@ -10,14 +10,14 @@ encoding  utf-8
 #  The Entrance Series plan at 1:200 is a second sheet of the same
 #  projection at a different scale, and Therion only takes one selected
 #  map per projection per run, so it has its own config next to this
-#  one: thconfig-entrance. CI runs both.
+#  one: swildons-entrance.thconfig. CI runs both.
 #
 #  The older configs from the SVN project (swildons_*.thconfig and
-#  thconfig-swildons) still work and still write into the project root
+#  swildons_model.thconfig) still work and still write into the project root
 #  as they always did. This one does not replace them, it just gathers
 #  their exports in one place for the website.
 #
-#  Build locally with:   therion thconfig && therion thconfig-entrance
+#  Build locally with:   therion -l output/therion.log swildons.thconfig && therion swildons-entrance.thconfig
 #  (see README.md for the Docker one-liner and the OS grid file).
 # ---------------------------------------------------------------------
 

@@ -8,6 +8,11 @@ survey wstanton
 
   centerline
     cs OSGB:ST 
+    # This centreline only joins Stanton's books together (equates, no shots),
+    # so this date affects nothing: it isn't inherited by the surveys input
+    # below. Each of those has its own 1950s date, and Therion corrects their
+    # compass bearings with the magnetic declination for that date (about -10
+    # degrees then, -2 now; see "geomag declinations" in the build log).
     date 2013.06.09
 
 #    station Ent "Swildons Hole" entrance

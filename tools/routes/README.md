@@ -118,7 +118,7 @@ Each card is one HTML file and a PDF.
 After the main build (which writes `output/Swildons.sql`):
 
 ```bash
-therion -l output/therion-routes.log tools/routes/thconfig-routes   # the background, output/routes-base.svg
+therion -l output/therion-routes.log tools/routes/routes.thconfig   # the background, output/routes-base.svg
 python3 -m tools.routes                    # every route in routes/
 python3 -m tools.routes routes/1-dry-ways.toml   # just one
 ```

@@ -60,9 +60,9 @@ jobs:
       # so later steps can read and upload it.
       #
       # Four configs, because Therion takes one map per projection per
-      # run: thconfig is the whole cave, thconfig-entrance the Entrance
-      # Series at 1:200, thconfig-centreline and thconfig-stanton the
-      # working sheets with survey legs. The others get their own logs so therion.log
+      # run: swildons.thconfig is the whole cave, swildons-entrance.thconfig the Entrance
+      # Series at 1:200, swildons-centreline.thconfig and swildons-stanton.thconfig the
+      # working sheets with survey legs. The others get their own logs so output/therion.log
       # stays the main build's, which web/make_index.py reads.
       - name: Build with Therion
         run: |
@@ -74,17 +74,17 @@ jobs:
               -e PROJ_NETWORK=OFF \
               ghcr.io/paperclipmonkey/therion:6.4.0 "$@"
           }
-          therion thconfig
-          therion -l output/therion-entrance.log thconfig-entrance
-          therion -l output/therion-centreline.log thconfig-centreline
-          therion -l output/therion-stanton.log thconfig-stanton
+          therion -l output/therion.log swildons.thconfig
+          therion -l output/therion-entrance.log swildons-entrance.thconfig
+          therion -l output/therion-centreline.log swildons-centreline.thconfig
+          therion -l output/therion-stanton.log swildons-stanton.thconfig
           # the background for the route cards, built in the next step
-          therion -l output/therion-routes.log tools/routes/thconfig-routes
+          therion -l output/therion-routes.log tools/routes/routes.thconfig
 
       - name: Fail if Therion logged an error
         run: |
           status=0
-          for log in therion.log output/therion-entrance.log output/therion-centreline.log output/therion-stanton.log output/therion-routes.log; do
+          for log in output/therion.log output/therion-entrance.log output/therion-centreline.log output/therion-stanton.log output/therion-routes.log; do
             if grep -qE "^therion: error" "$log"; then
               echo "::error::Therion reported an error in $log"
               grep -nE "^therion: (error|warning)" "$log"
@@ -94,9 +94,9 @@ jobs:
           # Warnings are worth surfacing but not worth failing on. The
           # drawings currently give a handful of "scrap outline
           # intersects itself" warnings from MetaPost.
-          if grep -qiE "warning" therion.log output/therion-entrance.log output/therion-centreline.log output/therion-stanton.log; then
+          if grep -qiE "warning" output/therion.log output/therion-entrance.log output/therion-centreline.log output/therion-stanton.log; then
             echo "::group::Therion warnings"
-            grep -inE "warning" therion.log output/therion-entrance.log output/therion-centreline.log output/therion-stanton.log | sort -u
+            grep -inE "warning" output/therion.log output/therion-entrance.log output/therion-centreline.log output/therion-stanton.log | sort -u
             echo "::endgroup::"
           fi
           exit $status

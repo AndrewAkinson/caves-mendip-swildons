@@ -1,6 +1,6 @@
 encoding  utf-8
 # Centreline-only maps of the whole cave, for exporting Therion's own
-# station layout (see thconfig-layout).
+# station layout (see layout.thconfig).
 map LayoutPlan -projection plan
   Swildons@SwildonsHole
 endmap

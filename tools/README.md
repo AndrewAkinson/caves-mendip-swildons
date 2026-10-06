@@ -6,7 +6,7 @@ survey, with drawings.
 | Path | What it is |
 |---|---|
 | `sketch2therion/` | Converts SexyTopo and PocketTopo sketches into Therion drawings (`.th2`): plan, extended elevation and cross-sections. |
-| `thconfig-layout`, `layout.th` | Exports where Therion puts every station, which the converter fits sketches to. |
+| `layout.thconfig`, `layout.th` | Exports where Therion puts every station, which the converter fits sketches to. |
 | `new-trip-template.th` | A starting point for a new trip's survey file. |
 | `requirements.txt` | The one Python library the converter needs (Shapely). |
 
@@ -79,12 +79,12 @@ write notes in red or orange or they will be read as walls.
    - Add `<Survey>@Swildons` to the `ResurveyCentreline` map in
      `swildonsmaster.th`, so the trip's legs appear on the centreline
      sheets.
-   - Build (`therion thconfig`) and check the log for loop errors.
+   - Build (`therion -l output/therion.log swildons.thconfig`) and check the log for loop errors.
 
 3. **Therion's layout.** Export where Therion now puts every station:
 
    ```bash
-   therion -l output/therion-layout.log tools/thconfig-layout
+   therion -l output/therion-layout.log tools/layout.thconfig
    ```
 
    This writes `output/layout-plan.xvi` and `output/layout-extended.xvi`.

@@ -159,7 +159,7 @@ PocketTopo workflow.
 | `routes/`, `tools/routes/` | Route card definitions, and the tool that makes them. |
 | `WISLogbookTranscription/` | Scans and a transcription of Stanton's logbooks. |
 | `SwildonsHole.svx` | The data in Survex format. |
-| `thconfig`, `thconfig-entrance`, `thconfig-centreline`, `thconfig-stanton`, `gb_layout.thc` | Build configs and Footleg's British symbol set. |
+| `swildons.thconfig`, `swildons-entrance.thconfig`, `swildons-centreline.thconfig`, `swildons-stanton.thconfig`, `gb_layout.thc` | Build configs and Footleg's British symbol set. |
 
 ### Building it yourself
 
@@ -172,15 +172,15 @@ curl -fL -o proj/uk_os_OSTN15_NTv2_OSGBtoETRS.tif \
 therion() { docker run --rm -v "$PWD:/project" \
   -e PROJ_DATA=/project/proj:/usr/share/proj -e PROJ_NETWORK=OFF \
   ghcr.io/paperclipmonkey/therion:6.4.0 "$@"; }
-therion thconfig
-therion -l output/therion-entrance.log thconfig-entrance
-therion -l output/therion-centreline.log thconfig-centreline
-therion -l output/therion-stanton.log thconfig-stanton
+therion -l output/therion.log swildons.thconfig
+therion -l output/therion-entrance.log swildons-entrance.thconfig
+therion -l output/therion-centreline.log swildons-centreline.thconfig
+therion -l output/therion-stanton.log swildons-stanton.thconfig
 ```
 
 Or with Therion installed:
-`therion thconfig`, `therion thconfig-entrance`,
-`therion thconfig-centreline` and `therion thconfig-stanton`. The sheets land in `output/`. The older
+`therion -l output/therion.log swildons.thconfig`, `therion swildons-entrance.thconfig`,
+`therion swildons-centreline.thconfig` and `therion swildons-stanton.thconfig`. The sheets land in `output/`. The older
 `swildons_*.thconfig` files from the SVN project still work and write
 into the project root.
 

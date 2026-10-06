@@ -5,7 +5,7 @@ encoding  utf-8
 # =====================================================================
 #
 #  The whole-cave elevation joins the Entrance Series and streamway
-#  elevations, entrance to Sump 1. It is here rather than in thconfig
+#  elevations, entrance to Sump 1. It is here rather than in swildons.thconfig
 #  because that already has an extended map (the streamway's), and
 #  Therion takes one selected map per projection per run.
 #
@@ -36,7 +36,7 @@ layout plan-centreline
   debug station-names
   survey-level 0
 
-  # Same place for the header as the main plan (thconfig).
+  # Same place for the header as the main plan (swildons.thconfig).
   map-header 40.5 26 nw
   legend-columns 4
   legend-width 26 cm

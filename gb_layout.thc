@@ -31,6 +31,9 @@ layout GB_Std
     
     #show the legend
     legend on
+
+    # the licence, printed in the map header beside the copyright
+    map-comment "Licensed under the GNU General Public License v3"
       
     #don't display survey centreline
     #symbol-hide group cave-centreline

@@ -3,7 +3,7 @@ encoding  utf-8
 #  Swildons Hole -- Entrance Series plan and extended elevation, 1:200
 # =====================================================================
 #
-#  The second half of the CI build (see thconfig). It is a separate
+#  The second half of the CI build (see swildons.thconfig). It is a separate
 #  file only because it is a second plan sheet at a different scale,
 #  and Therion takes one selected map per projection per run. CI runs
 #  it with its own log (-l output/therion-entrance.log) so therion.log

@@ -9,7 +9,7 @@
 
 Sketches can be SexyTopo or PocketTopo .xvi files, PocketTopo .top files or
 PocketTopo Therion exports (_th.txt). Run from the top of the repository,
-after `therion -l output/therion-layout.log tools/thconfig-layout`.
+after `therion -l output/therion-layout.log tools/layout.thconfig`.
 """
 import argparse
 import os
@@ -31,7 +31,7 @@ def load(path, view):
 def layout(path, required=False):
     if path and os.path.exists(path):
         return register.Layout(path)
-    msg = (f"{path} not found: run  therion -l output/therion-layout.log tools/thconfig-layout  first"
+    msg = (f"{path} not found: run  therion -l output/therion-layout.log tools/layout.thconfig  first"
            " (with the new trip's .th already input)")
     if required:
         sys.exit(msg)
