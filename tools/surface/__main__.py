@@ -324,7 +324,9 @@ body:has(.sheet.surface) { width: 297mm; height: 210mm; }
           border: 0.3mm solid #1f5fbf; color: #1f5fbf; background: #fff; border-radius: 2mm; }
 #where { position: absolute; top: 12mm; left: 4mm; font-size: 2.8mm; background: rgba(255,255,255,0.9); padding: 0 1.5mm; border-radius: 1mm; }
 @media print { #locate, #where { display: none; } }
-@media screen and (max-width: 1100px) {
+/* Any screen: flows to fit; the A4 sheet is only for printing */
+@media screen {
+  .sheet.surface { width: auto; height: auto; display: block; padding: 14px; }
   .surface aside { font-size: 15px; margin-top: 16px; }
   .surface .meta, .surface .links { font-size: 13px; }
   .surface .stats { grid-template-columns: 1fr 1fr; }
@@ -332,6 +334,17 @@ body:has(.sheet.surface) { width: 297mm; height: 210mm; }
   .surface .overview { aspect-ratio: 180 / 150; }
   body:has(.sheet.surface) { width: auto; height: auto; }
   #locate { font-size: 14px; padding: 8px 12px; } #where { top: 52px; font-size: 13px; }
+}
+/* A laptop or bigger: the map beside the parking and walks */
+@media screen and (min-width: 900px) {
+  .sheet.surface { display: grid; max-width: 1280px; margin: 0 auto; padding: 28px 32px; column-gap: 28px;
+                   grid-template-columns: minmax(0, 1.7fr) minmax(280px, 1fr); grid-template-rows: auto auto auto; }
+  .surface header { grid-column: 1 / 3; display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 32px; }
+  .surface h1 { font-size: 40px; } .surface .subtitle { font-size: 19px; } .surface .desc { font-size: 16px; }
+  .surface .stats { grid-template-columns: 1fr; width: 260px; margin-top: 0; }
+  .surface .overview { grid-column: 1; grid-row: 2; margin-top: 18px; align-self: start; }
+  .surface aside { grid-column: 2; grid-row: 2; margin-top: 18px; }
+  .surface footer { grid-column: 1 / 3; display: flex; justify-content: space-between; gap: 24px; margin-top: 18px; }
 }
 '''
 

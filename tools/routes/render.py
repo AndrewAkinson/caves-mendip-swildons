@@ -361,9 +361,10 @@ footer { grid-column: 1 / 3; display: grid; grid-template-columns: auto 1fr; ali
                     color: #fff; background: linear-gradient(transparent, rgba(0,0,0,0.65)); }
 .overview a, .pull a { cursor: pointer; }
 
-/* On a phone (or any narrow screen): one column, maps full width, tap a number
-   on the map to jump to its close-up. Printing keeps the A3 sheet. */
-@media screen and (max-width: 1100px) {
+/* On any screen the card flows to fit the window; the fixed A3 sheet above
+   is only for printing. On a phone: one column, maps full width, tap a number
+   on the map to jump to its close-up. */
+@media screen {
   html, body { width: auto; height: auto; }
   body { font-size: 16px; }
   .sheet, .sheet.wide { display: block; width: auto; height: auto; padding: 14px; }
@@ -395,7 +396,24 @@ footer { grid-column: 1 / 3; display: grid; grid-template-columns: auto 1fr; ali
 .kit h2 { margin: 0 0 0.8mm; }
 .kit b { color: #1d2430; margin-right: 1mm; }
 .kit .todo { color: #9c2f12; font-style: italic; }
-@media screen and (max-width: 1100px) { .kit { font-size: 15px; padding: 10px 12px; margin-bottom: 14px; } }
+@media screen { .kit { font-size: 15px; padding: 10px 12px; margin-bottom: 14px; } }
+/* A laptop or bigger: the header beside its numbers, the map full width,
+   the close-ups in as many columns as fit. */
+@media screen and (min-width: 900px) {
+  .sheet, .sheet.wide { max-width: 1280px; margin: 0 auto; padding: 28px 32px; }
+  header { display: grid; grid-template-columns: minmax(0, 1fr) 320px; column-gap: 32px; align-items: start; }
+  h1 { font-size: 40px; } .subtitle { font-size: 19px; } .desc { font-size: 16px; }
+  .side { margin-top: 0; }
+  .overview { margin-top: 18px; }
+  aside, .sheet.wide aside { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+                             gap: 16px; align-items: start; margin-top: 22px; }
+  aside h2, .sheet.wide aside h2, aside .kit, aside .more, .sheet.wide .more { grid-column: 1 / -1; }
+  aside .kit { margin-bottom: 0; }
+  .pull { margin-bottom: 0; }
+  .profilebox { margin-top: 14px; }
+  footer { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; margin-top: 18px; }
+  .credit { text-align: right; margin-top: 0; max-width: 45%; }
+}
 .basemap { position: absolute; width: 0; height: 0; overflow: hidden; }
 '''
 
