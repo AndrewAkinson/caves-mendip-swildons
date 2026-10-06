@@ -6966,6 +6966,43 @@ point 3436.77 901.74 label -text "2.4" -scale xs
 
 point 3498.27 1006.81 label -text "2.4" -scale xs
 
+point 4484.25 1988.19 station -name 5.8@NewGrottoes
+point 3920.47 1801.18 station -name 5.3@NewGrottoes
+point 1988.58 2122.83 station -name 2.58@LongDryWay
+point 3151.97 1377.17 station -name 2.12@LongDryWay
+point 1000.00 1000.00 station -name 6.11@OldGrottoToWaterChamber
+point 3122.05 1519.69 station -name 2.15@LongDryWay
+point 1870.47 1981.10 station -name 2.59@LongDryWay
+point 3086.61 1963.39 station -name 2.43@LongDryWay
+point 3691.34 1496.85 station -name 2.24@LongDryWay
+point 3519.69 1547.64 station -name 2.23@LongDryWay
+point 3906.69 1565.75 station -name 2.39@LongDryWay
+point 1150.39 1547.64 station -name 6.8@OldGrottoToWaterChamber
+point 2031.89 1960.24 station -name 4.2@ShortDryWay
+point 3831.50 1742.52 station -name 2.38@LongDryWay
+point 3480.31 1741.73 station -name 2.31@LongDryWay
+point 3958.27 1649.21 station -name 5.2@NewGrottoes
+point 2548.03 2142.13 station -name 2.54@LongDryWay
+point 3775.59 1873.62 station -name 2.37@LongDryWay
+point 3323.62 1701.97 station -name 2.19@LongDryWay
+point 2831.50 1986.61 station -name 2.49@LongDryWay
+point 1041.34 1305.51 station -name 6.9@OldGrottoToWaterChamber
+point 4131.89 1936.22 station -name 5.5@NewGrottoes
+point 4017.72 1885.83 station -name 5.4@NewGrottoes
+point 3307.87 1049.61 station -name 2.6@LongDryWay
+point 2217.32 2207.09 station -name 2.56@LongDryWay
+point 1509.45 1555.91 station -name 6.6@OldGrottoToWaterChamber
+point 1715.75 1685.04 station -name 6.5@OldGrottoToWaterChamber
+point 2705.12 2082.28 station -name 2.51@LongDryWay
+point 3377.56 879.13 station -name 2.4@LongDryWay
+
+endscrap
+
+scrap EntToWaterChamberXSTop -projection plan -author 2013.02.23 "Footleg" -copyright 2013 "Paul 'Footleg' Fretwell" -scale [0 0 393.7 393.7 0.0 0.0 10 10 m]
+
+# The cross-sections of the entrance passages and Zig Zags, kept apart so they
+# move with that level where the Entrance Series plan displaces it.
+
 line section
   3403.77 771.31
   3439.54 787.74
@@ -7065,80 +7102,14 @@ point 3864.96 569.93 label -text "1.4" -scale xs
 
 point 3937.52 798.24 label -text "1.4" -scale xs
 
-point 4484.25 1988.19 station -name 5.8@NewGrottoes
-
-point 3920.47 1801.18 station -name 5.3@NewGrottoes
-
-point 1988.58 2122.83 station -name 2.58@LongDryWay
-
-point 3151.97 1377.17 station -name 2.12@LongDryWay
-
-point 1000.00 1000.00 station -name 6.11@OldGrottoToWaterChamber
-
-point 3122.05 1519.69 station -name 2.15@LongDryWay
-
 point 3716.93 572.44 station -name 1.6@ZigZags
-
-point 1870.47 1981.10 station -name 2.59@LongDryWay
-
 point 3488.19 639.76 station -name 2.2@LongDryWay
-
-point 3086.61 1963.39 station -name 2.43@LongDryWay
-
-point 3691.34 1496.85 station -name 2.24@LongDryWay
-
-point 3519.69 1547.64 station -name 2.23@LongDryWay
-
-point 3906.69 1565.75 station -name 2.39@LongDryWay
-
-point 1150.39 1547.64 station -name 6.8@OldGrottoToWaterChamber
-
-point 2031.89 1960.24 station -name 4.2@ShortDryWay
-
-point 3831.50 1742.52 station -name 2.38@LongDryWay
-
 point 3665.75 918.90 station -name 1.15@ZigZags
-
-point 3480.31 1741.73 station -name 2.31@LongDryWay
-
-point 3958.27 1649.21 station -name 5.2@NewGrottoes
-
 point 3401.97 981.50 station -name 1.19@ZigZags
-
-point 2548.03 2142.13 station -name 2.54@LongDryWay
-
-point 3775.59 1873.62 station -name 2.37@LongDryWay
-
 point 3933.07 908.27 station -name 1.14@ZigZags
-
 point 3822.83 501.57 station -name 1.4@ZigZags
-
-point 3323.62 1701.97 station -name 2.19@LongDryWay
-
-point 2831.50 1986.61 station -name 2.49@LongDryWay
-
-point 1041.34 1305.51 station -name 6.9@OldGrottoToWaterChamber
-
-point 4131.89 1936.22 station -name 5.5@NewGrottoes
-
 point 3421.65 779.53 station -name 2.3@LongDryWay
-
 point 4027.56 707.09 station -name 1.12@ZigZags
-
-point 4017.72 1885.83 station -name 5.4@NewGrottoes
-
-point 3307.87 1049.61 station -name 2.6@LongDryWay
-
 point 3866.14 750.00 station -name 1.11@ZigZags
-
-point 2217.32 2207.09 station -name 2.56@LongDryWay
-
-point 1509.45 1555.91 station -name 6.6@OldGrottoToWaterChamber
-
-point 1715.75 1685.04 station -name 6.5@OldGrottoToWaterChamber
-
-point 2705.12 2082.28 station -name 2.51@LongDryWay
-
-point 3377.56 879.13 station -name 2.4@LongDryWay
 
 endscrap

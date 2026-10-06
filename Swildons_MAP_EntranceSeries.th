@@ -96,6 +96,83 @@ endmap
 
 # The 1:200 Entrance Series sheet: the plan above plus the cross-sections
 # (too small and busy for the 1:500 whole-cave plan).
+#The Entrance Series plan at 1:200 draws its top level (the entrances and Zig Zags)
+#displaced 35 m east, clear of the passages beneath, with a dashed outline where it is.
+#EntranceSeriesPlan above (used by the whole-cave plan) is unchanged; keep these lists in step.
+map EntranceSeriesLowerLevel -title "Swildons Hole - Entrance Series"
+  elevfixSP@Swildons
+  LongDryWaySP4@Swildons
+    break
+  LongDryWaySP3@Swildons
+  LongDryWaySP1@Swildons
+  LongDryWaySP2@Swildons
+  KenneysSP2@KenneysDigToShowerbath.Swildons
+  KenneysSP1@KenneysDigToShowerbath.Swildons
+  WetWaySP3@Swildons
+  WetWaySP2@Swildons
+  WetWaySP1@Swildons
+  OxbowJunctionSP4@OxbowJunction.Swildons
+  CisternDigSP1@CisternDig.Swildons
+    break
+  UpperOxbowSP4@Swildons
+  UpperOxbowSP3@Swildons
+  UpperOxbowSP2@Swildons
+  UpperOxbowSP1@Swildons
+  DryWayStreamSP1@Swildons
+  ShowerbathSP1@ShowerbathArea.Swildons
+  OxbowJunctionSP3@OxbowJunction.Swildons
+  OxbowJunctionSP2@OxbowJunction.Swildons
+  OxbowJunctionSP1@OxbowJunction.Swildons
+  ButcombeChamberSP2@ButcombeOxbows.Swildons
+  ButcombeChamberSP1@ButcombeOxbows.Swildons
+  ButcombeOxbowSP1@ButcombeOxbows.Swildons
+    break
+  ShowerbathSP2@ShowerbathArea.Swildons
+  ShowerbathSP3@ShowerbathArea.Swildons
+  ShowerbathSP4@KenneysDigToShowerbath.Swildons
+    break
+  DryWayStreamSP2@Swildons
+  LongDryWaySP5@Swildons
+  NewGrottoesSP1@Swildons
+  BoulderChamberSP1@Swildons
+  BoulderChamberSP2@Swildons
+  ShortDryWaySP1@ShortDryWay.Swildons
+  ShortDryWaySP2@ShortDryWay.Swildons
+  ShortDryWaySP3@ShortDryWay.Swildons
+  BaptismCrawlSP1@ShowerbathArea.Swildons
+  OldGrottoSP1@Swildons
+  ShortDryWaySP5@Swildons
+  Old40SP2@Old40Route.Swildons
+  Old40SP1@Old40Route.Swildons
+    break
+  LowerOxbowSP1@LowerOxbow.Swildons
+  LowerOxbowSP2@LowerOxbow.Swildons
+  LowerOxbowSP3@LowerOxbow.Swildons
+  OldGrottoStreamSP3@Swildons
+  OldGrottoStreamSP2@Swildons
+  OldGrottoStreamSP1@Swildons
+  WetWaySP4@Swildons
+  WetWaySP5@WaterChamber.Swildons
+  WetWaySP6@WaterChamber.Swildons
+  WaterChamberSP2@WaterChamber.Swildons
+  WaterChamberSP1@WaterChamber.Swildons
+  WaterChamberDigSP1@WaterChamber.Swildons
+  WaterChamberDigSP2@WaterChamber.Swildons
+  WaterRiftSP1@WaterRift.Swildons
+  WaterRiftSP2@WaterRift.Swildons
+  RollingThunderSP1@RollingThunder.Swildons
+  RollingThunderSP2@RollingThunder.Swildons
+  Old40to20SP1@Old40to20.Swildons
+  EntranceLevelLower@Swildons
+endmap
+
+map EntranceSeriesTopLevel -title "Upper level: the entrances and Zig Zags"
+  EntranceSP1@Swildons
+  EntranceSP2@Swildons
+  EntranceLevelTop@Swildons
+  EntToWaterChamberXSTop@Swildons
+endmap
+
 map EntranceSeriesSections -title "Swildons Hole - Entrance Series cross-sections"
   EntToWaterChamberXS@Swildons
   ShortDryWayXS@Swildons
@@ -114,6 +191,7 @@ map EntranceSeriesSections -title "Swildons Hole - Entrance Series cross-section
 endmap
 
 map EntranceSeriesPlanSections -title "Swildons Hole - Entrance Series"
-  EntranceSeriesPlan
+  EntranceSeriesLowerLevel
   EntranceSeriesSections
+  EntranceSeriesTopLevel [35 0 m] above
 endmap

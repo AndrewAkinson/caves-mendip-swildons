@@ -30,7 +30,7 @@ SHEETS = [
     ("Swildons-plan.pdf",               "Plan",                     "Entrance to Sump 1, coloured by altitude, with cross-sections along the streamway. Scale 1:500."),
     ("Swildons-extended-elevation.pdf", "Extended elevation",      "The whole drawn cave unrolled along its passages, entrance to Sump 1. Scale 1:500."),
     ("Swildons-streamway-elevation.pdf", "Streamway elevation",     "Extended elevation from the Old 40 to Sump 1, with Barnes Loop above the streamway. Scale 1:500."),
-    ("Swildons-entrance-plan.pdf",      "Entrance Series",          "The Entrance Series down to Rolling Thunder, with cross-sections. Scale 1:200."),
+    ("Swildons-entrance-plan.pdf",      "Entrance Series",          "The Entrance Series down to Rolling Thunder, with cross-sections; the entrances and Zig Zags drawn to one side, clear of the passages beneath. Scale 1:200."),
     ("Swildons-entrance-extended-elevation.pdf", "Entrance Series extended elevation", "The Entrance Series unrolled along its passages. Scale 1:200."),
     ("Swildons-entrance-elevation.pdf", "Entrance Series east-west elevation", "Footleg's projected elevation; only partly drawn so far. Scale 1:200."),
     ("Swildons-plan-bw.pdf",            "Plan, greyscale",          "Same drawing, for a black-and-white printer."),

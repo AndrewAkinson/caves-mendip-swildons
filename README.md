@@ -16,7 +16,7 @@ the latest sheets, rebuilt from this repository every time it changes.
 | [Plan](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan.pdf) | Entrance to Sump 1, coloured by altitude, with cross-sections along the streamway. 1:500. |
 | [Extended elevation](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-extended-elevation.pdf) | The whole drawn cave unrolled along its passages, entrance to Sump 1. 1:500. |
 | [Streamway elevation](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-streamway-elevation.pdf) | Extended elevation from the Old 40 to Sump 1, with Barnes Loop above the streamway. 1:500. |
-| [Entrance Series plan](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-entrance-plan.pdf) | The Entrance Series down to Rolling Thunder, with cross-sections. 1:200. |
+| [Entrance Series plan](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-entrance-plan.pdf) | The Entrance Series down to Rolling Thunder, with cross-sections. The entrances and Zig Zags, which lie on top of the passages below, are drawn 35 m to the east, joined to them by letters. 1:200. |
 | [Entrance Series extended elevation](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-entrance-extended-elevation.pdf) | The Entrance Series unrolled along its passages. 1:200. |
 | [Entrance Series east–west elevation](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-entrance-elevation.pdf) | Footleg's projected elevation, only partly drawn. 1:200. |
 | [Plan, greyscale](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan-bw.pdf) | For a black-and-white printer. |
