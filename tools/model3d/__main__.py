@@ -293,10 +293,17 @@ def preview(chromium, out_dir, port=8765, size=(1200, 750)):
         r = subprocess.run(chrome + ['--dump-dom', 'data:text/html,<script>document.write(innerHeight)</script>'],
                            capture_output=True, text=True, timeout=60)
         m = re.search(r'<body>(\d+)', r.stdout)
-        subprocess.run(chrome + ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist',
-                                 '--virtual-time-budget=30000', f'--screenshot={png}',
-                                 f'http://127.0.0.1:{port}/index.html?still'],
-                       check=True, timeout=180, capture_output=True)
+        # Now and then Chrome takes the shot before three.js has arrived from
+        # the CDN, leaving only the loading screen (a small, plain PNG): retry.
+        for _ in range(3):
+            subprocess.run(chrome + ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist',
+                                     '--virtual-time-budget=30000', f'--screenshot={png}',
+                                     f'http://127.0.0.1:{port}/index.html?still'],
+                           check=True, timeout=180, capture_output=True)
+            if os.path.getsize(png) > 300_000:
+                break
+        else:
+            print('the preview only shows the loading screen', file=sys.stderr)
         if m:
             crop_png(png, int(m.group(1)))
     except (subprocess.SubprocessError, OSError, ValueError) as e:
