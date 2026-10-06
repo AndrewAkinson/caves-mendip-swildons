@@ -119,6 +119,19 @@ endscrap
 
 scrap StreamwaySP2 -projection plan -author 2017.03.26 "Footleg" -copyright 2017 "Paul 'Footleg' Fretwell" -scale [-128.0 -128.0 2844.5354330708656 -128.0 0.0 0.0 75.50239999999998 0.0 m]
 
+line wall
+  557.14 1099.29
+  580.16 1095.71 604.20 1129.46 624.49 1118.01
+endline
+line wall
+  1808.56 165.04
+  1820.26 159.80 1831.85 154.32 1843.49 148.96
+endline
+line wall
+  1858.36 147.29
+  1865.20 146.41 1869.82 146.08 1876.82 146.52
+  1887.63 132.12
+endline
 line floor-step
   255.84 1154.27
   255.84 1152.70
