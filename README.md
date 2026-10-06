@@ -23,6 +23,12 @@ the latest sheets, rebuilt from this repository every time it changes.
 | [Plan with centreline](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan-centreline.pdf) | The plan with survey legs and station names, for resurveying. 1:500. |
 | [Plan with Stanton's survey](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan-with-stanton.pdf) | The plan plus Stanton's survey beyond it as centreline, with station names, for planning where to resurvey next. 1:500. |
 
+**[The cave in 3D](https://paperclipmonkey.github.io/caves-mendip-swildons/3d/)**:
+the survey beneath the Environment Agency's LIDAR ground surface and
+satellite imagery, in the browser. See [tools/model3d](tools/model3d/README.md).
+
+[![Swildons Hole in 3D beneath the ground](docs/swildons-3d.jpg)](https://paperclipmonkey.github.io/caves-mendip-swildons/3d/)
+
 **Getting there**: for visitors new to the area, a map of where to park
 and the walks to the entrance. See [tools/surface](tools/surface/README.md).
 
@@ -157,6 +163,7 @@ PocketTopo workflow.
 | `PocketTopo/` | The original PocketTopo files and their exports. |
 | `tools/` | The sketch converter and helpers for adding new trips: see [tools/README.md](tools/README.md). |
 | `routes/`, `tools/routes/` | Route card definitions, and the tool that makes them. |
+| `tools/model3d/`, `surface/lidar/` | The 3D view, and the LIDAR ground it uses (fetched once, kept here). |
 | `WISLogbookTranscription/` | Scans and a transcription of Stanton's logbooks. |
 | `SwildonsHole.svx` | The data in Survex format. |
 | `swildons.thconfig`, `swildons-entrance.thconfig`, `swildons-centreline.thconfig`, `swildons-stanton.thconfig`, `gb_layout.thc` | Build configs and Footleg's British symbol set. |

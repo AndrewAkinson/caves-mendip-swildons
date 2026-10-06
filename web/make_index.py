@@ -280,6 +280,22 @@ def main():
   </div>""")
     doc.append("</div>")
 
+    # The 3D view (tools/model3d), if it was built
+    if os.path.exists(os.path.join(OUT, "3d", "index.html")):
+        thumb = ('<a class="thumb" href="3d/index.html"><img src="3d/preview.png" '
+                 'alt="The cave in 3D beneath the ground" loading="lazy"></a>'
+                 if os.path.exists(os.path.join(OUT, "3d", "preview.png")) else "")
+        doc.append(f"""<h2>In 3D</h2>\n<div class="grid">
+  <div class="card">
+    {thumb}
+    <div class="body">
+      <h3><a href="3d/index.html">The cave beneath the ground</a></h3>
+      <p>The survey in 3D under the Environment Agency&rsquo;s LIDAR ground surface and satellite imagery. Drag to turn it, scroll or pinch to zoom.</p>
+      <div class="size"><a href="3d/index.html">Open in the browser</a></div>
+    </div>
+  </div>
+</div>""")
+
     # The surface map (tools/surface), if it was built
     surf = os.path.join(OUT, "surface", "index.html")
     if os.path.exists(surf):

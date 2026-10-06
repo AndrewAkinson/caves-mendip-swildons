@@ -104,13 +104,16 @@ jobs:
       # Route cards (tools/routes): one A3 sheet per route in routes/*.toml,
       # drawn over the plan just rendered and printed to PDF by Chrome,
       # which the runner has. Plain Python, no packages needed.
-      - name: Build the route cards and surface map
+      - name: Build the route cards, surface map and 3D view
         run: |
           export CHROMIUM="$(command -v google-chrome || command -v chromium)"
           python3 -m tools.routes
           # the surface map: parking and walks from surface/surface.geojson
           # over OpenStreetMap (tiles cached in surface/tiles/)
           python3 -m tools.surface
+          # the 3D view: the cave under the LIDAR ground (cached in
+          # surface/lidar/), with a still for the index page
+          python3 -m tools.model3d
 
       - name: Build the index page
         run: |
