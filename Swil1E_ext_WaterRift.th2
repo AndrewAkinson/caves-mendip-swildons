@@ -172,10 +172,6 @@ line wall -subtype presumed -outline out
   1392.07 1023.96
   1387.73 1023.96
 endline
-line wall -outline out
-  1387.73 1023.96
-  1387.52 1024.17 1387.33 1024.36 1387.17 1024.53
-endline
 line wall -subtype presumed -outline out
   1387.17 1024.53
   1383.04 1023.28

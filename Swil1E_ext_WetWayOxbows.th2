@@ -676,10 +676,6 @@ line wall -outline out
   568.69 1057.71 566.03 1056.16 563.46 1054.66
 endline
 line wall -outline out
-  529.14 1036.88
-  529.14 1036.08 528.87 1035.98 528.27 1036.59
-endline
-line wall -outline out
   522.57 1034.48
   521.24 1033.32 519.60 1032.82 517.67 1033.17
 endline

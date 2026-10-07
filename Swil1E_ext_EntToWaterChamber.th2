@@ -225,17 +225,9 @@ line wall -outline out
   4611.10 693.35
   4610.41 692.79 4609.89 692.98 4609.40 694.01
 endline
-line wall -outline out
-  4602.87 696.48
-  4602.48 695.81 4602.12 695.95 4601.91 696.84
-endline
 line wall -subtype presumed -outline out
   4601.91 696.84
   4523.54 727.97
-endline
-line wall -outline out
-  4523.54 727.97
-  4522.80 727.44 4522.44 727.59 4522.58 728.34
 endline
 line wall -outline out
   4516.40 730.72
@@ -1516,10 +1508,6 @@ line wall -outline out
   1424.75 1100.13
   1423.33 1098.89 1421.68 1098.41 1419.81 1098.80
 endline
-line wall -outline out
-  1406.09 1094.97
-  1405.97 1094.12 1405.62 1094.04 1405.07 1094.69
-endline
 line wall -subtype presumed -outline out
   1405.07 1094.69
   1399.73 1093.64
@@ -1539,7 +1527,6 @@ endline
 line wall -subtype presumed -outline out
   1228.38 1122.38
   1237.38 1121.58
-  1243.76 1118.65
   1242.03 1118.63
   1242.02 1104.64
   1224.04 1104.08

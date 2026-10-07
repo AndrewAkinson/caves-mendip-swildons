@@ -213,10 +213,6 @@ line wall -outline out
   2723.28 815.12
   2722.12 814.65 2721.27 814.96 2720.70 815.99
 endline
-line wall -outline out
-  2714.19 818.47
-  2713.59 817.87 2713.27 817.99 2713.23 818.84
-endline
 line wall -subtype presumed -outline out
   2713.23 818.84
   2665.81 839.64

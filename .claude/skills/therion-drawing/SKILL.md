@@ -136,6 +136,11 @@ walls (`python3 -m tools.sketch2therion roofs`, see `tools/README.md`).
 
 These are set in `gb_layout.thc` and `altitude-colours.th`:
 
+- A sump keeps an opening in its wall about 1 m wide where the dive
+  line goes on (the sketch's brown line through the pool).
+- Kinks and folds are conversion faults, never cave: a point where a
+  line steps back on itself over a short distance, or a wall stub
+  under 30 cm turning back off another wall's end. Remove them.
 - Water is always blue, so passages never are: the altitude colours
   (`lookup altitude:warm`, used as `color map-fg altitude:warm`) run
   from dark red at the bottom of the cave through orange and yellow to
@@ -200,6 +205,10 @@ itself").
 
 ### How these sketches read (answers from the review)
 
+- The furthest drawn line out from the passage is the wall (the
+  surveyor could only have drawn it by seeing it); a line between it
+  and the survey is a step or ledge, even when the converter or
+  Footleg's tidy-up made the outer one a dashed (presumed) wall.
 - Black is wall, including bays and alcoves where the wall bends in and
   out; a black line inside the passage is a step only where it is the
   edge of a shelf. Don't let Therion close a bend with a straight line.
