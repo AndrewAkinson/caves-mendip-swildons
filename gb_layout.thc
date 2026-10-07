@@ -262,13 +262,13 @@ layout CustomisedSymbols
     enddef;  
 
   def l_rockborder (expr p) =
-    if abs(llcorner p - urcorner p) > u:
+    if abs(llcorner p - urcorner p) > 0.1u:
       l_rockborder_UIS(p);
     fi;
   enddef;
   
   def l_rockedge (expr p) =
-    if abs(llcorner p - urcorner p) > u:
+    if abs(llcorner p - urcorner p) > 0.1u:
       l_rockedge_UIS(p);
     fi;
   enddef;
