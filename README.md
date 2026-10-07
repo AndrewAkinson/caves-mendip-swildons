@@ -1,17 +1,16 @@
 # Swildons Hole
 
-[![Plan of Swildons Hole from the entrance to Sump 1](docs/swildons-plan.png)](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan.pdf)
+[![Plan of Swildons Hole from the entrance to Sump 1. Click to open the survey.](docs/swildons-plan.png)](https://paperclipmonkey.github.io/caves-mendip-swildons/)
 
-The survey of **Swildons Hole**, Priddy, Mendip, Somerset. It combines
-the resurvey led by Paul 'Footleg' Fretwell (2012–2019) with
-W. I. Stanton's original survey of the 1950s and 60s, transcribed from
-his logbooks. The resurvey was done with DistoX and PocketTopo; the
-survey is drawn and built with [Therion](https://therion.speleo.sk/).
+## **[Open the survey →](https://paperclipmonkey.github.io/caves-mendip-swildons/)**
 
-**[Open the survey](https://paperclipmonkey.github.io/caves-mendip-swildons/)**:
-the latest sheets, rebuilt from this repository every time it changes.
+The survey of **Swildons Hole**, Priddy, Mendip, Somerset: the resurvey
+led by Paul 'Footleg' Fretwell (2012–2019) joined to W. I. Stanton's
+survey of the 1950s and 60s. The survey site has every sheet, the 3D
+view, directions to the entrance and the route cards, rebuilt from this
+repository every time it changes.
 
-| Sheet | |
+| On the survey site | |
 |---|---|
 | [Plan](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan.pdf) | Entrance to Sump 1, coloured by altitude, with cross-sections along the streamway. 1:500. |
 | [Extended elevation](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-extended-elevation.pdf) | The whole drawn cave unrolled along its passages, entrance to Sump 1. 1:500. |
@@ -22,25 +21,14 @@ the latest sheets, rebuilt from this repository every time it changes.
 | [Plan, greyscale](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan-bw.pdf) | For a black-and-white printer. |
 | [Plan with centreline](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan-centreline.pdf) | The plan with survey legs and station names, for resurveying. 1:500. |
 | [Plan with Stanton's survey](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan-with-stanton.pdf) | The plan plus Stanton's survey beyond it as centreline, with station names, for planning where to resurvey next. 1:500. |
-
-**[The cave in 3D](https://paperclipmonkey.github.io/caves-mendip-swildons/3d/)**:
-the survey beneath the Environment Agency's LIDAR ground surface and
-satellite imagery, in the browser. See [tools/model3d](tools/model3d/README.md).
-
-[![Swildons Hole in 3D beneath the ground](docs/swildons-3d.jpg)](https://paperclipmonkey.github.io/caves-mendip-swildons/3d/)
-
-**Getting there**: for visitors new to the area, a map of where to park
-and the walks to the entrance. See [tools/surface](tools/surface/README.md).
-
-**Route cards** (draft): one sheet per route through the cave, with
-the way to go at each junction, made automatically from the survey. See
-[tools/routes](tools/routes/README.md); the routes are in `routes/`.
+| [The cave in 3D](https://paperclipmonkey.github.io/caves-mendip-swildons/3d/) | The survey beneath the Environment Agency's LIDAR ground surface and satellite imagery, in the browser. See [tools/model3d](tools/model3d/README.md). |
+| [Getting there](https://paperclipmonkey.github.io/caves-mendip-swildons/surface/index.html) | For visitors new to the area: where to park and the walks to the entrance. See [tools/surface](tools/surface/README.md). |
+| Route cards (draft) | One sheet per route through the cave, with the way to go at each junction, made from the survey. On the [survey site](https://paperclipmonkey.github.io/caves-mendip-swildons/); see [tools/routes](tools/routes/README.md). |
 
 The survey site also has the 3D model (Survex `.3d` for Aven, Therion
 `.lox` for Loch), Google Earth `.kml` files and the survey data as CSV
-and SQL.
-
-[![Extended elevation of the streamway from the Old 40 to Sump 1](docs/swildons-streamway-elevation.png)](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-streamway-elevation.pdf)
+and SQL. The resurvey was done with DistoX and PocketTopo, and the
+survey is drawn and built with [Therion](https://therion.speleo.sk/).
 
 ## What's surveyed
 
@@ -63,6 +51,8 @@ vertical range, fixed to the OS grid at the entrance by GPS.
   Where the resurvey has replaced one of his sections, his legs are kept
   to connect the rest of his survey but flagged `duplicate`, so they
   are not counted twice.
+
+[![Extended elevation of the streamway from the Old 40 to Sump 1](docs/swildons-streamway-elevation.png)](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-streamway-elevation.pdf)
 
 ### Resurvey trips
 
