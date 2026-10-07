@@ -43,20 +43,22 @@ select StreamwayElevation@SwildonsHole
 # title, scale bar and survey details, instead of stacked under them, and
 # the symbol legend full width underneath. This is Therion's own
 # \legendcontent (therion.tex) with the colour legend moved into an \hbox.
+# The two columns are kept as \hdrtextcolumn and \hdrcolourcolumn so
+# header-one-row below can reuse them.
 layout header-two-columns
   code tex-map
     \newbox\hdrtextbox \newbox\hdrcolourbox
     \newdimen\hdrcolourwidth \hdrcolourwidth=4.5cm
     \newdimen\hdrgap \hdrgap=0.8cm
-    \legendcontent={%
-      \hsize=\legendwidth
-      \black\the\legendtextcolor
+    \newdimen\hdrtextwidth
+    \def\hdrnortharrow{%
       \ifnortharrow
         \setbox\tmpboxa=\hbox{\northarrow}%
         \tmpdimen=\dimexpr(\wd\tmpboxa+10pt)%
         \vbox to 0pt{\line{\hfil\box\tmpboxa}\vss}%
-      \fi
-      \setbox\hdrtextbox=\vtop{\hsize=\dimexpr\legendwidth-\hdrcolourwidth-\hdrgap\relax
+      \fi}
+    \def\hdrtextcolumn{%
+      \setbox\hdrtextbox=\vtop{\hsize=\hdrtextwidth
         \edef\tmp{\the\cavename}\ifx\tmp\empty\else
           {\rightskip=\tmpdimen plus 10em\the\legendtextheadersize\the\cavename\par}\vskip1cm
         \fi
@@ -70,17 +72,67 @@ layout header-two-columns
           \edef\tmp{\the\topoteam}\ifx\tmp\empty\else{\the\legendtextsize\si\the\topotitle: \ss\the\topoteam\quad\si\the\topodate\par}\fi
           \edef\tmp{\the\cartoteam}\ifx\tmp\empty\else{\the\legendtextsize\si\the\cartotitle: \ss\the\cartoteam\quad\si\the\cartodate\par}\fi
           \edef\tmp{\the\copyrights}\ifx\tmp\empty\else{\the\legendtextsize\ss\the\copyrights\par}\fi
-        }}%
+        }}}
+    \def\hdrcolourcolumn{%
       \setbox\hdrcolourbox=\vtop{\hsize=\hdrcolourwidth
         \ifcolorlegend
           \vskip1.2cm{\the\legendtextsectionsize\the\colorlegendtitle}\bigskip
           \insertcolorlegend
-        \fi}%
+        \fi}}
+    \legendcontent={%
+      \hsize=\legendwidth
+      \black\the\legendtextcolor
+      \hdrnortharrow
+      \hdrtextwidth=\dimexpr\legendwidth-\hdrcolourwidth-\hdrgap\relax
+      \hdrtextcolumn \hdrcolourcolumn
       \hbox{\box\hdrtextbox\hskip\hdrgap\box\hdrcolourbox}%
       \iflegend
         \vskip1cm{\the\legendtextsectionsize\the\legendtitle}\bigskip
         \insertlegend
       \fi
+      \black
+    }
+  endcode
+endlayout
+
+# The whole header in one row: title and survey details, the altitude
+# legend, then the symbol legend shrunk to \hdrlegendscale in its own
+# columns, so the header is only as tall as the survey details and the
+# sheet stays thin. legend-width is the width of the title column;
+# legend-columns is how many columns the symbol legend uses.
+layout header-one-row
+  copy header-two-columns
+  code tex-map
+    \newbox\hdrlegendbox
+    \def\hdrlegendscale{0.75}
+    % width of the symbol legend before it is shrunk
+    \newdimen\hdrlegendwidth \hdrlegendwidth=22cm
+    \legendcontent={%
+      \hsize=\legendwidth
+      \black\the\legendtextcolor
+      \hdrcolourwidth=3.5cm
+      \hdrtextwidth=\legendwidth
+      \tmpdimen=0pt
+      \hdrtextcolumn \hdrcolourcolumn
+      \iflegend
+        \setbox\hdrlegendbox=\vbox{\hsize=\hdrlegendwidth
+          \vskip1.2cm{\the\legendtextsectionsize\the\legendtitle}\bigskip
+          \insertlegend}%
+        % Shrink it as a picture, so the symbols and their text shrink
+        % together, then give TeX a box of the shrunk size to lay out.
+        \setbox\tmpboxb=\hbox{\pdfsave\pdfsetmatrix{\hdrlegendscale\space 0 0 \hdrlegendscale}%
+          \rlap{\lower\ht\hdrlegendbox\box\hdrlegendbox}\pdfrestore}%
+        \tmpdimen=\dp\tmpboxb \tmpdimen=\hdrlegendscale\tmpdimen
+        \ht\tmpboxb=0pt \dp\tmpboxb=0pt
+        % The north arrow goes above it, clear of the cave.
+        \setbox\hdrlegendbox=\vtop{\kern0pt
+          \ifnortharrow\hbox{\northarrow}\kern-0.6cm\fi
+          \box\tmpboxb\kern\tmpdimen}%
+        \wd\hdrlegendbox=\hdrlegendscale\hdrlegendwidth
+      \fi
+      \setbox\hdrtextbox=\hbox{\box\hdrtextbox\hskip\hdrgap\box\hdrcolourbox
+        \iflegend\hskip\hdrgap\box\hdrlegendbox\fi}%
+      \box\hdrtextbox
       \black
     }
   endcode
@@ -96,11 +148,12 @@ layout plan-sheet
   symbol-hide point station   # survey stations are for surveyors, not for finding the way
 
   # The cave runs west to Sump 1, leaving room under the middle of the
-  # plan: the title, scale bar and legend start there, not down the right.
-  map-header 40.5 26 nw
+  # plan: the header starts there, just right of Tratman's Temple, and
+  # runs in one row under the Entrance Series, which keeps the sheet thin.
+  map-header 31 20 nw
   legend-columns 4
-  legend-width 26 cm
-  copy header-two-columns
+  legend-width 20 cm
+  copy header-one-row
 
   color map-fg altitude:warm
   copy LayoutColourSymbols
@@ -118,11 +171,12 @@ layout plan-bw
   symbol-hide point station   # survey stations are for surveyors, not for finding the way
 
   # The cave runs west to Sump 1, leaving room under the middle of the
-  # plan: the title, scale bar and legend start there, not down the right.
-  map-header 40.5 26 nw
+  # plan: the header starts there, just right of Tratman's Temple, and
+  # runs in one row under the Entrance Series, which keeps the sheet thin.
+  map-header 31 20 nw
   legend-columns 4
-  legend-width 26 cm
-  copy header-two-columns
+  legend-width 20 cm
+  copy header-one-row
 
   color map-fg [85]
 endlayout
