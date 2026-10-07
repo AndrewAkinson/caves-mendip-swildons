@@ -5,58 +5,58 @@ encoding  utf-8
 survey Swildons
 
   #Centreline data from Willie Stanton original survey 
-  input Swildons_WIS_notdup.th
+  input stanton/Swildons_WIS_notdup.th
   
   #Data files which share a .th2 file (imported here too)
   
-  input Swildons_ZigZags.th
-  input Swildons_LongDryPrettyWay.th
-  input Swildons_NewGrottoes.th
-  input Swildons_OldGrottoToWaterChamber.th
-  input Swildons_InletOffOldGrottoToWaterChamber.th
+  input entrance/2012-09-09/Swildons_ZigZags.th
+  input entrance/2013-02-23/Swildons_LongDryPrettyWay.th
+  input entrance/2013-02-24/Swildons_NewGrottoes.th
+  input entrance/2013-02-24/Swildons_OldGrottoToWaterChamber.th
+  input entrance/2016-07-10/Swildons_InletOffOldGrottoToWaterChamber.th
   #Combined sketch for all 5 of the above
-  input Swil1P_Ent-OldGrotto-WaterChamber.th2
-  input Swil1P_EntranceLevels.th2
+  input entrance/2013-02-23/Swil1P_Ent-OldGrotto-WaterChamber.th2
+  input entrance/Swil1P_EntranceLevels.th2
   
-  input Swildons_WetWayOxbows.th
-  input Swildons_WetWayKeyhole.th
+  input entrance/2016-01-16/Swildons_WetWayOxbows.th
+  input entrance/2016-07-09/Swildons_WetWayKeyhole.th
   #Combined sketch for all 2 of the above
-  input Swil1P_WetWayOxbows.th2
+  input entrance/2016-01-16/Swil1P_WetWayOxbows.th2
   
   #The following data files import their respective sketches
   #directly inside their sub-survey data blocks.
-  input Swildons_ShortDryWay.th
-  input Swildons_KenneysDigToShowerbath.th
-  input Swildons_LowerEntAreaViaShowerbathToBaptism.th
-  input Swildons_Old40Route.th
-  input Swildons_WaterRiftToFoldedStrataCorner.th
-  input Swildons_ButcombeOxbows.th
-  input Swildons_WaterChamber.th
-  input Swildons_OxbowJunction.th
-  input Swildons_LowerOxbow.th
-  input Swildons_CisternDig.th
-  input Swildons_Old40to20.th
-  input Swildons_RollingThunder.th
-  input Swildons_20toBarnesLoop.th
-  input Swildons_DblPotsDownstream.th
-  input Swildons_BarnesLoopToTratmans.th
-  input Swildons_TratmansToSump1.th
+  input entrance/2013-02-24/Swildons_ShortDryWay.th
+  input entrance/2013-06-30/Swildons_KenneysDigToShowerbath.th
+  input entrance/2013-06-30/Swildons_LowerEntAreaViaShowerbathToBaptism.th
+  input entrance/2013-06-29/Swildons_Old40Route.th
+  input entrance/2013-06-29/Swildons_WaterRiftToFoldedStrataCorner.th
+  input entrance/2016-01-17/Swildons_ButcombeOxbows.th
+  input entrance/2016-07-09/Swildons_WaterChamber.th
+  input entrance/2016-07-09/Swildons_OxbowJunction.th
+  input entrance/2016-07-10/Swildons_LowerOxbow.th
+  input entrance/2017-03-11/Swildons_CisternDig.th
+  input streamway/2017-03-11/Swildons_Old40to20.th
+  input entrance/2019-01-05/Swildons_RollingThunder.th
+  input streamway/2017-03-25/Swildons_20toBarnesLoop.th
+  input streamway/2017-07-08/Swildons_DblPotsDownstream.th
+  input streamway/2017-10-14/Swildons_BarnesLoopToTratmans.th
+  input streamway/2019-01-05/Swildons_TratmansToSump1.th
 
   #Entrance Series extended elevation and cross-sections, from the PocketTopo sketches
-  input Swil1E_ext_EntToWaterChamber.th2
-  input Swil1E_ext_ShortDryWay.th2
-  input Swil1E_ext_WaterRift.th2
-  input Swil1E_ext_Old40Route.th2
-  input Swil1E_ext_KenneysDig.th2
-  input Swil1E_ext_ShowerbathArea.th2
-  input Swil1E_ext_WetWayOxbows.th2
-  input Swil1E_ext_ButcombeOxbows.th2
-  input Swil1E_ext_OxbowJunction.th2
-  input Swil1E_ext_WaterChamber.th2
-  input Swil1E_ext_LowerOxbow.th2
-  input Swil1E_ext_CisternDig.th2
-  input Swil1E_ext_RollingThunder.th2
-  input Swil1E_ext_WetWayKeyhole.th2
+  input entrance/2013-02-23/Swil1E_ext_EntToWaterChamber.th2
+  input entrance/2013-02-24/Swil1E_ext_ShortDryWay.th2
+  input entrance/2013-06-29/Swil1E_ext_WaterRift.th2
+  input entrance/2013-06-29/Swil1E_ext_Old40Route.th2
+  input entrance/2013-06-30/Swil1E_ext_KenneysDig.th2
+  input entrance/2013-06-30/Swil1E_ext_ShowerbathArea.th2
+  input entrance/2016-01-16/Swil1E_ext_WetWayOxbows.th2
+  input entrance/2016-01-17/Swil1E_ext_ButcombeOxbows.th2
+  input entrance/2016-07-09/Swil1E_ext_OxbowJunction.th2
+  input entrance/2016-07-09/Swil1E_ext_WaterChamber.th2
+  input entrance/2016-07-10/Swil1E_ext_LowerOxbow.th2
+  input entrance/2017-03-11/Swil1E_ext_CisternDig.th2
+  input entrance/2019-01-05/Swil1E_ext_RollingThunder.th2
+  input entrance/2016-07-09/Swil1E_ext_WetWayKeyhole.th2
 
   centreline
     copyright 2019 "Paul 'Footleg' Fretwell"

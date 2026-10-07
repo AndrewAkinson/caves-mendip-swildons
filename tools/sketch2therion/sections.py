@@ -21,6 +21,7 @@ repository after the main build:
 """
 import glob
 import math
+import os
 import re
 from xml.etree import ElementTree
 
@@ -38,12 +39,12 @@ CENTRELINE_KML = 'output/Swildons-centreline.kml'
 # The sheets the cross-sections are drawn on: which surveys' sections
 # (by th2 file), and which plan maps (by KML title) they must keep off,
 # each with the offset it is drawn at on that sheet (metres east, north).
-ENTRANCE_TOP_SHIFT = (35.0, 0.0)        # EntranceSeriesTopLevel [35 0 m] in Swildons_MAP_EntranceSeries.th
+ENTRANCE_TOP_SHIFT = (35.0, 0.0)        # EntranceSeriesTopLevel [35 0 m] in entrance/Swildons_MAP_EntranceSeries.th
 SHEETS = {
-    'entrance': {'files': 'Swil1E_ext_*.th2',
+    'entrance': {'files': '*/**/Swil1E_ext_*.th2',
                  'maps': {'Swildons Hole - Entrance Series': (0.0, 0.0),
                           'Upper level: the entrances and Zig Zags': ENTRANCE_TOP_SHIFT}},
-    'master': {'files': 'Swil1E_[!e]*.th2',
+    'master': {'files': '*/**/Swil1E_[!e]*.th2',
                'maps': {'Swildons Hole - Entrance Series': (0.0, 0.0),
                         'Upper level: the entrances and Zig Zags': (0.0, 0.0),
                         'Swildons 1 - Streamway': (0.0, 0.0)}},
@@ -137,12 +138,15 @@ def _scraps(text):
 
 
 def _survey_of(th2):
-    """The survey a th2 file is input in, from the .th files."""
-    for th in glob.glob('*.th'):
+    """The survey a th2 file is input in, from the .th files. An input's
+    path is relative to the file it is in."""
+    for th in glob.glob('**/*.th', recursive=True):
         t = open(th, encoding='utf-8', errors='replace').read()
-        i = t.find('input ' + th2)
-        if i < 0:
+        rel = os.path.relpath(th2, os.path.dirname(th) or '.')
+        m = re.search(r'^\s*input\s+' + re.escape(rel) + r'\s*$', t, re.M)
+        if not m:
             continue
+        i = m.start()
         found = re.findall(r'^\s*survey (\S+)', t[:i], re.M)
         if found:
             return found[-1]
@@ -201,7 +205,7 @@ FILES = {}     # path -> (text, {scrap name: parsed objects}) for writing back
 def collect(survey, sheet):
     """The cross-sections on a sheet, each with what's needed to place it."""
     secs = []
-    for path in sorted(glob.glob(SHEETS[sheet]['files'])):
+    for path in sorted(glob.glob(SHEETS[sheet]['files'], recursive=True)):
         text = open(path, 'rb').read().decode('utf-8').replace('\r\n', '\n')
         FILES[path] = (text, {})
         bodies = {m.group(2): (m.group(1), m.group(3)) for m in _scraps(text)}

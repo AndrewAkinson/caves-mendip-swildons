@@ -115,9 +115,9 @@ class Survey:
         return math.dist(self.pos[a], self.pos[b])
 
     # -- passage names -----------------------------------------------------------
-    def load_labels(self, pattern='Swil1P_*.th2'):
+    def load_labels(self, pattern='*/**/Swil1P_*.th2'):
         """Labels from the plan drawings, in survey coordinates."""
-        for f in sorted(glob.glob(pattern)):
+        for f in sorted(glob.glob(pattern, recursive=True)):
             txt = open(f, encoding='utf-8', errors='replace').read().replace('\r', '')
             for m in re.finditer(r'^scrap (\S+).*?^endscrap', txt, re.S | re.M):
                 body = m.group(0)

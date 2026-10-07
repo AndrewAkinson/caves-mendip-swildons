@@ -109,7 +109,7 @@ def cmd_plan(a):
     text, scraps, sections = convert.plan(sk, _opts(a), a.output, layout(a.layout or PLAN_LAYOUT), floor, a.tol)
     write_th2(tidy.tidy_text(text, a.map_scale), a.output)
     print(f"wrote {a.output}: {len(scraps)} plan scraps, {len(sections)} cross-sections")
-    print("Add to a plan map (e.g. in Swildons_MAP_Streamway1.th):")
+    print("Add to a plan map (e.g. in streamway/Swildons_MAP_Streamway1.th):")
     for s in scraps:
         print(f"  {s}@{a.survey or '<survey>'}.Swildons")
 
@@ -121,7 +121,7 @@ def cmd_extended(a):
         layout(a.plan_layout or PLAN_LAYOUT), a.tol, a.floor_reach, a.roof_reach)
     write_th2(tidy.tidy_text(text, a.map_scale), a.output)
     print(f"wrote {a.output}: {len(scraps)} elevation scraps, {len(sections)} cross-sections")
-    print("Add to an extended map (e.g. in Swildons_MAP-elev_Streamway.th):")
+    print("Add to an extended map (e.g. in streamway/Swildons_MAP-elev_Streamway.th):")
     for s in scraps:
         print(f"  {s}@{a.survey or '<survey>'}.Swildons")
     if plan_scraps:

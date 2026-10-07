@@ -1,0 +1,70 @@
+Swildons Therion Survey Project Workflows
+-----------------------------------------
+This document provides notes on the data processing workflows used to capture and add data into the 
+Therion project.
+
+New Survey Trips
+================
+Using SexyTopo (from 2026)
+See tools/README.md for the full workflow. In short:
+1) Survey with SexyTopo and a DistoX, sketching the plan and extended elevation, with cross-sections
+   drawn using SexyTopo's cross-section tool. Black/brown/grey for walls, blue water, green formations,
+   red/orange for notes (ignored by the converter).
+2) Export to Therion from SexyTopo, and copy the export and SexyTopo's own files into
+   <area>/<yyyy-mm-dd>/sexytopo/.
+3) Make <area>/<yyyy-mm-dd>/Swildons_<Where>.th from tools/new-trip-template.th with the exported data, team and copyright.
+   Input it in Swildons_Centreline.th, equate its first station to the station it started from, and add
+   the survey to the ResurveyCentreline map in swildonsmaster.th.
+4) Export Therion's station layout:  therion -l output/therion-layout.log tools/layout.thconfig
+5) Check and convert the sketches with  python3 -m tools.sketch2therion check / plan / extended ...
+   and add the scraps it lists to the plan and extended maps.
+6) Build, then tidy the drawings in xTherion over the linked sketch backdrop.
+
+Using Pocket Topo (2012-2019 trips)
+1) Surveying using PocketTopo on a PDA underground.
+2) Copy the .top file from PocketTopo into the trip's folder, <area>/<yyyy-mm-dd>/pockettopo/.
+3) Export the text format from PocketTopo using the same filename as the .top file (but with the file extension .txt).
+4) Export the Therion format data from PocketTopo using the same filename as before but with '_th.txt' as the suffix.
+
+Using Cave Converter and Survex
+5) Convert the Text export file from PocketTopo into Survex format using Footleg's Cave Converter program.
+6) Merge this data into the master Survex project file.
+   Flag duplicate legs as duplicates.
+
+Using Therion
+a) Data
+7) For each survey trip, create a new Therion Text project file containing a survey <name> / endsurvey block.
+   Import the survey data into this from the Therion export file, creating a centreline block inside the survey block.
+   Add team and copyright information into this new survey centreline block.
+8) Open the corresponding Text export file from PocketTopo, and copy and station comments into the .th file centreline data.
+9) Open the Swildons_Centreline.th file and add an input statement to include the new data .th file.
+10) Add equates into the Swildons_Centreline.th file to attach the new survey data to the existing centreline.
+11) Remove obsolete equate legs from within centreline data block (zero length legs).
+12) Mark any duplicate legs as duplicates.
+13) Compile project to check data is processed and appears in lox model correctly.
+
+b) Sketches
+x) For each survey trip, create a new Therion sketch project file, and import the plan drawing into this from the Therion export file.
+y) If the entire set of survey data for the sketch is in a single .th file then add the input statement into that .th file to import
+   the sketch (.th2 file) inside the survey block in that .th file.
+   If the sketch covers survey data from multiple .th files then add the input statements into the Swildons_Centreline.th file 
+   directly after the input statements for the set of .th data files covering the sketch.
+
+
+---
+
+Updating Sketches with Additional Data
+======================================
+Sometimes Existing PocketTopo sketches get updated on later surveying trips with details not captured on the original trip.
+In these cases, this workflow enables the sketch to be updated in the master Therion project so that the additional data 
+and drawings can be incorporated into the already processed data from the original trip.
+
+1) Export the text and Therion format data from the updated sketch in PocketTopo as for a new trip.
+2) Create a temporary new project text file in Therion and import the Therion export data.
+3) Copy and paste updated data into the project file from the original trip. Multiple centreline blocks with different dates
+   and team information are not supported inside the same survey, so a new survey file is needed for any new data from a later trip.
+4) Create a temporary new map project file and import the drawing into the map editor from the Therion export file.
+5) Take the .xvi sketch file which the previous step generated, and either rename it to replace the original .xvi file 
+   or update the filename in the corresponding .th2 file to reference the new .xvi file.
+6) Reopen the .th2 file in the map editor to see the updated background sketch. The scraps can now be ammended.
+ 

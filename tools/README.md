@@ -62,19 +62,22 @@ write notes in red or orange or they will be read as walls.
 1. **Export.** In SexyTopo use *Export → Therion*. It writes a `.th`
    file, a plan and an extended-elevation `.th2`, and an `.xvi` sketch
    for each. Copy the whole export, plus SexyTopo's own survey files,
-   into `SexyTopo/<yyyymmdd>_<Where>/` so the originals are kept. The
+   into the trip's own folder, `<area>/<yyyy-mm-dd>/sexytopo/` (for
+   example `streamway/2026-11-07/sexytopo/`), so the originals are kept. The
    `.th2` files SexyTopo writes are empty scraps; the converter
    replaces them.
 
 2. **The survey data.** Copy `tools/new-trip-template.th` to
-   `Swildons_<Where>.th` at the top of the repository:
+   `Swildons_<Where>.th` in the trip's folder, e.g.
+   `streamway/2026-11-07/Swildons_Sump1ToSwildons2.th`:
    - Give it a survey name, e.g. `Sump1ToSwildons2`.
    - Fill in the date, team and copyright.
    - Paste in the `data` and `extend` lines from SexyTopo's `.th`.
 
    Then tie it in:
-   - In `Swildons_Centreline.th`, add `input Swildons_<Where>.th` with
-     the others, and an equate to the station the trip started from,
+   - In `Swildons_Centreline.th`, add
+     `input streamway/2026-11-07/Swildons_Sump1ToSwildons2.th` with the
+     others, and an equate to the station the trip started from,
      e.g. `equate 0@Sump1ToSwildons2 24.33@TratmansToSump1`.
    - Add `<Survey>@Swildons` to the `ResurveyCentreline` map in
      `swildonsmaster.th`, so the trip's legs appear on the centreline
@@ -93,8 +96,8 @@ write notes in red or orange or they will be read as walls.
 4. **Check the sketches.**
 
    ```bash
-   python3 -m tools.sketch2therion check SexyTopo/20261107_Sump1ToSwildons2/plan.xvi --survey Sump1ToSwildons2
-   python3 -m tools.sketch2therion check SexyTopo/20261107_Sump1ToSwildons2/ee.xvi --survey Sump1ToSwildons2 --elevation
+   python3 -m tools.sketch2therion check streamway/2026-11-07/sexytopo/plan.xvi --survey Sump1ToSwildons2
+   python3 -m tools.sketch2therion check streamway/2026-11-07/sexytopo/ee.xvi --survey Sump1ToSwildons2 --elevation
    ```
 
    It reports:
@@ -116,14 +119,14 @@ write notes in red or orange or they will be read as walls.
 5. **Convert.**
 
    ```bash
-   python3 -m tools.sketch2therion plan SexyTopo/20261107_Sump1ToSwildons2/plan.xvi \
-     --survey Sump1ToSwildons2 --floor SexyTopo/20261107_Sump1ToSwildons2/ee.xvi \
+   python3 -m tools.sketch2therion plan streamway/2026-11-07/sexytopo/plan.xvi \
+     --survey Sump1ToSwildons2 --floor streamway/2026-11-07/sexytopo/ee.xvi \
      --author 2026.11.07 "Michael Waterworth" --copyright 2026 "Michael Waterworth" \
-     -o Swil1P_Sump1ToSwildons2.th2
-   python3 -m tools.sketch2therion extended SexyTopo/20261107_Sump1ToSwildons2/ee.xvi \
+     -o streamway/2026-11-07/Swil1P_Sump1ToSwildons2.th2
+   python3 -m tools.sketch2therion extended streamway/2026-11-07/sexytopo/ee.xvi \
      --survey Sump1ToSwildons2 \
      --author 2026.11.07 "Michael Waterworth" --copyright 2026 "Michael Waterworth" \
-     -o Swil1E_Sump1ToSwildons2.th2
+     -o streamway/2026-11-07/Swil1E_Sump1ToSwildons2.th2
    ```
 
    Each command prints the scraps it made, and the map they go in.
@@ -141,12 +144,13 @@ write notes in red or orange or they will be read as walls.
      units), and labels go outside the passage
 
    - **Inputs:** un-comment the `input` lines for the two `.th2` files
-     in the trip's `.th`.
+     in the trip's `.th`. An `input` path is relative to the file it is
+     in, so a drawing in the same folder needs only its name.
    - **Plan scraps:** add them to `Streamway1Plan` in
-     `Swildons_MAP_Streamway1.th`, or to a new map listed in
+     `streamway/Swildons_MAP_Streamway1.th`, or to a new map listed in
      `MasterPlan`.
    - **Extended scraps:** add them to `StreamwayElevation` in
-     `Swildons_MAP-elev_Streamway.th`.
+     `streamway/Swildons_MAP-elev_Streamway.th`.
    - **The `…XS` scrap:** it places the elevation's cross-sections on
      the plan, so it goes in the plan map.
 
@@ -165,7 +169,7 @@ write notes in red or orange or they will be read as walls.
    For an extended elevation, run this after a build too:
 
    ```bash
-   python3 -m tools.sketch2therion roofs Swil1E_Sump1ToSwildons2.th2
+   python3 -m tools.sketch2therion roofs streamway/2026-11-07/Swil1E_Sump1ToSwildons2.th2
    ```
 
    Where the sketch has no roof or floor, the conversion has to guess.
@@ -179,7 +183,7 @@ write notes in red or orange or they will be read as walls.
    stations and splay ends): `roofs` on the plan file does both. Then:
 
    ```bash
-   python3 -m tools.sketch2therion details Swil1P_Sump1ToSwildons2.th2
+   python3 -m tools.sketch2therion details streamway/2026-11-07/Swil1P_Sump1ToSwildons2.th2
    ```
 
    This turns lines inside the passage into floor steps, with the
@@ -192,7 +196,8 @@ write notes in red or orange or they will be read as walls.
    Last, on both files:
 
    ```bash
-   python3 -m tools.sketch2therion smooth Swil1P_Sump1ToSwildons2.th2 Swil1E_Sump1ToSwildons2.th2
+   python3 -m tools.sketch2therion smooth streamway/2026-11-07/Swil1P_Sump1ToSwildons2.th2 \
+     streamway/2026-11-07/Swil1E_Sump1ToSwildons2.th2
    ```
 
    The converted walls come in pieces, a stroke at a time, with four or
@@ -241,7 +246,7 @@ write notes in red or orange or they will be read as walls.
 ## Joining up with Stanton's survey
 
 Beyond the resurvey only W. I. Stanton's 1950s–60s survey exists
-(`swildons1-*.th`, `swildons2-*.th`). The
+(`stanton/`, one folder per trip). The
 [plan with Stanton's survey](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan-with-stanton.pdf)
 shows his stations next to the resurvey's. When a new trip reaches
 one of them:
@@ -252,7 +257,7 @@ one of them:
   measurements from the Forty.
 - **Flag the replaced legs.** Find the legs of his that the new trip
   replaces, and flag them `duplicate` in his file, as in
-  `swildons1-c.th`:
+  `stanton/1953-02-08/swildons1-c.th`:
 
   ```
   flags duplicate
@@ -272,9 +277,11 @@ export `_th.txt`. Two more commands help:
 
 ```bash
 # a PocketTopo sketch as an XVI backdrop for xTherion
-python3 -m tools.sketch2therion xvi PocketTopo/Trip.top --view elevation -o PocketTopo/Trip_th_e.xvi
+python3 -m tools.sketch2therion xvi entrance/2016-07-09/pockettopo/Trip.top --view elevation \
+  -o entrance/2016-07-09/pockettopo/Trip_th_e.xvi
 # copy PocketTopo's left/right leg directions into the trip's .th
-python3 -m tools.sketch2therion extend PocketTopo/Trip_th.txt Swildons_Trip.th
+python3 -m tools.sketch2therion extend entrance/2016-07-09/pockettopo/Trip_th.txt \
+  entrance/2016-07-09/Swildons_Trip.th
 ```
 
 PocketTopo's Therion export sometimes lists a side view's stations

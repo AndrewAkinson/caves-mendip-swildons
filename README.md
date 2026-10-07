@@ -111,52 +111,45 @@ underground (the converter is in `tools/`):
   survey.
 
 They are faithful to the sketches but not hand-finished. Each trip's
-sketch is in `PocketTopo/` as an `.xvi` backdrop for anyone who wants
+sketch is in its `pockettopo/` folder as an `.xvi` backdrop for anyone who wants
 to refine the drawings in xTherion.
-
-## Picking up the resurvey
-
-The [plan with Stanton's survey](https://paperclipmonkey.github.io/caves-mendip-swildons/Swildons-plan-with-stanton.pdf)
-shows where the resurvey stops and what Stanton surveyed beyond it,
-with station names for both. The resurvey reaches:
-
-- **Sump 1:** station 24.33, the bolt for the free-dive line. Beyond it
-  only Stanton's Swildons 2 survey exists (`swildons2-a` to `-e.th`,
-  starting from his station B1 at the entrance to the "P.G." passage,
-  which is about 11 m from 24.28 on the current layout).
-- **Tratman's Temple:** Stanton's St Paul's survey (`swildons1-f.th`)
-  starts at his station AL, "below Trats Grotto", about 3 m from 24.2.
-  Damascus, Paradise Regained, the Maypole Series and Double Trouble
-  (`swildons1-g` and `-j` to `-o.th`) hang off it.
-
-Stanton's survey is placed by his own measurements from the Forty, so
-near the resurvey it is a few metres out. When a new trip reaches one of
-his stations, equate it in `Swildons_Centreline.th` so the rest of his
-survey hangs off the new data, and flag the legs it replaces
-`duplicate`, as `swildons1-c/d/e.th` are. [tools/README.md](tools/README.md)
-has the details, and the workflow for getting a SexyTopo trip and its
-sketches into the survey.
 
 ## Working on the survey
 
 **[`tools/README.md`](tools/README.md) explains how to add a new SexyTopo
-trip, drawings included.** `ProjectWorkflow.txt` has the original
+trip, drawings included.** `docs/ProjectWorkflow.txt` has the original
 PocketTopo workflow.
+
+The survey is filed by area, then by trip date:
+
+```
+entrance/                 the Entrance Series, down to the Old 40 and Rolling Thunder
+  Swildons_MAP*.th        its maps: which drawings make up each sheet
+  2013-06-30/             one folder per trip, named by its date
+    Swildons_*.th         the trip's survey data and team, inputting its drawings
+    Swil1P_*.th2          plan drawings
+    Swil1E_*.th2          elevation drawings, which also hold the cross-sections
+    pockettopo/           the original PocketTopo files and their exports
+streamway/                the Old 40 to Sump 1, laid out the same way
+stanton/                  W. I. Stanton's survey, one folder per trip (1951-62)
+  Swildons_WIS*.th        joins his trips together
+  logbooks/               scans and a transcription of his logbooks
+```
+
+A new trip goes in a new dated folder in its area (for example
+`streamway/2026-11-07/`), with SexyTopo's files in a `sexytopo/`
+folder inside it.
 
 | Path | What it is |
 |---|---|
-| `Swildons_*.th` | One file per survey trip: data, team, and the drawings it inputs. |
-| `Swil1P_*.th2`, `Swil1E_*.th2` | Plan (`P`) and elevation (`E`) drawings. The `E` files also hold the cross-sections. |
-| `Swildons_Centreline.th` | Joins every trip together; the GPS fix. |
-| `Swildons_MAP*.th`, `swildonsmaster.th` | The maps: which drawings make up each sheet. |
-| `swildons1-*.th`, `swildons2-*.th`, `Swildons_WIS*.th` | W. I. Stanton's survey. |
-| `PocketTopo/` | The original PocketTopo files and their exports. |
+| `Swildons_Centreline.th` | Inputs every trip and joins them together; the GPS fix. |
+| `swildonsmaster.th` | The sheets: which maps make up each one. |
+| `swildons.thconfig`, `swildons-entrance.thconfig`, `swildons-centreline.thconfig`, `swildons-stanton.thconfig` | Build configs. |
+| `gb_layout.thc`, `altitude-colours.th` | Footleg's British symbol set and the altitude colours. |
 | `tools/` | The sketch converter and helpers for adding new trips: see [tools/README.md](tools/README.md). |
 | `routes/`, `tools/routes/` | Route card definitions, and the tool that makes them. |
 | `tools/model3d/`, `surface/lidar/` | The 3D view, and the LIDAR ground it uses (fetched once, kept here). |
-| `WISLogbookTranscription/` | Scans and a transcription of Stanton's logbooks. |
-| `SwildonsHole.svx` | The data in Survex format. |
-| `swildons.thconfig`, `swildons-entrance.thconfig`, `swildons-centreline.thconfig`, `swildons-stanton.thconfig`, `gb_layout.thc` | Build configs and Footleg's British symbol set. |
+| `legacy/` | The SVN project's own configs and its Survex export (`SwildonsHole.svx`). |
 
 ### Building it yourself
 
@@ -178,8 +171,8 @@ therion -l output/therion-stanton.log swildons-stanton.thconfig
 Or with Therion installed:
 `therion -l output/therion.log swildons.thconfig`, `therion swildons-entrance.thconfig`,
 `therion swildons-centreline.thconfig` and `therion swildons-stanton.thconfig`. The sheets land in `output/`. The older
-`swildons_*.thconfig` files from the SVN project still work and write
-into the project root.
+`legacy/swildons_*.thconfig` files from the SVN project still work and
+write into `legacy/`.
 
 Every push to `main` rebuilds the survey and publishes it
 (`.github/workflows/build.yml`). A pull request gets the built sheets

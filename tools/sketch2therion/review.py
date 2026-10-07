@@ -55,7 +55,7 @@ def _sketch(path, view='plan'):
 
 def sketches_for(stations, view='plan'):
     """The sketch files that have these stations, most of them first."""
-    files = glob.glob('PocketTopo/*.top') + glob.glob('drawings/**/*.xvi', recursive=True)
+    files = glob.glob('*/*/pockettopo/*.top') + glob.glob('*/*/sexytopo/**/*.xvi', recursive=True)
     hits = []
     for f in files:
         try:
@@ -159,7 +159,7 @@ def pdf_rect(stations, pdf=PLAN, pad=15):
             p = lay.find(n)
             return p[0] if p else None
         page = pymupdf.open(pdf)[0]; pairs = []
-        for f in glob.glob('*.th2'):
+        for f in glob.glob('*/**/Swil1[PE]*.th2', recursive=True):
             t = open(f, encoding='utf-8').read().replace('\r\n', '\n')
             for m in re.finditer(r'^scrap (\S+)[^\n]*\n(.*?)^endscrap', t, re.S | re.M):
                 body = m.group(2)
