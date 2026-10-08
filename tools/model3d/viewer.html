@@ -43,6 +43,11 @@
   .chip b { font-weight: 600; color: #fff; }
   #title a.back { position: absolute; top: 12px; right: 14px; color: var(--muted); font-size: 12px; text-decoration: none; }
   #title a.back:hover { color: var(--accent); }
+  #title .ar { display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; font: inherit; font-size: 12px; font-weight: 600;
+    color: #fff; background: rgba(59, 143, 176, .35); border-color: rgba(127, 184, 204, .45); cursor: pointer; }
+  #title .ar:hover { background: rgba(59, 143, 176, .55); }
+  #title .ar svg { width: 14px; height: 14px; }
+  #title .ar[hidden] { display: none; }
 
   /* controls */
   #panel { position: fixed; left: 16px; bottom: max(34px, calc(env(safe-area-inset-bottom) + 26px)); width: 260px; padding: 12px 14px; }
@@ -110,7 +115,7 @@
   #loading .fill { height: 100%; width: 0; background: var(--accent); transition: width .3s; }
   #loading .err { color: #ff8d8d; margin-top: 14px; max-width: 360px; display: none; }
 
-  body.still #panel, body.still #spin, body.still #compass, body.still #title a.back, body.still #credits { display: none; }
+  body.still #panel, body.still #spin, body.still #compass, body.still #title a.back, body.still #title .ar, body.still #credits { display: none; }
 
   @media (max-width: 640px) {
     #title { padding: 10px 14px; right: 16px; }
@@ -141,6 +146,9 @@
   <h1><span id="t-name">Swildons Hole</span></h1>
   <p id="t-sub">Priddy, Mendip &middot; the survey beneath the ground</p>
   <div class="chips" id="chips"></div>
+  <button id="ar" class="chip ar" hidden title="Put the model on a table or the floor around you">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2 21 7v10l-9 5-9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg>
+    <span id="ar-what">View in AR</span></button>
 </div>
 
 <div id="legend" class="glass" aria-hidden="true">
@@ -628,6 +636,159 @@ const home = () => viewFrom(Math.PI * 0.8, -0.12, R0 * 1.05);
   function done() {
     if (--pending === 0 && failed) $('img-credit').textContent += ` (${failed} tiles didn't load)`;
   }
+}
+
+// -- AR Quick Look -------------------------------------------------------------------------
+// On an iPhone or iPad, Safari can open a USDZ model in AR Quick Look,
+// set on a table or the floor. The model is exported from what's on
+// screen when the button is pressed: walls, centreline and ground as
+// shown, at the current vertical scale, about a metre across. Quick
+// Look draws only the front of each face and has no lines or vertex
+// colours, so the walls get both faces, the centreline becomes thin
+// square tubes, and the altitude colours come from a ramp texture.
+if (!STILL && document.createElement('a').relList.supports?.('ar')) {
+  const btn = $('ar'), what = $('ar-what');
+  btn.hidden = false;
+  let made = null, busy = false;
+  const link = document.createElement('a');
+  link.rel = 'ar';
+  link.download = 'Swildons-Hole.usdz';   // Safari needs a name to know it's a USDZ
+  link.appendChild(document.createElement('img'));   // and an image for it to be an AR link
+
+  function arScene() {
+    const rampTex = (k = 1) => {
+      const cv = document.createElement('canvas');
+      cv.width = 256; cv.height = 4;
+      const rg = cv.getContext('2d'), c = new THREE.Color();
+      for (let i = 0; i < 256; i++) { rg.fillStyle = `#${ramp(i / 255, c).multiplyScalar(k).getHexString()}`; rg.fillRect(i, 0, 1, 4); }
+      const t = new THREE.CanvasTexture(cv);
+      t.colorSpace = THREE.SRGBColorSpace;
+      return t;
+    };
+    // lit, but with enough glow that the colours read on the shaded side
+    // (the exporter ignores the emissive strength, so the glow is a dimmer ramp)
+    const caveMat = new THREE.MeshStandardMaterial({ map: rampTex(), emissiveMap: rampTex(0.35), emissive: 0xffffff, roughness: 0.8, metalness: 0 });
+    const u = z => (0.5 + 255 * Math.min(1, Math.max(0, alt01(z)))) / 256;
+
+    const group = new THREE.Group(), v = new THREE.Vector3();
+    if (walls && walls.visible) {
+      const wp = S.walls.pos, n = wp.length / 3, uv = new Float32Array(n * 2).fill(0.5);
+      for (let i = 0; i < n; i++) uv[2 * i] = u(wp[3 * i + 2]);
+      const g = new THREE.BufferGeometry();
+      g.setAttribute('position', walls.geometry.attributes.position);
+      g.setAttribute('normal', walls.geometry.attributes.normal);
+      g.setAttribute('uv', new THREE.BufferAttribute(uv, 2));
+      // every triangle again the other way round, so it shows from inside and out
+      const idx = S.walls.idx, both = new Uint32Array(idx.length * 2);
+      both.set(idx);
+      for (let i = 0; i < idx.length; i += 3) both.set([idx[i], idx[i + 2], idx[i + 1]], idx.length + i);
+      g.setIndex(new THREE.BufferAttribute(both, 1));
+      group.add(new THREE.Mesh(g, caveMat));
+    }
+    if (legs.visible && S.legs.length) {
+      const L = S.legs, n = L.length / 6, r = Math.max(W, HH) / 600;
+      const pos = new Float32Array(n * 24), nor = new Float32Array(n * 24), uv = new Float32Array(n * 16).fill(0.5), idx = new Uint32Array(n * 24);
+      const a = new THREE.Vector3(), b = new THREE.Vector3(), d = new THREE.Vector3(), e1 = new THREE.Vector3(), e2 = new THREE.Vector3(), o = new THREE.Vector3();
+      let m = 0;
+      for (let k = 0; k < n; k++) {
+        P(L.slice(6 * k, 6 * k + 3), a); P(L.slice(6 * k + 3, 6 * k + 6), b);
+        d.subVectors(b, a);
+        if (d.lengthSq() < 1e-6) continue;
+        d.normalize();
+        e1.crossVectors(d, Math.abs(d.y) < 0.9 ? THREE.Object3D.DEFAULT_UP : new THREE.Vector3(1, 0, 0)).normalize();
+        e2.crossVectors(d, e1);
+        const ua = u(L[6 * k + 2]), ub = u(L[6 * k + 5]), base = 8 * m;
+        for (let q = 0; q < 4; q++) {
+          const t = Math.PI / 4 + q * Math.PI / 2;
+          o.copy(e1).multiplyScalar(Math.cos(t)).addScaledVector(e2, Math.sin(t));
+          v.copy(a).addScaledVector(o, r); pos.set([v.x, v.y, v.z], 3 * (base + q));
+          v.copy(b).addScaledVector(o, r); pos.set([v.x, v.y, v.z], 3 * (base + 4 + q));
+          nor.set([o.x, o.y, o.z], 3 * (base + q)); nor.set([o.x, o.y, o.z], 3 * (base + 4 + q));
+          uv[2 * (base + q)] = ua; uv[2 * (base + 4 + q)] = ub;
+          const q1 = (q + 1) % 4;
+          idx.set([base + q, base + q1, base + 4 + q1, base + q, base + 4 + q1, base + 4 + q], 24 * m + 6 * q);
+        }
+        m++;
+      }
+      const g = new THREE.BufferGeometry();
+      g.setAttribute('position', new THREE.BufferAttribute(pos.subarray(0, m * 24), 3));
+      g.setAttribute('normal', new THREE.BufferAttribute(nor.subarray(0, m * 24), 3));
+      g.setAttribute('uv', new THREE.BufferAttribute(uv.subarray(0, m * 16), 2));
+      g.setIndex(new THREE.BufferAttribute(idx.subarray(0, m * 24), 1));
+      group.add(new THREE.Mesh(g, caveMat));
+    }
+    const opacity = groundMat.uniforms.uOpacity.value;
+    if (opacity > 0.02) {
+      // the ground at a coarser grid, and the imagery with the ground's
+      // opacity in its alpha, which is where Quick Look takes it from
+      const s = Math.ceil(Math.max(TW, TH) / 160);
+      const is = [], js = [];
+      for (let i = 0; i < TW; i += s) is.push(i);
+      if (is[is.length - 1] !== TW - 1) is.push(TW - 1);
+      for (let j = 0; j < TH; j += s) js.push(j);
+      if (js[js.length - 1] !== TH - 1) js.push(TH - 1);
+      const gw = is.length, gh = js.length, pos = new Float32Array(gw * gh * 3), uv = new Float32Array(gw * gh * 2);
+      js.forEach((j, jj) => is.forEach((i, ii) => {
+        const k = jj * gw + ii;
+        pos.set(ground.geometry.attributes.position.array.subarray(3 * (j * TW + i), 3 * (j * TW + i) + 3), 3 * k);
+        uv.set(ground.geometry.attributes.uv.array.subarray(2 * (j * TW + i), 2 * (j * TW + i) + 2), 2 * k);
+      }));
+      const idx = [];
+      for (let j = 0; j < gh - 1; j++) for (let i = 0; i < gw - 1; i++) {
+        const a = j * gw + i, b = a + 1, c = a + gw, d = c + 1;
+        idx.push(a, c, b, b, c, d);
+      }
+      const g = new THREE.BufferGeometry();
+      g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+      g.setAttribute('uv', new THREE.BufferAttribute(uv, 2));
+      g.setIndex(idx);
+      g.computeVertexNormals();
+      const k = Math.min(1, 1024 / Math.max(img.width, img.height));   // the exporter's limit
+      const tc = document.createElement('canvas');
+      tc.width = Math.round(img.width * k); tc.height = Math.round(img.height * k);
+      const tg = tc.getContext('2d');
+      tg.globalAlpha = opacity;
+      tg.drawImage(img, 0, 0, tc.width, tc.height);
+      const tex = new THREE.CanvasTexture(tc);
+      tex.colorSpace = THREE.SRGBColorSpace;
+      group.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ map: tex, transparent: true, roughness: 1, metalness: 0 })));
+    }
+
+    // about a metre across, centred, standing on the floor at its lowest point
+    const box = new THREE.Box3();
+    group.children.forEach(o => { o.geometry.computeBoundingBox(); box.union(o.geometry.boundingBox); });
+    const k = 1 / Math.max(box.max.x - box.min.x, box.max.z - box.min.z, 1);
+    const ex = world.scale.y;
+    group.scale.set(k, k * ex, k);
+    group.position.set(-k * (box.min.x + box.max.x) / 2, -k * ex * box.min.y, -k * (box.min.z + box.max.z) / 2);
+    const sc = new THREE.Scene();
+    sc.add(group);
+    sc.updateMatrixWorld(true);
+    return sc;
+  }
+
+  btn.onclick = async () => {
+    if (busy) return;
+    const key = [world.scale.y, walls?.visible, legs.visible, groundMat.uniforms.uOpacity.value.toFixed(2)].join();
+    if (made?.key !== key) {
+      busy = true; what.textContent = 'Preparing…';
+      try {
+        const { USDZExporter } = await import('three/addons/exporters/USDZExporter.js');
+        const data = await new USDZExporter().parse(arScene(), { quickLookCompatible: true });
+        if (made) URL.revokeObjectURL(made.url);
+        made = { key, url: URL.createObjectURL(new Blob([data], { type: 'model/vnd.usdz+zip' })) };
+        link.href = made.url;
+      } catch (e) {
+        console.error(e);
+        what.textContent = "AR didn't work";
+        busy = false;
+        return;
+      }
+      busy = false;
+    }
+    what.textContent = 'View in AR';
+    link.click();
+  };
 }
 
 // -- controls --------------------------------------------------------------------------------

@@ -41,6 +41,17 @@ python3 -m tools.model3d      # after the main build; writes output/3d/
   behind it, from whatever angle you look. The page draws the cave on its own into a
   small hidden image each frame, blurs it, and uses that to fade the ground.
 
+- **AR** on an iPhone or iPad: a *View in AR* button under the title
+  opens the model in Apple's AR Quick Look, to set on a table or the
+  floor. The page makes the USDZ when it's pressed, with three.js's
+  USDZ exporter, from what's on screen: the walls, centreline and
+  ground as they're shown, at the current vertical scale, about a
+  metre across. Quick Look has no lines, vertex colours or two-sided
+  faces, so the centreline becomes thin tubes, the altitude colours
+  come from a ramp texture and the walls get each face twice. The
+  button only appears where Safari says it can do AR
+  (`relList.supports('ar')`).
+
 Colours are altitude, warm near the surface and cold at depth, from the
 highest station to the lowest. The vertical scale starts at 1.5&times;
 and can be changed to 1&times; or 2.5&times;.
