@@ -146,6 +146,7 @@ folder inside it.
 | `swildonsmaster.th` | The sheets: which maps make up each one. |
 | `swildons.thconfig`, `swildons-entrance.thconfig`, `swildons-centreline.thconfig`, `swildons-stanton.thconfig` | Build configs. |
 | `gb_layout.thc`, `altitude-colours.th` | Footleg's British symbol set and the altitude colours. |
+| `therion.ini`, `fonts/` | Sets the maps in Source Sans 3 (SIL Open Font License, in `fonts/`). |
 | `tools/` | The sketch converter and helpers for adding new trips: see [tools/README.md](tools/README.md). |
 | `routes/`, `tools/routes/` | Route card definitions, and the tool that makes them. |
 | `tools/model3d/`, `surface/lidar/` | The 3D view, and the LIDAR ground it uses (fetched once, kept here). |
@@ -170,7 +171,15 @@ therion -l output/therion-stanton.log swildons-stanton.thconfig
 
 Or with Therion installed:
 `therion -l output/therion.log swildons.thconfig`, `therion swildons-entrance.thconfig`,
-`therion swildons-centreline.thconfig` and `therion swildons-stanton.thconfig`. The sheets land in `output/`. The older
+`therion swildons-centreline.thconfig` and `therion swildons-stanton.thconfig`. The sheets land in `output/`.
+Run them from the project root so Therion finds `therion.ini` and the
+fonts; it also needs LCDF Typetools (`otftotfm`) installed, which the
+Docker image has.
+
+The website's plan is then enlarged to three times its page size, so a
+phone will zoom far enough into it to read the labels (it is all vector,
+so nothing is lost):
+`python3 tools/enlarge_pdf.py output/Swildons-plan.pdf 3`. The older
 `legacy/swildons_*.thconfig` files from the SVN project still work and
 write into `legacy/`.
 

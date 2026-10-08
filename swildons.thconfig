@@ -43,8 +43,6 @@ select StreamwayElevation@SwildonsHole
 # title, scale bar and survey details, instead of stacked under them, and
 # the symbol legend full width underneath. This is Therion's own
 # \legendcontent (therion.tex) with the colour legend moved into an \hbox.
-# The two columns are kept as \hdrtextcolumn and \hdrcolourcolumn so
-# header-one-row below can reuse them.
 layout header-two-columns
   code tex-map
     \newbox\hdrtextbox \newbox\hdrcolourbox
@@ -95,46 +93,95 @@ layout header-two-columns
   endcode
 endlayout
 
-# The whole header in one row: title and survey details, the altitude
-# legend, then the symbol legend shrunk to \hdrlegendscale in its own
-# columns, so the header is only as tall as the survey details and the
-# sheet stays thin. legend-width is the width of the title column;
-# legend-columns is how many columns the symbol legend uses.
-layout header-one-row
-  copy header-two-columns
+# The plan's header in one row, set in Source Sans 3 (therion.ini):
+# the cave name large, a grey subtitle, length and depth, a slim scale
+# bar and the credits; then the altitude legend; then the symbol legend
+# shrunk to \hdrlegendscale, pushed down \kern1.6cm to clear the cave
+# above it. The north arrow sits beside the title. legend-width is the
+# width of the title column.
+layout header-plan
   code tex-map
-    \newbox\hdrlegendbox
-    \def\hdrlegendscale{0.75}
-    % width of the symbol legend before it is shrunk
+    \newbox\hdrtextbox \newbox\hdrcolourbox \newbox\hdrlegendbox
+    \newdimen\hdrgap \hdrgap=1.4cm
     \newdimen\hdrlegendwidth \hdrlegendwidth=22cm
+    \def\hdrlegendscale{0.75}
+    \def\grey{\pdfliteral{0.40 g 0.40 G}}
+    \def\sep{\hskip0.7em{\pdfliteral{0.70 g}\vrule width 0.8pt height 10pt depth 1pt\grey}\hskip0.7em}
+    \def\credit#1#2#3{%
+      \edef\tmp{\the#2}\ifx\tmp\empty\else
+        \noindent{\setsize[9]\grey\bf\the#1\black}\par\nobreak\vskip1pt
+        {\setsize[12]\rm\the#2\edef\tmp{\the#3}\ifx\tmp\empty\else
+          \hskip0.6em{\grey\it\the#3}\black\fi\par}\vskip7pt
+      \fi}
     \legendcontent={%
       \hsize=\legendwidth
-      \black\the\legendtextcolor
-      \hdrcolourwidth=3.5cm
-      \hdrtextwidth=\legendwidth
-      \tmpdimen=0pt
-      \hdrtextcolumn \hdrcolourcolumn
+      \black
+      \setbox\hdrtextbox=\vtop{\hsize=\legendwidth
+        \rightskip=0pt plus 4em \parindent=0pt \baselineskip=1.25em
+        \ifnortharrow\vbox to 0pt{\line{\hfil\northarrow\kern1cm}\vss}\fi
+        {\setsize[46]\bf\the\cavename\par}\vskip6pt
+        {\setsize[15]\grey Priddy, Mendip Hills\sep Plan\sep 1\thinspace:\thinspace500\black\par}
+        \vskip16pt
+        {\setsize[13]\rm
+          \edef\tmp{\the\cavelength}\ifx\tmp\empty\else{\bf\the\cavelength} long\fi
+          \edef\tmp{\the\cavedepth}\ifx\tmp\empty\else\quad\quad{\bf\the\cavedepth} deep\fi\par}
+        \vskip18pt
+        \ifscalebar\hbox{\kern-2pt\scalebar}\vskip20pt\fi
+        \credit\topotitle\topoteam\topodate
+        \credit\cartotitle\cartoteam\cartodate
+        \vskip4pt
+        {\setsize[9]\grey
+          \edef\tmp{\the\copyrights}\ifx\tmp\empty\else\the\copyrights\par\fi
+          \edef\tmp{\the\comment}\ifx\tmp\empty\else\the\comment\par\fi\black}
+      }%
+      \setbox\hdrcolourbox=\vtop{\hsize=3.6cm
+        \ifcolorlegend
+          {\setsize[9]\grey\bf\the\colorlegendtitle\black}\vskip10pt
+          \insertcolorlegend
+        \fi}%
       \iflegend
         \setbox\hdrlegendbox=\vbox{\hsize=\hdrlegendwidth
-          \vskip1.2cm{\the\legendtextsectionsize\the\legendtitle}\bigskip
+          {\setsize[11]\grey\bf\the\legendtitle\black}\vskip12pt
           \insertlegend}%
-        % Shrink it as a picture, so the symbols and their text shrink
-        % together, then give TeX a box of the shrunk size to lay out.
         \setbox\tmpboxb=\hbox{\pdfsave\pdfsetmatrix{\hdrlegendscale\space 0 0 \hdrlegendscale}%
           \rlap{\lower\ht\hdrlegendbox\box\hdrlegendbox}\pdfrestore}%
         \tmpdimen=\dp\tmpboxb \tmpdimen=\hdrlegendscale\tmpdimen
         \ht\tmpboxb=0pt \dp\tmpboxb=0pt
-        % The north arrow goes above it, clear of the cave.
-        \setbox\hdrlegendbox=\vtop{\kern0pt
-          \ifnortharrow\hbox{\northarrow}\kern-0.6cm\fi
+        \setbox\hdrlegendbox=\vtop{\kern1.6cm
           \box\tmpboxb\kern\tmpdimen}%
         \wd\hdrlegendbox=\hdrlegendscale\hdrlegendwidth
       \fi
-      \setbox\hdrtextbox=\hbox{\box\hdrtextbox\hskip\hdrgap\box\hdrcolourbox
+      \hbox{\box\hdrtextbox\hskip\hdrgap\box\hdrcolourbox
         \iflegend\hskip\hdrgap\box\hdrlegendbox\fi}%
-      \box\hdrtextbox
       \black
     }
+  endcode
+
+  # A slim scale bar: thin alternating bar, small figures, no big
+  # "Scale = 1 : 500" (the scale is in the subtitle).
+  code metapost
+    def s_scalebar (expr l, units, txt) =
+      begingroup
+        interim warningcheck:=0;
+        tmpl:=l / Scale * cm * units / 2;
+        tmpx:=l / Scale * cm * units / 5;
+        tmph:=5bp;
+      endgroup;
+      pickup pencircle scaled 0.5bp;
+      p:=(0,0)--(tmpx,0)--(tmpx,-tmph)--(0,-tmph)--cycle;
+      for i:=-2.5 step 1 until 2:
+        if (round(i+2.5) mod 2) = 0: fill p shifted (i * tmpx,0) withcolor (0.15,0.15,0.15);
+        else: fill p shifted (i * tmpx,0) withcolor (0.82,0.82,0.82); fi;
+      endfor;
+      begingroup
+        interim labeloffset:=4bp;
+        for i:=0 step (l/5) until (l-1):
+          tmpx:=tmpl * (i * 2 / l - 1);
+          label.bot(thTEX("\size[10]" & decimal (i)), (tmpx,-tmph));
+        endfor;
+        label.bot(thTEX("\size[10]" & decimal (l) & "\thinspace" & txt), (tmpl,-tmph));
+      endgroup;
+    enddef;
   endcode
 endlayout
 
@@ -152,8 +199,12 @@ layout plan-sheet
   # runs in one row under the Entrance Series, which keeps the sheet thin.
   map-header 31 20 nw
   legend-columns 4
-  legend-width 20 cm
-  copy header-one-row
+  legend-width 17 cm
+  copy header-plan
+
+  # Passage labels a step larger than Therion's 1:500 defaults, so the
+  # names stay readable when the sheet is zoomed on a phone.
+  fonts-setup 6 8 11 14 20
 
   color map-fg altitude:warm
   copy LayoutColourSymbols
@@ -175,8 +226,12 @@ layout plan-bw
   # runs in one row under the Entrance Series, which keeps the sheet thin.
   map-header 31 20 nw
   legend-columns 4
-  legend-width 20 cm
-  copy header-one-row
+  legend-width 17 cm
+  copy header-plan
+
+  # Passage labels a step larger than Therion's 1:500 defaults, so the
+  # names stay readable when the sheet is zoomed on a phone.
+  fonts-setup 6 8 11 14 20
 
   color map-fg [85]
 endlayout
