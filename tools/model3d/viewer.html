@@ -823,15 +823,25 @@ if (!STILL && document.createElement('a').relList.supports?.('ar')) {
       g.setAttribute('uv', new THREE.BufferAttribute(uv, 2));
       g.setIndex(idx);
       g.computeVertexNormals();
-      const k = Math.min(1, 1024 / Math.max(img.width, img.height));   // the exporter's limit
-      const tc = document.createElement('canvas');
-      tc.width = Math.round(img.width * k); tc.height = Math.round(img.height * k);
-      const tg = tc.getContext('2d');
-      tg.globalAlpha = opacity;
-      tg.drawImage(img, 0, 0, tc.width, tc.height);
-      const tex = new THREE.CanvasTexture(tc);
-      tex.colorSpace = THREE.SRGBColorSpace;
-      group.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ map: tex, transparent: true, roughness: 1, metalness: 0 })));
+      const imagery = (alpha) => {
+        const k = Math.min(1, 1024 / Math.max(img.width, img.height));   // the exporter's limit
+        const tc = document.createElement('canvas');
+        tc.width = Math.round(img.width * k); tc.height = Math.round(img.height * k);
+        const tg = tc.getContext('2d');
+        tg.globalAlpha = alpha;
+        tg.drawImage(img, 0, 0, tc.width, tc.height);
+        const tex = new THREE.CanvasTexture(tc);
+        tex.colorSpace = THREE.SRGBColorSpace;
+        return tex;
+      };
+      group.add(new THREE.Mesh(g, new THREE.MeshStandardMaterial({ map: imagery(opacity), transparent: true, roughness: 1, metalness: 0 })));
+      // and its underside, facing down, so it can be seen from below
+      // looking up: opaque and lit by itself, as no light reaches it there
+      const under = g.clone();
+      for (let i = 0; i < idx.length; i += 3) [idx[i + 1], idx[i + 2]] = [idx[i + 2], idx[i + 1]];
+      under.setIndex(idx);
+      under.attributes.normal.array.forEach((x, i, a) => { a[i] = -x; });
+      group.add(new THREE.Mesh(under, new THREE.MeshStandardMaterial({ color: 0x000000, emissiveMap: imagery(1), emissive: 0xffffff, roughness: 1, metalness: 0 })));
     }
 
     // a couple of metres across, centred, and lifted to about waist height

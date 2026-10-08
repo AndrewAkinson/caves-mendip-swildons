@@ -50,7 +50,9 @@ python3 -m tools.model3d      # after the main build; writes output/3d/
   into. Quick Look has no lines, vertex colours or two-sided faces, so
   the centreline becomes tubes (the legs joined into runs, bent round
   the corners, with a ball at each junction and end), the altitude
-  colours come from a ramp texture and the walls get each face twice. The
+  colours come from a ramp texture and the walls get each face twice.
+  The ground gets a second, downward-facing copy with the imagery
+  opaque and self-lit, so it can be seen from below, looking up. The
   button only appears where Safari says it can do AR
   (`relList.supports('ar')`).
 
