@@ -45,10 +45,12 @@ python3 -m tools.model3d      # after the main build; writes output/3d/
   opens the model in Apple's AR Quick Look, to set on a table or the
   floor. The page makes the USDZ when it's pressed, with three.js's
   USDZ exporter, from what's on screen: the walls, centreline and
-  ground as they're shown, at the current vertical scale, about a
-  metre across. Quick Look has no lines, vertex colours or two-sided
-  faces, so the centreline becomes thin tubes, the altitude colours
-  come from a ramp texture and the walls get each face twice. The
+  ground as they're shown, at the current vertical scale, 2 m across
+  and lifted 70 cm off the floor so it's easy to walk round and look
+  into. Quick Look has no lines, vertex colours or two-sided faces, so
+  the centreline becomes tubes (the legs joined into runs, bent round
+  the corners, with a ball at each junction and end), the altitude
+  colours come from a ramp texture and the walls get each face twice. The
   button only appears where Safari says it can do AR
   (`relList.supports('ar')`).
 
