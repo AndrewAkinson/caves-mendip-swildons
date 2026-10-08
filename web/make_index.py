@@ -61,12 +61,28 @@ def human(n):
         n /= 1024.0
 
 
+PREVIEW_MAX_PX = 2600
+
+
 def render_preview(pdf_path, png_path, width=1100):
     """First page of a PDF to PNG. Ghostscript first, ImageMagick second."""
     gs = shutil.which("gs") or shutil.which("gswin64c")
     if gs:
+        # 80 dpi, but no wider than PREVIEW_MAX_PX: the plan's page is
+        # enlarged for phones (tools/enlarge_pdf.py) and would otherwise
+        # make a preview several thousand pixels wide.
+        res = 80.0
+        try:
+            out = subprocess.run(
+                [gs, "-q", "-dNODISPLAY", "-dNOSAFER", "-c",
+                 f"({pdf_path}) (r) file runpdfbegin 1 pdfgetpage /MediaBox pget pop == quit"],
+                check=True, capture_output=True, text=True, timeout=60).stdout
+            x0, _, x1, _ = (float(v) for v in out.strip().strip("[]").split())
+            res = min(res, PREVIEW_MAX_PX * 72.0 / (x1 - x0))
+        except Exception:
+            pass
         cmd = [gs, "-q", "-dNOPAUSE", "-dBATCH", "-dSAFER",
-               "-sDEVICE=png16m", "-r80", "-dFirstPage=1", "-dLastPage=1",
+               "-sDEVICE=png16m", f"-r{res:.2f}", "-dFirstPage=1", "-dLastPage=1",
                "-dTextAlphaBits=4", "-dGraphicsAlphaBits=4",
                "-sOutputFile=" + png_path, pdf_path]
     else:
