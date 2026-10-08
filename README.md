@@ -174,12 +174,7 @@ Or with Therion installed:
 `therion swildons-centreline.thconfig` and `therion swildons-stanton.thconfig`. The sheets land in `output/`.
 Run them from the project root so Therion finds `therion.ini` and the
 fonts; it also needs LCDF Typetools (`otftotfm`) installed, which the
-Docker image has.
-
-The website's plan is then enlarged to three times its page size, so a
-phone will zoom far enough into it to read the labels (it is all vector,
-so nothing is lost):
-`python3 tools/enlarge_pdf.py output/Swildons-plan.pdf 3`. The older
+Docker image has. The older
 `legacy/swildons_*.thconfig` files from the SVN project still work and
 write into `legacy/`.
 

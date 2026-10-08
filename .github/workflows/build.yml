@@ -101,17 +101,6 @@ jobs:
           fi
           exit $status
 
-      # The plan is 82 cm wide, and phone PDF viewers run out of zoom
-      # before its labels are readable. Make the page three times the
-      # size; it is all vector, so it stays sharp and barely grows.
-      - name: Enlarge the plan for phones
-        run: |
-          docker run --rm \
-            -v "${{ github.workspace }}:/project" \
-            -u "$(id -u):$(id -g)" \
-            --entrypoint python3 \
-            ghcr.io/paperclipmonkey/therion:6.4.0 tools/enlarge_pdf.py output/Swildons-plan.pdf 3
-
       # Route cards (tools/routes): one A3 sheet per route in routes/*.toml,
       # drawn over the plan just rendered and printed to PDF by Chrome,
       # which the runner has. Plain Python, no packages needed.
