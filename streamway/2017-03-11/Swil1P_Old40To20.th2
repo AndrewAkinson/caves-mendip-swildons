@@ -493,8 +493,9 @@ point 507.75 811.25 water-flow -orientation 277.5
 point 362.25 911.25 water-flow -orientation 326.9
 
 line floor-step -id l151-87-1170 -clip off -outline out
-  79.12929133858233 1167.163228346457
-  87.75 1167.5 90.5 1172.5 88.5 1178.5
+  68.5 1156.7
+  71.9 1162.0 79.4 1167.2 79.6 1167.2
+  87.8 1167.7 90.5 1172.6 88.5 1178.5
 endline
 
 line border -id l150-306-1013

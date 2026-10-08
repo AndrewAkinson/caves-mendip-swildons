@@ -842,13 +842,6 @@ line rock-border -close on
 endline
 
 
-line rock-border -close on
-  -6.74 936.02
-  -7.48 945.32
-  -1.23 944.92
-  -0.58 941.23
-  -6.74 936.02
-endline
 
 line rock-border -close on
   143.25 859.30
@@ -1160,43 +1153,7 @@ area water
   TratmansToSump1SP1-water3
 endarea
 
-line border -subtype invisible -id TratmansToSump1SP1-water4 -close on
-  -1588.16 1123.68
-  -1589.66 1128.94
-  -1589.35 1133.14
-  -1582.08 1146.88
-  -1578.68 1143.31
-  -1576.43 1137.09
-  -1571.98 1137.03
-  -1556.69 1163.22
-  -1547.14 1177.52
-  -1543.77 1179.74
-  -1423.41 1179.02
-  -1359.40 1171.91
-  -1343.16 1165.43
-  -1336.15 1160.10
-  -1332.68 1152.32
-  -1331.07 1140.76
-  -1333.46 1133.27
-  -1332.89 1131.53
-  -1319.69 1130.36
-  -1329.53 1116.63
-  -1337.29 1110.28
-  -1343.98 1108.54
-  -1377.99 1112.10
-  -1413.68 1117.86
-  -1444.05 1118.16
-  -1456.80 1120.16
-  -1493.51 1117.82
-  -1528.71 1118.09
-  -1567.26 1113.29
-  -1580.77 1115.76
-  -1588.16 1123.68
-endline
 
-area water
-  TratmansToSump1SP1-water4
-endarea
 
 line border -subtype invisible -id TratmansToSump1SP1-water5 -close on
   -619.49 1161.27
@@ -1358,7 +1315,7 @@ point -1587.49 1154.82 water-flow -orientation 275.3
 
 point -1225.81 1123.64 water-flow -orientation 269.8
 
-point -1105.86 1144.26 water-flow -orientation 288.2
+point -1105.86 1144.26 water-flow -orientation 250.654
 
 point -436.52 1142.90 water-flow -orientation 289.9
 
@@ -1780,5 +1737,14 @@ scrap scrap-2 -scale [-3684.9 279.3 1439.9 279.3 0.0 0.0 130.16992 0.0 m]
     100.9 865.9
     97.9 862.0
     101.3 857.3
+  endline
+  line border -id water-border -close on -subtype invisible
+    -1509.6 1091.4
+    -1363.5 1094.3
+    -1363.5 1094.3 -1331.6 1125.8 -1332.0 1143.9
+    -1332.5 1162.1 -1354.0 1174.0 -1376.0 1178.8
+    -1397.9 1183.6 -1560.7 1188.8 -1560.7 1188.8
+    -1560.7 1188.8 -1592.7 1178.8 -1595.5 1147.8
+    -1598.4 1116.7 -1509.6 1091.4 -1509.6 1091.4
   endline
 endscrap

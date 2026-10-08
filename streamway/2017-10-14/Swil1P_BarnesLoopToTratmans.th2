@@ -1223,7 +1223,7 @@ point 1372.96 308.06 flowstone -orientation 157.3
 
 point 1295.08 414.39 flowstone -orientation 148.2
 
-point 1263.77 447.11 flowstone -orientation 148.2
+point 1263.77 447.11 flowstone -orientation 144.449
 
 point 1284.99 471.86 flowstone -orientation 148.2
 
@@ -1231,31 +1231,31 @@ point 1259.84 506.77 flowstone -orientation 148.2
 
 point 1225.92 536.88 flowstone -orientation 148.2
 
-point 1255.33 541.59 flowstone -orientation 148.2
+point 1255.33 541.59 flowstone -orientation 156.066
 
 point 1203.57 576.77 flowstone -orientation 148.2
 
-point 1198.34 643.41 flowstone -orientation 132.1
+point 1198.34 643.41 flowstone -orientation 238.016
 
-point 1163.30 706.83 flowstone -orientation 132.1
+point 1163.30 706.83 flowstone -orientation 257.423
 
-point 1183.48 680.22 flowstone -orientation 132.1
+point 1183.48 680.22 flowstone -orientation 238.917
 
-point 1209.95 668.96 flowstone -orientation 132.1
+point 1209.95 668.96 flowstone -orientation 241.74
 
-point 1196.14 705.78 flowstone -orientation 132.1
+point 1196.14 705.78 flowstone -orientation 259.236
 
-point 1180.16 729.49 flowstone -orientation 132.1
+point 1180.16 729.49 flowstone -orientation 256.953
 
 point 1175.70 603.42 flowstone -orientation 132.1
 
 point 1135.63 752.40 stalagmite
 
-point 1082.51 822.60 flowstone -orientation 126.4
+point 1082.51 822.60 flowstone -orientation 294.026
 
-point 1055.54 806.22 flowstone -orientation 126.4
+point 1055.54 806.22 flowstone -orientation 290.311
 
-point 1049.84 837.95 flowstone -orientation 126.4
+point 1049.84 837.95 flowstone -orientation 275.147
 
 point 1688.98 181.10 label -text "Barnes Loop" -scale xl
 
@@ -1476,4 +1476,6 @@ point -124.81 -1184.46 station -name 23.33
   area water
     line-7
   endarea
+  point 1059.6 858.7 flowstone -orientation 285.456
+  point 1083.2 798.4 flowstone -orientation 297.826
 endscrap
